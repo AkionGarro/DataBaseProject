@@ -1,0 +1,30 @@
+create table gender
+(
+idgender NUMBER(8) Primary key,
+name varchar2(10) constraint gender_name_nn not null,
+createdBy varchar2(10),
+creationDate DATE,
+modifiedBy varchar2(10),
+modificationDate DATE
+);
+
+COMMENT ON TABLE gender
+IS 'Table for the diferents kinds of genders';
+
+COMMENT ON COLUMN gender.idgender
+IS 'The id number of the type of gender';
+
+COMMENT ON COLUMN gender.name
+IS 'The gender name';
+
+COMMENT ON COLUMN gender.createdBy
+IS 'The name of the user that created the tuple';
+
+COMMENT ON COLUMN gender.creationDate
+IS 'Date when the tuple was created';
+
+COMMENT ON COLUMN gender.modifiedBy
+IS 'The name of the user that modified the type';
+
+COMMENT ON COLUMN gender.modificationDate
+IS 'Date when it was last modified';
