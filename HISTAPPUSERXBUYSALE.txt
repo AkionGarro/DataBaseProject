@@ -9,14 +9,15 @@ CONSTRAINT HISTAPPUSERXBUYSALE_pk PRIMARY KEY ( idUser, idSale)
 );
 COMMENT ON TABLE HISTAPPUSERXBUYSALE
 is 'It is a table that links users with the items they have bought';
-COMMENT ON COLUMN idUser
+COMMENT ON COLUMN HISTAPPUSERXBUYSALE.idUser
 is 'Reference to id of the user who bought the item';
-COMMENT ON COLUMN idBuySale
+COMMENT ON COLUMN HISTAPPUSERXBUYSALE.idBuySale
 is 'Reference to id of the item’s post';
-COMMENT ON COLUMN createdBy
+COMMENT ON COLUMN HISTAPPUSERXBUYSALE.createdBy
 is 'The user who created the tuple';
-COMMENT ON COLUMN creationDate
+COMMENT ON COLUMN HISTAPPUSERXBUYSALE.creationDate
 is 'The date when the tuple was created';
-COMMENT ON COLUMN modifiedBy
+COMMENT ON COLUMN HISTAPPUSERXBUYSALE.modifiedBy
 is 'The user who modified the tuple';
-COMMENT ON COLUMN modificationDate
+COMMENT ON COLUMN HISTAPPUSERXBUYSALE.modificationDate
+is 'Date when it was last modified';
