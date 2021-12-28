@@ -1,6 +1,6 @@
 CREATE TABLE CONDITION(
 idCondition number(2), CONSTRAINT CONDITION_pk PRIMARY KEY (idCondition),
-description VARCHAR2(20), CONSTRAINT CONDITION_description_nn not null,
+description VARCHAR2(20) CONSTRAINT CONDITION_description_nn not null,
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
