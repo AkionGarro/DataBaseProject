@@ -9,15 +9,15 @@ modificationDate DATE
 
 COMMENT ON TABLE CONDITION
 is 'It is a table that has the clock’s condition; for example: new, used, repaired, factory repaired'
-COMMENT ON COLUMN idCondition
+COMMENT ON COLUMN CONDITION.idCondition
 is 'Unique identifier of the condition';
-COMMENT ON COLUMN description
+COMMENT ON COLUMN CONDITION.description
 is 'Description of the condition';
-COMMENT ON COLUMN createdBy
+COMMENT ON COLUMN CONDITION.createdBy
 is 'The user who created the tuple';
-COMMENT ON COLUMN creationDate
+COMMENT ON COLUMN CONDITION.creationDate
 is 'The date when the tuple was created';
-COMMENT ON COLUMN modifiedBy
+COMMENT ON COLUMN CONDITION.modifiedBy
 is 'The user who modified the tuple';
-COMMENT ON COLUMN modificationDate
+COMMENT ON COLUMN CONDITION.modificationDate
 is 'The date when the tuple was modified';
