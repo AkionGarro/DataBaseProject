@@ -1,11 +1,11 @@
-CREATE TABLE HISTAPPUSERXBUYSALE(
+CREATE TABLE HISTORY_APPUSERXBUYSALE(
 idUser varchar2(20),
 idSale number(8),
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE,
-CONSTRAINT HISTAPPUSERXBUYSALE_pk PRIMARY KEY ( idUser, idSale)
+CONSTRAINT HISTORY_APPUSERXBUYSALE_pk PRIMARY KEY ( idUser, idSale)
 );
 COMMENT ON TABLE HISTAPPUSERXBUYSALE
 is 'It is a table that links users with the items they have bought';
