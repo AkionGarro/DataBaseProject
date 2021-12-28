@@ -49,14 +49,15 @@ IS 'Average score as seller';
 COMMENT ON COLUMN APPUSER.averageAsBuyer
 IS 'Average score as buyer';
 
-COMMENT ON COLUMN APPUSER.createdBy
-IS 'The name of the user that created the tuple';
+COMMENT ON COLUMN createdBy
+is 'The user who created the tuple';
 
-COMMENT ON COLUMN APPUSER.creationDate
-IS 'Date when it was created';
+COMMENT ON COLUMN creationDate
+is 'The date when the tuple was created';
 
-COMMENT ON COLUMN APPUSER.modifiedBy
-IS 'The name of the user that modified the tuple';
+COMMENT ON COLUMN modifiedBy
+is 'The user who modified the tuple';
 
-COMMENT ON COLUMN APPUSER.modificationDate
-IS 'Date when it was last modified';
+COMMENT ON COLUMN modificationDate
+is 'The date when the tuple was modified';
+
