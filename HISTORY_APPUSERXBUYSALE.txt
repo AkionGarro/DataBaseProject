@@ -7,17 +7,17 @@ modifiedBy VARCHAR2(20),
 modificationDate DATE,
 CONSTRAINT HISTORY_APPUSERXBUYSALE_pk PRIMARY KEY ( idUser, idSale)
 );
-COMMENT ON TABLE HISTAPPUSERXBUYSALE
+COMMENT ON TABLE HISTORY_APPUSERXBUYSALE
 is 'It is a table that links users with the items they have bought';
-COMMENT ON COLUMN HISTAPPUSERXBUYSALE.idUser
+COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.idUser
 is 'Reference to id of the user who bought the item';
-COMMENT ON COLUMN HISTAPPUSERXBUYSALE.idBuySale
+COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.idBuySale
 is 'Reference to id of the item’s post';
-COMMENT ON COLUMN HISTAPPUSERXBUYSALE.createdBy
+COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.createdBy
 is 'The user who created the tuple';
-COMMENT ON COLUMN HISTAPPUSERXBUYSALE.creationDate
+COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.creationDate
 is 'The date when the tuple was created';
-COMMENT ON COLUMN HISTAPPUSERXBUYSALE.modifiedBy
+COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.modifiedBy
 is 'The user who modified the tuple';
-COMMENT ON COLUMN HISTAPPUSERXBUYSALE.modificationDate
+COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.modificationDate
 is 'Date when it was last modified';
