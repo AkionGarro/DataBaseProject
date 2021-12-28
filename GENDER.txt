@@ -8,8 +8,8 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
-COMMENT ON TABLE gender
-IS 'Table for the diferents kinds of genders';
+COMMENT ON TABLE gender.gender
+IS 'Table for the diferents genders';
 
 COMMENT ON COLUMN gender.idgender
 IS 'The id number of the type of gender';
