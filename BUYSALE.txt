@@ -19,33 +19,33 @@ modificationDate DATE
 
 COMMENT ON TABLE BUYSALE
 is 'It is a table that links the seller with the clock and stores the order information'
-COMMENT ON COLUMN idBuySale
+COMMENT ON COLUMN BUYSALE.idBuySale
 is 'Unique identifier of the sale post';
-COMMENT ON COLUMN idUserSeller
+COMMENT ON COLUMN BUYSALE.idUserSeller
 is 'Reference to id of the user who sells the clock';
-COMMENT ON COLUMN idClock
+COMMENT ON COLUMN BUYSALE.idClock
 is 'Reference to id of the clock for sale';
-COMMENT ON COLUMN idUserBuyer
+COMMENT ON COLUMN BUYSALE.idUserBuyer
 is 'Reference to id of the user who bought the clock'
-COMMENT ON COLUMN idBuyStatus
+COMMENT ON COLUMN BUYSALE.idBuyStatus
 is 'Reference to id of status to know whether the clock has been sold or not';
-COMMENT ON COLUMN idReview;
+COMMENT ON COLUMN BUYSALE.idReview;
 is 'Reference to id of the review left by the user who bought the clock';
-COMMENT ON COLUMN idShippingMethod';
+COMMENT ON COLUMN BUYSALE.idShippingMethod';
 is 'Reference to id of the shipping method';
-COMMENT ON COLUMN idPaymentMethod
+COMMENT ON COLUMN BUYSALE.idPaymentMethod
 is 'Reference to id of the payment method';
-COMMENT ON COLUMN shippingPrice
+COMMENT ON COLUMN BUYSALE.shippingPrice
 is 'Shipping cost';
-COMMENT ON COLUMN datePost
+COMMENT ON COLUMN BUYSALE.datePost
 is 'The date when the item was posted';
-COMMENT ON COLUMN dateSale
+COMMENT ON COLUMN BUYSALE.dateSale
 is 'The date when the item was sold';
-COMMENT ON COLUMN createdBy
+COMMENT ON COLUMN BUYSALE.createdBy
 is 'The user who created the tuple';
-COMMENT ON COLUMN creationDate
+COMMENT ON COLUMN BUYSALE.creationDate
 is 'The date when the tuple was created';
-COMMENT ON COLUMN modifiedBy
+COMMENT ON COLUMN BUYSALE.modifiedBy
 is 'The user who modified the tuple';
-COMMENT ON COLUMN modificationDate
+COMMENT ON COLUMN BUYSALE.modificationDate
 is 'The date when the tuple was modified';
