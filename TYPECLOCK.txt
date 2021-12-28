@@ -10,17 +10,17 @@ modificationDate DATE
 
 COMMENT ON TABLE TYPECLOCK
 is 'It is a table that has the types of clocks; for example: wall clock, cuckoo clock, watch, etc…'
-COMMENT ON COLUMN idType
+COMMENT ON COLUMN TYPECLOCK.idType
 is 'Unique identifier of the  type of clock';
-COMMENT ON COLUMN nameType
+COMMENT ON COLUMN TYPECLOCK.nameType
 is 'Name of the type of clock';
-COMMENT ON COLUMN description
+COMMENT ON COLUMN TYPECLOCK.description
 is 'Description of the type of clock';
-COMMENT ON COLUMN createdBy
+COMMENT ON COLUMN TYPECLOCK.createdBy
 is 'The user who created the tuple';
-COMMENT ON COLUMN creationDate
+COMMENT ON COLUMN TYPECLOCK.creationDate
 is 'The date when the tuple was created';
-COMMENT ON COLUMN modifiedBy
+COMMENT ON COLUMN TYPECLOCK.modifiedBy
 is 'The user who modified the tuple';
-COMMENT ON COLUMN modificationDate
+COMMENT ON COLUMN TYPECLOCK.modificationDate
 is 'The date when the tuple was modified';
