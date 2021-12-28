@@ -1,0 +1,51 @@
+CREATE TABLE BUYSALE (
+idBuySale NUMBER(6), CONSTRAINT BUYSALE_pk PRIMARY KEY (idBuySale),
+idUserSeller VARCHAR2(20)CONSTRAINT BUYSALE_idUserSeller_nn not null, 
+idClock NUMBER(8) CONSTRAINT BUYSALE_idClock_nn not null,
+idUserBuyer VARCHAR2(20),
+idBuyStatus NUMBER(1) CONSTRAINT BUYSALE_idBuyStatus_nn not null,
+idReview NUMBER(8),
+idShippingMethod NUMBER(2),
+idPaymentMethod NUMBER(2),
+shippingPrice  NUMBER(8),
+datePost DATE CONSTRAINT BUYSALE_datePost_nn not null,
+totalPrice  NUMBER(8),
+dateSale DATE,
+createdBy VARCHAR2(20),
+creationDate DATE,
+modifiedBy VARCHAR2(20),
+modificationDate DATE
+);
+
+COMMENT ON TABLE BUYSALE
+is 'It is a table that links the seller with the clock and stores the order information'
+COMMENT ON COLUMN idBuySale
+is 'Unique identifier of the sale post';
+COMMENT ON COLUMN idUserSeller
+is 'Reference to id of the user who sells the clock';
+COMMENT ON COLUMN idClock
+is 'Reference to id of the clock for sale';
+COMMENT ON COLUMN idUserBuyer
+is 'Reference to id of the user who bought the clock'
+COMMENT ON COLUMN idBuyStatus
+is 'Reference to id of status to know whether the clock has been sold or not';
+COMMENT ON COLUMN idReview;
+is 'Reference to id of the review left by the user who bought the clock';
+COMMENT ON COLUMN idShippingMethod';
+is 'Reference to id of the shipping method';
+COMMENT ON COLUMN idPaymentMethod
+is 'Reference to id of the payment method';
+COMMENT ON COLUMN shippingPrice
+is 'Shipping cost';
+COMMENT ON COLUMN datePost
+is 'The date when the item was posted';
+COMMENT ON COLUMN dateSale
+is 'The date when the item was sold';
+COMMENT ON COLUMN createdBy
+is 'The user who created the tuple';
+COMMENT ON COLUMN creationDate
+is 'The date when the tuple was created';
+COMMENT ON COLUMN modifiedBy
+is 'The user who modified the tuple';
+COMMENT ON COLUMN modificationDate
+is 'The date when the tuple was modified';

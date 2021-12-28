@@ -1,0 +1,26 @@
+CREATE TABLE TYPECLOCK(
+idType number(3), CONSTRAINT TYPECLOCK_pk PRIMARY KEY(idType),
+nameType varchar(20) CONSTRAINT TYPECLOCK_nameType_nn not null,
+description varchar(20),
+createdBy VARCHAR2(20),
+creationDate DATE,
+modifiedBy VARCHAR2(20),
+modificationDate DATE
+);
+
+COMMENT ON TABLE TYPECLOCK
+is 'It is a table that has the types of clocks; for example: wall clock, cuckoo clock, watch, etc…'
+COMMENT ON COLUMN idType
+is 'Unique identifier of the  type of clock';
+COMMENT ON COLUMN nameType
+is 'Name of the type of clock';
+COMMENT ON COLUMN description
+is 'Description of the type of clock';
+COMMENT ON COLUMN createdBy
+is 'The user who created the tuple';
+COMMENT ON COLUMN creationDate
+is 'The date when the tuple was created';
+COMMENT ON COLUMN modifiedBy
+is 'The user who modified the tuple';
+COMMENT ON COLUMN modificationDate
+is 'The date when the tuple was modified';

@@ -1,0 +1,22 @@
+CREATE TABLE HISTAPPUSERXBUYSALE(
+idUser varchar2(20),
+idSale number(8),
+createdBy VARCHAR2(20),
+creationDate DATE,
+modifiedBy VARCHAR2(20),
+modificationDate DATE,
+CONSTRAINT HISTAPPUSERXBUYSALE_pk PRIMARY KEY ( idUser, idSale)
+);
+COMMENT ON TABLE HISTAPPUSERXBUYSALE
+is 'It is a table that links users with the items they have bought';
+COMMENT ON COLUMN idUser
+is 'Reference to id of the user who bought the item';
+COMMENT ON COLUMN idBuySale
+is 'Reference to id of the item’s post';
+COMMENT ON COLUMN createdBy
+is 'The user who created the tuple';
+COMMENT ON COLUMN creationDate
+is 'The date when the tuple was created';
+COMMENT ON COLUMN modifiedBy
+is 'The user who modified the tuple';
+COMMENT ON COLUMN modificationDate
