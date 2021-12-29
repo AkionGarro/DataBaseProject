@@ -1,9 +1,9 @@
 --identification table------
 
-create table identification
+create table IDENTIFICATION
 (
-ididentification NUMBER(8) Primary key,
-type varchar2(10) constraint identification_type_nn not null,
+idIdentification NUMBER(3), constraint IDENTIFICATION_pk PRIMARY KEY (idIdentification),
+typeId varchar2(10) constraint identification_type_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -16,7 +16,7 @@ IS 'Table for the diferents kinds of identifications';
 COMMENT ON COLUMN identification.ididentification
 IS 'The id number of the type of identification';
 
-COMMENT ON COLUMN identification.type
+COMMENT ON COLUMN identification.typeId
 IS 'The type of identification';
 
 COMMENT ON COLUMN identification.createdBy
