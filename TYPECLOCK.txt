@@ -1,5 +1,5 @@
 CREATE TABLE TYPECLOCK(
-idType number(3), CONSTRAINT TYPECLOCK_pk PRIMARY KEY(idType),
+idType number(3),
 nameType varchar(20) CONSTRAINT TYPECLOCK_nameType_nn not null,
 description varchar(20),
 createdBy VARCHAR2(20),
@@ -7,6 +7,12 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+
+ALTER TABLE TYPECLOCK
+ADD CONSTRAINT TYPECLOCK_pk PRIMARY KEY(idType)
+USING INDEX
+TABLESPACE pr_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE TYPECLOCK
 is 'It is a table that has the types of clocks; for example: wall clock, cuckoo clock, watch, etc…'
