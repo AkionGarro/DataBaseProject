@@ -1,11 +1,16 @@
 CREATE TABLE CONDITION(
-idCondition number(2), CONSTRAINT CONDITION_pk PRIMARY KEY (idCondition),
+idCondition number(2), 
 description VARCHAR2(20) CONSTRAINT CONDITION_description_nn not null,
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+ALTER TABLE CONDITION
+ADD CONSTRAINT CONDITION_pk PRIMARY KEY (idCondition)
+USING INDEX
+TABLESPACE PR_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE CONDITION
 is 'It is a table that has the clock’s condition; for example: new, used, repaired, factory repaired'
