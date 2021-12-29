@@ -9,6 +9,12 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+ALTER TABLE DISTRICT 
+ADD CONSTRAINT pk_DISTRICT PRIMARY KEY (idDistrict)
+USING INDEX
+TABLESPACE pr_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
 COMMENT ON TABLE DISTRICT
 is 'The table containing the information about the district';
 
