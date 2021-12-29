@@ -10,10 +10,10 @@ modificationDate DATE
 );
 
 COMMENT ON TABLE BUYERRATING
-is 'The table containing the information about the seller rating';
+is 'The table containing the information about the buyer rating';
 
-COMMENT ON COLUMN BUYERRATING.idSellRating
-IS 'The id that identifies the clock model';
+COMMENT ON COLUMN BUYERRATING.idBuyRating
+IS 'The id that identifies the buyer rating';
 
 COMMENT ON COLUMN BUYERRATING.username
 IS 'The id that identifies the username';
