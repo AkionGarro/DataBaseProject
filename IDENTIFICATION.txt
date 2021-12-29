@@ -16,7 +16,7 @@ IS 'Table for the diferents kinds of identifications';
 COMMENT ON COLUMN identification.ididentification
 IS 'The id number of the type of identification';
 
-COMMENT ON COLUMN identification.type
+COMMENT ON COLUMN identification.typeId
 IS 'The type of identification';
 
 COMMENT ON COLUMN identification.createdBy
