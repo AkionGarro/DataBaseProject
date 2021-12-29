@@ -1,7 +1,7 @@
-create table SELLERATING
+create table SELLERRATING
 (
 idSellRating varchar2(10), CONSTRAINT SELLERRATING_pk PRIMARY KEY (idSellRating),
-username varchar(10),
+username varchar(10) CONSTRAINT SELLERRATING_username_nn(NOT NULL),
 rating varchar(10),
 createdBy varchar2(10),
 creationDate DATE,
