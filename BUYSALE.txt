@@ -1,5 +1,5 @@
 CREATE TABLE BUYSALE (
-idBuySale NUMBER(6), ,
+idBuySale NUMBER(6), 
 idUserSeller VARCHAR2(20)CONSTRAINT BUYSALE_idUserSeller_nn not null, 
 idClock NUMBER(8) CONSTRAINT BUYSALE_idClock_nn not null,
 idUserBuyer VARCHAR2(20),
