@@ -1,5 +1,5 @@
 CREATE TABLE BUYSALE (
-idBuySale NUMBER(6), CONSTRAINT BUYSALE_pk PRIMARY KEY (idBuySale),
+idBuySale NUMBER(6), ,
 idUserSeller VARCHAR2(20)CONSTRAINT BUYSALE_idUserSeller_nn not null, 
 idClock NUMBER(8) CONSTRAINT BUYSALE_idClock_nn not null,
 idUserBuyer VARCHAR2(20),
@@ -16,6 +16,13 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+
+ALTER TABLE People
+ADD CONSTRAINT BUYSALE_pk PRIMARY KEY (idBuySale)
+USING INDEX
+TABLESPACE ge_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
 
 COMMENT ON TABLE BUYSALE
 is 'It is a table that links the seller with the clock and stores the order information'
