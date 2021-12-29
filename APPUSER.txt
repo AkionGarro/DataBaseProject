@@ -1,7 +1,7 @@
 create table APPUSER
 (
-username varchar2(10) primary key,
-identificationNumber Number(10),
+username varchar2(10), CONSTRAINT APPUSER_pk PRIMARY KEY (username),
+identificationNumber N umber(10),
 userType Number(10),
 district number(10),
 password varchar2(10) constraint user_password_nn not null,
@@ -14,7 +14,6 @@ createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE
-CONSTRAINT APPUSER_pk PRIMARY KEY (username)
 );
 
 COMMENT ON TABLE APPUSER
