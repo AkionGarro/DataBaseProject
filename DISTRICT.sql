@@ -2,7 +2,7 @@ create table DISTRICT
 (
 idDistrict varchar2(10), CONSTRAINT DISTRICT_pk PRIMARY KEY (idDistrict),
 idCity varchar(10),
-districtName varchar(10),
+nameDistrict varchar(10),
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -18,7 +18,7 @@ IS 'The id that identifies the district';
 COMMENT ON COLUMN DISTRICT.idCity
 IS 'The id that identifies the city';
 
-COMMENT ON COLUMN DISTRICT.districtName
+COMMENT ON COLUMN DISTRICT.nameDistrict
 IS 'Reference to the district name';
 
 COMMENT ON COLUMN DISTRICT.createdBy
