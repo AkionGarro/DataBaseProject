@@ -1,0 +1,24 @@
+CREATE TABLE BRAND(
+idBrand NUMBER(5), CONSTRAINT BRAND_pk PRIMARY KEY (idBrand),
+nameBrand VARCHAR2(20) CONSTRAINT BRAND_nameBrand_nn NOT NULL,
+createdBy VARCHAR2(20),
+creationDate DATE,
+modifiedBy VARCHAR2(20),
+modificationDate DATE
+);
+
+
+COMMENT ON TABLE BRAND
+is 'It is a table that stores the brands';
+COMMENT ON COLUMN BRAND.idBrand
+is 'Unique identifier of the brand';
+COMMENT ON COLUMN BRAND.nameBrand
+is 'Name of the brand';
+COMMENT ON COLUMN BRAND.createdBy
+is 'The user who created the tuple';
+COMMENT ON COLUMN BRAND.creationDate
+is 'The date when the tuple was created';
+COMMENT ON COLUMN BRAND.modifiedBy
+is 'The user who modified the tuple';
+COMMENT ON COLUMN BRAND.modificationDate
+is 'The date when the tuple was modified';

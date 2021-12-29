@@ -1,0 +1,29 @@
+CREATE TABLE PHOTOCLOCK(
+idPhoto number(5), CONSTRAINT PHOTOCLOCK_pk PRIMARY KEY (idPhoto),
+idClock number(8) CONSTRAINT PHOTOCLOCK_idClock_nn NOT NULL,
+photo BLOB CONSTRAINT PHOTOCLOCK_photo_nn NOT NULL,
+description varchar2(20),
+createdBy VARCHAR2(20),
+creationDate DATE,
+modifiedBy VARCHAR2(20),
+modificationDate DATE
+);
+
+COMMENT ON TABLE PHOTOCLOCK
+is 'It is a table that stores the photos of a clock';
+COMMENT ON COLUMN PHOTOCLOCK.idPhoto
+is 'Unique identifier of the photo';
+COMMENT ON COLUMN PHOTOCLOCK.idClock
+is 'Reference to id of the clock';
+COMMENT ON COLUMN PHOTOCLOCK.photo
+is 'Stores the photo';
+COMMENT ON COLUMN PHOTOCLOCK.description
+is 'Description of the photo';
+COMMENT ON COLUMN PHOTOCLOCK.createdBy
+is 'The user who created the tuple';
+COMMENT ON COLUMN PHOTOCLOCK.creationDate
+is 'The date when the tuple was created';
+COMMENT ON COLUMN PHOTOCLOCK.modifiedBy
+is 'The user who modified the tuple';
+COMMENT ON COLUMN PHOTOCLOCK.modificationDate
+is 'The date when the tuple was modified';

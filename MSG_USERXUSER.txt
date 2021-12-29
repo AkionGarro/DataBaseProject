@@ -1,0 +1,33 @@
+CREATE TABLE MSG_USERXUSER(
+idWriter varchar2(20),
+idRecipient varchar2(20),
+subject varchar2(20) CONSTRAINT MSG_USERXUSER_subject_nn NOT NULL,
+description varchar2(150)CONSTRAINT MSG_USERXUSER_description_nn NOT NULL,
+sendDate DATE CONSTRAINT MSG_USERXUSER_sendDate_nn NOT NULL,
+createdBy VARCHAR2(20),
+creationDate DATE,
+modifiedBy VARCHAR2(20),
+modificationDate DATE,
+CONSTRAINT MSG_USERXUSER_pk PRIMARY KEY (idWriter,idRecipient)
+);
+
+COMMENT ON TABLE MSG_USERXUSER
+is 'It is a table that stores the messages sent between two users';
+COMMENT ON COLUMN MSG_USERXUSER.idWriter
+is 'Reference to the user who sends the message';
+COMMENT ON COLUMN MSG_USERXUSER.idRecipient
+is 'Reference to the user who receives the message';
+COMMENT ON COLUMN MSG_USERXUSER.subject
+is 'Subject of the message';
+COMMENT ON COLUMN MSG_USERXUSER.description
+is 'The message that will be sent';
+COMMENT ON COLUMN MSG_USERXUSER.sendDate
+is 'Time the message was sent';
+COMMENT ON COLUMN MSG_USERXUSER.createdBy
+is 'The user who created the tuple';
+COMMENT ON COLUMN MSG_USERXUSER.creationDate
+is 'The date when the tuple was created';
+COMMENT ON COLUMN MSG_USERXUSER.modifiedBy
+is 'The user who modified the tuple';
+COMMENT ON COLUMN MSG_USERXUSER.modificationDate
+is 'The date when the tuple was modified';
