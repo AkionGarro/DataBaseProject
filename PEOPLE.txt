@@ -21,6 +21,22 @@ USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+ALTER TABLE PEOPLE
+ADD CONSTRAINT fk_People_idIdentification FOREIGN KEY
+(identificationType) REFERENCES IDENTIFICATION(idIdentification);
+
+ALTER TABLE PEOPLE
+ADD CONSTRAINT fk_People_idIdentification FOREIGN KEY
+(identificationType) REFERENCES IDENTIFICATION(idIdentification);
+
+ALTER TABLE PEOPLE
+ADD CONSTRAINT fk_People_GENDER FOREIGN KEY
+(gender) REFERENCES GENDER(idGender);
+
+ALTER TABLE PEOPLE
+ADD CONSTRAINT fk_People_country FOREIGN KEY
+(citenzenship) REFERENCES country(idCountry);
+
 COMMENT ON TABLE PEOPLE
 IS 'Table for the basic information abount the users';
 

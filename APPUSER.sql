@@ -4,7 +4,7 @@ create table APPUSER
 username varchar2(10),
 identificationNumber Number(10) constraint appuser_identification_nn not null,
 userType Number(10) constraint appuser_userType_nn not null,
-district number(10) constraint appuser_disctrict_nn not null,
+district Number(10) constraint appuser_disctrict_nn not null,
 password varchar2(10) constraint user_password_nn not null,
 photo BLOB DEFAULT EMPTY_BLOB(),
 phoneNumber Number(8) constraint user_phone_number_nn not null,
@@ -23,6 +23,18 @@ ADD CONSTRAINT pk_appuser PRIMARY KEY (username)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+ALTER TABLE APPUSER
+ADD CONSTRAINT fk_APPUSER_persona FOREIGN KEY
+(identificationNumber) REFERENCES PEOPLE(identificationNumber);
+
+ALTER TABLE APPUSER
+ADD CONSTRAINT fk_APPUSER_usertpe FOREIGN KEY
+(userType) REFERENCES USERTYPE(idUserType);
+
+ALTER TABLE APPUSER
+ADD CONSTRAINT fk_APPUSER_disctrict FOREIGN KEY
+(district ) REFERENCES DISTRICT(idDistrict);
 
 COMMENT ON TABLE APPUSER
 is 'The table containing the information about the user';

@@ -14,6 +14,14 @@ USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+ALTER TABLE shoppingcart_userxclock
+ADD CONSTRAINT fk_shoppingcart_userxclock_appUser FOREIGN KEY
+(idUser) REFERENCES appuser(username);
+
+ALTER TABLE shoppingcart_userxclock
+ADD CONSTRAINT fk_shoppingcart_userxclock_Clock FOREIGN KEY
+(idClock) REFERENCES CLOCK(idClock);
+
 COMMENT ON TABLE shoppingcart_userxclock
 is 'The table containing the information of the clocks that the user has in his shoppingcart';
 
