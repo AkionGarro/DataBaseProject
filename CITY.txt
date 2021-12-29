@@ -1,8 +1,8 @@
 create table City
 (
-idCity NUMBER(8) Primary key,
-idCountry Number(8),
-name varchar2(10) constraint city_name_nn not null,
+idCity NUMBER(8) , CONSTRAINT city_pk PRIMARY KEY (idCity),
+idCountry Number(8) constraint city_idCountry_nn not null,
+name varchar2(10) constraint city_nameCity_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -18,7 +18,7 @@ IS 'The id number of the city';
 COMMENT ON COLUMN City.idCountry
 IS 'The id number of the country where the city belongs';
 
-COMMENT ON COLUMN City.name
+COMMENT ON COLUMN City.nameCity
 IS 'The name of the city';
 
 COMMENT ON COLUMN City.createdBy
