@@ -8,6 +8,12 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+ALTER TABLE country
+ADD CONSTRAINT pk_country PRIMARY KEY idCountry
+USING INDEX
+TABLESPACE un_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
 COMMENT ON TABLE country
 IS 'Table for the diferents countries';
 

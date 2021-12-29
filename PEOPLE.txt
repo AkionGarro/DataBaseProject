@@ -1,5 +1,5 @@
 Create table PEOPLE(
-identificationNumber varchar2(9), CONSTRAINT PEOPLE_pk  PRIMARY KEY (identificationNumber),
+identificationNumber varchar2(9)
 identificationType Number(8),
 gender Number(8),
 citenzenship Number(8),
@@ -14,6 +14,12 @@ creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE
 );
+
+ALTER TABLE PEOPLE
+ADD CONSTRAINT pk_people PRIMARY KEY identificationNumber 
+USING INDEX
+TABLESPACE un_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE PEOPLE
 IS 'Table for the basic information abount the users';

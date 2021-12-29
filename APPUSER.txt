@@ -18,6 +18,12 @@ modificationDate DATE,
 CONSTRAINT APPUSER_pk PRIMARY KEY (username)
 );
 
+ALTER TABLE APPUSER
+ADD CONSTRAINT pk_appuser PRIMARY KEY (username)
+USING INDEX
+TABLESPACE un_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
 COMMENT ON TABLE APPUSER
 is 'The table containing the information about the user';
 
