@@ -1,7 +1,7 @@
 create table BUYERRATING
 (
 idBuyRating varchar2(10), CONSTRAINT BUYERRATING_pk PRIMARY KEY (idBuyRating),
-username varchar(10),
+username varchar(10) CONSTRAINT SELLERRATING_username_nn(NOT NULL),
 rating varchar(10),
 createdBy varchar2(10),
 creationDate DATE,
