@@ -1,6 +1,6 @@
 create table MODEL
 (
-idModel varchar2(10), CONSTRAINT MODEL_pk PRIMARY KEY (idModel),
+idModel varchar2(10),
 idBrand varchar(10) CONSTRAINT MODEL_idBrand_nn NOT NULL,
 nameBrand varchar(10) CONSTRAINT MODEL_nameBrand_nn NOT NULL,
 createdBy varchar2(10),
@@ -8,6 +8,12 @@ creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE
 );
+
+ALTER TABLE MODEL 
+ADD CONSTRAINT pk_MODEL PRIMARY KEY (idModel)
+USING INDEX
+TABLESPACE pr_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE MODEL
 is 'The table containing the information about the clock model';

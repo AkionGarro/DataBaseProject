@@ -5,9 +5,16 @@ idClock number(10),
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
-modificationDate DATE,
-CONSTRAINT WLISTUSERXCLOCK_pk PRIMARY KEY (idClock,idUser)
+modificationDate DATE
 );
+
+ALTER TABLE WLISTUSERXCLOCK 
+ADD CONSTRAINT pk_WLISTUSERXCLOCK PRIMARY KEY (idUser,idClock)
+USING INDEX
+TABLESPACE pr_ind PCTFREE 20
+STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+
 
 COMMENT ON TABLE WLISTUSERXCLOCK
 is 'The table containing the information about the wish list of the user';
