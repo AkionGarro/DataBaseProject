@@ -11,7 +11,7 @@ modificationDate DATE
 ALTER TABLE shoppingcart_userxclock 
 ADD CONSTRAINT pk_shoppingcart_userxclock PRIMARY KEY (idUser ,idClock )
 USING INDEX
-TABLESPACE pk_ind PCTFREE 20
+TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE shoppingcart_userxclock
