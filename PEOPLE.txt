@@ -1,11 +1,11 @@
 Create table PEOPLE(
-identificationNumber Number(9) Primary key,
+identificationNumber varchar2(9), CONSTRAINT PEOPLE_pk  PRIMARY KEY (identificationNumber),
 identificationType Number(8),
 gender Number(8),
 citenzenship Number(8),
 birthdate date constraint people_birthdate_nn not null,
 age Number(3),
-name varchar2(10) constraint people_name_nn not null,
+namePeople varchar2(10) constraint people_name_nn not null,
 surname varchar2(10) constraint people_surname_nn not null,
 secondsurname varchar2(10) constraint people_secondsurname_nn not null,
 
@@ -36,7 +36,7 @@ IS 'The date of birth if the user';
 COMMENT ON COLUMN PEOPLE.age
 IS 'The age of the user';
 
-COMMENT ON COLUMN PEOPLE.name
+COMMENT ON COLUMN PEOPLE.namePeople
 IS 'The first name of the user';
 
 COMMENT ON COLUMN PEOPLE.surname
