@@ -1,7 +1,7 @@
 create table country
 (
-idCountry NUMBER(8) Primary key,
-name varchar2(10) constraint country_name_nn not null,
+idCountry NUMBER(8), CONSTRAINT COUNTRY_pk PRIMARY KEY (idCountry),
+nameCountry varchar2(10) constraint country_nameCountry_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -14,7 +14,7 @@ IS 'Table for the diferents countries';
 COMMENT ON COLUMN country.idCountry
 IS 'The id number of the country';
 
-COMMENT ON COLUMN country.name
+COMMENT ON COLUMN country.nameCountry
 IS 'The name of the country';
 
 COMMENT ON COLUMN country.createdBy
