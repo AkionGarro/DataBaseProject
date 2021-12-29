@@ -1,15 +1,16 @@
 create table WLISTUSERXCLOCK
 (
 idUser varchar2(10), 
-idClock number(10), CONSTRAINT WLISTUSERXCLOCK_pk PRIMARY KEY (idClock,idUser),
+idClock number(10), 
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
-modificationDate DATE
+modificationDate DATE,
+CONSTRAINT WLISTUSERXCLOCK_pk PRIMARY KEY (idClock,idUser)
 );
 
 COMMENT ON TABLE WLISTUSERXCLOCK
-is 'The table containing the information about the district';
+is 'The table containing the information about the wish list of the user';
 
 COMMENT ON COLUMN WLISTUSERXCLOCK.idUser
 IS 'The id that identifies the user ';

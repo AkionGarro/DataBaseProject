@@ -1,7 +1,7 @@
 create table USERTYPE
 (
 idUserType varchar2(10), CONSTRAINT USERTYPE_pk PRIMARY KEY (idUserType),
-descriptionType varchar(10),
+descriptionType varchar(10) CONSTRAINT USERTYPE_descriptionType_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -9,7 +9,7 @@ modificationDate DATE
 );
 
 COMMENT ON TABLE USERTYPE
-is 'The table containing the information about the district';
+is 'The table containing the information about the user type';
 
 COMMENT ON COLUMN USERTYPE.idUserType
 IS 'The id that identifies the user type';

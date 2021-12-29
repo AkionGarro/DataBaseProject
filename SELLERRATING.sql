@@ -1,8 +1,8 @@
 create table SELLERRATING
 (
 idSellRating varchar2(10), CONSTRAINT SELLERRATING_pk PRIMARY KEY (idSellRating),
-username varchar(10) CONSTRAINT SELLERRATING_username_nn(NOT NULL),
-rating varchar(10),
+username varchar(10) CONSTRAINT SELLERRATING_username_nn NOT NULL ,
+rating varchar(10) CONSTRAINT SELLERRATING_rating_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -13,7 +13,7 @@ COMMENT ON TABLE SELLERRATING
 is 'The table containing the information about the seller rating';
 
 COMMENT ON COLUMN SELLERRATING.idSellRating
-IS 'The id that identifies the clock model';
+IS 'The id that identifies the sell rating';
 
 COMMENT ON COLUMN SELLERRATING.username
 IS 'The id that identifies the username';
