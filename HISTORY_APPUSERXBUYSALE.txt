@@ -21,3 +21,4 @@ COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.modifiedBy
 is 'The user who modified the tuple';
 COMMENT ON COLUMN HISTORY_APPUSERXBUYSALE.modificationDate
 is 'Date when it was last modified';
+ 
