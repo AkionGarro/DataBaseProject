@@ -1,6 +1,7 @@
 CREATE TABLE CONDITION(
 idCondition number(2), 
-description VARCHAR2(20) CONSTRAINT CONDITION_description_nn not null,
+nameCondition VARCHAR2(20) CONSTRAINT CONDITION_nameCondition_nn not null,
+description VARCHAR(50) CONSTRAINT CONDITION_description_nn not null,
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
@@ -16,6 +17,8 @@ COMMENT ON TABLE CONDITION
 is 'It is a table that has the clock’s condition; for example: new, used, repaired, factory repaired'
 COMMENT ON COLUMN CONDITION.idCondition
 is 'Unique identifier of the condition';
+COMMENT ON COLUMN CONDITION.nameCondition
+is 'Name of the condition';
 COMMENT ON COLUMN CONDITION.description
 is 'Description of the condition';
 COMMENT ON COLUMN CONDITION.createdBy
