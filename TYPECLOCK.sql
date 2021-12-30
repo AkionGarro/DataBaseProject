@@ -1,7 +1,7 @@
 CREATE TABLE TYPECLOCK(
 idType number(3),
 nameType varchar(20) CONSTRAINT TYPECLOCK_nameType_nn not null,
-description varchar(20),
+descriptionT varchar(20),
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
@@ -21,7 +21,7 @@ COMMENT ON COLUMN TYPECLOCK.idType
 is 'Unique identifier of the  type of clock';
 COMMENT ON COLUMN TYPECLOCK.nameType
 is 'Name of the type of clock';
-COMMENT ON COLUMN TYPECLOCK.description
+COMMENT ON COLUMN TYPECLOCK.descriptionT
 is 'Description of the type of clock';
 COMMENT ON COLUMN TYPECLOCK.createdBy
 is 'The user who created the tuple';
