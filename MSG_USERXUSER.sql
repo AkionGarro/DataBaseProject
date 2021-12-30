@@ -2,7 +2,7 @@ CREATE TABLE MSG_USERXUSER(
 idWriter varchar2(10),
 idRecipient varchar2(10),
 subject varchar2(20) CONSTRAINT MSG_USERXUSER_subject_nn NOT NULL,
-description varchar2(150)CONSTRAINT MSG_USERXUSER_description_nn NOT NULL,
+descriptionM varchar2(150)CONSTRAINT MSG_USERXUSER_descriptionm_nn NOT NULL,
 sendDate DATE CONSTRAINT MSG_USERXUSER_sendDate_nn NOT NULL,
 createdBy VARCHAR2(20),
 creationDate DATE,
@@ -24,7 +24,7 @@ COMMENT ON COLUMN MSG_USERXUSER.idRecipient
 is 'Reference to the user who receives the message';
 COMMENT ON COLUMN MSG_USERXUSER.subject
 is 'Subject of the message';
-COMMENT ON COLUMN MSG_USERXUSER.description
+COMMENT ON COLUMN MSG_USERXUSER.descriptionM
 is 'The message that will be sent';
 COMMENT ON COLUMN MSG_USERXUSER.sendDate
 is 'Time the message was sent';
