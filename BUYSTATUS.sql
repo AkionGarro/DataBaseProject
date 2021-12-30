@@ -1,7 +1,7 @@
 CREATE TABLE BUYSTATUS(
 idBuyStatus number(3),
 status varchar2(20) CONSTRAINT BUYSTATUS_status_nn (NOT NULL),
-description varchar2(20),
+descriptionB varchar2(20),
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
@@ -21,7 +21,7 @@ COMMENT ON COLUMN BUYSTATUS.idBuyStatus
 is is 'Unique idenfitifier of the status';
 COMMENT ON COLUMN BUYSTATUS.status
 is is 'Name of status';
-COMMENT ON COLUMN BUYSTATUS.description
+COMMENT ON COLUMN BUYSTATUS.descriptionB
 is is 'Description of the status';
 COMMENT ON COLUMN BUYSTATUS.createdBy
 is 'The user who created the tuple';
