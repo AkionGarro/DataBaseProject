@@ -1,0 +1,10 @@
+/*
+new_Brand inserts a new  Brand tuple, receives: name of the brand (VARCHAR2)) 
+*/
+create or replace procedure new_Brand(p_nameBrand in VARCHAR2)
+IS
+BEGIN
+INSERT INTO BRAND(idBrand,nameBrand)
+values(s_BRAND,p_nameBrand);
+commit;
+end new_BRAND;

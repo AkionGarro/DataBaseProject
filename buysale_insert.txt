@@ -1,0 +1,14 @@
+/*
+new_buySale inserts a new  BuySale tuple, receives: id of the seller (VARCHAR2), id of the clock(NUMBER), id of the buy status(NUMBER), and date(DATE)) 
+*/
+
+create or replace procedure new_buySale(p_idUserS in VARCHAR2, 
+                             p_idC in NUMBER,
+                             p_idBuyS in NUMBER, 
+                             p_date in DATE)
+is
+BEGIN
+INSERT INTO BUYSALE(idBuySale,idUserSeller,idClock,idBuyStatus,datePost)
+values(s_BUYSALE,p_idUserS,p_idC,p_idBuyS,p_date);
+commit;
+END new_buySale;

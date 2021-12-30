@@ -1,0 +1,16 @@
+/*
+new_MSG_USERXUSER inserts a new MSG_USERXUSER tuple, receives: id of the user writer (VARCHAR2),
+							   id of the user recipient(Varchar2),
+								subject of the message (Varchar2),
+								and description (Varchar2) 
+*/
+CREATE OR REPLACE PROCEDURE new_MSG_USERXUSER(p_idWriter in varchar2,
+                                        p_idRecipient in varchar2,
+                                        p_subject in VARCHAR2,
+                                        descritpionM IN VARCHAR2, sendDate in DATE)
+is
+BEGIN
+INSERT INTO MSG_USERXUSER(idWriter,idRecipient,subject,descriptionM,sendDate)
+values(p_idWriter,p_idRecipient,p_subject,p_descriptionM,p_sendDate);
+commit;
+end new_MSG_USERXUSER;

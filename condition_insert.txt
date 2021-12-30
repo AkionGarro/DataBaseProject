@@ -1,0 +1,14 @@
+
+/*
+new_Condition inserts a new  Condition tuple, receives: name of the condition (VARCHAR2) and description of the condition(VARCHAR2)
+*/
+
+                
+create or replace procedure new_Condition(p_nameCondition in VARCHAR2,
+                                          p_description in VARCHAR2)
+is
+BEGIN
+INSERT INTO BUYSALE(idCondition,nameCondition,descriptionC)
+values(s_CONDITION,p_nameCondition,p_descriptionC);
+commit;
+end new_Condition;

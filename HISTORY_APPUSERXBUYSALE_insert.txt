@@ -1,0 +1,12 @@
+/*
+new_HISTORY_APPUSERXBUYSALE inserts a new  HISTORY_APPUSERXBUYSALE tuple, receives: id of the user (VARCHAR2) and id of the buySale(NUMBER)) 
+*/
+
+create or replace PROCEDURE new_HISTORY_APPUSERXBUYSALE(p_idUser in VARCHAR2, 
+                                              p_idSale in NUMBER)
+IS
+BEGIN
+INSERT INTO HISTORY_APPUSERXBUYSALE(idUser,idSale)
+values(p_idUSer,p_idSale);
+commit;
+end new_HISTORY_APPUSERXBUYSALE;

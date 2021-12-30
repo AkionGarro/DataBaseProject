@@ -1,0 +1,12 @@
+/*
+new_PHOTOCLOCK inserts a new  PHOTOCLOCK tuple, receives: id of the clock (VARCHAR2), a photo(BLOB), and description (Varchar2) 
+*/
+CREATE OR REPLACE PROCEDURE new_PHOTOCLOCK(p_idClock in NUMBER, 
+                                           p_photo in BLOB,
+                                           p_descriptionP in varchar2)
+IS 
+BEGIN
+INSERT INTO PHOTOCLOCK(idPhoto,idClock,photo)
+values(s_PHOTOCLOCK,p_idClock,p_descriptionP);
+commit;
+end new_photoClock;

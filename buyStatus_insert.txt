@@ -1,0 +1,10 @@
+/*
+new_BUYSTATUS inserts a new  BUYSTATUS tuple, receives: name of the status(varchar2),and description of status(varchar2) 
+*/
+CREATE OR REPLACE PROCEDURE new_BUYSTATUS(p_status in VARCHAR2, p_descriptionB in varchar2)
+is
+BEGIN
+insert into BUYSTATUS(idBuyStatus,status, descriptionB)
+values(s_BUYSTATUS,p_status,p_descriptionB);
+commit;
+end new_BUYSTATUS;

@@ -1,0 +1,11 @@
+/*
+new_typeClock inserts a new  typeClock tuple, receives: name of the type (VARCHAR2) and description of the type(VARCHAR2)
+*/
+create or replace procedure  new_typeClock(p_nameType in VARCHAR2,
+                                           p_description in VARCHAR2 )
+is
+BEGIN
+INSERT INTO TYPECLOCK(idType,nameType,descriptionT)
+values(s_TYPECLOCK,p_nameType, p_description);
+commit;
+end new_TypeClock;

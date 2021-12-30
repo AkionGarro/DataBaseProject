@@ -1,0 +1,10 @@
+/*
+new_Review inserts a new  Review tuple, receives: description of review(varchar), and rating (number) 
+*/
+CREATE OR REPLACE PROCEDURE new_Review(p_description in VARCHAR2, rating in NUMBER)
+IS
+BEGIN 
+INSERT INTO REVIEW(idReview,descriptionR,rating)
+values(s_REVIEW, p_descriptionR, p_rating);
+commit;
+end new_Review;
