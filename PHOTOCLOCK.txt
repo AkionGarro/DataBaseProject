@@ -1,6 +1,6 @@
 CREATE TABLE PHOTOCLOCK(
 idPhoto number(5), 
-idClock number(8) CONSTRAINT PHOTOCLOCK_idClock_nn NOT NULL,
+idClock number(10) CONSTRAINT PHOTOCLOCK_idClock_nn NOT NULL,
 photo BLOB CONSTRAINT PHOTOCLOCK_photo_nn NOT NULL,
 description varchar2(20),
 createdBy VARCHAR2(20),
