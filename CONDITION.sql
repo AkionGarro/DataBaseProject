@@ -1,7 +1,7 @@
 CREATE TABLE CONDITION(
 idCondition number(2), 
 nameCondition VARCHAR2(20) CONSTRAINT CONDITION_nameCondition_nn not null,
-description VARCHAR(50) CONSTRAINT CONDITION_description_nn not null,
+descriptionC VARCHAR(50) CONSTRAINT CONDITION_descriptionC_nn not null,
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
@@ -19,7 +19,7 @@ COMMENT ON COLUMN CONDITION.idCondition
 is 'Unique identifier of the condition';
 COMMENT ON COLUMN CONDITION.nameCondition
 is 'Name of the condition';
-COMMENT ON COLUMN CONDITION.description
+COMMENT ON COLUMN CONDITION.descriptionC
 is 'Description of the condition';
 COMMENT ON COLUMN CONDITION.createdBy
 is 'The user who created the tuple';
