@@ -1,6 +1,6 @@
 CREATE TABLE REVIEW (
 idReview number(8),
-description varchar2(100)CONSTRAINT REVIEW_description_nn (NOT NULL),
+descriptionR varchar2(100)CONSTRAINT REVIEW_description_nn (NOT NULL),
 rating number(1),
 createdBy VARCHAR2(20),
 creationDate DATE,
@@ -18,7 +18,7 @@ COMMENT ON TABLE REVIEW
 is 'It is a table with the review of a sale';
 COMMENT ON COLUMN REVIEW.idReview
 is 'Unique identifier of the review';
-COMMENT ON COLUMN REVIEW.description
+COMMENT ON COLUMN REVIEW.descriptionR
 is 'Detail of the review';
 COMMENT ON COLUMN REVIEW.rating
 is 'Rating of the sale';
