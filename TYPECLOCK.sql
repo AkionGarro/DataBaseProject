@@ -1,7 +1,7 @@
 CREATE TABLE TYPECLOCK(
 idType number(3),
 nameType varchar(20) CONSTRAINT TYPECLOCK_nameType_nn not null,
-descriptionT varchar(20),
+descriptionT varchar(100),
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
