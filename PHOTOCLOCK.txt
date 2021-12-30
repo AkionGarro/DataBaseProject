@@ -2,7 +2,7 @@ CREATE TABLE PHOTOCLOCK(
 idPhoto number(5), 
 idClock number(10) CONSTRAINT PHOTOCLOCK_idClock_nn NOT NULL,
 photo BLOB CONSTRAINT PHOTOCLOCK_photo_nn NOT NULL,
-description varchar2(20),
+descriptionP varchar2(20),
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
@@ -22,7 +22,7 @@ COMMENT ON COLUMN PHOTOCLOCK.idClock
 is 'Reference to id of the clock';
 COMMENT ON COLUMN PHOTOCLOCK.photo
 is 'Stores the photo';
-COMMENT ON COLUMN PHOTOCLOCK.description
+COMMENT ON COLUMN PHOTOCLOCK.descriptionP
 is 'Description of the photo';
 COMMENT ON COLUMN PHOTOCLOCK.createdBy
 is 'The user who created the tuple';
