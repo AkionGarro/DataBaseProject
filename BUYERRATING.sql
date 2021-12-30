@@ -1,8 +1,8 @@
 create table BUYERRATING
 (
 idBuyRating varchar2(10),
-username varchar(10) CONSTRAINT BUYERRATING_username_nn NOT NULL,
-rating varchar(10) CONSTRAINT BUYERRATING_rating_nn NOT NULL,
+username varchar2(10) CONSTRAINT BUYERRATING_username_nn NOT NULL,
+rating varchar2(10) CONSTRAINT BUYERRATING_rating_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -14,6 +14,11 @@ ADD CONSTRAINT pk_BUYERRATING PRIMARY KEY (idBuyRating)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+ALTER TABLE BUYERRATING
+ADD CONSTRAINT fk_BUYERRATING_APPUSER FOREIGN KEY
+(username) REFERENCES APPUSER (username);
+
 
 COMMENT ON TABLE BUYERRATING
 is 'The table containing the information about the buyer rating';

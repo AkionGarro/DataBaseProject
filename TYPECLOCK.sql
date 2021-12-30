@@ -14,6 +14,7 @@ USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+
 COMMENT ON TABLE TYPECLOCK
 is 'It is a table that has the types of clocks; for example: wall clock, cuckoo clock, watch, etc…'
 COMMENT ON COLUMN TYPECLOCK.idType
