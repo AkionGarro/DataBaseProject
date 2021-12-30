@@ -1,6 +1,6 @@
 create table country
 (
-idCountry NUMBER(8), CONSTRAINT COUNTRY_pk PRIMARY KEY (idCountry),
+idCountry NUMBER(8),
 nameCountry varchar2(10) constraint country_nameCountry_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
