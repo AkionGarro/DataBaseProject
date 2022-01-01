@@ -1,6 +1,6 @@
 CREATE TABLE BUYSTATUS(
 idBuyStatus number(3),
-status varchar2(20) CONSTRAINT BUYSTATUS_status_nn (NOT NULL),
+status varchar2(20) CONSTRAINT BUYSTATUS_status_nn NOT NULL,
 descriptionB varchar2(20),
 createdBy VARCHAR2(20),
 creationDate DATE,
