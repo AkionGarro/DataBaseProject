@@ -18,11 +18,11 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 COMMENT ON TABLE BUYSTATUS
 is 'It is a table with the status of the ar; for example, sold, not sold';
 COMMENT ON COLUMN BUYSTATUS.idBuyStatus
-is is 'Unique idenfitifier of the status';
+is  'Unique idenfitifier of the status';
 COMMENT ON COLUMN BUYSTATUS.status
-is is 'Name of status';
+is  'Name of status';
 COMMENT ON COLUMN BUYSTATUS.descriptionB
-is is 'Description of the status';
+is  'Description of the status';
 COMMENT ON COLUMN BUYSTATUS.createdBy
 is 'The user who created the tuple';
 COMMENT ON COLUMN BUYSTATUS.creationDate
