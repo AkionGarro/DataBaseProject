@@ -1,6 +1,6 @@
 create table DISTRICT
 (
-idDistrict Number(10), CONSTRAINT DISTRICT_pk PRIMARY KEY (idDistrict),
+idDistrict Number(10),
 idCity Number(10) CONSTRAINT DISTRICT_idCity_nn NOT NULL,
 nameDistrict varchar(10) CONSTRAINT DISTRICT_nameDistrict_nn NOT NULL,
 createdBy varchar2(10),
