@@ -1,6 +1,6 @@
 create table CLOCK
 (
-idClock varchar2(10),
+idClock number(10),
 idType varchar(10) CONSTRAINT CLOCK_idType_nn NOT NULL,
 idModel varchar(10) CONSTRAINT CLOCK_idModel_nn NOT NULL,
 idCondition varchar(10) CONSTRAINT CLOCK_idCondition_nn NOT NULL,
