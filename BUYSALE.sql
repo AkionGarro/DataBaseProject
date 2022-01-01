@@ -25,7 +25,7 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 
 COMMENT ON TABLE BUYSALE
-is 'It is a table that links the seller with the clock and stores the order information'
+is 'It is a table that links the seller with the clock and stores the order information';
 COMMENT ON COLUMN BUYSALE.idBuySale
 is 'Unique identifier of the sale post';
 COMMENT ON COLUMN BUYSALE.idUserSeller
