@@ -14,7 +14,7 @@ averageAsBuyer Number(1),
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
-modificationDate DATE,
+modificationDate DATE
 );
 
 ALTER TABLE APPUSER
