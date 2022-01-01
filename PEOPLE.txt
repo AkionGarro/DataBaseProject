@@ -1,5 +1,5 @@
 Create table PEOPLE(
-identificationNumber varchar2(9)
+identificationNumber varchar2(9),
 identificationType Number(8),
 gender Number(8),
 citenzenship Number(8),
