@@ -2,7 +2,7 @@
 
 create table IDENTIFICATION
 (
-idIdentification NUMBER(3);
+idIdentification NUMBER(3),
 typeId varchar2(10) constraint identification_type_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
