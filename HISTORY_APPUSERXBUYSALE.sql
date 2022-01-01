@@ -4,7 +4,7 @@ idSale number(8),
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
-modificationDate DATE,
+modificationDate DATE
 
 );
 
