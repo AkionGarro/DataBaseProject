@@ -1,6 +1,6 @@
 create table GENDER
 (
-idGender NUMBER(8), constraint GENDER_pk PRIMARY KEY (idGender),
+idGender NUMBER(8),
 nameGender varchar2(20) constraint gender_name_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
@@ -14,7 +14,7 @@ USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-COMMENT ON TABLE gender.gender
+COMMENT ON TABLE gender
 IS 'Table for the diferents genders';
 
 COMMENT ON COLUMN gender.idgender
