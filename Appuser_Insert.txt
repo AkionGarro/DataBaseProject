@@ -1,0 +1,18 @@
+/*
+new_APPUSER inserts a new APPUSER tuple, receives: username (VARCHAR2), identificationNumber (VARCHAR2),
+						 id of userType(NUMBER), id of the district(NUMBER), password(VARCHAR2), phoneNumber(NUMBER), and second Email(VARCHAR2)) 
+*/
+
+create or replace procedure new_APPUSER(p_username in VARCHAR2, 
+                             p_idNumber in VARCHAR2,
+                             p_userType in NUMBER, 
+                             p_district in NUMBER,
+		 	     p_password in VARCHAR2,
+		             p_phoneNumber in NUMBER,
+			     p_Email in VARCHAR2)
+is
+BEGIN
+INSERT INTO APPUSER(username,identificationNumber,userType,district,password,phoneNumber,email)
+values(p_username,p_idNumber,p_userType,p_district,p_password,p_phoneNumber,p_Email);
+commit;
+END new_APPUSER;

@@ -1,0 +1,10 @@
+/*
+new_COUNTRY inserts a new COUNTRY tuple, receives: name of the Country (VARCHAR2)) 
+*/
+create or replace procedure new_COUNTRY(p_nameCountry in VARCHAR2)
+IS
+BEGIN
+INSERT INTO COUNTRY(idCountry,nameCountry)
+values(s_Conuntry,p_nameCountry);
+commit;
+end new_COUNTRY;

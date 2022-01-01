@@ -1,0 +1,11 @@
+/*
+new_shcart_appuserxclock inserts a new  shcart_appuserxclock tuple, receives: the username (VARCHAR2), and the id of the clock(NUMBER)) 
+*/
+create or replace procedure new_shcart_appuserxclock(p_username in VARCHAR2,
+				      p_Clock in NUMBER)
+IS
+BEGIN
+INSERT INTO shcart_appuserxclock(idUser,idClock)
+values(p_username,p_Clock);
+commit;
+end new_shcart_appuserxclock;

@@ -1,0 +1,19 @@
+/*
+new_People inserts a new People tuple, receives: identification (VARCHAR2), id of the type of identification(NUMBER),
+						 id of the gender(NUMBER), id of the country(NUMBER), birthdate(DATE), name(VARCHAR2), surname(VARCHAR2) and second surname(VARCHAR2)) 
+*/
+
+create or replace procedure new_People(p_identification in VARCHAR2, 
+                             p_idType in NUMBER,
+                             p_idGender in NUMBER, 
+                             p_idCountry in NUMBER,
+		 	     p_birthdate in DATE,
+		             p_name in VARCHAR2,
+			     p_surname in VARCHAR2,
+			     p_secondsurname VARCHAR2)
+is
+BEGIN
+INSERT INTO PEOPLE(identificationNumber,identificationType,gender,citenzenship,birthdate,namePeople,surname,secondsurname)
+values(p_identification,p_idType,p_idGender,p_idCountry,p_birthdate,p_name,p_surname,p_secondsurname);
+commit;
+END new_People;

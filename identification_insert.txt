@@ -1,0 +1,10 @@
+/*
+new_IDENTIFICATION inserts a new IDENTIFICATION tuple, receives: name of the identification type (VARCHAR2)) 
+*/
+create or replace procedure new_IDENTIFICATION(p_identification in VARCHAR2)
+IS
+BEGIN
+INSERT INTO IDENTIFICATION(idIdentification,typeId)
+values(s_IDENTIFICATION,p_identification);
+commit;
+end new_IDENTIFICATION;

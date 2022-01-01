@@ -1,0 +1,11 @@
+/*
+new_CITY inserts a new  Brand tuple, receives: name of the city (VARCHAR2), and the id of the country(NUMBER)) 
+*/
+create or replace procedure new_CITY(p_nameCity in VARCHAR2,
+				      p_Countryid in NUMBER)
+IS
+BEGIN
+INSERT INTO CITY(idCity,idCountry, nameCity)
+values(s_CITY,p_Countryid,p_nameCity);
+commit;
+end new_CITY;

@@ -1,0 +1,10 @@
+/*
+new_GENDER inserts a new GENDER tuple, receives: name of the GENDER (VARCHAR2)) 
+*/
+create or replace procedure new_GENDER(p_nameGender in VARCHAR2)
+IS
+BEGIN
+INSERT INTO GENDER(idGender,nameGender)
+values(s_Gender,p_nameGender);
+commit;
+end new_GENDER;
