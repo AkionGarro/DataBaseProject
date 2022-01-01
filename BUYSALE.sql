@@ -36,9 +36,9 @@ COMMENT ON COLUMN BUYSALE.idUserBuyer
 is 'Reference to id of the user who bought the clock'
 COMMENT ON COLUMN BUYSALE.idBuyStatus
 is 'Reference to id of status to know whether the clock has been sold or not';
-COMMENT ON COLUMN BUYSALE.idReview;
+COMMENT ON COLUMN BUYSALE.idReview
 is 'Reference to id of the review left by the user who bought the clock';
-COMMENT ON COLUMN BUYSALE.idShippingMethod';
+COMMENT ON COLUMN BUYSALE.idShippingMethod
 is 'Reference to id of the shipping method';
 COMMENT ON COLUMN BUYSALE.idPaymentMethod
 is 'Reference to id of the payment method';
