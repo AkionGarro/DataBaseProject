@@ -1,7 +1,7 @@
 create table MODELP
 (
 idModel varchar2(10),
-idBrand varchar(10) CONSTRAINT MODEL_idBrand_nn NOT NULL,
+idBrand number(10) CONSTRAINT MODEL_idBrand_nn NOT NULL,
 nameBrand varchar(20) CONSTRAINT MODEL_nameBrand_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
