@@ -18,7 +18,7 @@ ALTER TABLE shcart_appuserxclock
 ADD CONSTRAINT fk_shcart_appuserxclock_appUser FOREIGN KEY
 (idUser) REFERENCES appuser(username);
 
-ALTER TABLE shoppingcart_appuserxclock
+ALTER TABLE shcart_appuserxclock
 ADD CONSTRAINT fk_shcart_appuserxclock_Clock FOREIGN KEY
 (idClock) REFERENCES CLOCK(idClock);
 
