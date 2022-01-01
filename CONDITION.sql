@@ -14,7 +14,7 @@ TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE CONDITION
-is 'It is a table that has the clock’s condition; for example: new, used, repaired, factory repaired'
+is 'It is a table that has the clock’s condition; for example: new, used, repaired, factory repaired';
 COMMENT ON COLUMN CONDITION.idCondition
 is 'Unique identifier of the condition';
 COMMENT ON COLUMN CONDITION.nameCondition
