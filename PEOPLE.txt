@@ -1,6 +1,6 @@
 Create table PEOPLE(
 identificationNumber varchar2(10),
-identificationType Number(8),
+identificationType Number(3),
 gender Number(8),
 citenzenship Number(8),
 birthdate date constraint people_birthdate_nn not null,
