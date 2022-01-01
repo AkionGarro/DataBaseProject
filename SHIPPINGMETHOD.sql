@@ -1,7 +1,7 @@
 CREATE TABLE SHIPPINGMETHOD(
 idShipping number(4),
-nameSM VARCHAR2(20), CONSTRAINT SHIPPINGMETHOD_name_nn NOT NULL,
-company VARCHAR2(20), CONSTRAINT SHIPPINGMETHOD_company_nn NOT NULL, 
+nameSM VARCHAR2(20) CONSTRAINT SHIPPINGMETHOD_nameSm_nn NOT NULL,
+company VARCHAR2(20) CONSTRAINT SHIPPINGMETHOD_company_nn NOT NULL, 
 createdBy VARCHAR2(20),
 creationDate DATE,
 modifiedBy VARCHAR2(20),
@@ -15,11 +15,11 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 COMMENT ON TABLE SHIPPINGMETHOD
 is 'It is a table that stores shipping methods';
-COMMENT ON COLUMN SHPPINGMETHOD.idShipping
+COMMENT ON COLUMN SHIPPINGMETHOD.idShipping
 is  'Unique identifier for the shipping method';
-COMMENT ON COLUMN SHPPINGMETHOD.nameSM
+COMMENT ON COLUMN SHIPPINGMETHOD.nameSM
 is  'Name of the shipping method';
-COMMENT ON COLUMN SHPPINGMETHOD.company
+COMMENT ON COLUMN SHIPPINGMETHOD.company
 is  'Name of the company providing the shipping';
 COMMENT ON COLUMN SHIPPINGMETHOD.createdBy
 is 'The user who created the tuple';
