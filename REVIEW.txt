@@ -1,6 +1,6 @@
 CREATE TABLE REVIEW (
 idReview number(8),
-descriptionR varchar2(100)CONSTRAINT REVIEW_description_nn (NOT NULL),
+descriptionR varchar2(100)CONSTRAINT REVIEW_description_nn NOT NULL,
 rating number(1),
 createdBy VARCHAR2(20),
 creationDate DATE,
