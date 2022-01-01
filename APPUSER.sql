@@ -3,7 +3,7 @@ create table APPUSER
 (
 username varchar2(10),
 identificationNumber VARCHAR2(10) constraint appuser_identification_nn not null,
-userType Number(10) constraint appuser_userType_nn not null,
+userType Number(2) constraint appuser_userType_nn not null,
 district Number(10) constraint appuser_disctrict_nn not null,
 password varchar2(10) constraint user_password_nn not null,
 photo BLOB DEFAULT EMPTY_BLOB(),
