@@ -1,8 +1,8 @@
 create table MODELP
 (
-idModel varchar2(10),
+idModel number(10),
 idBrand number(10) CONSTRAINT MODEL_idBrand_nn NOT NULL,
-nameBrand varchar(20) CONSTRAINT MODEL_nameBrand_nn NOT NULL,
+nameModel varchar(20) CONSTRAINT MODEL_nameBrand_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -27,10 +27,10 @@ COMMENT ON COLUMN MODELP.idModel
 IS 'The id that identifies the clock model';
 
 COMMENT ON COLUMN MODELP.idBrand
-IS 'The id that identifies the clock brand';
+IS 'Reference to the clock brand ';
 
-COMMENT ON COLUMN MODELP.nameBrand
-IS 'Reference to the clock brand name';
+COMMENT ON COLUMN MODELP.nameModel
+IS 'Name of the model';
 
 COMMENT ON COLUMN MODELP.createdBy
 is 'The user who created the tuple';
