@@ -1,6 +1,6 @@
 create table USERTYPE
 (
-idUserType varchar2(10),
+idUserType number(2),
 descriptionType varchar(10) CONSTRAINT USERTYPE_descriptionType_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
