@@ -1,10 +1,10 @@
 create table CLOCK
 (
 idClock number(10),
-idType varchar(10) CONSTRAINT CLOCK_idType_nn NOT NULL,
-idModel varchar(10) CONSTRAINT CLOCK_idModel_nn NOT NULL,
-idCondition varchar(10) CONSTRAINT CLOCK_idCondition_nn NOT NULL,
-descriptionClock varchar(10) CONSTRAINT CLOCK_descriptionClock_nn NOT NULL,
+idType number(3) CONSTRAINT CLOCK_idType_nn NOT NULL,
+idModel number(10) CONSTRAINT CLOCK_idModel_nn NOT NULL,
+idCondition number(2) CONSTRAINT CLOCK_idCondition_nn NOT NULL,
+descriptionClock varchar2(100) CONSTRAINT CLOCK_descriptionClock_nn NOT NULL,
 manufactureDate DATE CONSTRAINT CLOCK_manufactureDate_nn NOT NULL,
 vintage varchar2(10) CONSTRAINT CLOCK_vintage_nn NOT NULL,
 price varchar2(10) CONSTRAINT CLOCK_price_nn NOT NULL,
