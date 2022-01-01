@@ -33,7 +33,7 @@ is 'Reference to id of the user who sells the clock';
 COMMENT ON COLUMN BUYSALE.idClock
 is 'Reference to id of the clock for sale';
 COMMENT ON COLUMN BUYSALE.idUserBuyer
-is 'Reference to id of the user who bought the clock'
+is 'Reference to id of the user who bought the clock';
 COMMENT ON COLUMN BUYSALE.idBuyStatus
 is 'Reference to id of status to know whether the clock has been sold or not';
 COMMENT ON COLUMN BUYSALE.idReview
