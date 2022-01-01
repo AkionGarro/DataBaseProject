@@ -2,7 +2,7 @@ create table City
 (
 idCity NUMBER(8),
 idCountry Number(8) constraint city_idCountry_nn not null,
-name varchar2(10) constraint city_nameCity_nn not null,
+nameCity varchar2(10) constraint city_nameCity_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
