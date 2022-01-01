@@ -1,5 +1,5 @@
 CREATE TABLE BRAND(
-idBrand NUMBER(5),
+idBrand NUMBER(10),
 nameBrand VARCHAR2(20) CONSTRAINT BRAND_nameBrand_nn NOT NULL,
 createdBy VARCHAR2(20),
 creationDate DATE,
