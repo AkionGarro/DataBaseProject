@@ -15,7 +15,6 @@ createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE,
-CONSTRAINT APPUSER_pk PRIMARY KEY (username)
 );
 
 ALTER TABLE APPUSER
