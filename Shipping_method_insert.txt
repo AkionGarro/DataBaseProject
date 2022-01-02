@@ -1,0 +1,10 @@
+/*
+new_SHIPPINGMETHOD inserts a new  SHIPPINGMETHOD tuple, receives: name of the sm (VARCHAR2), and name of the company (VARCHAR2)) 
+*/
+create or replace procedure new_SHIPPINGMETHOD(p_nameSM in VARCHAR2, p_company VARCHAR2)
+IS
+BEGIN
+INSERT INTO SHIPPINGMETHOD(idShipping, nameSM, company)
+values(s_SHIPPINGMETHOD, p_nameSM, p_company);
+commit;
+end new_SHIPPINGMETHOD;
