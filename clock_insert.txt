@@ -1,0 +1,33 @@
+
+Comentario: Se podrias arreglar que no tenga descripcion,manufactureDate,
+
+/*
+new_CLOCK inserts a new CLOCK tuple, receives: 
+                        idClock(NUMBER), 
+                        id of typeClock(NUMBER), 
+                        id of the model(NUMBER), 
+                        id of the condition(NUMBER),
+                        descriptionClock(VARCHAR2),
+                        manufactureDate(DATE),
+                        vintage(VARCHAR2),
+                        condition(VARCHAR2),
+                        price(VARCHAR2)) 
+*/
+
+create or replace procedure new_CLOCK(
+                            p_idClock in NUMBER,
+                            p_idType in NUMBER, 
+                            p_idModel in NUMBER,
+		 	                p_idCondition in NUMBER,
+		                    p_descriptionClock in VARCHAR2,
+			                p_manufactureDate in DATE,
+                            p_vintage in VARCHAR2,
+                            p_condition in VARCHAR2,
+                            p_price in VARCHAR2)
+
+is
+BEGIN
+INSERT INTO CLOCK(idClock,idType,idModel,idCondition,descriptionClock,manufactureDate,vintage,condition,price)
+values(p_idClock,p_idType,p_idModel,p_idCondition,p_descriptionClock,p_manufactureDate,p_vintage,p_condition,p_price);
+commit;
+END new_CLOCK;

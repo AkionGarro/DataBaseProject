@@ -1,0 +1,16 @@
+/*
+new_PAYMENTMETHOD inserts a new PAYMENTMETHOD  tuple, receives:
+                        idPay(NUMBER),
+                        type(VARCHAR2)) 
+*/
+      
+
+create or replace procedure new_PAYMENTMETHOD(
+                        p_idPay in NUMBER, 
+                        p_type in VARCHAR2)
+is
+BEGIN
+INSERT INTO PAYMENTMETHOD (idPay,type)
+values(p_idPay,p_type);
+commit;
+END new_PAYMENTMETHOD;

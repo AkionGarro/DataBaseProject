@@ -1,0 +1,19 @@
+/*
+new_DISTRICT inserts a new DISTRICT tuple, receives: 
+                        idDistrict(NUMBER),
+                        id of city(NUMBER),
+                        nameDistrict(VARCHAR2)) 
+*/
+
+                        
+
+create or replace procedure new_DISTRICT(
+                        p_idDistrict in NUMBER, 
+                        p_idCity in NUMBER ,
+                        p_nameDistrict in VARCHAR2)
+is
+BEGIN
+INSERT INTO DISTRICT(idDistrict,idCity,nameDistrict)
+values(p_idDistrict,p_idCity,p_nameDistrict);
+commit;
+END new_DISTRICT;

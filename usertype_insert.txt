@@ -1,0 +1,18 @@
+/*
+new_USERTYPE inserts a new USERTYPE tuple, receives: 
+                        idUserType(NUMBER),
+                        descriptionType(VARCHAR2)) 
+*/
+
+                        
+
+create or replace procedure new_USERTYPE(
+                        p_idUserType in NUMBER, 
+                        p_descriptionType in VARCHAR2)
+
+is
+BEGIN
+INSERT INTO USERTYPE(idUserType,descriptionType)
+values(p_idUserType,p_descriptionType);
+commit;
+END new_USERTYPE;

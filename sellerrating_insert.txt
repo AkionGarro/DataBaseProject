@@ -1,0 +1,19 @@
+/*
+new_SELLERRATING inserts a new SELLERRATING tuple, receives:
+                        idSellRating(VARCHAR2),
+                        username of APPUSER(VARCHAR2),
+                        rating(VARCHAR2)) 
+*/
+      
+
+create or replace procedure new_SELLERRATING(
+                        p_idSellRating in VARCHAR2, 
+                        p_username in VARCHAR2,
+                        p_rating in VARCHAR2)
+
+is
+BEGIN
+INSERT INTO SELLERRATING(idSellRating,username,rating)
+values(p_idSellRating,p_username,p_rating);
+commit;
+END new_SELLERRATING;

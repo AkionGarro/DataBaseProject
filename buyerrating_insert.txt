@@ -1,0 +1,19 @@
+/*
+new_BUYERRATING inserts a new BUYERRATING  tuple, receives:
+                        idBuyRating(VARCHAR2),
+                        username of APPUSER(VARCHAR2),
+                        rating(VARCHAR2)) 
+*/
+      
+
+create or replace procedure new_BUYERRATING(
+                        p_idBuyRating in VARCHAR2, 
+                        p_username in VARCHAR2,
+                        p_rating in VARCHAR2)
+
+is
+BEGIN
+INSERT INTO BUYERRATING (idBuyRating,username,rating)
+values(p_idBuyRating,p_username,p_rating);
+commit;
+END new_BUYERRATING;

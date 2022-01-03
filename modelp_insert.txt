@@ -1,0 +1,20 @@
+/*
+new_MODELP inserts a new MODELP tuple, receives:
+                        idModel(NUMBER),
+                        id of brand(NUMBER),
+                        nameModel(VARCHAR2)) 
+*/
+
+                        
+
+create or replace procedure new_MODELP(
+                        p_idModel in NUMBER, 
+                        p_idBrand in NUMBER,
+                        p_nameModel in VARCHAR2)
+
+is
+BEGIN
+INSERT INTO MODELP(idModel,idBrand,nameModel)
+values(p_idModel,p_idBrand,p_nameModel);
+commit;
+END new_MODELP;
