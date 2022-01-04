@@ -228,7 +228,7 @@ procedure  new_typeClock(p_nameType in VARCHAR2,
 is
 BEGIN
 INSERT INTO TYPECLOCK(idType,nameType,descriptionT)
-values(s_TYPECLOCK.nextval,p_nameType, p_description);
+values(s_TYPECLOCK.nextval,p_nameType, p_description); 
 commit;
 end new_TypeClock;
 
