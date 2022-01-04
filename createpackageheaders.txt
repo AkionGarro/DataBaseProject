@@ -62,7 +62,7 @@ procedure new_PAYMENTMETHOD(
 PROCEDURE new_PHOTOCLOCK(p_idClock in NUMBER, 
                                            p_photo in BLOB,
                                            p_descriptionP in varchar2);
-PROCEDURE new_Review(p_description in VARCHAR2, rating in NUMBER);
+PROCEDURE new_Review(p_description in VARCHAR2, p_rating in NUMBER);
 procedure new_SELLERRATING(
                         p_idSellRating in VARCHAR2, 
                         p_username in VARCHAR2,
