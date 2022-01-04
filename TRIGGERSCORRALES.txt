@@ -81,8 +81,7 @@ For each row
 BEGIN
 :new.modifiedBy:=USER;
 :new.modificationDate:=SYSDATE;
-END beforeUpdateHISTORY_APPUSERXBUY
-SALE;
+END beforeUpdateHISTORY_APPUSERXBUYSALE;
 
 
 --Triggers for BRAND
