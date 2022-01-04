@@ -71,14 +71,14 @@ BEGIN
 END beforeCrshcart_appuserxclock;
 
 
-CREATE OR REPLACE TRIGGER pr.beforeUpdateshcart_appuserxclock
+CREATE OR REPLACE TRIGGER pr.beforeUpdtshcart_appuserxclock
 BEFORE UPDATE
 ON pr.shcart_appuserxclock
 For each row
 BEGIN
 :new.modifiedBy:=USER;
 :new.modificationDate:=SYSDATE;
-END beforeUpdateshcart_appuserxclock;
+END beforeUpdtshcart_appuserxclock;
 
 --Triggers for GENDER
 CREATE OR REPLACE TRIGGER pr.beforeCreateGENDER
