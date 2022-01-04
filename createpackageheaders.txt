@@ -45,7 +45,7 @@ procedure new_CLOCK(
                             p_condition in VARCHAR2,
                             p_price in VARCHAR2);
 procedure new_Condition(p_nameCondition in VARCHAR2,
-                                          p_description in VARCHAR2);
+                                          p_descriptionC in VARCHAR2);
 procedure new_DISTRICT(
                         p_idDistrict in NUMBER, 
                         p_idCity in NUMBER ,
