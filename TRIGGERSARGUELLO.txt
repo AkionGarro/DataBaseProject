@@ -61,14 +61,14 @@ END beforeUpdateIDENTIFICATION;
 
 
 --Triggers for shcart_appuserxclock
-CREATE OR REPLACE TRIGGER pr.beforeCreateshcart_appuserxclock
+CREATE OR REPLACE TRIGGER pr.beforeCrshcart_appuserxclock
 BEFORE INSERT
 ON pr.shcart_appuserxclock
 For each row
 BEGIN
 :new.createdBy:=USER;
 :new.creationDate:=SYSDATE;
-END beforeCreateshcart_appuserxclock;
+END beforeCrshcart_appuserxclock;
 
 
 CREATE OR REPLACE TRIGGER pr.beforeUpdateshcart_appuserxclock
