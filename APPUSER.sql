@@ -7,7 +7,6 @@ userType Number(2) constraint appuser_userType_nn not null,
 district Number(10) constraint appuser_disctrict_nn not null,
 password varchar2(10) constraint user_password_nn not null,
 photo BLOB DEFAULT EMPTY_BLOB(),
-phoneNumber Number(8) constraint user_phone_number_nn not null,
 email varchar2(30) constraint user_email_nn not null,
 averageAsSeller Number(1),
 averageAsBuyer Number(1),
@@ -66,8 +65,6 @@ IS 'Password of the account';
 COMMENT ON COLUMN APPUSER.photo
 IS 'Photo of the user';
 
-COMMENT ON COLUMN APPUSER.phoneNumber
-IS 'Phone number of the user';
 
 COMMENT ON COLUMN APPUSER.email
 IS 'Email of the user';
