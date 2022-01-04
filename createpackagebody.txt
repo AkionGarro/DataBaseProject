@@ -14,11 +14,11 @@ values(p_username,p_idNumber,p_userType,p_district,p_password,p_phoneNumber,p_Em
 commit;
 END new_APPUSER; 
 
-procedure new_COUNTRY(p_nameCountry in VARCHAR2)
+procedure new_COUNTRY(p_nameCountry in VARCHAR2, p_codeCountry in NUMBER)
 IS
 BEGIN
-INSERT INTO COUNTRY(idCountry,nameCountry)
-values(s_Country.nextval,p_nameCountry);
+INSERT INTO COUNTRY(idCountry,nameCountry,codeCountry)
+values(s_Country.nextval,p_nameCountry, p_codeCountry);
 commit;
 end new_COUNTRY;
 
