@@ -14,7 +14,7 @@ values(p_username,p_idNumber,p_userType,p_district,p_password,p_phoneNumber,p_Em
 commit;
 END new_APPUSER; 
 
-procedure new_COUNTRY(p_nameCountry in VARCHAR2, p_codeCountry in NUMBER)
+procedure new_COUNTRY(p_nameCountry in VARCHAR2, p_codeCountry in VARCHAR2)
 IS
 BEGIN
 INSERT INTO COUNTRY(idCountry,nameCountry,codeCountry)
