@@ -2,6 +2,7 @@ create table country
 (
 idCountry NUMBER(8),
 nameCountry varchar2(10) constraint country_nameCountry_nn not null,
+codeCountry number(3) constraint country_codeCountry_nn not null,
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
@@ -25,6 +26,9 @@ IS 'The id number of the country';
 
 COMMENT ON COLUMN country.nameCountry
 IS 'The name of the country';
+
+COMMENT ON COLUMN country.codeCountry
+is 'Code of the country';
 
 COMMENT ON COLUMN country.createdBy
 IS 'The name of the user that created the tuple';
