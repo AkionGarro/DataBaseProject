@@ -8,11 +8,17 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+
+--------------------------------------PK---------------------------------------------------
+
 ALTER TABLE PHOTOCLOCK
 ADD CONSTRAINT pk_PHOTOCLOCK PRIMARY KEY (idPhoto)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+--------------------------------------Comments---------------------------------------------------
+
 
 COMMENT ON TABLE PHOTOCLOCK
 is 'It is a table that stores the photos of a clock';

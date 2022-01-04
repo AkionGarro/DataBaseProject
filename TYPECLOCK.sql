@@ -8,11 +8,14 @@ modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
 
+-----------------------------------PK------------------------------------------------------
+
 ALTER TABLE TYPECLOCK
 ADD CONSTRAINT pk_TYPECLOCK PRIMARY KEY(idType)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+----------------------------------Comments-------------------------------------------------------
 
 
 COMMENT ON TABLE TYPECLOCK

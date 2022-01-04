@@ -8,16 +8,18 @@ creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE
 );
-
+--------------------------------------------Primary Keys----------------------------------
 ALTER TABLE city
 ADD CONSTRAINT pk_city PRIMARY KEY (idCity)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
-
+--------------------------------------------Foreign Keys----------------------------------
 ALTER TABLE city
 ADD CONSTRAINT fk_CITY_COUNTRY FOREIGN KEY
 (idCountry) REFERENCES COUNTRY(idCountry);
+
+---------------------------------------Comments----------------------------------------------------
 
 COMMENT ON TABLE City
 IS 'Table for the diferents cities';

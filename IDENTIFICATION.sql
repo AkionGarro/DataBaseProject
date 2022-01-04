@@ -1,4 +1,4 @@
---identification table------
+
 
 create table IDENTIFICATION
 (
@@ -10,11 +10,15 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+
+-----------------------------------PK------------------------------------------------------
 ALTER TABLE IDENTIFICATION
 ADD CONSTRAINT pk_IDENTIFICATION PRIMARY KEY (idIdentification) 
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+---------------------------------Comments--------------------------------------------------------
 
 COMMENT ON TABLE identification
 IS 'Table for the diferents kinds of identifications';

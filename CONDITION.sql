@@ -7,12 +7,17 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+
+------------------------------------Primary Keys-----------------------------------------------------
+
 ALTER TABLE CONDITION
 ADD CONSTRAINT pk_CONDITION PRIMARY KEY (idCondition)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+
+-----------------------------------Comments------------------------------------------------------
 COMMENT ON TABLE CONDITION
 is 'It is a table that has the clock’s condition; for example: new, used, repaired, factory repaired';
 COMMENT ON COLUMN CONDITION.idCondition

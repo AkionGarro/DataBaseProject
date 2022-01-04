@@ -9,16 +9,20 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+------------------------------------Pk-----------------------------------------------------
 ALTER TABLE DISTRICT 
 ADD CONSTRAINT pk_DISTRICT PRIMARY KEY (idDistrict)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+------------------------------------FK-----------------------------------------------------
+
 ALTER TABLE DISTRICT
 ADD CONSTRAINT fk_DISTRICT_CITY FOREIGN KEY
 (idCity) REFERENCES CITY(idCity);
 
+-----------------------------------Comments------------------------------------------------------
 
 COMMENT ON TABLE DISTRICT
 is 'The table containing the information about the district';

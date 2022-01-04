@@ -9,12 +9,14 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+
+--------------------------------------PK---------------------------------------------------
 ALTER TABLE MSG_USERXUSER
 ADD CONSTRAINT pk_MSG_USERXUSER PRIMARY KEY (idWriter,idRecipient)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
-
+-------------------------------------Comments----------------------------------------------------
 
 COMMENT ON TABLE MSG_USERXUSER
 is 'It is a table that stores the messages sent between two users';

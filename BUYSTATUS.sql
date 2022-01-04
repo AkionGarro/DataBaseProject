@@ -7,6 +7,7 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+---------------------------------------PK--------------------------------------------------
 
 
 ALTER TABLE BUYSTATUS
@@ -14,6 +15,7 @@ ADD CONSTRAINT BUYSTATUS_pk PRIMARY KEY (idBuyStatus)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+--------------------------------------commments---------------------------------------------------
 
 COMMENT ON TABLE BUYSTATUS
 is 'It is a table with the status of the ar; for example, sold, not sold';

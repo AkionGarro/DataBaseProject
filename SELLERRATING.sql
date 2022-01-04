@@ -9,6 +9,7 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+---------------------------------PK--------------------------------------------------------
 
 ALTER TABLE SELLERRATING 
 ADD CONSTRAINT pk_SELLERRATING PRIMARY KEY (idSellRating)
@@ -16,9 +17,14 @@ USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+--------------------------------FK---------------------------------------------------------
+
 ALTER TABLE SELLERRATING
 ADD CONSTRAINT fk_SELLERRATING_APPUSER FOREIGN KEY
 (username) REFERENCES APPUSER (username);
+
+
+-----------------------------------Comments------------------------------------------------------
 
 COMMENT ON TABLE SELLERRATING
 is 'The table containing the information about the seller rating';

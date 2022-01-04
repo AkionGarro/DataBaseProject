@@ -7,13 +7,15 @@ modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
 
+------------------------------------Primary Keys-----------------------------------------
+
 ALTER TABLE BRAND
 ADD CONSTRAINT pk_BRAND PRIMARY KEY (idBrand)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-
+------------------------------------Comments-----------------------------------------------------
 COMMENT ON TABLE BRAND
 is 'It is a table that stores the brands';
 COMMENT ON COLUMN BRAND.idBrand

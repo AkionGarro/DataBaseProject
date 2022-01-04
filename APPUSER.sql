@@ -17,11 +17,17 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+
+---------------------------------Primary Key---------------------------------------
 ALTER TABLE APPUSER
 ADD CONSTRAINT pk_appuser PRIMARY KEY (username)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+
+
+-----------------------------------Foreign Keys------------------------------------
 
 ALTER TABLE APPUSER
 ADD CONSTRAINT fk_APPUSER_persona FOREIGN KEY
@@ -34,6 +40,10 @@ ADD CONSTRAINT fk_APPUSER_usertpe FOREIGN KEY
 ALTER TABLE APPUSER
 ADD CONSTRAINT fk_APPUSER_disctrict FOREIGN KEY
 (district ) REFERENCES DISTRICT(idDistrict);
+
+
+
+----------------------------------Coments------------------------------------------
 
 COMMENT ON TABLE APPUSER
 is 'The table containing the information about the user';

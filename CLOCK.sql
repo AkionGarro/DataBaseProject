@@ -15,28 +15,25 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
-
-
+--------------------------------------------Primary Keys----------------------------------
 ALTER TABLE CLOCK 
 ADD CONSTRAINT pk_CLOCK PRIMARY KEY (idClock)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
-
-
+--------------------------------------------Foreign Keys----------------------------------
 ALTER TABLE CLOCK
 ADD CONSTRAINT fk_CLOCK_TYPECLOCK FOREIGN KEY
 (idType) REFERENCES TYPECLOCK(idType);
 
 ALTER TABLE CLOCK
 ADD CONSTRAINT fk_CLOCK_MODEL FOREIGN KEY
-(idModel) REFERENCES MODEL(idModel);
+(idModel) REFERENCES MODELP(idModel);
 
 ALTER TABLE CLOCK
 ADD CONSTRAINT fk_CLOCK_CONDITION FOREIGN KEY
 (idCondition) REFERENCES CONDITION(idCondition);
-
-
+-----------------------------------------Comments--------------------------------------------------
 
 
 COMMENT ON TABLE CLOCK

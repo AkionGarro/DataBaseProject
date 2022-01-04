@@ -7,12 +7,14 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+----------------------------------------PK-------------------------------------------------
 
 ALTER TABLE SHIPPINGMETHOD
-ADD CONSTRAINT pk_CONSTRAINT SHIPPINGMETHOD PRIMARY KEY (idShipping)
+ADD CONSTRAINT pk_SHIPPINGMETHOD PRIMARY KEY (idShipping)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+-------------------------------------comments----------------------------------------------------
 
 COMMENT ON TABLE SHIPPINGMETHOD
 is 'It is a table that stores shipping methods';

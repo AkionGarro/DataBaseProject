@@ -7,12 +7,15 @@ creationDate DATE,
 modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
+---------------------------------PK--------------------------------------------------------
 
 ALTER TABLE REVIEW
 ADD CONSTRAINT pk_REVIEW PRIMARY KEY (idReview)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+--------------------------------Comments---------------------------------------------------------
 
 COMMENT ON TABLE REVIEW
 is 'It is a table with the review of a sale';

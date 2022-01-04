@@ -8,22 +8,20 @@ age Number(3),
 namePeople varchar2(10) constraint people_name_nn not null,
 surname varchar2(10) constraint people_surname_nn not null,
 secondsurname varchar2(10) constraint people_secondsurname_nn not null,
-
 createdBy varchar2(10),
 creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+------------------------------------PK-----------------------------------------------------
 ALTER TABLE PEOPLE
 ADD CONSTRAINT pk_people PRIMARY KEY (identificationNumber) 
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-ALTER TABLE PEOPLE
-ADD CONSTRAINT fk_People_idIdentification FOREIGN KEY
-(identificationType) REFERENCES IDENTIFICATION(idIdentification);
+---------------------------------FK--------------------------------------------------------
 
 
 ALTER TABLE PEOPLE
@@ -33,6 +31,9 @@ ADD CONSTRAINT fk_People_GENDER FOREIGN KEY
 ALTER TABLE PEOPLE
 ADD CONSTRAINT fk_People_country FOREIGN KEY
 (citenzenship) REFERENCES country(idCountry);
+
+------------------------------------comments-----------------------------------------------------
+
 
 COMMENT ON TABLE PEOPLE
 IS 'Table for the basic information abount the users';

@@ -17,13 +17,15 @@ modifiedBy VARCHAR2(20),
 modificationDate DATE
 );
 
+------------------------------------Primary Keys-----------------------------------------
+
 ALTER TABLE BUYSALE
 ADD CONSTRAINT pk_BUYSALE PRIMARY KEY (idBuySale)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
-
+-----------------------------------Comments------------------------------------------------------
 COMMENT ON TABLE BUYSALE
 is 'It is a table that links the seller with the clock and stores the order information';
 COMMENT ON COLUMN BUYSALE.idBuySale
@@ -48,6 +50,8 @@ COMMENT ON COLUMN BUYSALE.shippingPrice
 is 'Shipping cost';
 COMMENT ON COLUMN BUYSALE.datePost
 is 'The date when the item was posted';
+COMMENT ON COLUMN BUYSALE.totalPrice
+is 'Reference to total price of sale';
 COMMENT ON COLUMN BUYSALE.dateSale
 is 'The date when the item was sold';
 COMMENT ON COLUMN BUYSALE.createdBy

@@ -8,19 +8,28 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+------------------------------------PK-----------------------------------------------------
+
 ALTER TABLE shcart_appuserxclock 
 ADD CONSTRAINT pk_shcart_appuserxclock PRIMARY KEY (idUser ,idClock )
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+------------------------------------Fk-----------------------------------------------------
+
+
 ALTER TABLE shcart_appuserxclock
-ADD CONSTRAINT fk_shcart_appuserxclock_appUser FOREIGN KEY
+ADD CONSTRAINT fk_shcart_appxclock FOREIGN KEY
 (idUser) REFERENCES appuser(username);
 
 ALTER TABLE shcart_appuserxclock
 ADD CONSTRAINT fk_shcart_appuserxclock_Clock FOREIGN KEY
 (idClock) REFERENCES CLOCK(idClock);
+
+
+----------------------------------comments-------------------------------------------------------
+
 
 COMMENT ON TABLE shcart_appuserxclock
 is 'The table containing the information of the clocks that the user has in his shoppingcart';

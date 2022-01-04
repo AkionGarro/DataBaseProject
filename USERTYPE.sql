@@ -7,12 +7,16 @@ creationDate DATE,
 modifiedBy varchar2(10),
 modificationDate DATE
 );
+-------------------------------------PK----------------------------------------------------
 
 ALTER TABLE USERTYPE 
 ADD CONSTRAINT pk_USERTYPE PRIMARY KEY (idUserType)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+-----------------------------------Commets------------------------------------------------------
+
 
 COMMENT ON TABLE USERTYPE
 is 'The table containing the information about the user type';

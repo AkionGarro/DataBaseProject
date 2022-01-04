@@ -8,12 +8,15 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+
+-----------------------------------Primary Keys------------------------------------------------------
 ALTER TABLE country
 ADD CONSTRAINT pk_country PRIMARY KEY (idCountry)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
+--------------------------------------Comments---------------------------------------------------
 COMMENT ON TABLE country
 IS 'Table for the diferents countries';
 
@@ -36,4 +39,3 @@ COMMENT ON COLUMN country.modificationDate
 IS 'Date when it was last modified';
 
 
-_----------------------------------------------------------

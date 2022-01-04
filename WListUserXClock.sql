@@ -8,11 +8,16 @@ modifiedBy varchar2(10),
 modificationDate DATE
 );
 
+----------------------------------PK-------------------------------------------------------
+
 ALTER TABLE WLISTUSERXCLOCK 
 ADD CONSTRAINT pk_WLISTUSERXCLOCK PRIMARY KEY (idUser,idClock)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
+
+---------------------------------FK--------------------------------------------------------
+
 
 ALTER TABLE WLISTUSERXCLOCK
 ADD CONSTRAINT fk_WLISTUSERXCLOCK_APPUSER FOREIGN KEY
@@ -22,6 +27,7 @@ ALTER TABLE WLISTUSERXCLOCK
 ADD CONSTRAINT fk_WLISTUSERXCLOCK_CLOCK FOREIGN KEY
 (idClock) REFERENCES CLOCK(idClock);
 
+-------------------------------comments----------------------------------------------------------
 
 
 COMMENT ON TABLE WLISTUSERXCLOCK
