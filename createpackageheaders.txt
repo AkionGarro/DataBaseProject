@@ -6,7 +6,7 @@ procedure new_APPUSER(p_username in VARCHAR2,
 		 	     p_password in VARCHAR2,
 		             p_phoneNumber in NUMBER,
 			     p_Email in VARCHAR2);
-procedure new_COUNTRY(p_nameCountry in VARCHAR2,p_codeCountry in NUMBER);
+procedure new_COUNTRY(p_nameCountry in VARCHAR2,p_codeCountry in varchar2);
 PROCEDURE new_HISTORY_APPUSERXBUYSALE(p_idUser in VARCHAR2, 
                                               p_idSale in NUMBER);
 PROCEDURE new_MSG_USERXUSER(p_idWriter in varchar2,
