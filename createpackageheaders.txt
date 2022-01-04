@@ -11,7 +11,7 @@ PROCEDURE new_HISTORY_APPUSERXBUYSALE(p_idUser in VARCHAR2,
 PROCEDURE new_MSG_USERXUSER(p_idWriter in varchar2,
                                         p_idRecipient in varchar2,
                                         p_subject in VARCHAR2,
-                                        descritpionM IN VARCHAR2, sendDate in DATE); 
+                                        p_descritpionM IN VARCHAR2, p_sendDate in DATE); 
 procedure new_People(p_identification in VARCHAR2, 
                              p_idType in NUMBER,
                              p_idGender in NUMBER, 
