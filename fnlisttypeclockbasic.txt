@@ -1,0 +1,6 @@
+create or replace function fnListTypeClockBasic return sys_Refcursor is
+typeClockCursor SYS_REFCURSOR;
+BEGIN
+    OPEN typeClockCursor FOR SELECT IDTYPE,NAMETYPE,DESCRIPTIONT FROM TYPECLOCK;
+    return typeClockCursor;
+END;

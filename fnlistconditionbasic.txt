@@ -1,0 +1,7 @@
+--returns cursor with all the conditions
+create or replace function fnListConditionBasic return sys_Refcursor is
+condCursor SYS_REFCURSOR;
+BEGIN
+    OPEN condcursor FOR SELECT IDCONDITION,NAMECONDITION,DESCRIPTIONC FROM CONDITION;
+    return condCursor;
+END;
