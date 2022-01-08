@@ -1,8 +1,8 @@
 CREATE TABLE BUYSALE (
 idBuySale NUMBER(6), 
-idUserSeller VARCHAR2(10)CONSTRAINT BUYSALE_idUserSeller_nn not null, 
+idUserSeller number(8)CONSTRAINT BUYSALE_idUserSeller_nn not null, 
 idClock NUMBER(10) CONSTRAINT BUYSALE_idClock_nn not null,
-idUserBuyer VARCHAR2(10),
+idUserBuyer number(8),
 idBuyStatus NUMBER(3) CONSTRAINT BUYSALE_idBuyStatus_nn not null,
 idReview NUMBER(8),
 idShippingM NUMBER(4),
