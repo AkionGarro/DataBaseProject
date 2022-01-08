@@ -1,6 +1,7 @@
 --verificado
 create table APPUSER
 (
+idAppUser number(8),
 username varchar2(10),
 identificationNumber VARCHAR2(10) constraint appuser_identification_nn not null,
 userType Number(2) constraint appuser_userType_nn not null,
@@ -19,7 +20,7 @@ modificationDate DATE
 
 ---------------------------------Primary Key---------------------------------------
 ALTER TABLE APPUSER
-ADD CONSTRAINT pk_appuser PRIMARY KEY (username)
+ADD CONSTRAINT pk_idAppuser PRIMARY KEY (idAppUser)
 USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
@@ -46,6 +47,9 @@ ADD CONSTRAINT fk_APPUSER_disctrict FOREIGN KEY
 
 COMMENT ON TABLE APPUSER
 is 'The table containing the information about the user';
+
+COMMENT ON COLUMN APPUSER.idAppUser
+IS 'Unique identifier for appuser tuple';
 
 COMMENT ON COLUMN APPUSER.username
 IS 'The username that identifies the user';
