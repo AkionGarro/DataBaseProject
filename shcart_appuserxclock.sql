@@ -1,5 +1,5 @@
 create table shcart_appuserxclock(
-idUser varchar2(10),
+idUser number(8),
 idClock Number(10),
 subTotal Number(10),
 createdBy varchar2(10),
@@ -21,7 +21,7 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 ALTER TABLE shcart_appuserxclock
 ADD CONSTRAINT fk_shcart_appxclock FOREIGN KEY
-(idUser) REFERENCES appuser(username);
+(idUser) REFERENCES appuser(idappuser);
 
 ALTER TABLE shcart_appuserxclock
 ADD CONSTRAINT fk_shcart_appuserxclock_Clock FOREIGN KEY
@@ -35,7 +35,7 @@ COMMENT ON TABLE shcart_appuserxclock
 is 'The table containing the information of the clocks that the user has in his shoppingcart';
 
 COMMENT ON COLUMN shcart_appuserxclock.idUser
-is 'References the username of the user that has the clock in the shoppingcart';
+is 'References the id of the user that has the clock in the shoppingcart';
 
 COMMENT ON COLUMN shcart_appuserxclock.idClock
 is 'References the idClock in the shoppingcart';
