@@ -1,6 +1,6 @@
 CREATE TABLE MSG_USERXUSER(
-idWriter varchar2(10),
-idRecipient varchar2(10),
+idWriter number(8),
+idRecipient number(8),
 subject varchar2(20) CONSTRAINT MSG_USERXUSER_subject_nn NOT NULL,
 descriptionM varchar2(150)CONSTRAINT MSG_USERXUSER_descriptionm_nn NOT NULL,
 sendDate DATE CONSTRAINT MSG_USERXUSER_sendDate_nn NOT NULL,
