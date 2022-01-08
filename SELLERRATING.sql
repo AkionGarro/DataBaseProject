@@ -1,6 +1,6 @@
 create table SELLERRATING
 (
-idSellRating varchar2(10),
+idSellRating number(8),
 idAppUser number(8) CONSTRAINT SELLERRATING_username_nn NOT NULL ,
 rating varchar(10) CONSTRAINT SELLERRATING_rating_nn NOT NULL,
 createdBy varchar2(10),
