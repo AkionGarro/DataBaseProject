@@ -1,5 +1,5 @@
 CREATE TABLE HISTORY_APPUSERXBUYSALE(
-idUser varchar2(20),
+idUser number(8),
 idBuySale number(8),
 createdBy VARCHAR2(20),
 creationDate DATE,
