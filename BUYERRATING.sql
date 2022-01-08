@@ -1,7 +1,7 @@
 create table BUYERRATING
 (
 idBuyRating varchar2(10),
-username varchar2(10) CONSTRAINT BUYERRATING_username_nn NOT NULL,
+IDAPPUSER NUMBER(8) CONSTRAINT BUYERRATING_username_nn NOT NULL,
 rating varchar2(10) CONSTRAINT BUYERRATING_rating_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
@@ -20,7 +20,7 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 ALTER TABLE BUYERRATING
 ADD CONSTRAINT fk_BUYERRATING_APPUSER FOREIGN KEY
-(username) REFERENCES APPUSER (username);
+(IDAPPUSER) REFERENCES APPUSER (IDAPPUSER);
 
 ---------------------------------------Comments--------------------------------------------------
 
@@ -30,8 +30,8 @@ is 'The table containing the information about the buyer rating';
 COMMENT ON COLUMN BUYERRATING.idBuyRating
 IS 'The id that identifies the buyer rating';
 
-COMMENT ON COLUMN BUYERRATING.username
-IS 'The id that identifies the username';
+COMMENT ON COLUMN BUYERRATING.IDAPPUSER
+IS 'Reference to the user';
 
 COMMENT ON COLUMN BUYERRATING.rating
 IS 'Reference to the buyer rating';
