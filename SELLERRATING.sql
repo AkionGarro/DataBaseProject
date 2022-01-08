@@ -1,7 +1,7 @@
 create table SELLERRATING
 (
 idSellRating varchar2(10),
-username varchar(10) CONSTRAINT SELLERRATING_username_nn NOT NULL ,
+idAppUser number(8) CONSTRAINT SELLERRATING_username_nn NOT NULL ,
 rating varchar(10) CONSTRAINT SELLERRATING_rating_nn NOT NULL,
 createdBy varchar2(10),
 creationDate DATE,
@@ -21,7 +21,7 @@ STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 
 ALTER TABLE SELLERRATING
 ADD CONSTRAINT fk_SELLERRATING_APPUSER FOREIGN KEY
-(username) REFERENCES APPUSER (username);
+(idAPPUSer) REFERENCES APPUSER (idappuser);
 
 
 -----------------------------------Comments------------------------------------------------------
@@ -32,7 +32,7 @@ is 'The table containing the information about the seller rating';
 COMMENT ON COLUMN SELLERRATING.idSellRating
 IS 'The id that identifies the sell rating';
 
-COMMENT ON COLUMN SELLERRATING.username
+COMMENT ON COLUMN SELLERRATING.idappuser
 IS 'The id that identifies the username';
 
 COMMENT ON COLUMN SELLERRATING.rating
