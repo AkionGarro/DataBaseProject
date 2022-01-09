@@ -1,0 +1,69 @@
+create or replace PACKAGE packagefnnew is
+
+function  fnNewappuser(p_username in VARCHAR2, 
+                             p_idNumber in number,
+                             p_userType in NUMBER, 
+                             p_district in NUMBER,
+		 	     p_password in VARCHAR2,
+			     p_Email in VARCHAR2)return varchar2;
+
+function  fnNewBrand(p_nameB in varchar2)return varchar2;
+function  fnNewBuyerRating(p_idUser in number, p_rating in number)return varchar2;
+function  fnNewBuySale(p_idUserS in number, p_idClock in NUMBER,
+                             p_idBuyS in NUMBER)return varchar2;
+
+function  fnNewBuyStatus(p_nameB in varchar2, p_descriptionB in varchar2)return varchar2;
+
+function  fnNewCity(p_nameC in varchar2, p_idCountry in number)return varchar2;
+function  fnNewClockBuysale( p_idType in number,  p_idModel in NUMBER,
+		 	                p_idCondition in NUMBER,
+		                    p_descriptionClock in VARCHAR2,
+			                p_manufactureDate in DATE,
+                            p_vintage in VARCHAR2,
+                            
+                            p_price in VARCHAR2,p_idUserS in number,
+                             p_idBuyS in NUMBER)return varchar2;
+
+function  fnNewCondition(p_nameC in varchar2, p_descriptionC in varchar2)return varchar2;
+
+function  fnNewDistrict(p_nameD in varchar2, p_idCity in number)return varchar2;
+function  fnNewHistory_AppuserxBuysale(p_idUser in NUMBER, 
+                                              p_idSale in NUMBER)return varchar2;
+
+function FNNEWIDENTIFICATION(p_identification in VARCHAR2) RETURN VARCHAR2;
+
+function  fnNewModelP( p_idBrand in NUMBER,
+                        p_nameModel in VARCHAR2)return varchar2;
+
+function  fnNewMSG_userxuser(p_idWriter in number,
+                                        p_idRecipient in number,
+                                        p_subject in VARCHAR2,
+                                        p_descriptionM IN VARCHAR2, p_sendDate in DATE)return varchar2;
+function  fnNewPaymentMethod(p_namep in varchar2)return varchar2;
+
+replace function  fnNewPeopleappuser(p_identification in VARCHAR2, 
+                             p_idType in NUMBER,
+                             p_idGender in NUMBER, 
+                             p_idCountry in NUMBER,
+                             p_birthdate in DATE,
+                             p_name in VARCHAR2,
+                             p_surname in VARCHAR2,
+                             p_secondsurname VARCHAR2,p_username in VARCHAR2, 
+                             p_idNumber in number,
+                             p_userType in NUMBER, 
+                             p_district in NUMBER,
+		 	     p_password in VARCHAR2,
+			     p_Email in VARCHAR2)return varchar2;
+function  fnNewReview(p_descriptionR in VARCHAR2, p_rating in NUMBER)return varchar2;
+function  fnNewSellerRating(p_idUser in number, p_rating in number)return varchar2;
+function  fnNewShCart_appuserxclock(p_idappuser in NUMBER,
+				      p_Clock in NUMBER)return varchar2;
+function  fnNewShippingMethod(p_nameSM in VARCHAR2, p_company VARCHAR2)
+return varchar2;
+function  fnNewTypeClock(p_nameT in varchar2, p_descriptionT in varchar2)return varchar2;
+
+function  fnNewuserType(p_nameT in varchar2, p_descriptionT in varchar2)return varchar2;
+function  fnNewWlistUserxClock( p_idUser in NUMBER, 
+                        p_idClock in NUMBER)return varchar2
+
+end packagefnnew;
