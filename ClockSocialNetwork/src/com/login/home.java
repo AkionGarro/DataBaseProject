@@ -320,7 +320,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option1MouseEntered
 
     private void option1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseExited
-        option1.setBackground(new Color(0,0,250));
+        option1.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option1MouseExited
 
     private void option7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseEntered
@@ -328,7 +328,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option7MouseEntered
 
     private void option7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseExited
-        option7.setBackground(new Color(0,0,250));
+        option7.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option7MouseExited
 
     private void option2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseEntered
@@ -336,7 +336,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option2MouseEntered
 
     private void option2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseExited
-        option2.setBackground(new Color(0,0,250));
+        option2.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option2MouseExited
 
     private void option3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseEntered
@@ -344,7 +344,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option3MouseEntered
 
     private void option3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseExited
-       option3.setBackground(new Color(0,0,250));
+       option3.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option3MouseExited
 
     private void option4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseEntered
@@ -352,7 +352,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option4MouseEntered
 
     private void option4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseExited
-      option4.setBackground(new Color(0,0,250));
+      option4.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option4MouseExited
 
     private void option5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseEntered
@@ -360,7 +360,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option5MouseEntered
 
     private void option5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseExited
-        option5.setBackground(new Color(0,0,250));
+        option5.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option5MouseExited
 
     private void option6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseEntered
@@ -368,7 +368,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option6MouseEntered
 
     private void option6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseExited
-       option6.setBackground(new Color(0,0,250));
+       option6.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option6MouseExited
 
     private void option8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseEntered
@@ -376,7 +376,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option8MouseEntered
 
     private void option8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseExited
-        option8.setBackground(new Color(0,0,250));
+        option8.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option8MouseExited
 
 
