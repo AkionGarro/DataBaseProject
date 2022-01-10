@@ -4,6 +4,7 @@
  */
 package com.login;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 /**
@@ -75,6 +76,9 @@ public class home extends javax.swing.JPanel {
         option1.setBackground(new java.awt.Color(0, 0, 102));
         option1.setBorder(null);
         option1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option1MouseEntered(evt);
             }
@@ -96,6 +100,9 @@ public class home extends javax.swing.JPanel {
         option2.setBackground(new java.awt.Color(0, 0, 102));
         option2.setBorder(null);
         option2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option2MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option2MouseEntered(evt);
             }
@@ -117,6 +124,9 @@ public class home extends javax.swing.JPanel {
         option3.setBackground(new java.awt.Color(0, 0, 102));
         option3.setBorder(null);
         option3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option3MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option3MouseEntered(evt);
             }
@@ -138,6 +148,9 @@ public class home extends javax.swing.JPanel {
         option4.setBackground(new java.awt.Color(0, 0, 102));
         option4.setBorder(null);
         option4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option4MouseEntered(evt);
             }
@@ -159,6 +172,9 @@ public class home extends javax.swing.JPanel {
         option5.setBackground(new java.awt.Color(0, 0, 102));
         option5.setBorder(null);
         option5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option5MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option5MouseEntered(evt);
             }
@@ -180,6 +196,9 @@ public class home extends javax.swing.JPanel {
         option8.setBackground(new java.awt.Color(0, 0, 102));
         option8.setBorder(null);
         option8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option8MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option8MouseEntered(evt);
             }
@@ -201,6 +220,9 @@ public class home extends javax.swing.JPanel {
         option6.setBackground(new java.awt.Color(0, 0, 102));
         option6.setBorder(null);
         option6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option6MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option6MouseEntered(evt);
             }
@@ -221,6 +243,9 @@ public class home extends javax.swing.JPanel {
 
         option7.setBackground(new java.awt.Color(0, 0, 102));
         option7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option7MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 option7MouseEntered(evt);
             }
@@ -378,6 +403,86 @@ public class home extends javax.swing.JPanel {
     private void option8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseExited
         option8.setBackground(new Color(0,0,102));
     }//GEN-LAST:event_option8MouseExited
+
+    private void option1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseClicked
+        principal p1 = new principal();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_option1MouseClicked
+
+    private void option7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseClicked
+        buscarRelojes p1 = new buscarRelojes();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_option7MouseClicked
+
+    private void option2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseClicked
+        insertarRelojes p1 = new insertarRelojes();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_option2MouseClicked
+
+    private void option3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseClicked
+        favoritos p1 = new favoritos();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_option3MouseClicked
+
+    private void option4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseClicked
+        carritoCompra p1 = new carritoCompra();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_option4MouseClicked
+
+    private void option5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseClicked
+        chats p1 = new chats();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_option5MouseClicked
+
+    private void option6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseClicked
+        estadisticas p1 = new estadisticas();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();        
+    }//GEN-LAST:event_option6MouseClicked
+
+    private void option8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseClicked
+        cuenta p1 = new cuenta();
+        p1.setSize(630,5300);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();              // TODO add your handling code here:
+    }//GEN-LAST:event_option8MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
