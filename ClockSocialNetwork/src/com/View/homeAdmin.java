@@ -4,6 +4,23 @@
  */
 package com.View;
 
+
+
+import com.View.adminPanels.Brand;
+import com.View.adminPanels.City;
+import com.View.adminPanels.ClockType;
+import com.View.adminPanels.Condition;
+import com.View.adminPanels.Country;
+import com.View.adminPanels.District;
+import com.View.adminPanels.Gender;
+import com.View.adminPanels.Model;
+import com.View.adminPanels.PaymentMethod;
+import com.View.adminPanels.ShippingMethod;
+import com.View.adminPanels.Status;
+import com.View.adminPanels.UserType;
+import com.View.adminPanels.identification;
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -123,6 +140,11 @@ public class homeAdmin extends javax.swing.JPanel {
         userCategoryPanel.add(option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
 
         genderPanel.setBackground(new java.awt.Color(0, 0, 102));
+        genderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                genderPanelMouseClicked(evt);
+            }
+        });
         genderPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -132,6 +154,11 @@ public class homeAdmin extends javax.swing.JPanel {
         userCategoryPanel.add(genderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 190, 20));
 
         identificationPanel.setBackground(new java.awt.Color(0, 0, 102));
+        identificationPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                identificationPanelMouseClicked(evt);
+            }
+        });
         identificationPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -141,6 +168,11 @@ public class homeAdmin extends javax.swing.JPanel {
         userCategoryPanel.add(identificationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 190, 20));
 
         userTypePanel.setBackground(new java.awt.Color(0, 0, 102));
+        userTypePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userTypePanelMouseClicked(evt);
+            }
+        });
         userTypePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -178,33 +210,68 @@ public class homeAdmin extends javax.swing.JPanel {
         clockCategoryPanel.add(option7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
 
         clockTypePanel.setBackground(new java.awt.Color(0, 0, 102));
+        clockTypePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clockTypePanelMouseClicked(evt);
+            }
+        });
         clockTypePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel10.setText("Clock type");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
         clockTypePanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 220, -1));
 
         clockCategoryPanel.add(clockTypePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 190, 20));
 
         modelPanel.setBackground(new java.awt.Color(0, 0, 102));
+        modelPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modelPanelMouseClicked(evt);
+            }
+        });
         modelPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel16.setText("Model");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
         modelPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 220, -1));
 
         clockCategoryPanel.add(modelPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 190, 20));
 
         conditionPanel.setBackground(new java.awt.Color(0, 0, 102));
+        conditionPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                conditionPanelMouseClicked(evt);
+            }
+        });
         conditionPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel15.setText("Condition");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
         conditionPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 220, -1));
 
         clockCategoryPanel.add(conditionPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 190, 20));
 
         brandPanel.setBackground(new java.awt.Color(0, 0, 102));
+        brandPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                brandPanelMouseClicked(evt);
+            }
+        });
         brandPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -213,7 +280,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         clockCategoryPanel.add(brandPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
 
-        menu.add(clockCategoryPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 270, 110));
+        menu.add(clockCategoryPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 270, 110));
 
         buysellCategory.setBackground(new java.awt.Color(0, 0, 102));
         buysellCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -243,6 +310,11 @@ public class homeAdmin extends javax.swing.JPanel {
         buysellCategory.add(option2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
 
         statusPanel.setBackground(new java.awt.Color(0, 0, 102));
+        statusPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                statusPanelMouseClicked(evt);
+            }
+        });
         statusPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -252,6 +324,11 @@ public class homeAdmin extends javax.swing.JPanel {
         buysellCategory.add(statusPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 190, 20));
 
         paymentPanel.setBackground(new java.awt.Color(0, 0, 102));
+        paymentPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                paymentPanelMouseClicked(evt);
+            }
+        });
         paymentPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -261,6 +338,11 @@ public class homeAdmin extends javax.swing.JPanel {
         buysellCategory.add(paymentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 190, 20));
 
         shippingPanel.setBackground(new java.awt.Color(0, 0, 102));
+        shippingPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shippingPanelMouseClicked(evt);
+            }
+        });
         shippingPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -269,7 +351,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         buysellCategory.add(shippingPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 190, 20));
 
-        menu.add(buysellCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 270, 100));
+        menu.add(buysellCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 270, 100));
 
         addressCategory.setBackground(new java.awt.Color(0, 0, 102));
         addressCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -299,6 +381,11 @@ public class homeAdmin extends javax.swing.JPanel {
         addressCategory.add(option3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
 
         countryPanel.setBackground(new java.awt.Color(0, 0, 102));
+        countryPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                countryPanelMouseClicked(evt);
+            }
+        });
         countryPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel21.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -308,6 +395,11 @@ public class homeAdmin extends javax.swing.JPanel {
         addressCategory.add(countryPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 190, 20));
 
         cityPanel.setBackground(new java.awt.Color(0, 0, 102));
+        cityPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cityPanelMouseClicked(evt);
+            }
+        });
         cityPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel22.setBackground(new java.awt.Color(0, 0, 102));
@@ -318,6 +410,11 @@ public class homeAdmin extends javax.swing.JPanel {
         addressCategory.add(cityPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 190, 20));
 
         districtPanel.setBackground(new java.awt.Color(0, 0, 102));
+        districtPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                districtPanelMouseClicked(evt);
+            }
+        });
         districtPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
@@ -326,7 +423,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         addressCategory.add(districtPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 190, 20));
 
-        menu.add(addressCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 270, 130));
+        menu.add(addressCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 270, 130));
 
         add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 570));
 
@@ -447,6 +544,148 @@ public class homeAdmin extends javax.swing.JPanel {
     private void option1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseClicked
 
     }//GEN-LAST:event_option1MouseClicked
+
+    private void genderPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_genderPanelMouseClicked
+         Gender p1 = new Gender();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_genderPanelMouseClicked
+
+    private void identificationPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_identificationPanelMouseClicked
+       identification p1 = new identification();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_identificationPanelMouseClicked
+
+    private void userTypePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTypePanelMouseClicked
+               UserType p1 = new UserType();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_userTypePanelMouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void clockTypePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clockTypePanelMouseClicked
+                       ClockType p1 = new ClockType();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_clockTypePanelMouseClicked
+
+    private void modelPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelPanelMouseClicked
+                       Model p1 = new Model();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_modelPanelMouseClicked
+
+    private void conditionPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conditionPanelMouseClicked
+                       Condition p1 = new Condition();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_conditionPanelMouseClicked
+
+    private void brandPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brandPanelMouseClicked
+                       Brand p1 = new Brand();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_brandPanelMouseClicked
+
+    private void statusPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statusPanelMouseClicked
+                       Status p1 = new Status();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_statusPanelMouseClicked
+
+    private void paymentPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentPanelMouseClicked
+                       PaymentMethod p1 = new PaymentMethod();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_paymentPanelMouseClicked
+
+    private void shippingPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shippingPanelMouseClicked
+                       ShippingMethod p1 = new ShippingMethod();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_shippingPanelMouseClicked
+
+    private void countryPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_countryPanelMouseClicked
+                      Country p1 = new Country();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_countryPanelMouseClicked
+
+    private void cityPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityPanelMouseClicked
+                       City p1 = new City();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_cityPanelMouseClicked
+
+    private void districtPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtPanelMouseClicked
+                       District p1 = new District();
+        p1.setSize(630,530);
+        p1.setLocation(0,0);
+        homeContent.removeAll();
+        homeContent.add(p1,BorderLayout.CENTER);
+        homeContent.revalidate();
+        homeContent.repaint();
+    }//GEN-LAST:event_districtPanelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

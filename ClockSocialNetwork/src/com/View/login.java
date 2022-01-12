@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 
-
 /**
  *
  * @author garroakion
@@ -15,27 +14,22 @@ public class login extends javax.swing.JFrame {
 
     public login() {
         initComponents();
-        
-        background.setLocation(0,0);
+
+        background.setLocation(0, 0);
         homePanel.removeAll();
-        homePanel.add(background,BorderLayout.CENTER);
+        homePanel.add(background, BorderLayout.CENTER);
         homePanel.revalidate();
         homePanel.repaint();
-        
-        
-        
-        loginSection.setLocation(0,0);
+
+        loginSection.setLocation(0, 0);
         content.removeAll();
         content.add(loginSection, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
-      
+
         registerSection.setVisible(false);
         registerSection.setEnabled(false);
     }
-    
-    
-   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -875,16 +869,16 @@ public class login extends javax.swing.JFrame {
     private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
         loginPanel.setBackground(Color.black);
         logoPanel.setBackground(Color.black);
-        
-        registerSection.setSize(480,570);
-        registerSection.setLocation(0,0);
+
+        registerSection.setSize(480, 570);
+        registerSection.setLocation(0, 0);
         content.removeAll();
-        content.add(registerSection,BorderLayout.CENTER);
+        content.add(registerSection, BorderLayout.CENTER);
         registerSection.setEnabled(true);
         registerSection.setVisible(true);
         content.revalidate();
         content.repaint();
-        
+
     }//GEN-LAST:event_registerButtonMouseClicked
 
     private void exitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseExited
@@ -900,20 +894,31 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButtonMouseClicked
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+        if (usernameTextField.getText().equals("admin")) {
+            homeAdmin h1 = new homeAdmin();
+            h1.setSize(900, 570);
+            h1.setLocation(0, 0);
+            homePanel.removeAll();
+            homePanel.add(h1, BorderLayout.CENTER);
+            homePanel.revalidate();
+            homePanel.repaint();
+        }else{
         home h1 = new home();
-        h1.setSize(900,570);
-        h1.setLocation(0,0);
+        h1.setSize(900, 570);
+        h1.setLocation(0, 0);
         homePanel.removeAll();
-        homePanel.add(h1,BorderLayout.CENTER);
+        homePanel.add(h1, BorderLayout.CENTER);
         homePanel.revalidate();
         homePanel.repaint();
+        }
+
     }//GEN-LAST:event_loginButtonMouseClicked
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-        loginPanel.setBackground(new Color(0,0,102));
-        logoPanel.setBackground(new Color(0,0,102));
-        
-        loginSection.setLocation(0,0);
+        loginPanel.setBackground(new Color(0, 0, 102));
+        logoPanel.setBackground(new Color(0, 0, 102));
+
+        loginSection.setLocation(0, 0);
         content.removeAll();
         content.add(loginSection, BorderLayout.CENTER);
         content.revalidate();
@@ -949,11 +954,11 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButton1MouseExited
 
     private void registerButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseClicked
-        
-        loginPanel.setBackground(new Color(0,0,102));
-        logoPanel.setBackground(new Color(0,0,102));
-        
-        loginSection.setLocation(0,0);
+
+        loginPanel.setBackground(new Color(0, 0, 102));
+        logoPanel.setBackground(new Color(0, 0, 102));
+
+        loginSection.setLocation(0, 0);
         content.removeAll();
         content.add(loginSection, BorderLayout.CENTER);
         content.revalidate();
@@ -961,11 +966,11 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_registerButtonPanelMouseClicked
 
     private void registerButtonPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseEntered
-        
+
     }//GEN-LAST:event_registerButtonPanelMouseEntered
 
     private void registerButtonPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseExited
-        
+
     }//GEN-LAST:event_registerButtonPanelMouseExited
 
     private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
@@ -1059,10 +1064,7 @@ public class login extends javax.swing.JFrame {
     public JPanel getLogoPanel() {
         return logoPanel;
     }
-    
-    
 
-    
     /**
      * @param args the command line arguments
      */
