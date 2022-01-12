@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.login;
+package com.View;
 
 /**
  *
  * @author garroakion
  */
-public class chats extends javax.swing.JPanel {
+public class estadisticas extends javax.swing.JPanel {
 
     /**
-     * Creates new form chats
+     * Creates new form estadisticas
      */
-    public chats() {
+    public estadisticas() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class chats extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(102, 0, 102));
+        setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

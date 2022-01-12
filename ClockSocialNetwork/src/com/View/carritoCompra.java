@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.login;
+package com.View;
 
 /**
  *
  * @author garroakion
  */
-public class cuenta extends javax.swing.JPanel {
+public class carritoCompra extends javax.swing.JPanel {
 
     /**
-     * Creates new form cuenta
+     * Creates new form carritoCompra
      */
-    public cuenta() {
+    public carritoCompra() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class cuenta extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(51, 51, 0));
+        setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
