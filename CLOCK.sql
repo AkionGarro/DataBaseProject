@@ -2,6 +2,7 @@ create table CLOCK
 (
 idClock number(10),
 idModel number(10) CONSTRAINT CLOCK_idModel_nn NOT NULL,
+idType number(3) CONSTRAINT CLOCK_idType_nn NOT NULL,
 idCondition number(2) CONSTRAINT CLOCK_idCondition_nn NOT NULL,
 descriptionClock varchar2(100) CONSTRAINT CLOCK_descriptionClock_nn NOT NULL,
 manufactureDate DATE CONSTRAINT CLOCK_manufactureDate_nn NOT NULL,
@@ -29,6 +30,12 @@ ADD CONSTRAINT fk_CLOCK_MODEL FOREIGN KEY
 ALTER TABLE CLOCK
 ADD CONSTRAINT fk_CLOCK_CONDITION FOREIGN KEY
 (idCondition) REFERENCES CONDITION(idCondition);
+
+
+ALTER TABLE CLOCK
+ADD CONSTRAINT fk_CLOCK_TYPECLOCK FOREIGN KEY
+(idType) REFERENCES TYPECLOCK(idType);
+
 -----------------------------------------Comments--------------------------------------------------
 
 
@@ -71,3 +78,7 @@ is 'The user who modified the tuple';
 
 COMMENT ON COLUMN CLOCK.modificationDate
 is 'The date when the tuple was modified';
+
+COMMENT ON COLUMN CLOCK.idType
+IS 'The id that identifies the clock type';
+
