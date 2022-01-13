@@ -4,12 +4,9 @@
  */
 package com.View;
 
-import com.View.adminPanels.Brand;
-import com.View.adminPanels.City;
 import com.View.adminPanels.ClockType;
 import com.View.adminPanels.Condition;
-import com.View.adminPanels.Country;
-import com.View.adminPanels.District;
+import com.View.adminPanels.Address;
 import com.View.adminPanels.Gender;
 import com.View.adminPanels.Model;
 import com.View.adminPanels.PaymentMethod;
@@ -66,8 +63,6 @@ public class homeAdmin extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         conditionPanel = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        brandPanel = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
         buysellCategory = new javax.swing.JPanel();
         option2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -82,10 +77,6 @@ public class homeAdmin extends javax.swing.JPanel {
         option3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        countryPanel = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        cityPanel = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
         districtPanel = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         homeContent = new javax.swing.JPanel();
@@ -271,13 +262,13 @@ public class homeAdmin extends javax.swing.JPanel {
 
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Model");
+        jLabel16.setText("Brand/Model");
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel16MouseClicked(evt);
             }
         });
-        modelPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 100, -1));
+        modelPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 110, -1));
 
         clockCategoryPanel.add(modelPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 270, 20));
 
@@ -306,27 +297,6 @@ public class homeAdmin extends javax.swing.JPanel {
         conditionPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 90, -1));
 
         clockCategoryPanel.add(conditionPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 270, 20));
-
-        brandPanel.setBackground(new java.awt.Color(0, 0, 102));
-        brandPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                brandPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                brandPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                brandPanelMouseExited(evt);
-            }
-        });
-        brandPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel17.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Brand");
-        brandPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 110, -1));
-
-        clockCategoryPanel.add(brandPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 270, 20));
 
         menu.add(clockCategoryPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 270, 130));
 
@@ -451,49 +421,6 @@ public class homeAdmin extends javax.swing.JPanel {
 
         addressCategory.add(option3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
 
-        countryPanel.setBackground(new java.awt.Color(0, 0, 102));
-        countryPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                countryPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                countryPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                countryPanelMouseExited(evt);
-            }
-        });
-        countryPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel21.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Country");
-        countryPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 130, -1));
-
-        addressCategory.add(countryPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 270, 20));
-
-        cityPanel.setBackground(new java.awt.Color(0, 0, 102));
-        cityPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cityPanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cityPanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cityPanelMouseExited(evt);
-            }
-        });
-        cityPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel22.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel22.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("City");
-        cityPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 100, -1));
-
-        addressCategory.add(cityPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 270, 20));
-
         districtPanel.setBackground(new java.awt.Color(0, 0, 102));
         districtPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -510,10 +437,10 @@ public class homeAdmin extends javax.swing.JPanel {
 
         jLabel18.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("District");
+        jLabel18.setText("Address");
         districtPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 120, -1));
 
-        addressCategory.add(districtPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 270, 20));
+        addressCategory.add(districtPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 270, 20));
 
         menu.add(addressCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 270, 130));
 
@@ -709,16 +636,6 @@ public class homeAdmin extends javax.swing.JPanel {
         homeContent.repaint();
     }//GEN-LAST:event_conditionPanelMouseClicked
 
-    private void brandPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brandPanelMouseClicked
-        Brand p1 = new Brand();
-        p1.setSize(630, 530);
-        p1.setLocation(0, 0);
-        homeContent.removeAll();
-        homeContent.add(p1, BorderLayout.CENTER);
-        homeContent.revalidate();
-        homeContent.repaint();
-    }//GEN-LAST:event_brandPanelMouseClicked
-
     private void statusPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statusPanelMouseClicked
         Status p1 = new Status();
         p1.setSize(630, 530);
@@ -749,28 +666,8 @@ public class homeAdmin extends javax.swing.JPanel {
         homeContent.repaint();
     }//GEN-LAST:event_shippingPanelMouseClicked
 
-    private void countryPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_countryPanelMouseClicked
-        Country p1 = new Country();
-        p1.setSize(630, 530);
-        p1.setLocation(0, 0);
-        homeContent.removeAll();
-        homeContent.add(p1, BorderLayout.CENTER);
-        homeContent.revalidate();
-        homeContent.repaint();
-    }//GEN-LAST:event_countryPanelMouseClicked
-
-    private void cityPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityPanelMouseClicked
-        City p1 = new City();
-        p1.setSize(630, 530);
-        p1.setLocation(0, 0);
-        homeContent.removeAll();
-        homeContent.add(p1, BorderLayout.CENTER);
-        homeContent.revalidate();
-        homeContent.repaint();
-    }//GEN-LAST:event_cityPanelMouseClicked
-
     private void districtPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtPanelMouseClicked
-        District p1 = new District();
+        Address p1 = new Address();
         p1.setSize(630, 530);
         p1.setLocation(0, 0);
         homeContent.removeAll();
@@ -804,14 +701,6 @@ public class homeAdmin extends javax.swing.JPanel {
         userTypePanel.setBackground(new Color(0, 0, 102));
     }//GEN-LAST:event_userTypePanelMouseExited
 
-    private void brandPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brandPanelMouseEntered
-        brandPanel.setBackground(new Color(0, 0, 180));
-    }//GEN-LAST:event_brandPanelMouseEntered
-
-    private void brandPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_brandPanelMouseExited
-        brandPanel.setBackground(new Color(0, 0, 102));
-    }//GEN-LAST:event_brandPanelMouseExited
-
     private void statusPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statusPanelMouseEntered
         statusPanel.setBackground(new Color(0, 0, 180));
     }//GEN-LAST:event_statusPanelMouseEntered
@@ -835,22 +724,6 @@ public class homeAdmin extends javax.swing.JPanel {
     private void shippingPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shippingPanelMouseExited
         shippingPanel.setBackground(new Color(0, 0, 102));
     }//GEN-LAST:event_shippingPanelMouseExited
-
-    private void countryPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_countryPanelMouseEntered
-        countryPanel.setBackground(new Color(0, 0, 180));
-    }//GEN-LAST:event_countryPanelMouseEntered
-
-    private void countryPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_countryPanelMouseExited
-        countryPanel.setBackground(new Color(0, 0, 102));
-    }//GEN-LAST:event_countryPanelMouseExited
-
-    private void cityPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityPanelMouseEntered
-        cityPanel.setBackground(new Color(0, 0, 180));
-    }//GEN-LAST:event_cityPanelMouseEntered
-
-    private void cityPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cityPanelMouseExited
-        cityPanel.setBackground(new Color(0, 0, 102));
-    }//GEN-LAST:event_cityPanelMouseExited
 
     private void districtPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtPanelMouseEntered
         districtPanel.setBackground(new Color(0, 0, 180));
@@ -887,13 +760,10 @@ public class homeAdmin extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addressCategory;
-    private javax.swing.JPanel brandPanel;
     private javax.swing.JPanel buysellCategory;
-    private javax.swing.JPanel cityPanel;
     private javax.swing.JPanel clockCategoryPanel;
     private javax.swing.JPanel clockTypePanel;
     private javax.swing.JPanel conditionPanel;
-    private javax.swing.JPanel countryPanel;
     private javax.swing.JPanel districtPanel;
     private javax.swing.JLabel exitButton2;
     private javax.swing.JPanel exitPanel2;
@@ -908,13 +778,10 @@ public class homeAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;

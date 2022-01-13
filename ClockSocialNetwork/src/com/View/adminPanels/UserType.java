@@ -98,7 +98,7 @@ public class UserType extends javax.swing.JPanel {
         tableInfo.setName(""); // NOI18N
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 630, 320));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 630, 360));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,12 +108,12 @@ public class UserType extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
 
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton.setText("Modify");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, -1, -1));
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +121,7 @@ public class UserType extends javax.swing.JPanel {
                 nameFieldActionPerformed(evt);
             }
         });
-        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 240, -1));
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 240, -1));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -131,17 +131,17 @@ public class UserType extends javax.swing.JPanel {
         descriptionField.setDocument(new limitText.JTextFieldLimit(20));
         jScrollPane1.setViewportView(descriptionField);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 240, 60));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 230, 60));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Description:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 50));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 50));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Name of the user type:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
