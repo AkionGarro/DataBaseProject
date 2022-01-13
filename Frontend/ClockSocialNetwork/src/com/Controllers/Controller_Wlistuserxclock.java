@@ -15,7 +15,7 @@ import oracle.jdbc.internal.OracleTypes;
  *
  * @author Jonathan
  */
-public class Controller_Wlistuserxclock {
+public class Controller_Wlistuserxclock  {
 
     public Controller_Wlistuserxclock() {
             if (connect==null){//creates the connection to the database

@@ -626,6 +626,12 @@ exception
      return val;
 end fnNewGender;
 
+function fnListGenderBasic return sys_RefCursor is
+cCursor sys_refCursor;
+begin open ccUrsor for select nameGender from gender;
+return ccursor;
+end fnListGenderBasic;
+
 
 
 

@@ -5,23 +5,22 @@
 package com.Controllers;
 
 import com.Connect.DB_Connection;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import oracle.jdbc.OracleCallableStatement;
-import oracle.jdbc.internal.OracleTypes;
 import static com.Controllers.Controller_Main.connect;
+import java.sql.Connection;
+
 /**
  *
  * @author Jonathan
  */
-public class Controller_ModelP extends ControllerF{
+public class Controller_TypeClockxBrand extends ControllerF {
 
-    public Controller_ModelP() {
-                if (connect==null){//creates the connection to the database
+    public Controller_TypeClockxBrand() {
+        super();
+        if (connect==null){ //connects to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
-        this.createFn="{ ? = call packagefnnew.fnNewmodelp(?,?)}";
-    
+        this.createFn="{ ? = call packagefnnew.fnNewBrand(?,?)}";
     }
-
+    
+    
 }

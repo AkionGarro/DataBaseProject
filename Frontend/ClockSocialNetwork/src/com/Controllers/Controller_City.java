@@ -8,7 +8,9 @@ import com.Connect.DB_Connection;
 import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import javax.swing.table.TableModel;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
 
@@ -16,41 +18,46 @@ import oracle.jdbc.internal.OracleTypes;
  *
  * @author Jonathan
  */
-public class Controller_City {
+public class Controller_City extends  ControllerF{
     public Controller_City() {
     
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+            this.createFn="{ ? = call packagefnnew.fnNewCity(?,?)}";
 }
     
     
     
 
             
-    public String create(String nameCity, String nameCountry){
+
+   public ArrayList<String> listInfo(String nameCountry){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewCity(?,?)}");
-            cstmt.setString(2, nameCity);
-            cstmt.setString(3, nameCountry);
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
+            ArrayList <String> listCity=new ArrayList<String>();
+
+
+
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListCityBasic(?)}");
+            cstmt.setString(2, nameCountry);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
             cstmt.execute();
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Wrong data, was not created";
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            
+            
+            while(rs.next()){
+                listCity.add(rs.getString("nameCity"));
+                
+            }
+            return listCity;
+        }catch(Exception e){
+            return null;
         }
     }
-
-    public TableModel listInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String create(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-
+    
+    
 }

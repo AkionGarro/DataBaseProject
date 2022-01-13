@@ -5,41 +5,54 @@
 package com.Controllers;
 
 import com.Connect.DB_Connection;
+import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
-import static com.Controllers.Controller_Main.connect;
-import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Jonathan
  */
-public class Controller_PaymentMethod {
+public class Controller_PaymentMethod extends ControllerF{
     public Controller_PaymentMethod(){
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+            this.createFn="{ ? = call packagefnnew.fnNewPaymentMethod(?)}";
+            this.deleteFn="{ ? = call packagedeletetuple.fnDelPaymentMethod(?)}";
             
     }
-            public String create(String nameP){
+   
+    
+     public DefaultTableModel listInfo(){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewPaymentMethod(?)}");
-            cstmt.setString(2, nameP);
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
-            cstmt.execute();
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Wrong data, was not created";
-        }
-        //missing correct implementation with buysale
-}
+            DefaultTableModel table=new DefaultTableModel();
 
-    public TableModel listInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
+            table.addColumn("Name");
+
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListPayMethodBasic}");
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
+            cstmt.execute();
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            String data[]= new  String[1];
+            
+            while(rs.next()){
+                data[0]=rs.getString("type");
+                table.addRow(data);
+            }
+            return table;
+        }catch(Exception e){
+            return null;
+        }
     }
     
 }

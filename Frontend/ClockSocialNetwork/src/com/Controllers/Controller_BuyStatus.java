@@ -18,29 +18,17 @@ import oracle.jdbc.internal.OracleTypes;
  *
  * @author Jonathan
  */
-public class Controller_BuyStatus {
+public class Controller_BuyStatus extends ControllerF {
     public  Controller_BuyStatus(){
         if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+        this.deleteFn="{ ? = call packagedeleteTuple.fnDelBuyStatus(?)}";
+        this.createFn="{ ? = call packagefnnew.fnNewBuyStatus(?,?)}";
     }
 
 
-    public String create(String nameB,String descriptionB){
-        try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewBuyStatus(?,?)}");
-            cstmt.setString(2, nameB);
-            cstmt.setString(3, descriptionB);
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
-            cstmt.execute();
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Was not created";
-        }
-    }
+   
      public DefaultTableModel listInfo(){
         try{
             DefaultTableModel table=new DefaultTableModel();
@@ -71,5 +59,7 @@ public class Controller_BuyStatus {
             return null;
         }
     }
+     
+
 }
 

@@ -17,32 +17,16 @@ import java.sql.ResultSet;
  *
  * @author Jonathan
  */
-public class Controller_Condition {
+public class Controller_Condition extends ControllerF{
     public  Controller_Condition(){
+        super();
         if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+        this.deleteFn="{ ? = call packagedeleteTuple.fnDelCondition(?)}";
+        this.createFn="{ ? = call packagefnnew.fnNewCondition(?,?)}";
     }
 
-    //Function that calls function fnNewCondition in the database
-    public String create(String nameC, String descriptionC){
-        try{
-            nameC=nameC.trim();
-            descriptionC=descriptionC.trim();
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewCondition(?,?)}");
-            cstmt.setString(2, nameC);
-            cstmt.setString(3, descriptionC);
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
-            cstmt.execute();
-            
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return  e.toString();
-        }
-    }
     public DefaultTableModel listInfo(){
         try{
             DefaultTableModel table=new DefaultTableModel();
@@ -69,10 +53,10 @@ public class Controller_Condition {
             //rs.close();
             return table;
         }catch(Exception e){
-            
+            System.out.println(e.toString());
             return null;
         }
     }
-    
+
 }
 

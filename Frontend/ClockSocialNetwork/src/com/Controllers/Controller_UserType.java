@@ -16,30 +16,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Jonathan
  */
-public class Controller_UserType {
-
+public class Controller_UserType extends ControllerF {
+      
     public Controller_UserType() {
+        super();
                 if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+        this.deleteFn="{ ? = call packagedeleteTuple.fnDelUserType(?)}";
+        this.createFn="{ ? = call packagefnnew.fnNewUserType(?,?)}";
     }
    
-    
-    public String create(String nameD, String description){
-        try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewUserType(?,?)}");
-            cstmt.setString(2, nameD.trim());
-            cstmt.setString(3, description.trim());
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
-            cstmt.execute();
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Wrong data, was not created";
-        }
-    }
     
        public DefaultTableModel listInfo(){
         try{

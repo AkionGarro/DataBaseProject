@@ -9,6 +9,7 @@ import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
 import javax.swing.table.DefaultTableModel;
@@ -25,40 +26,14 @@ public class Controller_District {
 }
     
     
-            public DefaultTableModel listInfo(){
-        try{
-            DefaultTableModel table=new DefaultTableModel();
-
-
-            table.addColumn("Name");
-
-            //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListBrandBasic}");
-
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-
-            cstmt.execute();
-
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            String data[]= new  String[1];
-            
-            while(rs.next()){
-                data[0]=rs.getString("nameBrand");
-                table.addRow(data);
-            }
-            return table;
-        }catch(Exception e){
-            return null;
-        }
-    }
-            
+    
+          
     public String create(String nameD, String nameCity, String country){
         try{
             CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewDistrict(?,?,?)}");
             cstmt.setString(2, nameD);
-            cstmt.setString(3, nameCity);
-            cstmt.setString(4, country);
+            cstmt.setString(3, nameCity.trim());
+            cstmt.setString(4, country.trim());
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             String result;
@@ -69,8 +44,31 @@ public class Controller_District {
         return "Wrong data, was not created";
         }
     }
+    
+        public ArrayList<String> listInfo(String nameCity, String nameCountry){
+        try{
+            ArrayList <String> listDistricts=new ArrayList<String>();
 
-    public String create(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+
+
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListDistrictBasic(?,?)}");
+            cstmt.setString(2, nameCity);
+            cstmt.setString(3, nameCountry);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
+            cstmt.execute();
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            
+            
+            while(rs.next()){
+                listDistricts.add(rs.getString("nameDistrict"));
+            }
+            return listDistricts;
+        }catch(Exception e){
+            return null;
+        }
     }
 }

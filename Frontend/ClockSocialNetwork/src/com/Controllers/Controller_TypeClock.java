@@ -16,13 +16,16 @@ import static com.Controllers.Controller_Main.connect;
  *
  * @author Jonathan
  */
-public class Controller_TypeClock {
+public class Controller_TypeClock extends ControllerF {
     
     
-    public  Controller_TypeClock(){
+    public  Controller_TypeClock() {
+        super();
         if (connect==null){ //connects to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+       this.deleteFn ="{ ? = call packagedeleteTuple.fnDelTypeClock(?)}";
+       this.createFn="{ ? = call packagefnnew.fnNewTypeClock(?,?)}";
     }
     
     //Returns array with information(typeClock) requested  from the database
@@ -55,22 +58,5 @@ public class Controller_TypeClock {
         }
     }
     
-        //Function that calls function fnNewTypeClock in the database
-    public String create(String nameC, String descriptionC){
-        try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewTypeClock(?,?)}");
-            cstmt.setString(2, nameC.trim());
-            cstmt.setString(3, descriptionC.trim());
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
-            cstmt.execute();
-            
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Was not created";
-        }
-    }
-    
+
 }

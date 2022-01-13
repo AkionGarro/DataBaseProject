@@ -9,6 +9,7 @@ import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
 import javax.swing.table.DefaultTableModel;
@@ -16,15 +17,19 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Jonathan
  */
-public class Controller_Country {
+public class Controller_Country extends ControllerF {
     
     public Controller_Country() {
+        super();
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
+            
         }   
+        this.createFn="{ ? = call packagefnnew.fnNewCountry(?,?)}";
 }
+
     
-        public DefaultTableModel listInfo(){
+    /*public DefaultTableModel listInfo(){
         try{
             DefaultTableModel table=new DefaultTableModel();
 
@@ -32,7 +37,7 @@ public class Controller_Country {
             table.addColumn("Name");
 
             //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListBrandBasic}");
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListCountryInfoBasic}");
 
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 
@@ -50,22 +55,32 @@ public class Controller_Country {
         }catch(Exception e){
             return null;
         }
-    }
-    public String create(String nameB){
+    }   */
+   
+
+    public ArrayList<String> listInfo(){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewBrand(?)}");
-            cstmt.setString(2, nameB);
+            ArrayList <String> listDistricts=new ArrayList<String>();
+
+
+
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListCountryBasic}");
             
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
             cstmt.execute();
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Wrong data, was not created";
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            
+            
+            while(rs.next()){
+                listDistricts.add(rs.getString("nameCountry"));
+            }
+            return listDistricts;
+        }catch(Exception e){
+            return null;
         }
     }
-    
-    
 }

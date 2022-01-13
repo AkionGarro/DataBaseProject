@@ -4,8 +4,12 @@
  */
 package com.View.adminPanels;
 
+import com.Controllers.Controller_City;
+import com.Controllers.Controller_Country;
 import com.Controllers.Controller_District;
 import com.Controllers.Controller_Main;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -13,27 +17,68 @@ import com.Controllers.Controller_Main;
  */
 public class Address extends javax.swing.JPanel {
 
-    private Controller_Main mainCont = Controller_Main.getContMain();
-    private Controller_District controller;
+    private  Controller_Main mainCont= Controller_Main.getContMain();
+    private  Controller_Country controllerCountry;
+    private  Controller_City controllerCity;
+    private  Controller_District controllerDistrict;
 
     /**
      * Creates new form District
      */
     public Address() {
-
         initComponents();
-        controller = mainCont.getContDistrict();
-        fillTable();
+        controllerCountry=mainCont.getContCountry();
+        controllerCity=mainCont.getContCity();
+        controllerDistrict=mainCont.getContDistrict();
+        this.fillCountry();
     }
 
     
-    private void fillTable() {
-        try {
-            this.tableInfo.setModel(controller.listInfo());
-            this.tableInfo.revalidate();
-            this.tableInfo.repaint();
-        } catch (Exception e) {
+
+    
+        private void fillCity(){
+    try{
+           this.comboCityF.removeAllItems();
+            int number=this.comboCountry.getSelectedIndex();
+            ArrayList<String>listCity= new ArrayList<String>();
+            listCity= controllerCity.listInfo(this.comboCountry.getItemAt(number));
+            DefaultComboBoxModel modelList= new DefaultComboBoxModel(listCity.toArray());
+
+            this.comboCityF.setModel(modelList);
+
+           
+            //this.comboCity.setModel(new DefaultComboBoxModel(arr));
+            System.out.println("From fillcity");
+            this.fillDistrict();
+            
+        }catch(Exception e){
+        System.out.println("Error in fillcity  "+e.toString());
         }
+
+    
+    }
+    private void fillCountry(){
+        try{
+            ArrayList<String> listC= controllerCountry.listInfo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboCountry.setModel(listF);
+            this.fillCity();
+            
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    
+    }
+    private void fillDistrict(){
+        try{
+            ArrayList<String> listC= controllerDistrict.listInfo(this.comboCityF.getSelectedItem().toString(),this.comboCountry.getSelectedItem().toString());
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboDistrict.setModel(listF);
+            
+        }catch(Exception e){
+        
+        }
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,23 +92,23 @@ public class Address extends javax.swing.JPanel {
         titleBrand = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboCountry = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         createButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableInfo = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboDistrict = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        comboCityF = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         createButton1 = new javax.swing.JButton();
         createButton2 = new javax.swing.JButton();
         createButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        nameTextField2 = new javax.swing.JTextField();
+        countryCodeField = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,15 +126,18 @@ public class Address extends javax.swing.JPanel {
         add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("City:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
+        comboCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCountry.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCountryItemStateChanged(evt);
+            }
+        });
+        add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cod:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, 30));
 
@@ -124,28 +172,29 @@ public class Address extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 630, 250));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Country:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 300, 30));
+        comboDistrict.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 300, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Country:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 300, 30));
+        comboCityF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCityF.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCityFItemStateChanged(evt);
+            }
+        });
+        add(comboCityF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 300, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("District Name:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Agregar:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 30));
 
@@ -178,37 +227,87 @@ public class Address extends javax.swing.JPanel {
             }
         });
         add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 120, 30));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 110, -1));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 120, -1));
+        add(nameTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 110, -1));
+        add(countryCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 120, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-            
-    }//GEN-LAST:event_createButtonActionPerformed
-
 
     private void createButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton2ActionPerformed
-        // TODO add your handling code here:
+               try{
+            if (!this.nameTextField2.getText().isBlank() && !this.countryCodeField.getText().isBlank()){
+                mainCont.createWindowMessage(controllerCountry.create(this.nameTextField2.getText(),this.countryCodeField.getText()), "Create Country");
+                fillCountry();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }       // TODO add your handling code here:
     }//GEN-LAST:event_createButton2ActionPerformed
 
     private void createButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton3ActionPerformed
-        // TODO add your handling code here:
+               try{
+            if (!this.nameTextField2.getText().isBlank() && this.comboCountry.getSelectedItem().toString()!=null){
+                mainCont.createWindowMessage(controllerCity.create(this.nameTextField2.getText(),this.comboCountry.getSelectedItem().toString()), "Create City");
+                fillCity();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        // TODO add your handling code here:
+                        // TODO add your handling code here:
     }//GEN-LAST:event_createButton3ActionPerformed
 
     private void createButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_createButton1ActionPerformed
 
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
+                try{
+            if (!this.nameTextField2.getText().isBlank() && this.comboCountry.getSelectedItem().toString()!=null && this.comboCityF.getSelectedItem().toString()!=null){
+                mainCont.createWindowMessage(controllerDistrict.create(this.nameTextField2.getText(),this.comboCityF.getSelectedItem().toString(),this.comboCountry.getSelectedItem().toString()), "Create District");
+                fillDistrict();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+                  
+    }//GEN-LAST:event_createButtonActionPerformed
+
+    private void comboCountryItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCountryItemStateChanged
+        try{
+         this.fillCity();
+         this.fillCountry();
+         this.fillDistrict();
+        }catch(Exception e){
+        
+        }
+    }//GEN-LAST:event_comboCountryItemStateChanged
+
+    private void comboCityFItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCityFItemStateChanged
+       this.fillDistrict();
+    }//GEN-LAST:event_comboCityFItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboCityF;
+    private javax.swing.JComboBox<String> comboCountry;
+    private javax.swing.JComboBox<String> comboDistrict;
+    private javax.swing.JTextField countryCodeField;
     private javax.swing.JButton createButton;
     private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
     private javax.swing.JButton createButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -217,9 +316,8 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton modifyButton;
+    private javax.swing.JTextField nameTextField2;
     private javax.swing.JTable tableInfo;
     private javax.swing.JPanel titleBrand;
     // End of variables declaration//GEN-END:variables

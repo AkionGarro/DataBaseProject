@@ -18,6 +18,7 @@ function fnListCountryBasic return sys_RefCursor;
 function fnListCountryInfoBasic return sys_RefCursor;
 function fnListCityBasic(p_nameC in varchar2) return sys_Refcursor;
 function fnListDistrictBasic(p_nameC in varchar2, p_nameCountry in varchar2) return sys_Refcursor; 
+Function fnListGenderBasic return sys_refcursor;
 
 end packagefnlist;
 
