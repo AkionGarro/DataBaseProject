@@ -1,7 +1,6 @@
 create table CLOCK
 (
 idClock number(10),
-idType number(3) CONSTRAINT CLOCK_idType_nn NOT NULL,
 idModel number(10) CONSTRAINT CLOCK_idModel_nn NOT NULL,
 idCondition number(2) CONSTRAINT CLOCK_idCondition_nn NOT NULL,
 descriptionClock varchar2(100) CONSTRAINT CLOCK_descriptionClock_nn NOT NULL,
@@ -22,9 +21,6 @@ USING INDEX
 TABLESPACE pr_ind PCTFREE 20
 STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
 --------------------------------------------Foreign Keys----------------------------------
-ALTER TABLE CLOCK
-ADD CONSTRAINT fk_CLOCK_TYPECLOCK FOREIGN KEY
-(idType) REFERENCES TYPECLOCK(idType);
 
 ALTER TABLE CLOCK
 ADD CONSTRAINT fk_CLOCK_MODEL FOREIGN KEY
@@ -42,8 +38,6 @@ is 'The table containing the information about the clock';
 COMMENT ON COLUMN CLOCK.idClock
 IS 'The id that identifies the clock';
 
-COMMENT ON COLUMN CLOCK.idType
-IS 'The id that identifies the clock type';
 
 COMMENT ON COLUMN CLOCK.idModel
 IS 'The id that identifies the clock model';
