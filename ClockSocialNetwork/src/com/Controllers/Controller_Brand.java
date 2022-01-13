@@ -2,41 +2,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Controller;
+package com.Controllers;
 
-import com.Conecction.DB_Connection;
+
+import com.Connect.DB_Connection;
+import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
-import static com.Controller.Controller_Main.connect;
+
 /**
  *
  * @author Jonathan
  */
-public class Controller_TypeClock {
-    
-    
-    public  Controller_TypeClock(){
-        if (connect==null){ //connects to the database
+public class Controller_Brand {
+    public  Controller_Brand(){
+        if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
     }
-    
-    //Returns array with information(typeClock) requested  from the database
-    public DefaultTableModel listTypeClock(){
+    //returns array with the list of conditions from database sysrefcursor
+    public DefaultTableModel listInfo(){
         try{
             DefaultTableModel table=new DefaultTableModel();
 
-            table.addColumn("ID");
 
             table.addColumn("Name");
 
-            table.addColumn("Description");
-
-            CallableStatement cstmt= connect.prepareCall("{ ? = call fnListTypeClockBasic}");
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListBrandBasic}");
 
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 
@@ -44,12 +41,10 @@ public class Controller_TypeClock {
 
             ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
             
-            String data[]= new  String[3];
+            String data[]= new  String[1];
             
             while(rs.next()){
-                data[0]=String.valueOf(rs.getInt("idType"));
-                data[1]=rs.getString("nameType");
-                data[2]=rs.getString("descriptionT");
+                data[0]=rs.getString("nameBrand");
                 table.addRow(data);
             }
             return table;
@@ -57,23 +52,23 @@ public class Controller_TypeClock {
             return null;
         }
     }
-    
-        //Function that calls function fnNewTypeClock in the database
-    public String create(String nameC, String descriptionC){
+    public String create(String nameB){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call fnNewTypeClock(?,?)}");
-            cstmt.setString(2, nameC);
-            cstmt.setString(3, descriptionC);
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
-            cstmt.execute();
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewBrand(?)}");
+            cstmt.setString(2, nameB.trim());
             
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
             System.out.println(result);
             return result;
         } catch(Exception e){
-        return "Was not created";
+        return "Wrong data, was not created";
         }
     }
+    
+    
+    
     
 }

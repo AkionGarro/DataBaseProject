@@ -2,21 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Controller;
+package com.Controllers;
 
-import com.Conecction.DB_Connection;
-import static com.Controller.Controller_Main.connect;
+import com.Connect.DB_Connection;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
-
+import static com.Controllers.Controller_Main.connect;
 /**
  *
  * @author Jonathan
  */
-public class Controller_City {
-    public Controller_City() {
+public class Controller_District {
+    public Controller_District() {
     
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
@@ -25,13 +24,13 @@ public class Controller_City {
     
     
     
-
             
-    public String create(String nameCity, String nameCountry){
+    public String create(String nameD, String nameCity, String country){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewCity(?,?)}");
-            cstmt.setString(2, nameCity);
-            cstmt.setString(3, nameCountry);
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewDistrict(?,?,?)}");
+            cstmt.setString(2, nameD);
+            cstmt.setString(3, nameCity);
+            cstmt.setString(4, country);
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             String result;

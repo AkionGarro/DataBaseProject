@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Controller;
+package com.Controllers;
 
-import com.Conecction.DB_Connection;
-import static com.Controller.Controller_Main.connect;
+import com.Connect.DB_Connection;
+import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import oracle.jdbc.OracleCallableStatement;

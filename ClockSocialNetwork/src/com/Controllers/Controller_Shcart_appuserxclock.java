@@ -2,31 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.Controller;
+package com.Controllers;
 
-import  com.Conecction.DB_Connection;
-import static com.Controller.Controller_Main.connect;
+import com.Connect.DB_Connection;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
-
+import static com.Controllers.Controller_Main.connect;
 /**
  *
  * @author Jonathan
  */
-public class Controller_Wlistuserxclock {
-
-    public Controller_Wlistuserxclock() {
+public class Controller_Shcart_appuserxclock {
+    public Controller_Shcart_appuserxclock(){
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
     }
-     
     
+        
     public String create(String idUser,int idClock){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewWlistUserxClock(?,?)}");
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewShCart_appuserxclock(?,?)}");
             cstmt.setString(2, idUser);
             cstmt.setInt(3, idClock);
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
