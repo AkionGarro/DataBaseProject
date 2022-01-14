@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
+-- Archivo creado  - viernes-enero-14-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package PACKAGEFNNEW
@@ -14,7 +14,7 @@ function  fnNewappuser(p_username in VARCHAR2,
 		 	     p_password in VARCHAR2,
 			     p_Email in VARCHAR2)return varchar2;
 
-function  fnNewBrand(p_nameB in varchar2, p_nameType in varchar2)return varchar2;
+function  fnNewBrand(p_nameB in varchar2)return varchar2;
 function   fnNewCountry(p_nameC in varchar2, p_codeCountry in varchar2)return varchar2;
 function  fnNewBuyerRating(p_idUser in varchar2, p_rating in number)return varchar2;
 function  fnNewBuySale(p_idUserS in number, p_idClock in NUMBER,
@@ -76,7 +76,7 @@ function  fnNewWlistUserxClock( p_idUser in varchar2,
                         p_idClock in NUMBER)return varchar2;
 function  fnNewGender(p_nameG in varchar2)return varchar2;
 
-function fnnewTypeClockxBrand(p_typeClock in varchar2 , p_nameBrand in varchar2) return varchar2;
+
 
 end packagefnnew;
 

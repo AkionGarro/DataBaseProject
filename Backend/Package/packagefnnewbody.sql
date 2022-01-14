@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
+-- Archivo creado  - viernes-enero-14-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package Body PACKAGEFNNEW
@@ -26,15 +26,12 @@ begin
     return val;
 end fnNewappuser;
 
-function  fnNewBrand(p_nameB in varchar2, p_nameType in varchar2)return varchar2 as
+function  fnNewBrand(p_nameB in varchar2)return varchar2 as
 val varchar2(50);
 v_nameType number(3);
 v_idBrand number(10);
 begin
-    v_nameType:=packagegetid.getidTypeClock(p_nameType);
     packagepcd.new_Brand(p_nameB);
-    v_idBrand:=packagegetid.getidBrand(p_nameB);
-    packagepcd.new_typeclockxbrand(v_nameType,v_idBrand);
     commit;
     val:='Successfully Created';
     return val;
@@ -54,28 +51,6 @@ exception
 
 end fnNewBrand;
 
-function fnnewTypeClockxBrand(p_typeClock in varchar2 , p_nameBrand in varchar2) return varchar2 as
-val varchar2(50);
-v_nameType number(3);
-v_idBrand number(10);
-begin
-    v_nameType:=packagegetid.getidTypeClock(p_typeClock);
-    v_idBrand:=packagegetid.getidBrand(p_nameBrand);
-    packagepcd.new_typeclockxbrand(v_nameType,v_idBrand);
-    commit;
-    val:='Successfully Created';
-    return val;
-exception
-    WHEN no_data_found THEN
-     return val;
-    when dup_val_on_index then
-     val:='Already exists';
-     return val;
-    when others then
-     val:='Wrong data';
-     return val;
-
-end FnnewtypeclockxBrand;
 
 
 
@@ -625,12 +600,6 @@ exception
      val:='Wrong data';
      return val;
 end fnNewGender;
-
-function fnListGenderBasic return sys_RefCursor is
-cCursor sys_refCursor;
-begin open ccUrsor for select nameGender from gender;
-return ccursor;
-end fnListGenderBasic;
 
 
 

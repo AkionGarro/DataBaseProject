@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
+-- Archivo creado  - viernes-enero-14-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package PACKAGEPCD
@@ -77,8 +77,7 @@ procedure new_USERTYPE( p_nameType in varchar2,
 procedure new_WLISTUSERXCLOCK(
                         p_idUser in NUMBER, 
                         p_idClock in NUMBER);
-procedure new_TypeClockxBrand(
-            p_idType in number, p_idBrand in number);
+
 END PACKAGEPCD;
 
 /

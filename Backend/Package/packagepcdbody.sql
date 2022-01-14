@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
+-- Archivo creado  - viernes-enero-14-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package Body PACKAGEPCD
@@ -252,13 +252,7 @@ values(p_idUser,p_idClock);
 
 END new_WLISTUSERXCLOCK;
 
-procedure new_TypeClockxBrand(
-            p_idType in number, p_idBrand in number)
-is
-BEGIN
-INSERT INTO TypeClockxBrand(idTypeclock,idBrand)
-values(p_idType,p_idBrand);
-end new_TypeClockxBrand;
+
 END PACKAGEPCD;
 
 /
