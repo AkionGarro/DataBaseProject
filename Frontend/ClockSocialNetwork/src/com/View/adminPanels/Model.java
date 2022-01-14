@@ -44,6 +44,28 @@ public class Model extends javax.swing.JPanel {
         }
     
     }
+        private void fillModel(){
+        try{
+            ArrayList<String> listC= controllerModelP.listInfoCombo(this.comboBrand.getSelectedItem().toString());
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboBrand.setModel(listF);
+            
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    
+    }
+                     private void fillType(){
+        try{
+            ArrayList<String> listC= controllerB.listInfoCombo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboBrand.setModel(listF);
+            
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,7 +82,7 @@ public class Model extends javax.swing.JPanel {
         tableInfo = new javax.swing.JTable();
         createButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        modelCombo = new javax.swing.JComboBox<>();
         comboBrand = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         createButton2 = new javax.swing.JButton();
@@ -117,8 +139,8 @@ public class Model extends javax.swing.JPanel {
         jLabel3.setText("Type:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, 40));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 300, 30));
+        modelCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(modelCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 300, 30));
 
         comboBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
@@ -139,7 +161,7 @@ public class Model extends javax.swing.JPanel {
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 110, -1));
 
         comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 90, -1));
+        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Name:");
@@ -148,7 +170,7 @@ public class Model extends javax.swing.JPanel {
         modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton1.setText("Add type to brand");
-        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 120, 30));
+        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -176,13 +198,13 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboType;
     private javax.swing.JButton createButton;
     private javax.swing.JButton createButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JComboBox<String> modelCombo;
     private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;

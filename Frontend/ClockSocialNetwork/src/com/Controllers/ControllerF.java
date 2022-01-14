@@ -101,6 +101,34 @@ public class ControllerF {
             return null;
         }
     }
+      public ArrayList<String> listInfoCombo(String param){
+        try{
+            ArrayList<String> myList=new ArrayList<String>();
+
+
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall(listComboFn);
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
+            cstmt.execute();
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            String data[]= new  String[1];
+            
+            while(rs.next()){
+                myList.add(rs.getString(listComboVariable));
+
+            }
+            return myList;
+        }catch(Exception e){
+            return null;
+        }
+    }
+   
+   
+   
    
     public DefaultTableModel listInfoTable(String n){
         try{

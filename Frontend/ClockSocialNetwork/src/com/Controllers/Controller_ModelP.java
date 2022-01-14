@@ -22,6 +22,7 @@ public class Controller_ModelP extends ControllerF{
         }
         this.createFn="{ ? = call packagefnnew.fnNewmodelp(?,?)}";
         this.listComboVariable="namemodel";
+        this.listComboFn="{ ? = call packagefnlist.fnListModelPBasic(?)}";
     
     }
 
