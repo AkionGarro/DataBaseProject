@@ -295,12 +295,14 @@ exception
 end fnNEWIDENTIFICATION;
 
 function  fnNewModelP( p_nameModel in VARCHAR2,p_idBrand in varchar2
-                        )return varchar2 as
+                        ,p_nameType in varchar2)return varchar2 as
 val varchar2(50);
 idB number(10);
+v_idType number(3);
 begin
     idB:=packagegetid.getidBrand(p_idBrand);
-    packagepcd.new_modelP(idB,p_nameModel);
+    v_idType:=packagegetid.getIdTypeClock(p_nameType);
+    packagepcd.new_modelP(idB,p_nameModel,v_idType);
     commit;
     val:='Successfully Created';
     return val;
@@ -607,6 +609,4 @@ end fnNewGender;
 
 END PACKAGEFNNEW;
 
-/
 
-  GRANT EXECUTE ON "PR"."PACKAGEFNNEW" TO "PR";

@@ -176,12 +176,12 @@ end new_IDENTIFICATION;
 procedure new_MODELP(
 
                         p_idBrand in NUMBER,
-                        p_nameModel in VARCHAR2)
+                        p_nameModel in VARCHAR2, p_idType in number)
 
 is
 BEGIN
-INSERT INTO MODELP(idModel,idBrand,nameModel)
-values(s_modelp.NEXTVAL,p_idBrand,p_nameModel);
+INSERT INTO MODELP(idModel,idBrand,nameModel,idTypeClock)
+values(s_modelp.NEXTVAL,p_idBrand,p_nameModel,p_idType);
 
 END new_MODELP;
 
@@ -254,7 +254,3 @@ END new_WLISTUSERXCLOCK;
 
 
 END PACKAGEPCD;
-
-/
-
-  GRANT EXECUTE ON "PR"."PACKAGEPCD" TO "PR";

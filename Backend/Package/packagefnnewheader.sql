@@ -42,8 +42,7 @@ function  fnNewHistory_AppuserxBuysale(p_idUser in varchar2,
 
 function FNNEWIDENTIFICATION(p_identification in VARCHAR2) RETURN VARCHAR2;
 
-function  fnNewModelP( p_nameModel in VARCHAR2,p_idBrand in varchar2
-                        )return varchar2;
+function  fnNewModelP( p_nameModel in VARCHAR2,p_idBrand in varchar2,p_nameType in varchar2)return varchar2;
 
 function  fnNewMSG_userxuser(p_idWriter in varchar2,
                                         p_idRecipient in varchar2,
@@ -80,6 +79,3 @@ function  fnNewGender(p_nameG in varchar2)return varchar2;
 
 end packagefnnew;
 
-/
-
-  GRANT EXECUTE ON "PR"."PACKAGEFNNEW" TO "PR";

@@ -59,7 +59,7 @@ procedure new_IDENTIFICATION(p_identification in VARCHAR2);
 procedure new_MODELP(
 
                         p_idBrand in NUMBER,
-                        p_nameModel in VARCHAR2);
+                        p_nameModel in VARCHAR2,p_idType in number);
 procedure new_PAYMENTMETHOD(
                         p_type in VARCHAR2);
 PROCEDURE new_PHOTOCLOCK(p_idClock in NUMBER, 
@@ -80,6 +80,3 @@ procedure new_WLISTUSERXCLOCK(
 
 END PACKAGEPCD;
 
-/
-
-  GRANT EXECUTE ON "PR"."PACKAGEPCD" TO "PR";
