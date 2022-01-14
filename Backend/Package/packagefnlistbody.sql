@@ -85,6 +85,25 @@ begin open ccUrsor for select nameCountry, codeCountry from country;
 return ccursor;
 end fnListCountryInfoBasic;
 
+function fnListGenderBasic return sys_RefCursor is
+cCursor sys_refCursor;
+begin open ccUrsor for select nameGender from gender;
+return ccursor;
+end fnListGenderBasic;
+
+function fnListShippingMethodInfoBasic return sys_refcursor is
+cCursor sys_refCursor;
+begin open ccUrsor for select namesm, company from shippingmethod;
+return ccursor;
+end fnListShippingMethodInfoBasic;
+
+function fnListShippingMethodBasic return sys_RefCursor is
+cCursor sys_refCursor;
+begin open ccUrsor for select namesm from shippingmethod;
+return ccursor;
+end fnListShippingMethodBasic;
+
+
 end packagefnlist;
 
 /

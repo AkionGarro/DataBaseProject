@@ -10,6 +10,7 @@ import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
@@ -29,12 +30,10 @@ public class Controller_Brand extends ControllerF{
         this.createFn="{ ? = call packagefnnew.fnNewBrand(?,?)}";
     }
     //returns array with the list of conditions from database sysrefcursor
-    public DefaultTableModel listInfo(){
+    public ArrayList<String> listInfo(){
         try{
-            DefaultTableModel table=new DefaultTableModel();
+            ArrayList<String> myList=new ArrayList<String>();
 
-
-            table.addColumn("Name");
 
             //calls function that returns the list
             CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListBrandBasic}");
@@ -48,10 +47,10 @@ public class Controller_Brand extends ControllerF{
             String data[]= new  String[1];
             
             while(rs.next()){
-                data[0]=rs.getString("nameBrand");
-                table.addRow(data);
+                myList.add(rs.getString("nameBrand"));
+
             }
-            return table;
+            return myList;
         }catch(Exception e){
             return null;
         }

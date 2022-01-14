@@ -50,6 +50,8 @@ public class ShippingMethod extends javax.swing.JPanel {
         createButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         nameField = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,9 +81,8 @@ public class ShippingMethod extends javax.swing.JPanel {
         add(titleBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Shipping Method:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 50, 150, 50));
+        jLabel3.setText("Company Name");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 180, 50));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,7 +97,7 @@ public class ShippingMethod extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 430));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 540, 310));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,12 +115,20 @@ public class ShippingMethod extends javax.swing.JPanel {
         add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 70, 30));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
+        nameField.setColumns(20);
         nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameFieldActionPerformed(evt);
             }
         });
-        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 270, 30));
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 250, 30));
+
+        jTextField1.setColumns(20);
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 250, 40));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setText("Shipping Method:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -147,7 +156,9 @@ public class ShippingMethod extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton modifyButton;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;

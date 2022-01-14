@@ -27,8 +27,10 @@ public class Controller_Main {
      private Controller_ModelP contModelP;
      private Controller_TypeClockxBrand contTypexBrand;
      private Controller_Gender contGender;
+     private Controller_ShippingMethod contShippingMethod;
      public static Connection connect=(Connection) new DB_Connection().obtainConnection(); 
      private static Controller_Main mainController= new Controller_Main();
+     
     
      
     public  Controller_Main(){
@@ -46,6 +48,7 @@ public class Controller_Main {
        contDistrict=new Controller_District();
        contModelP=new Controller_ModelP();
        contTypexBrand=new Controller_TypeClockxBrand();
+       contShippingMethod= new Controller_ShippingMethod();
        
        
     }
@@ -91,6 +94,10 @@ public class Controller_Main {
 
     public Controller_BuyStatus getContBuyStatus() {
         return contBuyStatus;
+    }
+
+    public Controller_ShippingMethod getContShippingMethod() {
+        return contShippingMethod;
     }
 
     public Controller_PaymentMethod getContPaymentMethod() {

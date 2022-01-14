@@ -125,7 +125,7 @@ public class Gender extends javax.swing.JPanel {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         try {
             if (!this.nameField.getText().isBlank()) {
-                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Brand");
+                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Gender");
                 fillTable();
 
             } else {

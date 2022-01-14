@@ -25,7 +25,7 @@ public class Controller_Gender extends ControllerF{
             this.listVariable="nameGender";
     }
     
-        public DefaultTableModel listInfo(String n){
+        public DefaultTableModel listInfo(){
         try{
             DefaultTableModel table=new DefaultTableModel();
 

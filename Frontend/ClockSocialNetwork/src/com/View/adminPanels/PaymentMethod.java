@@ -19,7 +19,7 @@ public class PaymentMethod extends javax.swing.JPanel {
      */
     public PaymentMethod() {
         initComponents();
-         controller = mainCont.getContPaymentMethod();
+        controller = mainCont.getContPaymentMethod();
         fillTable();
     }
         
@@ -126,7 +126,7 @@ public class PaymentMethod extends javax.swing.JPanel {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         try{
             if (!this.nameField.getText().isBlank()){
-                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Brand");
+                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Payment Method");
                 fillTable();
 
             }

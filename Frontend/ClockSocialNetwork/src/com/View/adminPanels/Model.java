@@ -4,34 +4,45 @@
  */
 package com.View.adminPanels;
 
+import com.Controllers.Controller_Brand;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_ModelP;
+import com.Controllers.Controller_TypeClockxBrand;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
  * @author garroakion
  */
 public class Model extends javax.swing.JPanel {
-
-    private Controller_Main mainCont = Controller_Main.getContMain();
-    private Controller_ModelP controller;
-
+    private  Controller_Main mainCont= Controller_Main.getContMain();
+    private Controller_Brand controllerB;
+    private Controller_TypeClockxBrand contTypeCxBrand;
+    private Controller_ModelP controllerModelP;
     /**
      * Creates new form Model
      */
     public Model() {
         initComponents();
-        controller = mainCont.getContModel();
-        fillTable();
+        controllerB=mainCont.getContBrand();
+        controllerModelP=mainCont.getContModelP();
+        contTypeCxBrand=mainCont.getContTypexBrand();
+       
     }
     
-        private void fillTable(){
+  
+        
+         private void fillBrand(){
         try{
-        this.tableInfo.setModel(controller.listInfo());
-        this.tableInfo.revalidate();
-        this.tableInfo.repaint();
+            ArrayList<String> listC= controllerB.listInfo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboBrand.setModel(listF);
+            
         }catch(Exception e){
+        System.out.println(e.toString());
         }
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,11 +61,11 @@ public class Model extends javax.swing.JPanel {
         createButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        comboBrand = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         createButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        nameField = new javax.swing.JTextField();
+        comboType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         modifyButton1 = new javax.swing.JButton();
 
@@ -74,7 +85,6 @@ public class Model extends javax.swing.JPanel {
         add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Brand:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
@@ -104,18 +114,16 @@ public class Model extends javax.swing.JPanel {
         add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Type:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, 40));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 300, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
+        comboBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Model name:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 50));
 
@@ -128,13 +136,12 @@ public class Model extends javax.swing.JPanel {
             }
         });
         add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 100, 30));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 110, -1));
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 110, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 90, -1));
+        comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Name:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 50));
 
@@ -149,24 +156,35 @@ public class Model extends javax.swing.JPanel {
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void createButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton2ActionPerformed
-        // TODO add your handling code here:
+                try{
+            if (!this.nameField.getText().isBlank()&&this.comboType.getSelectedItem().toString()!=null){
+                mainCont.createWindowMessage(controllerB.create(this.nameField.getText(),this.comboType.getSelectedItem().toString()), "Create Brand");
+            fillBrand();
+
+        }
+        else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+        }
+        }
+        catch(Exception e){
+                System.out.println(e.toString());
+        }    
     }//GEN-LAST:event_createButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboBrand;
+    private javax.swing.JComboBox<String> comboType;
     private javax.swing.JButton createButton;
     private javax.swing.JButton createButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton modifyButton1;
+    private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
     private javax.swing.JPanel titleBrand;
     // End of variables declaration//GEN-END:variables

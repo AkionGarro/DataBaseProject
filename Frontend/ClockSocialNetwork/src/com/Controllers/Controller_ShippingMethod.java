@@ -5,35 +5,51 @@
 package com.Controllers;
 
 import com.Connect.DB_Connection;
+import static com.Controllers.Controller_Main.connect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
-import static com.Controllers.Controller_Main.connect; 
+import javax.swing.table.DefaultTableModel; 
 /**
  *
  * @author Jonathan
  */
-public class Controller_ShippingMethod {
+public class Controller_ShippingMethod extends ControllerF {
     public  Controller_ShippingMethod(){
         if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+        this.createFn="{ ? = call packagefnnew.fnNewShippingMethod(?,?)}";
     }
-    
-        public String create(String nameShipping,String nameCompany){
+        public DefaultTableModel listInfo(){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewShippingMethod(?,?)}");
-            cstmt.setString(2, nameShipping);
-            cstmt.setString(2, nameCompany);
-            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            DefaultTableModel table=new DefaultTableModel();
+
+            table.addColumn("Name");
+
+            table.addColumn("Company");
+
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListShippingMethodInfoBasic}");
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
             cstmt.execute();
-            String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
-            return result;
-        } catch(Exception e){
-        return "Wrong data, was not created";
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            String data[]= new  String[2];
+            
+            while(rs.next()){
+                data[0]=rs.getString("namesm");
+                data[1]=rs.getString("company");
+                table.addRow(data);
+            }
+            return table;
+        }catch(Exception e){
+            return null;
         }
     }
+
 }
