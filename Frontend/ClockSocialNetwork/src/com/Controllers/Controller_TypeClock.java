@@ -26,6 +26,8 @@ public class Controller_TypeClock extends ControllerF {
         }
        this.deleteFn ="{ ? = call packagedeleteTuple.fnDelTypeClock(?)}";
        this.createFn="{ ? = call packagefnnew.fnNewTypeClock(?,?)}";
+       this.listComboVariable="nameType";
+       this.listComboFn="{ ? = call packagefnlist.fnListTypeClockBasic}";
     }
     
     //Returns array with information(typeClock) requested  from the database
@@ -37,7 +39,7 @@ public class Controller_TypeClock extends ControllerF {
 
             table.addColumn("Description");
 
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListTypeClockBasic}");
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListTypeClockInfoBasic}");
 
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 

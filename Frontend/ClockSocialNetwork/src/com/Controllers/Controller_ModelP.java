@@ -21,6 +21,7 @@ public class Controller_ModelP extends ControllerF{
             connect=(Connection) new DB_Connection().obtainConnection();
         }
         this.createFn="{ ? = call packagefnnew.fnNewmodelp(?,?)}";
+        this.listComboVariable="namemodel";
     
     }
 

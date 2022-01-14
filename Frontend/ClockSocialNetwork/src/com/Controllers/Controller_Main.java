@@ -28,6 +28,8 @@ public class Controller_Main {
      private Controller_TypeClockxBrand contTypexBrand;
      private Controller_Gender contGender;
      private Controller_ShippingMethod contShippingMethod;
+     private Controller_Identification contIdentification;
+     
      public static Connection connect=(Connection) new DB_Connection().obtainConnection(); 
      private static Controller_Main mainController= new Controller_Main();
      
@@ -47,8 +49,11 @@ public class Controller_Main {
        contCity=new Controller_City();
        contDistrict=new Controller_District();
        contModelP=new Controller_ModelP();
+       contGender=new Controller_Gender();
+       
        contTypexBrand=new Controller_TypeClockxBrand();
        contShippingMethod= new Controller_ShippingMethod();
+       contIdentification=new Controller_Identification();
        
        
     }
@@ -118,5 +123,7 @@ public class Controller_Main {
     public Controller_TypeClockxBrand getContTypexBrand() {
         return contTypexBrand;
     }
-    
+    public Controller_Identification getContIdentification(){
+        return contIdentification;
+    }
 }

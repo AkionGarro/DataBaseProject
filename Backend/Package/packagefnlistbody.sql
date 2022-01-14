@@ -103,6 +103,12 @@ begin open ccUrsor for select namesm from shippingmethod;
 return ccursor;
 end fnListShippingMethodBasic;
 
+function fnListIdentification return SYS_REFCURSOR is
+cCursor sys_refCursor;
+begin open ccUrsor for select typeID from identification;
+return ccursor;
+end fnListIdentification;
+
 
 end packagefnlist;
 

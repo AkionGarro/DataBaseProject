@@ -26,61 +26,9 @@ public class Controller_Country extends ControllerF {
             
         }   
         this.createFn="{ ? = call packagefnnew.fnNewCountry(?,?)}";
+        this.listComboFn="{ ? = call packagefnlist.fnListCountryInfoBasic}";
+        this.listComboVariable="nameCountry";
 }
 
     
-    /*public DefaultTableModel listInfo(){
-        try{
-            DefaultTableModel table=new DefaultTableModel();
-
-
-            table.addColumn("Name");
-
-            //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListCountryInfoBasic}");
-
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-
-            cstmt.execute();
-
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            String data[]= new  String[1];
-            
-            while(rs.next()){
-                data[0]=rs.getString("nameBrand");
-                table.addRow(data);
-            }
-            return table;
-        }catch(Exception e){
-            return null;
-        }
-    }   */
-   
-
-    public ArrayList<String> listInfo(){
-        try{
-            ArrayList <String> listDistricts=new ArrayList<String>();
-
-
-
-            //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListCountryBasic}");
-            
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-
-            cstmt.execute();
-
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            
-            
-            while(rs.next()){
-                listDistricts.add(rs.getString("nameCountry"));
-            }
-            return listDistricts;
-        }catch(Exception e){
-            return null;
-        }
-    }
 }

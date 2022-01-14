@@ -19,7 +19,7 @@ public class Controller_TypeClockxBrand extends ControllerF {
         if (connect==null){ //connects to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
-        this.createFn="{ ? = call packagefnnew.fnNewBrand(?,?)}";
+        this.createFn="{ ? = call packagefnnew.fnNewTypeClockxBrand(?,?)}";
     }
     
     

@@ -35,7 +35,7 @@ public class Model extends javax.swing.JPanel {
         
          private void fillBrand(){
         try{
-            ArrayList<String> listC= controllerB.listInfo();
+            ArrayList<String> listC= controllerB.listInfoCombo();
             DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
             this.comboBrand.setModel(listF);
             

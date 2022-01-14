@@ -59,7 +59,7 @@ public class Address extends javax.swing.JPanel {
     }
     private void fillCountry(){
         try{
-            ArrayList<String> listC= controllerCountry.listInfo();
+            ArrayList<String> listC= controllerCountry.listInfoCombo();
             DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
             this.comboCountry.setModel(listF);
             this.fillCity();

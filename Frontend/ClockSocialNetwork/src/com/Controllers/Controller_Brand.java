@@ -28,33 +28,11 @@ public class Controller_Brand extends ControllerF{
         }
         this.deleteFn="{ ? = call packagedeleteTuple.fnDelBrand(?)}";
         this.createFn="{ ? = call packagefnnew.fnNewBrand(?,?)}";
+        this.listComboFn="{ ? = call packagefnlist.fnListBrandBasic}";
+        this.listComboVariable="nameBrand";
     }
     //returns array with the list of conditions from database sysrefcursor
-    public ArrayList<String> listInfo(){
-        try{
-            ArrayList<String> myList=new ArrayList<String>();
 
-
-            //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListBrandBasic}");
-
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-
-            cstmt.execute();
-
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            String data[]= new  String[1];
-            
-            while(rs.next()){
-                myList.add(rs.getString("nameBrand"));
-
-            }
-            return myList;
-        }catch(Exception e){
-            return null;
-        }
-    }
    public DefaultTableModel listInfoFull(){
         try{
             DefaultTableModel table=new DefaultTableModel();

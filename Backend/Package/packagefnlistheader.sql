@@ -21,6 +21,7 @@ function fnListDistrictBasic(p_nameC in varchar2, p_nameCountry in varchar2) ret
 Function fnListGenderBasic return sys_refcursor;
 function fnListShippingMethodInfoBasic return sys_refcursor;
 function fnListShippingMethodBasic return sys_RefCursor;
+function fnListIdentification return SYS_REFCURSOR;
 
 end packagefnlist;
 

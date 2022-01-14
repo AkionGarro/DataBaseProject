@@ -49,8 +49,9 @@ public class PaymentMethod extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tableInfo = new javax.swing.JTable();
         createButton = new javax.swing.JButton();
-        modifyButton = new javax.swing.JButton();
+        deleteB = new javax.swing.JButton();
         nameField = new javax.swing.JTextField();
+        modifyButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -80,7 +81,6 @@ public class PaymentMethod extends javax.swing.JPanel {
         add(titleBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Payment Method: ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 50, 170, 50));
 
@@ -97,7 +97,7 @@ public class PaymentMethod extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 430));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 580, 360));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,10 +109,15 @@ public class PaymentMethod extends javax.swing.JPanel {
         });
         add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 70, 30));
 
-        modifyButton.setBackground(new java.awt.Color(0, 0, 0));
-        modifyButton.setForeground(new java.awt.Color(255, 255, 255));
-        modifyButton.setText("Modify");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 70, 30));
+        deleteB.setBackground(new java.awt.Color(0, 0, 0));
+        deleteB.setForeground(new java.awt.Color(255, 255, 255));
+        deleteB.setText("Delete");
+        deleteB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBActionPerformed(evt);
+            }
+        });
+        add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 70, 30));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +126,11 @@ public class PaymentMethod extends javax.swing.JPanel {
             }
         });
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 250, 30));
+
+        modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
+        modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
+        modifyButton1.setText("Modify");
+        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -142,14 +152,25 @@ public class PaymentMethod extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
+    private void deleteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBActionPerformed
+        int column = 0;
+        int row = this.tableInfo.getSelectedRow();
+        if (row!=-1){
+            String value = this.tableInfo.getModel().getValueAt(row, column).toString();
+            mainCont.createWindowMessage(controller.deleteT(value), "Delete");
+            fillTable();
+        }
+    }//GEN-LAST:event_deleteBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createButton;
+    private javax.swing.JButton deleteB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton modifyButton;
+    private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
     private javax.swing.JPanel titleBrand;

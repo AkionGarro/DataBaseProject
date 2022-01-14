@@ -25,7 +25,7 @@ public class Gender extends javax.swing.JPanel {
     
         private void fillTable(){
         try{
-        this.tableInfo.setModel(controller.listInfo());
+        this.tableInfo.setModel(controller.listInfoTable(""));
         this.tableInfo.revalidate();
         this.tableInfo.repaint();
         }catch(Exception e){

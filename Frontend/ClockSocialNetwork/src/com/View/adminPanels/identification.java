@@ -27,7 +27,7 @@ public class identification extends javax.swing.JPanel {
     }
             private void fillTable(){
         try{
-        this.tableInfo.setModel(controller.listInfo());
+        this.tableInfo.setModel(controller.listInfoTable(""));
         this.tableInfo.revalidate();
         this.tableInfo.repaint();
         }catch(Exception e){
@@ -82,9 +82,8 @@ public class identification extends javax.swing.JPanel {
         add(titleBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Identification Name:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 50, 170, 50));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 50, 200, 50));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -122,7 +121,7 @@ public class identification extends javax.swing.JPanel {
                 nameFieldActionPerformed(evt);
             }
         });
-        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 250, 30));
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 230, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed

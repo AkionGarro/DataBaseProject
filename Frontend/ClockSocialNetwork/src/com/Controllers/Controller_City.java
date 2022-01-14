@@ -25,6 +25,8 @@ public class Controller_City extends  ControllerF{
             connect=(Connection) new DB_Connection().obtainConnection();
         }
             this.createFn="{ ? = call packagefnnew.fnNewCity(?,?)}";
+            this.listComboVariable="nameCity";
+           
 }
     
     
