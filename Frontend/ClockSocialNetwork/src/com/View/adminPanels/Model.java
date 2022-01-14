@@ -8,7 +8,7 @@ import com.Controllers.Controller_Brand;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_ModelP;
 import com.Controllers.Controller_TypeClock;
-import com.Controllers.Controller_TypeClockxBrand;
+
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 
@@ -19,7 +19,7 @@ import javax.swing.DefaultComboBoxModel;
 public class Model extends javax.swing.JPanel {
     private  Controller_Main mainCont= Controller_Main.getContMain();
     private Controller_Brand controllerB;
-    private Controller_TypeClockxBrand contTypeCxBrand;
+
     private Controller_ModelP controllerModelP;
     private Controller_TypeClock controllerType;
     /**
@@ -29,7 +29,7 @@ public class Model extends javax.swing.JPanel {
         initComponents();
         controllerB=mainCont.getContBrand();
         controllerModelP=mainCont.getContModelP();
-        contTypeCxBrand=mainCont.getContTypexBrand();
+
         controllerType=mainCont.getContTypeClock();
         fillType();
         fillBrand();
@@ -97,7 +97,6 @@ public class Model extends javax.swing.JPanel {
         nameField = new javax.swing.JTextField();
         comboType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        modifyButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,11 +178,6 @@ public class Model extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Name:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 50));
-
-        modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
-        modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
-        modifyButton1.setText("Add type to brand");
-        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -205,8 +199,8 @@ public class Model extends javax.swing.JPanel {
 
     private void createButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton2ActionPerformed
                 try{
-            if (!this.nameField.getText().isBlank()&&this.comboType.getSelectedItem().toString()!=null){
-                mainCont.createWindowMessage(controllerB.create(this.nameField.getText(),this.comboType.getSelectedItem().toString()), "Create Brand");
+            if (!this.nameField.getText().isBlank()){
+                mainCont.createWindowMessage(controllerB.create(this.nameField.getText()), "Create Brand");
             fillBrand();
             fillModel();
         
@@ -238,7 +232,6 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
     private javax.swing.JPanel titleBrand;

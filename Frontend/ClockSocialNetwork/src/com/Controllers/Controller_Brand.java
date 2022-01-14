@@ -27,7 +27,7 @@ public class Controller_Brand extends ControllerF{
             connect=(Connection) new DB_Connection().obtainConnection();
         }
         this.deleteFn="{ ? = call packagedeleteTuple.fnDelBrand(?)}";
-        this.createFn="{ ? = call packagefnnew.fnNewBrand(?,?)}";
+        this.createFn="{ ? = call packagefnnew.fnNewBrand(?)}";
         this.listComboFn="{ ? = call packagefnlist.fnListBrandBasic}";
         this.listComboVariable="nameBrand";
     }

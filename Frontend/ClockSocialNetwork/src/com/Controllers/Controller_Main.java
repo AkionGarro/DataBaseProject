@@ -25,7 +25,7 @@ public class Controller_Main {
      private Controller_City contCity;
      private Controller_District contDistrict;
      private Controller_ModelP contModelP;
-     private Controller_TypeClockxBrand contTypexBrand;
+    
      private Controller_Gender contGender;
      private Controller_ShippingMethod contShippingMethod;
      private Controller_Identification contIdentification;
@@ -51,7 +51,7 @@ public class Controller_Main {
        contModelP=new Controller_ModelP();
        contGender=new Controller_Gender();
        
-       contTypexBrand=new Controller_TypeClockxBrand();
+      
        contShippingMethod= new Controller_ShippingMethod();
        contIdentification=new Controller_Identification();
        
@@ -120,9 +120,7 @@ public class Controller_Main {
         
     }
 
-    public Controller_TypeClockxBrand getContTypexBrand() {
-        return contTypexBrand;
-    }
+
     public Controller_Identification getContIdentification(){
         return contIdentification;
     }
