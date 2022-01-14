@@ -71,7 +71,7 @@ public class ControllerF {
             System.out.println(result);
             return result;
         } catch(Exception e){
-        return "Wrong data, was not created";
+        return e.toString();//"Wrong data, was not created";
         }
     }
     
@@ -83,7 +83,7 @@ public class ControllerF {
 
             //calls function that returns the list
             CallableStatement cstmt= connect.prepareCall(listComboFn);
-
+            
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 
             cstmt.execute();
@@ -104,11 +104,11 @@ public class ControllerF {
       public ArrayList<String> listInfoCombo(String param){
         try{
             ArrayList<String> myList=new ArrayList<String>();
-
+                
 
             //calls function that returns the list
             CallableStatement cstmt= connect.prepareCall(listComboFn);
-
+            cstmt.setString(2, param.trim());
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 
             cstmt.execute();
@@ -121,6 +121,7 @@ public class ControllerF {
                 myList.add(rs.getString(listComboVariable));
 
             }
+            
             return myList;
         }catch(Exception e){
             return null;

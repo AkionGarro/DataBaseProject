@@ -20,10 +20,11 @@ public class Controller_Identification extends ControllerF {
     public Controller_Identification(){
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
+
+        }
             this.createFn="{ ? = call packagefnnew.fnNewIdentification(?)}";
             this.listComboFn="{ ? = call packagefnlist.fnListIdentification}";
             this.listComboVariable="typeid";
-        }
     }
     
 

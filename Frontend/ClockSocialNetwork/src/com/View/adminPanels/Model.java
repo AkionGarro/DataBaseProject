@@ -7,6 +7,7 @@ package com.View.adminPanels;
 import com.Controllers.Controller_Brand;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_ModelP;
+import com.Controllers.Controller_TypeClock;
 import com.Controllers.Controller_TypeClockxBrand;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
@@ -20,6 +21,7 @@ public class Model extends javax.swing.JPanel {
     private Controller_Brand controllerB;
     private Controller_TypeClockxBrand contTypeCxBrand;
     private Controller_ModelP controllerModelP;
+    private Controller_TypeClock controllerType;
     /**
      * Creates new form Model
      */
@@ -28,6 +30,11 @@ public class Model extends javax.swing.JPanel {
         controllerB=mainCont.getContBrand();
         controllerModelP=mainCont.getContModelP();
         contTypeCxBrand=mainCont.getContTypexBrand();
+        controllerType=mainCont.getContTypeClock();
+        fillType();
+        fillBrand();
+        fillModel();
+        
        
     }
     
@@ -46,20 +53,21 @@ public class Model extends javax.swing.JPanel {
     }
         private void fillModel(){
         try{
+           
             ArrayList<String> listC= controllerModelP.listInfoCombo(this.comboBrand.getSelectedItem().toString());
             DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
-            this.comboBrand.setModel(listF);
+            this.comboModel.setModel(listF);
             
         }catch(Exception e){
         System.out.println(e.toString());
         }
     
     }
-                     private void fillType(){
+     private void fillType(){
         try{
-            ArrayList<String> listC= controllerB.listInfoCombo();
+            ArrayList<String> listC= controllerType.listInfoCombo();
             DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
-            this.comboBrand.setModel(listF);
+            this.comboType.setModel(listF);
             
         }catch(Exception e){
         System.out.println(e.toString());
@@ -82,7 +90,7 @@ public class Model extends javax.swing.JPanel {
         tableInfo = new javax.swing.JTable();
         createButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        modelCombo = new javax.swing.JComboBox<>();
+        comboModel = new javax.swing.JComboBox<>();
         comboBrand = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         createButton2 = new javax.swing.JButton();
@@ -139,10 +147,15 @@ public class Model extends javax.swing.JPanel {
         jLabel3.setText("Type:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, 40));
 
-        modelCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(modelCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 300, 30));
+        comboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 300, 30));
 
         comboBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBrand.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBrandItemStateChanged(evt);
+            }
+        });
         add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -161,7 +174,7 @@ public class Model extends javax.swing.JPanel {
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 110, -1));
 
         comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 90, -1));
+        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Name:");
@@ -174,7 +187,20 @@ public class Model extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-     
+                     try{
+            if (!this.nameField.getText().isBlank()&&this.comboBrand.getSelectedItem().toString()!=null){
+                mainCont.createWindowMessage(controllerModelP.create(this.nameField.getText(),this.comboBrand.getSelectedItem().toString()), "Create Model");
+            fillBrand();
+            fillModel();
+        
+
+        }
+        else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+        }
+        }
+        catch(Exception e){
+                System.out.println(e.toString());
+        }    
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void createButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton2ActionPerformed
@@ -182,6 +208,8 @@ public class Model extends javax.swing.JPanel {
             if (!this.nameField.getText().isBlank()&&this.comboType.getSelectedItem().toString()!=null){
                 mainCont.createWindowMessage(controllerB.create(this.nameField.getText(),this.comboType.getSelectedItem().toString()), "Create Brand");
             fillBrand();
+            fillModel();
+        
 
         }
         else {mainCont.createWindowMessage("Missing data", "Blank Fields");
@@ -192,9 +220,15 @@ public class Model extends javax.swing.JPanel {
         }    
     }//GEN-LAST:event_createButton2ActionPerformed
 
+    private void comboBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBrandItemStateChanged
+        
+       fillModel();
+    }//GEN-LAST:event_comboBrandItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBrand;
+    private javax.swing.JComboBox<String> comboModel;
     private javax.swing.JComboBox<String> comboType;
     private javax.swing.JButton createButton;
     private javax.swing.JButton createButton2;
@@ -204,7 +238,6 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JComboBox<String> modelCombo;
     private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;

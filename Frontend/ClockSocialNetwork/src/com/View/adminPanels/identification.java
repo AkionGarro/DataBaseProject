@@ -49,80 +49,85 @@ public class identification extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableInfo = new javax.swing.JTable();
-        createButton = new javax.swing.JButton();
-        modifyButton = new javax.swing.JButton();
-        nameField = new javax.swing.JTextField();
+        tableInfo = new javax.swing.JTable(){
+            private static final long serialVersionUID = 1L;
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            };};
+            createButton = new javax.swing.JButton();
+            modifyButton = new javax.swing.JButton();
+            nameField = new javax.swing.JTextField();
 
-        titleBrand.setBackground(new java.awt.Color(0, 0, 102));
-        titleBrand.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            setBackground(new java.awt.Color(255, 255, 255));
+            setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("New Identification Type");
-        jLabel1.setToolTipText("");
-        titleBrand.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
+            titleBrand.setBackground(new java.awt.Color(0, 0, 102));
+            titleBrand.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
+            jLabel1.setBackground(new java.awt.Color(0, 0, 102));
+            jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel1.setText("New Identification Type");
+            jLabel1.setToolTipText("");
+            titleBrand.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
-        titleBrand1.setBackground(new java.awt.Color(0, 0, 102));
-        titleBrand1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("New Brand");
-        jLabel2.setToolTipText("");
-        titleBrand1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
+            titleBrand1.setBackground(new java.awt.Color(0, 0, 102));
+            titleBrand1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        add(titleBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
+            jLabel2.setBackground(new java.awt.Color(0, 0, 102));
+            jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel2.setText("New Brand");
+            jLabel2.setToolTipText("");
+            titleBrand1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setText("Identification Name:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 50, 200, 50));
+            add(titleBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
-        tableInfo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(tableInfo);
+            jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel3.setText("Identification Name:");
+            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 50, 200, 50));
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 430));
+            tableInfo.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Title 1", "Title 2", "Title 3", "Title 4"
+                }
+            ));
+            jScrollPane2.setViewportView(tableInfo);
 
-        createButton.setBackground(new java.awt.Color(0, 0, 0));
-        createButton.setForeground(new java.awt.Color(255, 255, 255));
-        createButton.setText("Create");
-        createButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButtonActionPerformed(evt);
-            }
-        });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 70, 30));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 430));
 
-        modifyButton.setBackground(new java.awt.Color(0, 0, 0));
-        modifyButton.setForeground(new java.awt.Color(255, 255, 255));
-        modifyButton.setText("Modify");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 70, 30));
+            createButton.setBackground(new java.awt.Color(0, 0, 0));
+            createButton.setForeground(new java.awt.Color(255, 255, 255));
+            createButton.setText("Create");
+            createButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    createButtonActionPerformed(evt);
+                }
+            });
+            add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 70, 30));
 
-        nameField.setDocument(new limitText.JTextFieldLimit(20));
-        nameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameFieldActionPerformed(evt);
-            }
-        });
-        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 230, 30));
-    }// </editor-fold>//GEN-END:initComponents
+            modifyButton.setBackground(new java.awt.Color(0, 0, 0));
+            modifyButton.setForeground(new java.awt.Color(255, 255, 255));
+            modifyButton.setText("Modify");
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 60, 70, 30));
+
+            nameField.setDocument(new limitText.JTextFieldLimit(20));
+            nameField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    nameFieldActionPerformed(evt);
+                }
+            });
+            add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 230, 30));
+        }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         try {
