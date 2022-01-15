@@ -847,8 +847,8 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonMouseClicked
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-        loginPanel.setBackground(new Color(0, 0, 102));
-        logoPanel.setBackground(new Color(0, 0, 102));
+        loginPanel.setBackground(new Color(62,114,179));
+        logoPanel.setBackground(new Color(62,114,179));
 
         loginSection.setLocation(0, 0);
         content.removeAll();
@@ -887,8 +887,8 @@ public class login extends javax.swing.JFrame {
 
     private void registerButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseClicked
 
-        loginPanel.setBackground(new Color(0, 0, 102));
-        logoPanel.setBackground(new Color(0, 0, 102));
+        loginPanel.setBackground(new Color(62,114,179));
+        logoPanel.setBackground(new Color(62,114,179));
 
         loginSection.setLocation(0, 0);
         content.removeAll();

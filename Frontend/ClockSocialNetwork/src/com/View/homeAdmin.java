@@ -462,13 +462,13 @@ public class homeAdmin extends javax.swing.JPanel {
             .addGap(0, 700, Short.MAX_VALUE)
         );
 
-        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
+        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, -1));
 
-        menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        menuBar.setBackground(new java.awt.Color(62, 114, 179));
         menuBar.setPreferredSize(new java.awt.Dimension(730, 40));
         menuBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exitPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        exitPanel2.setBackground(new java.awt.Color(62, 114, 179));
 
         exitButton2.setBackground(new java.awt.Color(0, 0, 0));
         exitButton2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -516,7 +516,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_exitButton2MouseEntered
 
     private void exitButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton2MouseExited
-        exitPanel2.setBackground(Color.white);
+        exitPanel2.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_exitButton2MouseExited
 
     private void option7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseEntered

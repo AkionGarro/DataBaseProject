@@ -29,13 +29,14 @@ public class principal extends javax.swing.JPanel {
         clockScrollPane = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(204, 255, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clockScrollPane.setBackground(new java.awt.Color(153, 204, 0));
+        clockScrollPane.setBackground(new java.awt.Color(255, 255, 255));
+        clockScrollPane.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTable1.setBackground(new java.awt.Color(51, 0, 255));
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -49,7 +50,7 @@ public class principal extends javax.swing.JPanel {
         ));
         clockScrollPane.setViewportView(jTable1);
 
-        add(clockScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 530));
+        add(clockScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 700));
     }// </editor-fold>//GEN-END:initComponents
 
 

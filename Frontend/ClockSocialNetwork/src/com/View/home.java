@@ -75,7 +75,7 @@ public class home extends javax.swing.JPanel {
         menuLabel.setForeground(new java.awt.Color(255, 255, 255));
         menuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menuLabel.setText("Menu");
-        menu.add(menuLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
+        menu.add(menuLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
 
         option1.setBackground(new java.awt.Color(62, 114, 179));
         option1.setBorder(null);
@@ -270,7 +270,7 @@ public class home extends javax.swing.JPanel {
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        menu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 270, 10));
+        menu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 38, 270, -1));
 
         add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -292,14 +292,14 @@ public class home extends javax.swing.JPanel {
 
         add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
-        menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        menuBar.setBackground(new java.awt.Color(62, 114, 179));
         menuBar.setMinimumSize(new java.awt.Dimension(730, 40));
         menuBar.setPreferredSize(new java.awt.Dimension(730, 40));
         menuBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        exitPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        exitPanel2.setBackground(new java.awt.Color(62, 114, 179));
 
-        exitButton2.setBackground(new java.awt.Color(0, 0, 0));
+        exitButton2.setBackground(new java.awt.Color(62, 114, 179));
         exitButton2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         exitButton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exitButton2.setText("X");
@@ -333,7 +333,7 @@ public class home extends javax.swing.JPanel {
 
         menuBar.add(exitPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 30, 40));
 
-        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
+        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton2MouseClicked
@@ -345,7 +345,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_exitButton2MouseEntered
 
     private void exitButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton2MouseExited
-        exitPanel2.setBackground(Color.white);
+        exitPanel2.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_exitButton2MouseExited
 
     private void option1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseEntered
