@@ -95,8 +95,6 @@ public class Address extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleBrand = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         comboCountry = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -118,23 +116,12 @@ public class Address extends javax.swing.JPanel {
         modifyButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(730, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        titleBrand.setBackground(new java.awt.Color(0, 0, 102));
-        titleBrand.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("New District");
-        jLabel1.setToolTipText("");
-        titleBrand.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
-        add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel2.setText("City:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
 
         comboCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboCountry.addItemListener(new java.awt.event.ItemListener() {
@@ -142,11 +129,11 @@ public class Address extends javax.swing.JPanel {
                 comboCountryItemStateChanged(evt);
             }
         });
-        add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
+        add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel3.setText("Cod:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, 30));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,7 +143,7 @@ public class Address extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 120, 30));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 120, 30));
 
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -166,7 +153,7 @@ public class Address extends javax.swing.JPanel {
                 modifyButtonActionPerformed(evt);
             }
         });
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 130, 30));
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 130, 30));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -181,14 +168,14 @@ public class Address extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 630, 250));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 730, 460));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("Country:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
         comboDistrict.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 300, 30));
+        add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 300, 30));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Country:");
@@ -200,15 +187,15 @@ public class Address extends javax.swing.JPanel {
                 comboCityFItemStateChanged(evt);
             }
         });
-        add(comboCityF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 300, 30));
+        add(comboCityF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 300, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setText("District Name:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel7.setText("Agregar:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 30));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
 
         createButton1.setBackground(new java.awt.Color(0, 0, 0));
         createButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -218,7 +205,7 @@ public class Address extends javax.swing.JPanel {
                 createButton1ActionPerformed(evt);
             }
         });
-        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 70, 30));
+        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 70, 30));
 
         createButton2.setBackground(new java.awt.Color(0, 0, 0));
         createButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -228,7 +215,7 @@ public class Address extends javax.swing.JPanel {
                 createButton2ActionPerformed(evt);
             }
         });
-        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 120, 30));
+        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 120, 30));
 
         createButton3.setBackground(new java.awt.Color(0, 0, 0));
         createButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -238,20 +225,20 @@ public class Address extends javax.swing.JPanel {
                 createButton3ActionPerformed(evt);
             }
         });
-        add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 240, 120, 30));
+        add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 120, 30));
 
         nameTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameTextField2ActionPerformed(evt);
             }
         });
-        add(nameTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 110, -1));
-        add(countryCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 120, -1));
+        add(nameTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 110, -1));
+        add(countryCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 120, -1));
 
         modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton1.setText("Modify");
-        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 70, 30));
+        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -350,7 +337,6 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
     private javax.swing.JButton createButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -362,6 +348,5 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameTextField2;
     private javax.swing.JTable tableInfo;
-    private javax.swing.JPanel titleBrand;
     // End of variables declaration//GEN-END:variables
 }

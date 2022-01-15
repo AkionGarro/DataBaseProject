@@ -42,7 +42,7 @@ public class insertarRelojes extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(630, 530));
+        setPreferredSize(new java.awt.Dimension(730, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N

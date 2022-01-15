@@ -37,8 +37,6 @@ public class Condition extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleBrand = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         buttonAddC = new javax.swing.JButton();
         nameConditionField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -52,18 +50,6 @@ public class Condition extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titleBrand.setBackground(new java.awt.Color(0, 0, 102));
-        titleBrand.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("New Condition");
-        jLabel1.setToolTipText("");
-        titleBrand.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
-        add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
         buttonAddC.setBackground(new java.awt.Color(0, 0, 0));
         buttonAddC.setForeground(new java.awt.Color(255, 255, 255));
         buttonAddC.setText("Add");
@@ -72,10 +58,10 @@ public class Condition extends javax.swing.JPanel {
                 buttonAddCActionPerformed(evt);
             }
         });
-        add(buttonAddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 70, -1));
+        add(buttonAddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 70, -1));
 
         nameConditionField.setDocument(new limitText.JTextFieldLimit(20));
-        add(nameConditionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 237, -1));
+        add(nameConditionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 237, -1));
 
         descriptionField.setColumns(20);
         descriptionField.setRows(5);
@@ -83,7 +69,7 @@ public class Condition extends javax.swing.JPanel {
         descriptionField.setLineWrap(true);
         jScrollPane1.setViewportView(descriptionField);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 237, 80));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 237, 80));
 
         buttonModifyC.setBackground(new java.awt.Color(0, 0, 0));
         buttonModifyC.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,7 +79,7 @@ public class Condition extends javax.swing.JPanel {
                 buttonModifyCActionPerformed(evt);
             }
         });
-        add(buttonModifyC, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 70, 30));
+        add(buttonModifyC, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 70, 30));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,17 +94,17 @@ public class Condition extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 630, 300));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 550));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Description:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 40));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 40));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Condition's Name:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 30));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAddCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddCActionPerformed
@@ -153,13 +139,11 @@ public class Condition extends javax.swing.JPanel {
     private javax.swing.JButton buttonAddC;
     private javax.swing.JButton buttonModifyC;
     private javax.swing.JTextArea descriptionField;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nameConditionField;
     private javax.swing.JTable tableInfo;
-    private javax.swing.JPanel titleBrand;
     // End of variables declaration//GEN-END:variables
 }

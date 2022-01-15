@@ -87,7 +87,8 @@ public class homeAdmin extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menu.setBackground(new java.awt.Color(0, 0, 102));
+        menu.setBackground(new java.awt.Color(62, 114, 179));
+        menu.setPreferredSize(new java.awt.Dimension(270, 700));
         menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menuLabel.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -103,7 +104,7 @@ public class homeAdmin extends javax.swing.JPanel {
         userCategoryPanel.setBackground(new java.awt.Color(0, 0, 102));
         userCategoryPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        option1.setBackground(new java.awt.Color(0, 0, 102));
+        option1.setBackground(new java.awt.Color(62, 114, 179));
         option1.setBorder(null);
         option1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,7 +129,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         userCategoryPanel.add(option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
 
-        genderPanel.setBackground(new java.awt.Color(0, 0, 102));
+        genderPanel.setBackground(new java.awt.Color(62, 114, 179));
         genderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 genderPanelMouseClicked(evt);
@@ -149,7 +150,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         userCategoryPanel.add(genderPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 270, 20));
 
-        identificationPanel.setBackground(new java.awt.Color(0, 0, 102));
+        identificationPanel.setBackground(new java.awt.Color(62, 114, 179));
         identificationPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 identificationPanelMouseClicked(evt);
@@ -170,7 +171,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         userCategoryPanel.add(identificationPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 270, 20));
 
-        userTypePanel.setBackground(new java.awt.Color(0, 0, 102));
+        userTypePanel.setBackground(new java.awt.Color(62, 114, 179));
         userTypePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userTypePanelMouseClicked(evt);
@@ -193,10 +194,10 @@ public class homeAdmin extends javax.swing.JPanel {
 
         menu.add(userCategoryPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 270, 100));
 
-        clockCategoryPanel.setBackground(new java.awt.Color(0, 0, 102));
+        clockCategoryPanel.setBackground(new java.awt.Color(62, 114, 179));
         clockCategoryPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        option7.setBackground(new java.awt.Color(0, 0, 102));
+        option7.setBackground(new java.awt.Color(62, 114, 179));
         option7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 option7MouseClicked(evt);
@@ -220,7 +221,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         clockCategoryPanel.add(option7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
 
-        clockTypePanel.setBackground(new java.awt.Color(0, 0, 102));
+        clockTypePanel.setBackground(new java.awt.Color(62, 114, 179));
         clockTypePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 clockTypePanelMouseClicked(evt);
@@ -246,7 +247,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         clockCategoryPanel.add(clockTypePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 270, 20));
 
-        modelPanel.setBackground(new java.awt.Color(0, 0, 102));
+        modelPanel.setBackground(new java.awt.Color(62, 114, 179));
         modelPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 modelPanelMouseClicked(evt);
@@ -272,7 +273,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         clockCategoryPanel.add(modelPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 270, 20));
 
-        conditionPanel.setBackground(new java.awt.Color(0, 0, 102));
+        conditionPanel.setBackground(new java.awt.Color(62, 114, 179));
         conditionPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 conditionPanelMouseClicked(evt);
@@ -303,7 +304,7 @@ public class homeAdmin extends javax.swing.JPanel {
         buysellCategory.setBackground(new java.awt.Color(0, 0, 102));
         buysellCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        option2.setBackground(new java.awt.Color(0, 0, 102));
+        option2.setBackground(new java.awt.Color(62, 114, 179));
         option2.setBorder(null);
         option2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -328,7 +329,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         buysellCategory.add(option2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
 
-        statusPanel.setBackground(new java.awt.Color(0, 0, 102));
+        statusPanel.setBackground(new java.awt.Color(62, 114, 179));
         statusPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 statusPanelMouseClicked(evt);
@@ -349,7 +350,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         buysellCategory.add(statusPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 270, 20));
 
-        paymentPanel.setBackground(new java.awt.Color(0, 0, 102));
+        paymentPanel.setBackground(new java.awt.Color(62, 114, 179));
         paymentPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 paymentPanelMouseClicked(evt);
@@ -370,7 +371,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         buysellCategory.add(paymentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 270, 20));
 
-        shippingPanel.setBackground(new java.awt.Color(0, 0, 102));
+        shippingPanel.setBackground(new java.awt.Color(62, 114, 179));
         shippingPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 shippingPanelMouseClicked(evt);
@@ -393,10 +394,10 @@ public class homeAdmin extends javax.swing.JPanel {
 
         menu.add(buysellCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 270, 100));
 
-        addressCategory.setBackground(new java.awt.Color(0, 0, 102));
+        addressCategory.setBackground(new java.awt.Color(62, 114, 179));
         addressCategory.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        option3.setBackground(new java.awt.Color(0, 0, 102));
+        option3.setBackground(new java.awt.Color(62, 114, 179));
         option3.setBorder(null);
         option3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -421,7 +422,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
         addressCategory.add(option3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
 
-        districtPanel.setBackground(new java.awt.Color(0, 0, 102));
+        districtPanel.setBackground(new java.awt.Color(62, 114, 179));
         districtPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 districtPanelMouseClicked(evt);
@@ -444,25 +445,27 @@ public class homeAdmin extends javax.swing.JPanel {
 
         menu.add(addressCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 270, 130));
 
-        add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 570));
+        add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         homeContent.setBackground(new java.awt.Color(255, 255, 255));
         homeContent.setForeground(new java.awt.Color(255, 255, 255));
+        homeContent.setPreferredSize(new java.awt.Dimension(730, 700));
 
         javax.swing.GroupLayout homeContentLayout = new javax.swing.GroupLayout(homeContent);
         homeContent.setLayout(homeContentLayout);
         homeContentLayout.setHorizontalGroup(
             homeContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 730, Short.MAX_VALUE)
         );
         homeContentLayout.setVerticalGroup(
             homeContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
-        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 630, 530));
+        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
         menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        menuBar.setPreferredSize(new java.awt.Dimension(730, 40));
         menuBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         exitPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -499,9 +502,9 @@ public class homeAdmin extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        menuBar.add(exitPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 30, 40));
+        menuBar.add(exitPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 30, 40));
 
-        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 630, 40));
+        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton2MouseClicked
@@ -566,7 +569,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void genderPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_genderPanelMouseClicked
         Gender p1 = new Gender();
-        p1.setSize(630, 530);
+        p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -576,7 +579,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void identificationPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_identificationPanelMouseClicked
         identification p1 = new identification();
-        p1.setSize(630, 530);
+       p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -586,7 +589,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void userTypePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTypePanelMouseClicked
         UserType p1 = new UserType();
-        p1.setSize(630, 530);
+      p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -608,7 +611,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void clockTypePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clockTypePanelMouseClicked
         ClockType p1 = new ClockType();
-        p1.setSize(630, 530);
+      p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -618,7 +621,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void modelPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelPanelMouseClicked
         Model p1 = new Model();
-        p1.setSize(630, 530);
+       p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -628,7 +631,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void conditionPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conditionPanelMouseClicked
         Condition p1 = new Condition();
-        p1.setSize(630, 530);
+      p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -638,7 +641,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void statusPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statusPanelMouseClicked
         Status p1 = new Status();
-        p1.setSize(630, 530);
+      p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -648,7 +651,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void paymentPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentPanelMouseClicked
         PaymentMethod p1 = new PaymentMethod();
-        p1.setSize(630, 530);
+       p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -658,7 +661,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void shippingPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shippingPanelMouseClicked
         ShippingMethod p1 = new ShippingMethod();
-        p1.setSize(630, 530);
+       p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -668,7 +671,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void districtPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtPanelMouseClicked
         Address p1 = new Address();
-        p1.setSize(630, 530);
+        p1.setSize(730, 700);
         p1.setLocation(0, 0);
         homeContent.removeAll();
         homeContent.add(p1, BorderLayout.CENTER);
@@ -681,7 +684,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_genderPanelMouseEntered
 
     private void genderPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_genderPanelMouseExited
-        genderPanel.setBackground(new Color(0, 0, 102));
+        genderPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_genderPanelMouseExited
 
     private void identificationPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_identificationPanelMouseEntered
@@ -689,7 +692,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_identificationPanelMouseEntered
 
     private void identificationPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_identificationPanelMouseExited
-        identificationPanel.setBackground(new Color(0, 0, 102));
+        identificationPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_identificationPanelMouseExited
 
     private void userTypePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTypePanelMouseEntered
@@ -698,7 +701,7 @@ public class homeAdmin extends javax.swing.JPanel {
 
     private void userTypePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTypePanelMouseExited
 
-        userTypePanel.setBackground(new Color(0, 0, 102));
+        userTypePanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_userTypePanelMouseExited
 
     private void statusPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statusPanelMouseEntered
@@ -706,7 +709,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_statusPanelMouseEntered
 
     private void statusPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statusPanelMouseExited
-        statusPanel.setBackground(new Color(0, 0, 102));
+        statusPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_statusPanelMouseExited
 
     private void paymentPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentPanelMouseEntered
@@ -714,7 +717,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_paymentPanelMouseEntered
 
     private void paymentPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paymentPanelMouseExited
-        paymentPanel.setBackground(new Color(0, 0, 102));
+        paymentPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_paymentPanelMouseExited
 
     private void shippingPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shippingPanelMouseEntered
@@ -722,7 +725,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_shippingPanelMouseEntered
 
     private void shippingPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shippingPanelMouseExited
-        shippingPanel.setBackground(new Color(0, 0, 102));
+        shippingPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_shippingPanelMouseExited
 
     private void districtPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtPanelMouseEntered
@@ -730,7 +733,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_districtPanelMouseEntered
 
     private void districtPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtPanelMouseExited
-        districtPanel.setBackground(new Color(0, 0, 102));
+        districtPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_districtPanelMouseExited
 
     private void clockTypePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clockTypePanelMouseEntered
@@ -738,7 +741,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_clockTypePanelMouseEntered
 
     private void clockTypePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clockTypePanelMouseExited
-        clockTypePanel.setBackground(new Color(0, 0, 102));
+        clockTypePanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_clockTypePanelMouseExited
 
     private void modelPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelPanelMouseEntered
@@ -746,7 +749,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_modelPanelMouseEntered
 
     private void modelPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modelPanelMouseExited
-        modelPanel.setBackground(new Color(0, 0, 102));
+        modelPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_modelPanelMouseExited
 
     private void conditionPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conditionPanelMouseEntered
@@ -754,7 +757,7 @@ public class homeAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_conditionPanelMouseEntered
 
     private void conditionPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conditionPanelMouseExited
-        conditionPanel.setBackground(new Color(0, 0, 102));
+        conditionPanel.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_conditionPanelMouseExited
 
 

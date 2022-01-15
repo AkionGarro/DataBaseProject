@@ -18,11 +18,12 @@ import javax.swing.JPanel;
 public class login extends javax.swing.JFrame {
 
     private int xMousePosition, yMousePosition;
-    private  Controller_Main mainCont= Controller_Main.getContMain();
-    private  Controller_Country controllerCountry;
-    private  Controller_City controllerCity;
-    private  Controller_District controllerDistrict;
+    private Controller_Main mainCont = Controller_Main.getContMain();
+    private Controller_Country controllerCountry;
+    private Controller_City controllerCity;
+    private Controller_District controllerDistrict;
     private Controller_Identification controllerIdentification;
+
     public login() {
         initComponents();
 
@@ -40,10 +41,10 @@ public class login extends javax.swing.JFrame {
 
         registerSection.setVisible(false);
         registerSection.setEnabled(false);
-        controllerCountry=mainCont.getContCountry();
-        controllerCity=mainCont.getContCity();
-        controllerDistrict=mainCont.getContDistrict();
-        controllerIdentification=mainCont.getContIdentification();
+        controllerCountry = mainCont.getContCountry();
+        controllerCity = mainCont.getContCity();
+        controllerDistrict = mainCont.getContDistrict();
+        controllerIdentification = mainCont.getContIdentification();
         this.fillCountry();
         this.fillComboCitizen();
         this.fillComboCodeCountry();
@@ -113,7 +114,6 @@ public class login extends javax.swing.JFrame {
         identificationField = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
         nombreLabel6 = new javax.swing.JLabel();
-        usernameTextField6 = new javax.swing.JTextField();
         comboIdentification = new javax.swing.JComboBox<>();
         jSeparator16 = new javax.swing.JSeparator();
         nombreLabel9 = new javax.swing.JLabel();
@@ -121,13 +121,16 @@ public class login extends javax.swing.JFrame {
         jSeparator17 = new javax.swing.JSeparator();
         PhoneNumber = new javax.swing.JLabel();
         comboCodeCountry = new javax.swing.JComboBox<>();
+        nombreLabel5 = new javax.swing.JLabel();
         homePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1000, 700));
         setResizable(false);
-        setSize(new java.awt.Dimension(1280, 600));
+        setSize(new java.awt.Dimension(1000, 700));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 formMouseDragged(evt);
@@ -140,13 +143,16 @@ public class login extends javax.swing.JFrame {
         });
 
         background.setBackground(new java.awt.Color(255, 255, 255));
-        background.setMinimumSize(new java.awt.Dimension(0, 0));
+        background.setMinimumSize(new java.awt.Dimension(1000, 700));
+        background.setPreferredSize(new java.awt.Dimension(1000, 700));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginPanel.setBackground(new java.awt.Color(0, 0, 102));
+        loginPanel.setBackground(new java.awt.Color(62, 114, 179));
+        loginPanel.setMinimumSize(new java.awt.Dimension(420, 700));
+        loginPanel.setPreferredSize(new java.awt.Dimension(420, 700));
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoPanel.setBackground(new java.awt.Color(0, 0, 102));
+        logoPanel.setBackground(new java.awt.Color(62, 114, 179));
         logoPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         part1.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,16 +168,19 @@ public class login extends javax.swing.JFrame {
 
         loginPanel.add(logoPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 250, 310));
 
-        background.add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 570));
+        background.add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 700));
 
         loginSection.setBackground(new java.awt.Color(255, 255, 255));
         loginSection.setEnabled(false);
+        loginSection.setMinimumSize(new java.awt.Dimension(580, 700));
+        loginSection.setPreferredSize(new java.awt.Dimension(580, 700));
         loginSection.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         exitPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         exitButton.setBackground(new java.awt.Color(0, 0, 0));
         exitButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        exitButton.setForeground(new java.awt.Color(0, 0, 0));
         exitButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exitButton.setText("X");
         exitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -197,34 +206,37 @@ public class login extends javax.swing.JFrame {
         );
         exitPanelLayout.setVerticalGroup(
             exitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(exitButton))
+            .addGroup(exitPanelLayout.createSequentialGroup()
+                .addComponent(exitButton)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
-        loginSection.add(exitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 30, 30));
+        loginSection.add(exitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 30, 30));
 
         iniciarLabel.setBackground(new java.awt.Color(255, 255, 255));
         iniciarLabel.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        iniciarLabel.setForeground(new java.awt.Color(0, 0, 0));
         iniciarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iniciarLabel.setText("INICIAR SESIÓN");
-        loginSection.add(iniciarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 3, 480, 80));
+        loginSection.add(iniciarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 3, 480, 80));
 
         passwordLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(0, 0, 0));
         passwordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passwordLabel.setText("CONTRASEÑA");
-        loginSection.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 480, -1));
+        loginSection.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 480, -1));
 
         userLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        userLabel.setForeground(new java.awt.Color(0, 0, 0));
         userLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userLabel.setText("USUARIO");
-        loginSection.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 480, -1));
+        loginSection.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 580, -1));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jSeparator1.setMinimumSize(new java.awt.Dimension(50, 20));
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 50));
-        loginSection.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 480, 10));
+        loginSection.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 480, 10));
 
         usernameTextField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         usernameTextField.setForeground(new java.awt.Color(255, 255, 255));
@@ -241,13 +253,13 @@ public class login extends javax.swing.JFrame {
                 usernameTextFieldActionPerformed(evt);
             }
         });
-        loginSection.add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 480, 30));
+        loginSection.add(usernameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 480, 30));
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jSeparator2.setMinimumSize(new java.awt.Dimension(50, 20));
         jSeparator2.setPreferredSize(new java.awt.Dimension(50, 50));
-        loginSection.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 480, 10));
+        loginSection.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 480, 10));
 
         userPasswordField.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         userPasswordField.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,12 +271,13 @@ public class login extends javax.swing.JFrame {
                 userPasswordFieldMouseClicked(evt);
             }
         });
-        loginSection.add(userPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 480, 30));
+        loginSection.add(userPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 480, 30));
 
-        panelLogin.setBackground(new java.awt.Color(0, 0, 102));
+        panelLogin.setBackground(new java.awt.Color(62, 114, 179));
         panelLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        loginButton.setBackground(new java.awt.Color(62, 114, 179));
         loginButton.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
         loginButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -282,14 +295,15 @@ public class login extends javax.swing.JFrame {
         });
         panelLogin.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 40));
 
-        loginSection.add(panelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 130, 40));
+        loginSection.add(panelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 130, 40));
 
-        registerPanel.setBackground(new java.awt.Color(0, 0, 102));
+        registerPanel.setBackground(new java.awt.Color(62, 114, 179));
         registerPanel.setForeground(new java.awt.Color(255, 255, 255));
         registerPanel.setToolTipText("");
         registerPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        registerButton.setBackground(new java.awt.Color(62, 114, 179));
         registerButton.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         registerButton.setForeground(new java.awt.Color(255, 255, 255));
         registerButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -307,27 +321,31 @@ public class login extends javax.swing.JFrame {
         });
         registerPanel.add(registerButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 40));
 
-        loginSection.add(registerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 230, 40));
+        loginSection.add(registerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 230, 40));
 
-        background.add(loginSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 480, 570));
+        background.add(loginSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
+
+        content.setPreferredSize(new java.awt.Dimension(580, 700));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         background.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
 
         registerSection.setBackground(new java.awt.Color(62, 114, 179));
+        registerSection.setMinimumSize(new java.awt.Dimension(580, 700));
+        registerSection.setPreferredSize(new java.awt.Dimension(580, 700));
         registerSection.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        backPanel.setBackground(new java.awt.Color(0, 0, 150));
+        backPanel.setBackground(new java.awt.Color(62, 114, 179));
 
         backButton.setBackground(new java.awt.Color(0, 0, 150));
         backButton.setFont(new java.awt.Font("Roboto", 0, 48)); // NOI18N
@@ -358,7 +376,7 @@ public class login extends javax.swing.JFrame {
 
         registerSection.add(backPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        usernameField.setBackground(new java.awt.Color(0, 0, 102));
+        usernameField.setBackground(new java.awt.Color(62, 114, 179));
         usernameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         usernameField.setForeground(new java.awt.Color(255, 255, 255));
         usernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -373,26 +391,26 @@ public class login extends javax.swing.JFrame {
                 usernameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 120, 30));
+        registerSection.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 120, 30));
 
         passwordLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         passwordLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        passwordLabel1.setText("Password");
-        registerSection.add(passwordLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 30));
+        passwordLabel1.setText("Password:");
+        registerSection.add(passwordLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, -1, 30));
 
-        passwordTextField.setBackground(new java.awt.Color(0, 0, 102));
+        passwordTextField.setBackground(new java.awt.Color(62, 114, 179));
         passwordTextField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         passwordTextField.setForeground(new java.awt.Color(255, 255, 255));
         passwordTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordTextField.setBorder(null);
-        registerSection.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 110, 30));
+        registerSection.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, 110, 30));
 
         emailLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         emailLabel.setForeground(new java.awt.Color(255, 255, 255));
-        emailLabel.setText("E-mail");
-        registerSection.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, 30));
+        emailLabel.setText("E-mail:");
+        registerSection.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, 30));
 
-        emailTextField.setBackground(new java.awt.Color(0, 0, 102));
+        emailTextField.setBackground(new java.awt.Color(62, 114, 179));
         emailTextField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         emailTextField.setForeground(new java.awt.Color(255, 255, 255));
         emailTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -402,26 +420,26 @@ public class login extends javax.swing.JFrame {
                 emailTextFieldActionPerformed(evt);
             }
         });
-        registerSection.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 370, 30));
+        registerSection.add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 360, 30));
 
         countryLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         countryLabel.setForeground(new java.awt.Color(255, 255, 255));
-        countryLabel.setText("Country");
-        registerSection.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        countryLabel.setText("Country:");
+        registerSection.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, -1, -1));
 
-        comboCitizenship.setBackground(new java.awt.Color(0, 0, 150));
+        comboCitizenship.setBackground(new java.awt.Color(62, 114, 179));
         comboCitizenship.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboCitizenship.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboCitizenshipActionPerformed(evt);
             }
         });
-        registerSection.add(comboCitizenship, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 120, 30));
+        registerSection.add(comboCitizenship, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 120, 30));
 
         provinciaLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         provinciaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        provinciaLabel.setText("City");
-        registerSection.add(provinciaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, 110, 30));
+        provinciaLabel.setText("City:");
+        registerSection.add(provinciaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 40, 40));
 
         comboCity.setBackground(new java.awt.Color(0, 0, 150));
         comboCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -430,31 +448,31 @@ public class login extends javax.swing.JFrame {
                 comboCityItemStateChanged(evt);
             }
         });
-        registerSection.add(comboCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 120, 30));
+        registerSection.add(comboCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, 100, 40));
 
         distritoLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         distritoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        distritoLabel.setText("District");
-        registerSection.add(distritoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 90, 30));
+        distritoLabel.setText("District:");
+        registerSection.add(distritoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 70, 40));
 
         comboDistrict.setBackground(new java.awt.Color(0, 0, 150));
         comboDistrict.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        registerSection.add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 120, 30));
+        registerSection.add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 530, 120, 40));
 
         part3.setBackground(new java.awt.Color(255, 255, 255));
         part3.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         part3.setForeground(new java.awt.Color(255, 255, 255));
         part3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         part3.setText("Sign In");
-        registerSection.add(part3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, -1));
-        registerSection.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 120, 10));
-        registerSection.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 480, 10));
-        registerSection.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 110, 10));
+        registerSection.add(part3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 520, -1));
+        registerSection.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 120, 10));
+        registerSection.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 580, 10));
+        registerSection.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 110, 10));
 
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
-        registerSection.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 370, 10));
+        registerSection.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 360, 10));
 
-        exitPanel1.setBackground(new java.awt.Color(0, 0, 150));
+        exitPanel1.setBackground(new java.awt.Color(62, 114, 179));
 
         exitButton1.setBackground(new java.awt.Color(0, 0, 0));
         exitButton1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -488,9 +506,9 @@ public class login extends javax.swing.JFrame {
                 .addComponent(exitButton1))
         );
 
-        registerSection.add(exitPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 30, 30));
+        registerSection.add(exitPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 30, 30));
 
-        registerButtonPanel.setBackground(new java.awt.Color(0, 0, 150));
+        registerButtonPanel.setBackground(new java.awt.Color(62, 114, 179));
         registerButtonPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
         registerButtonPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -509,25 +527,25 @@ public class login extends javax.swing.JFrame {
         jLabel1.setText("Registrar");
         registerButtonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        registerSection.add(registerButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 530, 130, 40));
-        registerSection.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 480, 10));
+        registerSection.add(registerButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 630, 130, 40));
+        registerSection.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 580, 10));
 
         usuarioLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         usuarioLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        usuarioLabel1.setText("User");
-        registerSection.add(usuarioLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 40));
+        usuarioLabel1.setText("Username:");
+        registerSection.add(usuarioLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, 30));
 
         nombreLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel1.setText("Name");
+        nombreLabel1.setText("Name:");
         registerSection.add(nombreLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 40));
 
         nombreLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel2.setText("Surname");
-        registerSection.add(nombreLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, 40));
+        nombreLabel2.setText("Surname:");
+        registerSection.add(nombreLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, 40));
 
-        nameField.setBackground(new java.awt.Color(129, 165, 211));
+        nameField.setBackground(new java.awt.Color(62, 114, 179));
         nameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         nameField.setForeground(new java.awt.Color(255, 255, 255));
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -542,10 +560,10 @@ public class login extends javax.swing.JFrame {
                 nameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 120, 30));
-        registerSection.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 120, 10));
+        registerSection.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 120, 30));
+        registerSection.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 120, 10));
 
-        lastNameField.setBackground(new java.awt.Color(0, 0, 102));
+        lastNameField.setBackground(new java.awt.Color(62, 114, 179));
         lastNameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lastNameField.setForeground(new java.awt.Color(255, 255, 255));
         lastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -560,10 +578,10 @@ public class login extends javax.swing.JFrame {
                 lastNameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 120, 30));
-        registerSection.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 120, 10));
+        registerSection.add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 120, 30));
+        registerSection.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 120, 10));
 
-        secondLastNameField.setBackground(new java.awt.Color(0, 0, 102));
+        secondLastNameField.setBackground(new java.awt.Color(62, 114, 179));
         secondLastNameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         secondLastNameField.setForeground(new java.awt.Color(255, 255, 255));
         secondLastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -578,13 +596,13 @@ public class login extends javax.swing.JFrame {
                 secondLastNameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(secondLastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 130, 30));
-        registerSection.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 130, 10));
+        registerSection.add(secondLastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 110, 30));
+        registerSection.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 110, 10));
 
         nombreLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel3.setText("Second Surname");
-        registerSection.add(nombreLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
+        nombreLabel3.setText("Second Surname:");
+        registerSection.add(nombreLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, 40));
 
         comboCountry.setBackground(new java.awt.Color(0, 0, 150));
         comboCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -598,14 +616,14 @@ public class login extends javax.swing.JFrame {
                 comboCountryActionPerformed(evt);
             }
         });
-        registerSection.add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 110, 30));
+        registerSection.add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 90, 40));
 
         nombreLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel4.setText("Type");
-        registerSection.add(nombreLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 50, 40));
+        nombreLabel4.setText("Type:");
+        registerSection.add(nombreLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 50, 40));
 
-        identificationField.setBackground(new java.awt.Color(0, 0, 102));
+        identificationField.setBackground(new java.awt.Color(62, 114, 179));
         identificationField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         identificationField.setForeground(new java.awt.Color(255, 255, 255));
         identificationField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -625,42 +643,25 @@ public class login extends javax.swing.JFrame {
 
         nombreLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel6.setText("Identification");
+        nombreLabel6.setText("Identification:");
         registerSection.add(nombreLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 30));
 
-        usernameTextField6.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField6.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField6.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField6.setBorder(null);
-        usernameTextField6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField6MouseClicked(evt);
-            }
-        });
-        usernameTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField6ActionPerformed(evt);
-            }
-        });
-        registerSection.add(usernameTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 120, 30));
-
-        comboIdentification.setBackground(new java.awt.Color(0, 0, 150));
+        comboIdentification.setBackground(new java.awt.Color(62, 114, 179));
         comboIdentification.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboIdentification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboIdentificationActionPerformed(evt);
             }
         });
-        registerSection.add(comboIdentification, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 110, 30));
-        registerSection.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 480, 10));
+        registerSection.add(comboIdentification, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 110, 30));
+        registerSection.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 580, 10));
 
         nombreLabel9.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel9.setText("Citizenship");
-        registerSection.add(nombreLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 30));
+        nombreLabel9.setText("Citizenship:");
+        registerSection.add(nombreLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 30));
 
-        phoneField.setBackground(new java.awt.Color(0, 0, 102));
+        phoneField.setBackground(new java.awt.Color(62, 114, 179));
         phoneField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         phoneField.setForeground(new java.awt.Color(255, 255, 255));
         phoneField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -675,30 +676,43 @@ public class login extends javax.swing.JFrame {
                 phoneFieldActionPerformed(evt);
             }
         });
-        registerSection.add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 120, 30));
-        registerSection.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 120, 10));
+        registerSection.add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 140, 30));
+        registerSection.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 140, 10));
 
         PhoneNumber.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
-        PhoneNumber.setText("Phone Number");
-        registerSection.add(PhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
+        PhoneNumber.setText("Phone Number:");
+        registerSection.add(PhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, 30));
 
+        comboCodeCountry.setBackground(new java.awt.Color(62, 114, 179));
         comboCodeCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        registerSection.add(comboCodeCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 110, 30));
+        comboCodeCountry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboCodeCountryActionPerformed(evt);
+            }
+        });
+        registerSection.add(comboCodeCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 110, 30));
 
-        background.add(registerSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, 570));
+        nombreLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        nombreLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        nombreLabel5.setText("Type:");
+        registerSection.add(nombreLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 50, 40));
+
+        background.add(registerSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
 
         homePanel.setBackground(new java.awt.Color(255, 255, 255));
+        homePanel.setMinimumSize(new java.awt.Dimension(1000, 700));
+        homePanel.setPreferredSize(new java.awt.Dimension(1000, 700));
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
         homePanelLayout.setHorizontalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -769,7 +783,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_userPasswordFieldMouseClicked
 
     private void loginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseExited
-        panelLogin.setBackground(new Color(0, 0, 102));
+        panelLogin.setBackground(new Color(62, 114, 179));
     }//GEN-LAST:event_loginButtonMouseExited
 
     private void loginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseEntered
@@ -777,7 +791,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonMouseEntered
 
     private void registerButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseExited
-        registerPanel.setBackground(new Color(0, 0, 102));
+        registerPanel.setBackground(new Color(62, 114, 179));
     }//GEN-LAST:event_registerButtonMouseExited
 
     private void registerButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseEntered
@@ -788,7 +802,7 @@ public class login extends javax.swing.JFrame {
         loginPanel.setBackground(Color.black);
         logoPanel.setBackground(Color.black);
 
-        registerSection.setSize(480, 570);
+        registerSection.setSize(580, 700);
         registerSection.setLocation(0, 0);
         content.removeAll();
         content.add(registerSection, BorderLayout.CENTER);
@@ -814,20 +828,20 @@ public class login extends javax.swing.JFrame {
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         if (usernameTextField.getText().equals("admin")) {
             homeAdmin h1 = new homeAdmin();
-            h1.setSize(900, 570);
+            h1.setSize(1000, 700);
             h1.setLocation(0, 0);
             homePanel.removeAll();
             homePanel.add(h1, BorderLayout.CENTER);
             homePanel.revalidate();
             homePanel.repaint();
-        }else{
-        home h1 = new home();
-        h1.setSize(900, 570);
-        h1.setLocation(0, 0);
-        homePanel.removeAll();
-        homePanel.add(h1, BorderLayout.CENTER);
-        homePanel.revalidate();
-        homePanel.repaint();
+        } else {
+            home h1 = new home();
+            h1.setSize(1000, 700);
+            h1.setLocation(0, 0);
+            homePanel.removeAll();
+            homePanel.add(h1, BorderLayout.CENTER);
+            homePanel.revalidate();
+            homePanel.repaint();
         }
 
     }//GEN-LAST:event_loginButtonMouseClicked
@@ -848,7 +862,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonMouseEntered
 
     private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
-        backPanel.setBackground(new Color(0, 0, 150));
+        backPanel.setBackground(new Color(62, 114, 179));
     }//GEN-LAST:event_backButtonMouseExited
 
     private void usernameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameFieldMouseClicked
@@ -868,7 +882,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_exitButton1MouseEntered
 
     private void exitButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton1MouseExited
-        exitPanel1.setBackground(new Color(0, 0, 150));
+        exitPanel1.setBackground(new Color(62, 114, 179));
     }//GEN-LAST:event_exitButton1MouseExited
 
     private void registerButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseClicked
@@ -947,14 +961,6 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneFieldActionPerformed
 
-    private void usernameTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField6ActionPerformed
-
-    private void usernameTextField6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField6MouseClicked
-
     private void comboCountryItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCountryItemStateChanged
         fillCity();
     }//GEN-LAST:event_comboCountryItemStateChanged
@@ -962,6 +968,10 @@ public class login extends javax.swing.JFrame {
     private void comboCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCityItemStateChanged
         fillDistrict();
     }//GEN-LAST:event_comboCityItemStateChanged
+
+    private void comboCodeCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCodeCountryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboCodeCountryActionPerformed
 
     public JPanel getContent() {
         return content;
@@ -1010,97 +1020,89 @@ public class login extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void fillComboIdentificationType(){
-          try{
-            ArrayList<String> listC= controllerIdentification.listInfoCombo();
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillComboIdentificationType() {
+        try {
+            ArrayList<String> listC = controllerIdentification.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboIdentification.setModel(listF);
 
-        }catch(Exception e){
-        System.out.println(e.toString());
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
     }
-    
-    
-     private void fillComboCitizen(){
-        try{
-            ArrayList<String> listC= controllerCountry.listInfoCombo();
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillComboCitizen() {
+        try {
+            ArrayList<String> listC = controllerCountry.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboCitizenship.setModel(listF);
 
-        }catch(Exception e){
-        System.out.println(e.toString());
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-    
+
     }
-     
-      private void fillComboCodeCountry(){
-        try{
-            ArrayList<String> listC= controllerCountry.listCodeCombo();
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillComboCodeCountry() {
+        try {
+            ArrayList<String> listC = controllerCountry.listCodeCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboCodeCountry.setModel(listF);
 
-        }catch(Exception e){
-        System.out.println(e.toString());
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-    
+
     }
-    
-    
-    private void fillCity(){
-    try{
-           this.comboCity.removeAllItems();
-            int number=this.comboCountry.getSelectedIndex();
-            ArrayList<String>listCity= new ArrayList<String>();
-            listCity= controllerCity.listInfo(this.comboCountry.getItemAt(number));
-            DefaultComboBoxModel modelList= new DefaultComboBoxModel(listCity.toArray());
+
+    private void fillCity() {
+        try {
+            this.comboCity.removeAllItems();
+            int number = this.comboCountry.getSelectedIndex();
+            ArrayList<String> listCity = new ArrayList<String>();
+            listCity = controllerCity.listInfo(this.comboCountry.getItemAt(number));
+            DefaultComboBoxModel modelList = new DefaultComboBoxModel(listCity.toArray());
 
             this.comboCity.setModel(modelList);
 
-           System.out.println(listCity.size());
+            System.out.println(listCity.size());
             //this.comboCity.setModel(new DefaultComboBoxModel(arr));
 
             this.fillDistrict();
-            
-        }catch(Exception e){
-        System.out.println("Error in fillcity  "+e.toString());
+
+        } catch (Exception e) {
+            System.out.println("Error in fillcity  " + e.toString());
         }
 
-    
     }
-    private void fillCountry(){
-        try{
-            ArrayList<String> listC= controllerCountry.listInfoCombo();
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillCountry() {
+        try {
+            ArrayList<String> listC = controllerCountry.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboCountry.setModel(listF);
             this.fillCity();
-            
-        }catch(Exception e){
-        System.out.println(e.toString());
-        }
-    
-    }
-    private void fillDistrict(){
-        try{
-            ArrayList<String> listC= controllerDistrict.listInfo(this.comboCity.getSelectedItem().toString(),this.comboCountry.getSelectedItem().toString());
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
-            this.comboDistrict.setModel(listF);
-            
-        }catch(Exception e){
-        
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    private void fillDistrict() {
+        try {
+            ArrayList<String> listC = controllerDistrict.listInfo(this.comboCity.getSelectedItem().toString(), this.comboCountry.getSelectedItem().toString());
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboDistrict.setModel(listF);
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PhoneNumber;
     private javax.swing.JLabel backButton;
@@ -1148,6 +1150,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel nombreLabel2;
     private javax.swing.JLabel nombreLabel3;
     private javax.swing.JLabel nombreLabel4;
+    private javax.swing.JLabel nombreLabel5;
     private javax.swing.JLabel nombreLabel6;
     private javax.swing.JLabel nombreLabel9;
     private javax.swing.JPanel panelLogin;
@@ -1168,7 +1171,6 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPasswordField userPasswordField;
     private javax.swing.JTextField usernameField;
     private javax.swing.JTextField usernameTextField;
-    private javax.swing.JTextField usernameTextField6;
     private javax.swing.JLabel usuarioLabel1;
     // End of variables declaration//GEN-END:variables
 }

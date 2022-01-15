@@ -16,7 +16,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,58,0,0,3,-124"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-68,0,0,3,-24"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -26,12 +26,15 @@
     <Container class="javax.swing.JPanel" name="menu">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="b3" green="72" red="3e" type="rgb"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[270, 700]"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="270" height="570"/>
+          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
@@ -90,7 +93,7 @@
             <Container class="javax.swing.JPanel" name="option1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -144,7 +147,7 @@
             <Container class="javax.swing.JPanel" name="genderPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -183,7 +186,7 @@
             <Container class="javax.swing.JPanel" name="identificationPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -222,7 +225,7 @@
             <Container class="javax.swing.JPanel" name="userTypePanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -263,7 +266,7 @@
         <Container class="javax.swing.JPanel" name="clockCategoryPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="0" type="rgb"/>
+              <Color blue="b3" green="72" red="3e" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -279,7 +282,7 @@
             <Container class="javax.swing.JPanel" name="option7">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -330,7 +333,7 @@
             <Container class="javax.swing.JPanel" name="clockTypePanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -372,7 +375,7 @@
             <Container class="javax.swing.JPanel" name="modelPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -414,7 +417,7 @@
             <Container class="javax.swing.JPanel" name="conditionPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -474,7 +477,7 @@
             <Container class="javax.swing.JPanel" name="option2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -528,7 +531,7 @@
             <Container class="javax.swing.JPanel" name="statusPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -567,7 +570,7 @@
             <Container class="javax.swing.JPanel" name="paymentPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -606,7 +609,7 @@
             <Container class="javax.swing.JPanel" name="shippingPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -647,7 +650,7 @@
         <Container class="javax.swing.JPanel" name="addressCategory">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="0" red="0" type="rgb"/>
+              <Color blue="b3" green="72" red="3e" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -663,7 +666,7 @@
             <Container class="javax.swing.JPanel" name="option3">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -717,7 +720,7 @@
             <Container class="javax.swing.JPanel" name="districtPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="b3" green="72" red="3e" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
@@ -765,22 +768,25 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[730, 700]"/>
+        </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="270" y="40" width="630" height="530"/>
+          <AbsoluteConstraints x="270" y="40" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="630" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="730" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="530" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="700" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -790,10 +796,13 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[730, 40]"/>
+        </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="270" y="0" width="630" height="40"/>
+          <AbsoluteConstraints x="270" y="0" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
@@ -809,7 +818,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="600" y="0" width="30" height="40"/>
+              <AbsoluteConstraints x="700" y="0" width="30" height="40"/>
             </Constraint>
           </Constraints>
 

@@ -62,9 +62,13 @@ public class home extends javax.swing.JPanel {
         exitButton2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1000, 700));
+        setPreferredSize(new java.awt.Dimension(1000, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menu.setBackground(new java.awt.Color(0, 0, 102));
+        menu.setBackground(new java.awt.Color(62, 114, 179));
+        menu.setMinimumSize(new java.awt.Dimension(270, 700));
+        menu.setPreferredSize(new java.awt.Dimension(270, 700));
         menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         menuLabel.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -73,7 +77,7 @@ public class home extends javax.swing.JPanel {
         menuLabel.setText("Menu");
         menu.add(menuLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 40));
 
-        option1.setBackground(new java.awt.Color(0, 0, 102));
+        option1.setBackground(new java.awt.Color(62, 114, 179));
         option1.setBorder(null);
         option1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -97,7 +101,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 270, 40));
 
-        option2.setBackground(new java.awt.Color(0, 0, 102));
+        option2.setBackground(new java.awt.Color(62, 114, 179));
         option2.setBorder(null);
         option2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -121,7 +125,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 270, 40));
 
-        option3.setBackground(new java.awt.Color(0, 0, 102));
+        option3.setBackground(new java.awt.Color(62, 114, 179));
         option3.setBorder(null);
         option3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -145,7 +149,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 270, 40));
 
-        option4.setBackground(new java.awt.Color(0, 0, 102));
+        option4.setBackground(new java.awt.Color(62, 114, 179));
         option4.setBorder(null);
         option4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,7 +173,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 270, 40));
 
-        option5.setBackground(new java.awt.Color(0, 0, 102));
+        option5.setBackground(new java.awt.Color(62, 114, 179));
         option5.setBorder(null);
         option5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -193,7 +197,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 270, 40));
 
-        option8.setBackground(new java.awt.Color(0, 0, 102));
+        option8.setBackground(new java.awt.Color(62, 114, 179));
         option8.setBorder(null);
         option8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -217,7 +221,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 270, 40));
 
-        option6.setBackground(new java.awt.Color(0, 0, 102));
+        option6.setBackground(new java.awt.Color(62, 114, 179));
         option6.setBorder(null);
         option6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -241,7 +245,7 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 270, 40));
 
-        option7.setBackground(new java.awt.Color(0, 0, 102));
+        option7.setBackground(new java.awt.Color(62, 114, 179));
         option7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 option7MouseClicked(evt);
@@ -268,25 +272,29 @@ public class home extends javax.swing.JPanel {
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         menu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 270, 10));
 
-        add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 570));
+        add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         homeContent.setBackground(new java.awt.Color(255, 255, 255));
         homeContent.setForeground(new java.awt.Color(255, 255, 255));
+        homeContent.setMinimumSize(new java.awt.Dimension(730, 700));
+        homeContent.setPreferredSize(new java.awt.Dimension(730, 700));
 
         javax.swing.GroupLayout homeContentLayout = new javax.swing.GroupLayout(homeContent);
         homeContent.setLayout(homeContentLayout);
         homeContentLayout.setHorizontalGroup(
             homeContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 730, Short.MAX_VALUE)
         );
         homeContentLayout.setVerticalGroup(
             homeContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
 
-        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 630, 530));
+        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
         menuBar.setBackground(new java.awt.Color(255, 255, 255));
+        menuBar.setMinimumSize(new java.awt.Dimension(730, 40));
+        menuBar.setPreferredSize(new java.awt.Dimension(730, 40));
         menuBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         exitPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -323,9 +331,9 @@ public class home extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        menuBar.add(exitPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 30, 40));
+        menuBar.add(exitPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 0, 30, 40));
 
-        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 630, 40));
+        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton2MouseClicked
@@ -345,7 +353,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option1MouseEntered
 
     private void option1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseExited
-        option1.setBackground(new Color(0,0,102));
+        option1.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option1MouseExited
 
     private void option7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseEntered
@@ -353,7 +361,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option7MouseEntered
 
     private void option7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseExited
-        option7.setBackground(new Color(0,0,102));
+        option7.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option7MouseExited
 
     private void option2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseEntered
@@ -361,7 +369,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option2MouseEntered
 
     private void option2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseExited
-        option2.setBackground(new Color(0,0,102));
+        option2.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option2MouseExited
 
     private void option3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseEntered
@@ -369,7 +377,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option3MouseEntered
 
     private void option3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseExited
-       option3.setBackground(new Color(0,0,102));
+       option3.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option3MouseExited
 
     private void option4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseEntered
@@ -377,7 +385,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option4MouseEntered
 
     private void option4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseExited
-      option4.setBackground(new Color(0,0,102));
+      option4.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option4MouseExited
 
     private void option5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseEntered
@@ -385,7 +393,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option5MouseEntered
 
     private void option5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseExited
-        option5.setBackground(new Color(0,0,102));
+        option5.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option5MouseExited
 
     private void option6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseEntered
@@ -393,7 +401,7 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option6MouseEntered
 
     private void option6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseExited
-       option6.setBackground(new Color(0,0,102));
+       option6.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option6MouseExited
 
     private void option8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseEntered
@@ -401,12 +409,12 @@ public class home extends javax.swing.JPanel {
     }//GEN-LAST:event_option8MouseEntered
 
     private void option8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseExited
-        option8.setBackground(new Color(0,0,102));
+        option8.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option8MouseExited
 
     private void option1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseClicked
         principal p1 = new principal();
-        p1.setSize(630,5300);
+        p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -416,7 +424,7 @@ public class home extends javax.swing.JPanel {
 
     private void option7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseClicked
         buscarRelojes p1 = new buscarRelojes();
-        p1.setSize(630,5300);
+      p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -426,7 +434,7 @@ public class home extends javax.swing.JPanel {
 
     private void option2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option2MouseClicked
         insertarRelojes p1 = new insertarRelojes();
-        p1.setSize(630,5300);
+      p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -436,7 +444,7 @@ public class home extends javax.swing.JPanel {
 
     private void option3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option3MouseClicked
         favoritos p1 = new favoritos();
-        p1.setSize(630,5300);
+      p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -446,7 +454,7 @@ public class home extends javax.swing.JPanel {
 
     private void option4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option4MouseClicked
         carritoCompra p1 = new carritoCompra();
-        p1.setSize(630,5300);
+       p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -456,7 +464,7 @@ public class home extends javax.swing.JPanel {
 
     private void option5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option5MouseClicked
         chats p1 = new chats();
-        p1.setSize(630,5300);
+       p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -466,7 +474,7 @@ public class home extends javax.swing.JPanel {
 
     private void option6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option6MouseClicked
         estadisticas p1 = new estadisticas();
-        p1.setSize(630,5300);
+       p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);
@@ -476,7 +484,7 @@ public class home extends javax.swing.JPanel {
 
     private void option8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseClicked
         cuenta p1 = new cuenta();
-        p1.setSize(630,5300);
+       p1.setSize(730, 700);
         p1.setLocation(0,0);
         homeContent.removeAll();
         homeContent.add(p1,BorderLayout.CENTER);

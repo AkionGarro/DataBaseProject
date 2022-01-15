@@ -30,6 +30,7 @@ public class principal extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(204, 255, 255));
+        setPreferredSize(new java.awt.Dimension(730, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         clockScrollPane.setBackground(new java.awt.Color(153, 204, 0));

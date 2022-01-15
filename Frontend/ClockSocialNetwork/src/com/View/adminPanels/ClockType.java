@@ -43,8 +43,6 @@ public class ClockType extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleBrand = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         deleteB = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         nameField = new javax.swing.JTextField();
@@ -63,18 +61,6 @@ public class ClockType extends javax.swing.JPanel {
             setBackground(new java.awt.Color(255, 255, 255));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-            titleBrand.setBackground(new java.awt.Color(0, 0, 102));
-            titleBrand.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-            jLabel1.setBackground(new java.awt.Color(0, 0, 102));
-            jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel1.setText("New Clock Type");
-            jLabel1.setToolTipText("");
-            titleBrand.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
-            add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
             deleteB.setBackground(new java.awt.Color(0, 0, 0));
             deleteB.setForeground(new java.awt.Color(255, 255, 255));
             deleteB.setText("Delete");
@@ -83,7 +69,7 @@ public class ClockType extends javax.swing.JPanel {
                     deleteBActionPerformed(evt);
                 }
             });
-            add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
+            add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,7 +79,7 @@ public class ClockType extends javax.swing.JPanel {
                     modifyButtonActionPerformed(evt);
                 }
             });
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -101,14 +87,14 @@ public class ClockType extends javax.swing.JPanel {
                     nameFieldActionPerformed(evt);
                 }
             });
-            add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 192, -1));
+            add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 192, -1));
 
             descriptionField.setColumns(20);
             descriptionField.setRows(5);
             nameField.setDocument(new limitText.JTextFieldLimit(200));
             jScrollPane1.setViewportView(descriptionField);
 
-            add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 192, 120));
+            add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 192, 120));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -123,15 +109,15 @@ public class ClockType extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 630, 290));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 730, 490));
 
             jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
             jLabel7.setText("Description:");
-            add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
+            add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
             jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
             jLabel8.setText("Type's name:");
-            add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 30));
+            add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
             createButton1.setBackground(new java.awt.Color(0, 0, 0));
             createButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,7 +127,7 @@ public class ClockType extends javax.swing.JPanel {
                     createButton1ActionPerformed(evt);
                 }
             });
-            add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, -1));
+            add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
         }// </editor-fold>//GEN-END:initComponents
 
     private void deleteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBActionPerformed
@@ -184,7 +170,6 @@ public class ClockType extends javax.swing.JPanel {
     private javax.swing.JButton createButton1;
     private javax.swing.JButton deleteB;
     private javax.swing.JTextArea descriptionField;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
@@ -192,6 +177,5 @@ public class ClockType extends javax.swing.JPanel {
     private javax.swing.JButton modifyButton;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
-    private javax.swing.JPanel titleBrand;
     // End of variables declaration//GEN-END:variables
 }

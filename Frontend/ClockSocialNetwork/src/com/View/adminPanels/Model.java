@@ -83,8 +83,6 @@ public class Model extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleBrand = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableInfo = new javax.swing.JTable();
@@ -102,21 +100,9 @@ public class Model extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titleBrand.setBackground(new java.awt.Color(0, 0, 102));
-        titleBrand.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 102));
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("New Clock Model");
-        jLabel1.setToolTipText("");
-        titleBrand.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
-        add(titleBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 50));
-
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel2.setText("Brand:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,7 +117,7 @@ public class Model extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 630, 290));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 730, 500));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,14 +127,14 @@ public class Model extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, 30));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel3.setText("Type:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, 40));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, -1, 40));
 
         comboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 300, 30));
+        add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
 
         comboBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBrand.addItemListener(new java.awt.event.ItemListener() {
@@ -156,11 +142,11 @@ public class Model extends javax.swing.JPanel {
                 comboBrandItemStateChanged(evt);
             }
         });
-        add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 300, 30));
+        add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("Model name:");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 50));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
         createButton2.setBackground(new java.awt.Color(0, 0, 0));
         createButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,15 +156,15 @@ public class Model extends javax.swing.JPanel {
                 createButton2ActionPerformed(evt);
             }
         });
-        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 100, 30));
-        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 110, -1));
+        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 100, 30));
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 110, -1));
 
         comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 140, -1));
+        add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Name:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 50));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 50));
 
         createButton1.setBackground(new java.awt.Color(0, 0, 0));
         createButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,7 +174,7 @@ public class Model extends javax.swing.JPanel {
                 createButton1ActionPerformed(evt);
             }
         });
-        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, 30));
+        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -256,7 +242,6 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JButton createButton;
     private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -264,6 +249,5 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
-    private javax.swing.JPanel titleBrand;
     // End of variables declaration//GEN-END:variables
 }
