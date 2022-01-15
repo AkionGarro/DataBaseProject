@@ -140,5 +140,12 @@ return idC;
 end getIdUserType;
 
 
+function getidPhoneType(p_name in varchar2) return number is
+idC number(2);
+begin 
+    select idPhoneType into idC from phoneType where (phonetype.nameType=p_name);
+    return idC;
+end getidPhonetype;
+
 end packagegetid;
 

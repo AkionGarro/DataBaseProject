@@ -38,6 +38,6 @@ function getidShippingMethod(p_nameC in varchar2)return number;
 function getidTypeClock(p_nameC in varchar2)return number;
 
 function getidUsertype(p_nameC in varchar2)return number;
-
+function getidPhoneType(p_name in varchar2) return number;
 end packagegetid;
 
