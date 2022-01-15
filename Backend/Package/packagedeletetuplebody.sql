@@ -138,6 +138,23 @@ exception
      return val;
 end fnDelCountry;
 
+function fnDelPhone(p_phonenumber in varchar2) return varchar2 is
+val varchar2(50);
+begin
+    delete from phone where phone.phonenumber=p_phonenumber; 
+    val:='Deleted Successfully';
+    commit;
+    return val;
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnDelPhone;
+
+
 end  packageDeleteTuple;
 
 

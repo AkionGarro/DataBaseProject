@@ -14,6 +14,8 @@ function fnDelBuyStatus(p_name in varchar2) return varchar2;
 function fnDelUserType(p_name in varchar2) return varchar2;
 function fnDelPaymentMethod(p_name in varchar2) return varchar2;
 function fnDelCountry(p_name in varchar2)return varchar2;
+function fnDelPhone(p_phonenumber in varchar2) return varchar2;
+
 end  packageDeleteTuple;
 
 
