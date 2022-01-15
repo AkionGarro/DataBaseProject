@@ -324,7 +324,7 @@ public class login extends javax.swing.JFrame {
 
         background.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
 
-        registerSection.setBackground(new java.awt.Color(58, 144, 232));
+        registerSection.setBackground(new java.awt.Color(62, 114, 179));
         registerSection.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backPanel.setBackground(new java.awt.Color(0, 0, 150));
@@ -527,7 +527,7 @@ public class login extends javax.swing.JFrame {
         nombreLabel2.setText("Surname");
         registerSection.add(nombreLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, 40));
 
-        nameField.setBackground(new java.awt.Color(0, 0, 102));
+        nameField.setBackground(new java.awt.Color(129, 165, 211));
         nameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         nameField.setForeground(new java.awt.Color(255, 255, 255));
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);

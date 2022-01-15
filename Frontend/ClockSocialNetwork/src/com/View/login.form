@@ -475,7 +475,7 @@
         <Container class="javax.swing.JPanel" name="registerSection">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="e8" green="90" red="3a" type="rgb"/>
+              <Color blue="b3" green="72" red="3e" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -973,7 +973,7 @@
             <Component class="javax.swing.JTextField" name="nameField">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="0" type="rgb"/>
+                  <Color blue="d3" green="a5" red="81" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="sansserif" size="14" style="0"/>
