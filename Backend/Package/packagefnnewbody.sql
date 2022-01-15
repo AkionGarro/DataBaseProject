@@ -594,7 +594,33 @@ exception
      return val;
 end fnNewGender;
 
+function fnNewPhone(p_number in number,p_username in varchar2,p_nametype in varchar2,p_nameCountry in varchar2)return varchar2
+is
+val varchar2(50);
+v_idUSer number(8);
+v_idTypep number(2);
+v_idCountry number(8);
+begin
+    v_idUser:= packagegetid.getIdUsername(p_username);
+    v_idTypep:=packagegetid.getIdPhoneType(p_nameType);
+    v_idCountry:=packagegetid.getidCountry(p_nameCountry);
+    insert into phone(phonenumber,iduser,idType,idCountry)
+    values(p_number,v_iduser,v_idTypep,v_idCountry);
+    val:='Successfully Created';
+    commit;
+    return val;
+exception
+    WHEN no_data_found THEN
+     val:='Wrong or missing information'; 
+     return val;
+    when dup_val_on_index then
+     val:='Already exists';   
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
 
+end fnNewPhone;
 
 
 
