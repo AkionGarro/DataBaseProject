@@ -57,6 +57,9 @@ public class Address extends javax.swing.JPanel {
 
     
     }
+        
+
+        
     private void fillCountry(){
         try{
             ArrayList<String> listC= controllerCountry.listInfoCombo();
@@ -69,6 +72,9 @@ public class Address extends javax.swing.JPanel {
         }
     
     }
+    
+    
+    
     private void fillDistrict(){
         try{
             ArrayList<String> listC= controllerDistrict.listInfo(this.comboCityF.getSelectedItem().toString(),this.comboCountry.getSelectedItem().toString());

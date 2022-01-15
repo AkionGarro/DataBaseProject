@@ -1,7 +1,14 @@
 package com.View;
 
+import com.Controllers.Controller_City;
+import com.Controllers.Controller_Country;
+import com.Controllers.Controller_District;
+import com.Controllers.Controller_Identification;
+import com.Controllers.Controller_Main;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 
 /**
@@ -11,7 +18,11 @@ import javax.swing.JPanel;
 public class login extends javax.swing.JFrame {
 
     private int xMousePosition, yMousePosition;
-
+    private  Controller_Main mainCont= Controller_Main.getContMain();
+    private  Controller_Country controllerCountry;
+    private  Controller_City controllerCity;
+    private  Controller_District controllerDistrict;
+    private Controller_Identification controllerIdentification;
     public login() {
         initComponents();
 
@@ -29,6 +40,14 @@ public class login extends javax.swing.JFrame {
 
         registerSection.setVisible(false);
         registerSection.setEnabled(false);
+        controllerCountry=mainCont.getContCountry();
+        controllerCity=mainCont.getContCity();
+        controllerDistrict=mainCont.getContDistrict();
+        controllerIdentification=mainCont.getContIdentification();
+        this.fillCountry();
+        this.fillComboCitizen();
+        this.fillComboCodeCountry();
+        this.fillComboIdentificationType();
     }
 
     @SuppressWarnings("unchecked")
@@ -58,21 +77,17 @@ public class login extends javax.swing.JFrame {
         registerSection = new javax.swing.JPanel();
         backPanel = new javax.swing.JPanel();
         backButton = new javax.swing.JLabel();
-        usernameTextField1 = new javax.swing.JTextField();
+        usernameField = new javax.swing.JTextField();
         passwordLabel1 = new javax.swing.JLabel();
         passwordTextField = new javax.swing.JTextField();
         emailLabel = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         countryLabel = new javax.swing.JLabel();
-        countryComboBox = new javax.swing.JComboBox<>();
+        comboCitizenship = new javax.swing.JComboBox<>();
         provinciaLabel = new javax.swing.JLabel();
-        provinciaComboBox = new javax.swing.JComboBox<>();
-        cantonLabel = new javax.swing.JLabel();
-        cantonComboBox = new javax.swing.JComboBox<>();
+        comboCity = new javax.swing.JComboBox<>();
         distritoLabel = new javax.swing.JLabel();
-        distritoComboBox = new javax.swing.JComboBox<>();
-        direccionLabel = new javax.swing.JLabel();
-        direccionTextField = new javax.swing.JTextField();
+        comboDistrict = new javax.swing.JComboBox<>();
         part3 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -82,37 +97,30 @@ public class login extends javax.swing.JFrame {
         exitButton1 = new javax.swing.JLabel();
         registerButtonPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         usuarioLabel1 = new javax.swing.JLabel();
         nombreLabel1 = new javax.swing.JLabel();
         nombreLabel2 = new javax.swing.JLabel();
-        usernameTextField2 = new javax.swing.JTextField();
+        nameField = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
-        usernameTextField3 = new javax.swing.JTextField();
+        lastNameField = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
-        usernameTextField4 = new javax.swing.JTextField();
+        secondLastNameField = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
         nombreLabel3 = new javax.swing.JLabel();
-        countryComboBox1 = new javax.swing.JComboBox<>();
+        comboCountry = new javax.swing.JComboBox<>();
         nombreLabel4 = new javax.swing.JLabel();
-        usernameTextField5 = new javax.swing.JTextField();
+        identificationField = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
-        nombreLabel5 = new javax.swing.JLabel();
         nombreLabel6 = new javax.swing.JLabel();
         usernameTextField6 = new javax.swing.JTextField();
-        jSeparator14 = new javax.swing.JSeparator();
-        nombreLabel7 = new javax.swing.JLabel();
-        usernameTextField7 = new javax.swing.JTextField();
-        jSeparator15 = new javax.swing.JSeparator();
-        nombreLabel8 = new javax.swing.JLabel();
-        countryComboBox2 = new javax.swing.JComboBox<>();
+        comboIdentification = new javax.swing.JComboBox<>();
         jSeparator16 = new javax.swing.JSeparator();
         nombreLabel9 = new javax.swing.JLabel();
-        usernameTextField8 = new javax.swing.JTextField();
+        phoneField = new javax.swing.JTextField();
         jSeparator17 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
-        nombreLabel10 = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
+        comboCodeCountry = new javax.swing.JComboBox<>();
         homePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -190,7 +198,7 @@ public class login extends javax.swing.JFrame {
         exitPanelLayout.setVerticalGroup(
             exitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitPanelLayout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(exitButton))
         );
 
@@ -198,19 +206,16 @@ public class login extends javax.swing.JFrame {
 
         iniciarLabel.setBackground(new java.awt.Color(255, 255, 255));
         iniciarLabel.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
-        iniciarLabel.setForeground(new java.awt.Color(0, 0, 0));
         iniciarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iniciarLabel.setText("INICIAR SESIÓN");
         loginSection.add(iniciarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 3, 480, 80));
 
         passwordLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        passwordLabel.setForeground(new java.awt.Color(0, 0, 0));
         passwordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passwordLabel.setText("CONTRASEÑA");
         loginSection.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 480, -1));
 
         userLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        userLabel.setForeground(new java.awt.Color(0, 0, 0));
         userLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userLabel.setText("USUARIO");
         loginSection.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 480, -1));
@@ -221,7 +226,6 @@ public class login extends javax.swing.JFrame {
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 50));
         loginSection.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 480, 10));
 
-        usernameTextField.setBackground(new java.awt.Color(255, 255, 255));
         usernameTextField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         usernameTextField.setForeground(new java.awt.Color(255, 255, 255));
         usernameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -245,7 +249,6 @@ public class login extends javax.swing.JFrame {
         jSeparator2.setPreferredSize(new java.awt.Dimension(50, 50));
         loginSection.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 480, 10));
 
-        userPasswordField.setBackground(new java.awt.Color(255, 255, 255));
         userPasswordField.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         userPasswordField.setForeground(new java.awt.Color(255, 255, 255));
         userPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -321,7 +324,7 @@ public class login extends javax.swing.JFrame {
 
         background.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, -1));
 
-        registerSection.setBackground(new java.awt.Color(0, 0, 102));
+        registerSection.setBackground(new java.awt.Color(58, 144, 232));
         registerSection.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backPanel.setBackground(new java.awt.Color(0, 0, 150));
@@ -355,26 +358,26 @@ public class login extends javax.swing.JFrame {
 
         registerSection.add(backPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        usernameTextField1.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField1.setBorder(null);
-        usernameTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+        usernameField.setBackground(new java.awt.Color(0, 0, 102));
+        usernameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        usernameField.setForeground(new java.awt.Color(255, 255, 255));
+        usernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usernameField.setBorder(null);
+        usernameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField1MouseClicked(evt);
+                usernameFieldMouseClicked(evt);
             }
         });
-        usernameTextField1.addActionListener(new java.awt.event.ActionListener() {
+        usernameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField1ActionPerformed(evt);
+                usernameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 120, 30));
+        registerSection.add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 120, 30));
 
         passwordLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         passwordLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        passwordLabel1.setText("CONTRASEÑA:");
+        passwordLabel1.setText("Password");
         registerSection.add(passwordLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, 30));
 
         passwordTextField.setBackground(new java.awt.Color(0, 0, 102));
@@ -386,7 +389,7 @@ public class login extends javax.swing.JFrame {
 
         emailLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         emailLabel.setForeground(new java.awt.Color(255, 255, 255));
-        emailLabel.setText("EMAIL:");
+        emailLabel.setText("E-mail");
         registerSection.add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, 30));
 
         emailTextField.setBackground(new java.awt.Color(0, 0, 102));
@@ -403,79 +406,51 @@ public class login extends javax.swing.JFrame {
 
         countryLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         countryLabel.setForeground(new java.awt.Color(255, 255, 255));
-        countryLabel.setText("PAIS:");
+        countryLabel.setText("Country");
         registerSection.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
-        countryComboBox.setBackground(new java.awt.Color(0, 0, 150));
-        countryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        countryComboBox.addActionListener(new java.awt.event.ActionListener() {
+        comboCitizenship.setBackground(new java.awt.Color(0, 0, 150));
+        comboCitizenship.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCitizenship.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                countryComboBoxActionPerformed(evt);
+                comboCitizenshipActionPerformed(evt);
             }
         });
-        registerSection.add(countryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 120, 30));
+        registerSection.add(comboCitizenship, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 120, 30));
 
         provinciaLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         provinciaLabel.setForeground(new java.awt.Color(255, 255, 255));
-        provinciaLabel.setText("PROVINCIA:");
+        provinciaLabel.setText("City");
         registerSection.add(provinciaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 410, 110, 30));
 
-        provinciaComboBox.setBackground(new java.awt.Color(0, 0, 150));
-        provinciaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        registerSection.add(provinciaComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 120, 30));
-
-        cantonLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        cantonLabel.setForeground(new java.awt.Color(255, 255, 255));
-        cantonLabel.setText("CANTÓN:");
-        registerSection.add(cantonLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 130, 50));
-
-        cantonComboBox.setBackground(new java.awt.Color(0, 0, 150));
-        cantonComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cantonComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cantonComboBoxActionPerformed(evt);
+        comboCity.setBackground(new java.awt.Color(0, 0, 150));
+        comboCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCity.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCityItemStateChanged(evt);
             }
         });
-        registerSection.add(cantonComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 110, 30));
+        registerSection.add(comboCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 120, 30));
 
         distritoLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         distritoLabel.setForeground(new java.awt.Color(255, 255, 255));
-        distritoLabel.setText("DISTRITO:");
+        distritoLabel.setText("District");
         registerSection.add(distritoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 460, 90, 30));
 
-        distritoComboBox.setBackground(new java.awt.Color(0, 0, 150));
-        distritoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        registerSection.add(distritoComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 120, 30));
-
-        direccionLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        direccionLabel.setForeground(new java.awt.Color(255, 255, 255));
-        direccionLabel.setText("DIRECCIÓN:");
-        registerSection.add(direccionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 240, 30));
-
-        direccionTextField.setBackground(new java.awt.Color(0, 0, 102));
-        direccionTextField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        direccionTextField.setForeground(new java.awt.Color(255, 255, 255));
-        direccionTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        direccionTextField.setBorder(null);
-        registerSection.add(direccionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 330, 30));
+        comboDistrict.setBackground(new java.awt.Color(0, 0, 150));
+        comboDistrict.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        registerSection.add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, 120, 30));
 
         part3.setBackground(new java.awt.Color(255, 255, 255));
         part3.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         part3.setForeground(new java.awt.Color(255, 255, 255));
         part3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        part3.setText("Registro");
+        part3.setText("Sign In");
         registerSection.add(part3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, -1));
-
-        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
         registerSection.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 120, 10));
-
-        jSeparator4.setBackground(new java.awt.Color(255, 255, 255));
         registerSection.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 480, 10));
-
-        jSeparator5.setBackground(new java.awt.Color(255, 255, 255));
         registerSection.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 110, 10));
 
-        jSeparator6.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
         registerSection.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 370, 10));
 
@@ -509,7 +484,7 @@ public class login extends javax.swing.JFrame {
         exitPanel1Layout.setVerticalGroup(
             exitPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitPanel1Layout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(exitButton1))
         );
 
@@ -535,135 +510,122 @@ public class login extends javax.swing.JFrame {
         registerButtonPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         registerSection.add(registerButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 530, 130, 40));
-
-        jSeparator7.setBackground(new java.awt.Color(255, 255, 255));
-        registerSection.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, 340, 10));
-
-        jSeparator8.setBackground(new java.awt.Color(255, 255, 255));
         registerSection.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 480, 10));
 
         usuarioLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         usuarioLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        usuarioLabel1.setText("USUARIO:");
+        usuarioLabel1.setText("User");
         registerSection.add(usuarioLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 40));
 
         nombreLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel1.setText("Nombre:");
+        nombreLabel1.setText("Name");
         registerSection.add(nombreLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 40));
 
         nombreLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel2.setText("Primer Apellido:");
-        registerSection.add(nombreLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, 40));
+        nombreLabel2.setText("Surname");
+        registerSection.add(nombreLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, 40));
 
-        usernameTextField2.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField2.setBorder(null);
-        usernameTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
+        nameField.setBackground(new java.awt.Color(0, 0, 102));
+        nameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        nameField.setForeground(new java.awt.Color(255, 255, 255));
+        nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nameField.setBorder(null);
+        nameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField2MouseClicked(evt);
+                nameFieldMouseClicked(evt);
             }
         });
-        usernameTextField2.addActionListener(new java.awt.event.ActionListener() {
+        nameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField2ActionPerformed(evt);
+                nameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 120, 30));
-
-        jSeparator10.setBackground(new java.awt.Color(255, 255, 255));
+        registerSection.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 120, 30));
         registerSection.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 120, 10));
 
-        usernameTextField3.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField3.setBorder(null);
-        usernameTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lastNameField.setBackground(new java.awt.Color(0, 0, 102));
+        lastNameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        lastNameField.setForeground(new java.awt.Color(255, 255, 255));
+        lastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lastNameField.setBorder(null);
+        lastNameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField3MouseClicked(evt);
+                lastNameFieldMouseClicked(evt);
             }
         });
-        usernameTextField3.addActionListener(new java.awt.event.ActionListener() {
+        lastNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField3ActionPerformed(evt);
+                lastNameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 120, 30));
-
-        jSeparator11.setBackground(new java.awt.Color(255, 255, 255));
+        registerSection.add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 120, 30));
         registerSection.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 120, 10));
 
-        usernameTextField4.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField4.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField4.setBorder(null);
-        usernameTextField4.addMouseListener(new java.awt.event.MouseAdapter() {
+        secondLastNameField.setBackground(new java.awt.Color(0, 0, 102));
+        secondLastNameField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        secondLastNameField.setForeground(new java.awt.Color(255, 255, 255));
+        secondLastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        secondLastNameField.setBorder(null);
+        secondLastNameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField4MouseClicked(evt);
+                secondLastNameFieldMouseClicked(evt);
             }
         });
-        usernameTextField4.addActionListener(new java.awt.event.ActionListener() {
+        secondLastNameField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField4ActionPerformed(evt);
+                secondLastNameFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 130, 30));
-
-        jSeparator12.setBackground(new java.awt.Color(255, 255, 255));
+        registerSection.add(secondLastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 130, 30));
         registerSection.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 130, 10));
 
         nombreLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel3.setText("Segundo Apellido:");
+        nombreLabel3.setText("Second Surname");
         registerSection.add(nombreLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
-        countryComboBox1.setBackground(new java.awt.Color(0, 0, 150));
-        countryComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        countryComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                countryComboBox1ActionPerformed(evt);
+        comboCountry.setBackground(new java.awt.Color(0, 0, 150));
+        comboCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboCountry.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCountryItemStateChanged(evt);
             }
         });
-        registerSection.add(countryComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 110, 30));
+        comboCountry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboCountryActionPerformed(evt);
+            }
+        });
+        registerSection.add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 110, 30));
 
         nombreLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel4.setText("Tipo:");
+        nombreLabel4.setText("Type");
         registerSection.add(nombreLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 50, 40));
 
-        usernameTextField5.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField5.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField5.setBorder(null);
-        usernameTextField5.addMouseListener(new java.awt.event.MouseAdapter() {
+        identificationField.setBackground(new java.awt.Color(0, 0, 102));
+        identificationField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        identificationField.setForeground(new java.awt.Color(255, 255, 255));
+        identificationField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        identificationField.setBorder(null);
+        identificationField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField5MouseClicked(evt);
+                identificationFieldMouseClicked(evt);
             }
         });
-        usernameTextField5.addActionListener(new java.awt.event.ActionListener() {
+        identificationField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField5ActionPerformed(evt);
+                identificationFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 150, 30));
-
-        jSeparator13.setBackground(new java.awt.Color(255, 255, 255));
+        registerSection.add(identificationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 150, 30));
         registerSection.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 150, 10));
-
-        nombreLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        nombreLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel5.setText("Edad:");
-        registerSection.add(nombreLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, 30));
 
         nombreLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel6.setText("Identificación:");
+        nombreLabel6.setText("Identification");
         registerSection.add(nombreLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 30));
 
         usernameTextField6.setBackground(new java.awt.Color(0, 0, 102));
@@ -683,90 +645,46 @@ public class login extends javax.swing.JFrame {
         });
         registerSection.add(usernameTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 120, 30));
 
-        jSeparator14.setBackground(new java.awt.Color(255, 255, 255));
-        registerSection.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 120, 10));
-
-        nombreLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        nombreLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel7.setText("Seleccionar foto:");
-        registerSection.add(nombreLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, -1, 30));
-
-        usernameTextField7.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField7.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField7.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField7.setBorder(null);
-        usernameTextField7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField7MouseClicked(evt);
-            }
-        });
-        usernameTextField7.addActionListener(new java.awt.event.ActionListener() {
+        comboIdentification.setBackground(new java.awt.Color(0, 0, 150));
+        comboIdentification.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboIdentification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField7ActionPerformed(evt);
+                comboIdentificationActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 120, 30));
-
-        jSeparator15.setBackground(new java.awt.Color(255, 255, 255));
-        registerSection.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 120, 10));
-
-        nombreLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        nombreLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel8.setText("Fecha Nacimiento:");
-        registerSection.add(nombreLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 30));
-
-        countryComboBox2.setBackground(new java.awt.Color(0, 0, 150));
-        countryComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        countryComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                countryComboBox2ActionPerformed(evt);
-            }
-        });
-        registerSection.add(countryComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 110, 30));
-
-        jSeparator16.setBackground(new java.awt.Color(255, 255, 255));
+        registerSection.add(comboIdentification, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 110, 30));
         registerSection.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 480, 10));
 
         nombreLabel9.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         nombreLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel9.setText("Nacionalidad:");
+        nombreLabel9.setText("Citizenship");
         registerSection.add(nombreLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, 30));
 
-        usernameTextField8.setBackground(new java.awt.Color(0, 0, 102));
-        usernameTextField8.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        usernameTextField8.setForeground(new java.awt.Color(255, 255, 255));
-        usernameTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField8.setBorder(null);
-        usernameTextField8.addMouseListener(new java.awt.event.MouseAdapter() {
+        phoneField.setBackground(new java.awt.Color(0, 0, 102));
+        phoneField.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        phoneField.setForeground(new java.awt.Color(255, 255, 255));
+        phoneField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        phoneField.setBorder(null);
+        phoneField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usernameTextField8MouseClicked(evt);
+                phoneFieldMouseClicked(evt);
             }
         });
-        usernameTextField8.addActionListener(new java.awt.event.ActionListener() {
+        phoneField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextField8ActionPerformed(evt);
+                phoneFieldActionPerformed(evt);
             }
         });
-        registerSection.add(usernameTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 120, 30));
+        registerSection.add(phoneField, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 120, 30));
+        registerSection.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 120, 10));
 
-        jSeparator17.setBackground(new java.awt.Color(255, 255, 255));
-        registerSection.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 120, 10));
+        PhoneNumber.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
+        PhoneNumber.setText("Phone Number");
+        registerSection.add(PhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        registerSection.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, -1, -1));
-
-        nombreLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        nombreLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        nombreLabel10.setText("Telefono:");
-        registerSection.add(nombreLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, 30));
+        comboCodeCountry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        registerSection.add(comboCodeCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 110, 30));
 
         background.add(registerSection, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, -1, 570));
 
@@ -933,13 +851,13 @@ public class login extends javax.swing.JFrame {
         backPanel.setBackground(new Color(0, 0, 150));
     }//GEN-LAST:event_backButtonMouseExited
 
-    private void usernameTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField1MouseClicked
+    private void usernameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameFieldMouseClicked
 
-    }//GEN-LAST:event_usernameTextField1MouseClicked
+    }//GEN-LAST:event_usernameFieldMouseClicked
 
-    private void usernameTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField1ActionPerformed
+    private void usernameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField1ActionPerformed
+    }//GEN-LAST:event_usernameFieldActionPerformed
 
     private void exitButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButton1MouseClicked
         System.exit(0);
@@ -977,81 +895,73 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
-    private void countryComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countryComboBoxActionPerformed
+    private void comboCitizenshipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCitizenshipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_countryComboBoxActionPerformed
+    }//GEN-LAST:event_comboCitizenshipActionPerformed
 
-    private void cantonComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantonComboBoxActionPerformed
+    private void nameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nameFieldMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_cantonComboBoxActionPerformed
+    }//GEN-LAST:event_nameFieldMouseClicked
 
-    private void usernameTextField2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField2MouseClicked
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField2MouseClicked
+    }//GEN-LAST:event_nameFieldActionPerformed
 
-    private void usernameTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField2ActionPerformed
+    private void lastNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lastNameFieldMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField2ActionPerformed
+    }//GEN-LAST:event_lastNameFieldMouseClicked
 
-    private void usernameTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField3MouseClicked
+    private void lastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField3MouseClicked
+    }//GEN-LAST:event_lastNameFieldActionPerformed
 
-    private void usernameTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField3ActionPerformed
+    private void secondLastNameFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_secondLastNameFieldMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField3ActionPerformed
+    }//GEN-LAST:event_secondLastNameFieldMouseClicked
 
-    private void usernameTextField4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField4MouseClicked
+    private void secondLastNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_secondLastNameFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField4MouseClicked
+    }//GEN-LAST:event_secondLastNameFieldActionPerformed
 
-    private void usernameTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField4ActionPerformed
+    private void comboCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCountryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField4ActionPerformed
+    }//GEN-LAST:event_comboCountryActionPerformed
 
-    private void countryComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countryComboBox1ActionPerformed
+    private void identificationFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_identificationFieldMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_countryComboBox1ActionPerformed
+    }//GEN-LAST:event_identificationFieldMouseClicked
 
-    private void usernameTextField5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField5MouseClicked
+    private void identificationFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identificationFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField5MouseClicked
+    }//GEN-LAST:event_identificationFieldActionPerformed
 
-    private void usernameTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField5ActionPerformed
+    private void comboIdentificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboIdentificationActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField5ActionPerformed
+    }//GEN-LAST:event_comboIdentificationActionPerformed
 
-    private void usernameTextField6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField6MouseClicked
+    private void phoneFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phoneFieldMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField6MouseClicked
+    }//GEN-LAST:event_phoneFieldMouseClicked
+
+    private void phoneFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phoneFieldActionPerformed
 
     private void usernameTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameTextField6ActionPerformed
 
-    private void usernameTextField7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField7MouseClicked
+    private void usernameTextField6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField6MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField7MouseClicked
+    }//GEN-LAST:event_usernameTextField6MouseClicked
 
-    private void usernameTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField7ActionPerformed
+    private void comboCountryItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCountryItemStateChanged
+        fillCity();
+    }//GEN-LAST:event_comboCountryItemStateChanged
 
-    private void countryComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_countryComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_countryComboBox2ActionPerformed
-
-    private void usernameTextField8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextField8MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField8MouseClicked
-
-    private void usernameTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_usernameTextField8ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void comboCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCityItemStateChanged
+        fillDistrict();
+    }//GEN-LAST:event_comboCityItemStateChanged
 
     public JPanel getContent() {
         return content;
@@ -1100,21 +1010,110 @@ public class login extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void fillComboIdentificationType(){
+          try{
+            ArrayList<String> listC= controllerIdentification.listInfoCombo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboIdentification.setModel(listF);
 
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    }
+    
+    
+     private void fillComboCitizen(){
+        try{
+            ArrayList<String> listC= controllerCountry.listInfoCombo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboCitizenship.setModel(listF);
+
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    
+    }
+     
+      private void fillComboCodeCountry(){
+        try{
+            ArrayList<String> listC= controllerCountry.listCodeCombo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboCodeCountry.setModel(listF);
+
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    
+    }
+    
+    
+    private void fillCity(){
+    try{
+           this.comboCity.removeAllItems();
+            int number=this.comboCountry.getSelectedIndex();
+            ArrayList<String>listCity= new ArrayList<String>();
+            listCity= controllerCity.listInfo(this.comboCountry.getItemAt(number));
+            DefaultComboBoxModel modelList= new DefaultComboBoxModel(listCity.toArray());
+
+            this.comboCity.setModel(modelList);
+
+           System.out.println(listCity.size());
+            //this.comboCity.setModel(new DefaultComboBoxModel(arr));
+
+            this.fillDistrict();
+            
+        }catch(Exception e){
+        System.out.println("Error in fillcity  "+e.toString());
+        }
+
+    
+    }
+    private void fillCountry(){
+        try{
+            ArrayList<String> listC= controllerCountry.listInfoCombo();
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboCountry.setModel(listF);
+            this.fillCity();
+            
+        }catch(Exception e){
+        System.out.println(e.toString());
+        }
+    
+    }
+    private void fillDistrict(){
+        try{
+            ArrayList<String> listC= controllerDistrict.listInfo(this.comboCity.getSelectedItem().toString(),this.comboCountry.getSelectedItem().toString());
+            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+            this.comboDistrict.setModel(listF);
+            
+        }catch(Exception e){
+        
+        }
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PhoneNumber;
     private javax.swing.JLabel backButton;
     private javax.swing.JPanel backPanel;
     public javax.swing.JPanel background;
-    private javax.swing.JComboBox<String> cantonComboBox;
-    private javax.swing.JLabel cantonLabel;
+    private javax.swing.JComboBox<String> comboCitizenship;
+    private javax.swing.JComboBox<String> comboCity;
+    private javax.swing.JComboBox<String> comboCodeCountry;
+    private javax.swing.JComboBox<String> comboCountry;
+    private javax.swing.JComboBox<String> comboDistrict;
+    private javax.swing.JComboBox<String> comboIdentification;
     public javax.swing.JPanel content;
-    private javax.swing.JComboBox<String> countryComboBox;
-    private javax.swing.JComboBox<String> countryComboBox1;
-    private javax.swing.JComboBox<String> countryComboBox2;
     private javax.swing.JLabel countryLabel;
-    private javax.swing.JLabel direccionLabel;
-    private javax.swing.JTextField direccionTextField;
-    private javax.swing.JComboBox<String> distritoComboBox;
     private javax.swing.JLabel distritoLabel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
@@ -1123,16 +1122,14 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel exitPanel;
     private javax.swing.JPanel exitPanel1;
     public javax.swing.JPanel homePanel;
+    private javax.swing.JTextField identificationField;
     private javax.swing.JLabel iniciarLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator2;
@@ -1140,21 +1137,18 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JTextField lastNameField;
     private javax.swing.JLabel loginButton;
     public javax.swing.JPanel loginPanel;
     public javax.swing.JPanel loginSection;
     private javax.swing.JPanel logoPanel;
+    private javax.swing.JTextField nameField;
     private javax.swing.JLabel nombreLabel1;
-    private javax.swing.JLabel nombreLabel10;
     private javax.swing.JLabel nombreLabel2;
     private javax.swing.JLabel nombreLabel3;
     private javax.swing.JLabel nombreLabel4;
-    private javax.swing.JLabel nombreLabel5;
     private javax.swing.JLabel nombreLabel6;
-    private javax.swing.JLabel nombreLabel7;
-    private javax.swing.JLabel nombreLabel8;
     private javax.swing.JLabel nombreLabel9;
     private javax.swing.JPanel panelLogin;
     private javax.swing.JLabel part1;
@@ -1163,23 +1157,18 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JLabel passwordLabel1;
     private javax.swing.JTextField passwordTextField;
-    private javax.swing.JComboBox<String> provinciaComboBox;
+    private javax.swing.JTextField phoneField;
     private javax.swing.JLabel provinciaLabel;
     private javax.swing.JLabel registerButton;
     private javax.swing.JPanel registerButtonPanel;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JPanel registerSection;
+    private javax.swing.JTextField secondLastNameField;
     private javax.swing.JLabel userLabel;
     private javax.swing.JPasswordField userPasswordField;
+    private javax.swing.JTextField usernameField;
     private javax.swing.JTextField usernameTextField;
-    private javax.swing.JTextField usernameTextField1;
-    private javax.swing.JTextField usernameTextField2;
-    private javax.swing.JTextField usernameTextField3;
-    private javax.swing.JTextField usernameTextField4;
-    private javax.swing.JTextField usernameTextField5;
     private javax.swing.JTextField usernameTextField6;
-    private javax.swing.JTextField usernameTextField7;
-    private javax.swing.JTextField usernameTextField8;
     private javax.swing.JLabel usuarioLabel1;
     // End of variables declaration//GEN-END:variables
 }

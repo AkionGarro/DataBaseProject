@@ -140,6 +140,13 @@ begin open ccUrsor for select nameType,descriptionT from typeclock;
 return ccursor;
 end fnListTypeClockInfoBasic;
 
+
+function fnListCodeCountry return sys_refcursor is
+cCursor sys_refCursor;
+begin open ccUrsor for select codeCountry from country;
+return ccursor;
+end fnListCodeCountry;
+
 end packagefnlist;
 
 

@@ -31,5 +31,12 @@ public class Controller_Country extends ControllerF {
         this.deleteFn= "{ ? = call packagedeleteTuple.fnDelCountry(?)}";
 }
 
-    
+    public ArrayList<String> listCodeCombo(){
+        ArrayList<String> listCodeCountry= new ArrayList<String>();
+        String backupV=listComboVariable;
+        listComboVariable="codecountry";
+        listCodeCountry=listInfoCombo();
+        listComboVariable=backupV;
+        return listCodeCountry;
+    }
 }
