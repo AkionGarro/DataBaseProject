@@ -131,7 +131,7 @@ begin
 v_idBrand:= packagegetid.getidBrand(nameBrand);
 open ccUrsor for select namemodel from modelp where modelp.idBrand=v_idBrand;
 return ccursor;
-end fnListPhonesFromUser;
+end fnListModelPBasic;
 
 end packagefnlist;
 
