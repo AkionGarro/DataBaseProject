@@ -124,6 +124,14 @@ open ccUrsor for select phonenumber from phone where phone.iduser=v_idappuser;
 return ccursor;
 end fnListPhonesFromUser;
 
+function fnListModelPBasic(nameBrand in varchar2) return SYs_refcursor is
+cCursor sys_refCursor;
+v_idBrand number(10);
+begin 
+v_idBrand:= packagegetid.getidBrand(nameBrand);
+open ccUrsor for select namemodel from modelp where modelp.idBrand=v_idBrand;
+return ccursor;
+end fnListPhonesFromUser;
 
 end packagefnlist;
 

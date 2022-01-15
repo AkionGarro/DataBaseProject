@@ -24,7 +24,7 @@ function fnListShippingMethodBasic return sys_RefCursor;
 function fnListIdentification return SYS_REFCURSOR;
 function fnListPhoneType return SYS_REFCURSOR;
 function fnListPhonesFromUser(username in varchar2) return SYS_REFCURSOR;
-
+function fnListModelPBasic(nameBrand in varchar2) return SYs_refcursor;
 
 end packagefnlist;
 
