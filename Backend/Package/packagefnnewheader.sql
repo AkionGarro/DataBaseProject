@@ -78,7 +78,7 @@ function  fnNewGender(p_nameG in varchar2)return varchar2;
 
 function fnNewPhone(p_number in number,p_username in varchar2,p_nametype in varchar2,p_nameCountry in varchar2)return varchar2;
 
-
+function fnNewPhoneType(p_nameType in varchar2)return varchar2;
 
 end packagefnnew;
 

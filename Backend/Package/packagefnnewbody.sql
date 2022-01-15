@@ -622,7 +622,26 @@ exception
 
 end fnNewPhone;
 
+function fnNewPhoneType(p_nameType in varchar2)return varchar2 is
+val varchar2(50);
 
+begin
+
+    insert into phoneType(nameType) values(p_nameType);
+    val:='Successfully Created';
+    commit;
+    return val;
+exception
+    WHEN no_data_found THEN
+     val:='Wrong or missing information'; 
+     return val;
+    when dup_val_on_index then
+     val:='Already exists';   
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnNewPhoneType;
 
 END PACKAGEFNNEW;
 

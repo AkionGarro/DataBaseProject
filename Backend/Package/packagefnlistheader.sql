@@ -22,9 +22,10 @@ Function fnListGenderBasic return sys_refcursor;
 function fnListShippingMethodInfoBasic return sys_refcursor;
 function fnListShippingMethodBasic return sys_RefCursor;
 function fnListIdentification return SYS_REFCURSOR;
+function fnListPhoneType return SYS_REFCURSOR;
+function fnListPhonesFromUser(username in varchar2) return SYS_REFCURSOR;
+
 
 end packagefnlist;
 
-/
 
-  GRANT EXECUTE ON "PR"."PACKAGEFNLIST" TO "PR";

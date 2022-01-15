@@ -109,9 +109,22 @@ begin open ccUrsor for select typeID from identification;
 return ccursor;
 end fnListIdentification;
 
+function fnListPhoneType return SYS_REFCURSOR is
+cCursor sys_refCursor;
+begin open ccUrsor for select nameType from phoneType;
+return ccursor;
+end fnListPhoneType;
+
+function fnListPhonesFromUser(username in varchar2) return SYS_REFCURSOR is
+cCursor sys_refCursor;
+v_idAppuser number(10);
+begin 
+v_idAppUser:= packagegetid.getidusername(username);
+open ccUrsor for select phonenumber from phone where phone.iduser=v_idappuser;
+return ccursor;
+end fnListPhonesFromUser;
+
 
 end packagefnlist;
 
-/
 
-  GRANT EXECUTE ON "PR"."PACKAGEFNLIST" TO "PR";
