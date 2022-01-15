@@ -133,6 +133,13 @@ open ccUrsor for select namemodel from modelp where modelp.idBrand=v_idBrand;
 return ccursor;
 end fnListModelPBasic;
 
+
+function fnListTypeClockInfoBasic return sys_refcursor  is
+cCursor sys_refCursor;
+begin open ccUrsor for select nameType,descriptionT from typeclock;
+return ccursor;
+end fnListTypeClockInfoBasic;
+
 end packagefnlist;
 
 
