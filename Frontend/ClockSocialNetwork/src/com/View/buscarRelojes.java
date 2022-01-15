@@ -26,21 +26,142 @@ public class buscarRelojes extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableInfo = new javax.swing.JTable(){
+            private static final long serialVersionUID = 1L;
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-    }// </editor-fold>//GEN-END:initComponents
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            };};
+            jCheckBox1 = new javax.swing.JCheckBox();
+            jCheckBox2 = new javax.swing.JCheckBox();
+            jComboBox1 = new javax.swing.JComboBox<>();
+            jLabel4 = new javax.swing.JLabel();
+            jLabel5 = new javax.swing.JLabel();
+            jComboBox2 = new javax.swing.JComboBox<>();
+            jLabel6 = new javax.swing.JLabel();
+            jCheckBox3 = new javax.swing.JCheckBox();
+            jLabel7 = new javax.swing.JLabel();
+            jComboBox3 = new javax.swing.JComboBox<>();
+            jLabel8 = new javax.swing.JLabel();
+            jComboBox4 = new javax.swing.JComboBox<>();
+            jButton1 = new javax.swing.JButton();
+
+            setBackground(new java.awt.Color(255, 255, 255));
+            setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel3.setText("Filter: brand:");
+            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 150, 50));
+
+            tableInfo.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Title 1", "Title 2", "Title 3", "Title 4"
+                }
+            ));
+            jScrollPane2.setViewportView(tableInfo);
+
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 730, 460));
+
+            jCheckBox1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jCheckBox1.setForeground(new java.awt.Color(0, 0, 0));
+            jCheckBox1.setText("Menor a $600");
+            jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jCheckBox1ActionPerformed(evt);
+                }
+            });
+            add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
+
+            jCheckBox2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jCheckBox2.setForeground(new java.awt.Color(0, 0, 0));
+            jCheckBox2.setText("Si");
+            jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jCheckBox2ActionPerformed(evt);
+                }
+            });
+            add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
+
+            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 110, 50));
+
+            jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel4.setText("Filter: condition");
+            add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 180, 50));
+
+            jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel5.setText("Filter: type");
+            add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 150, 50));
+
+            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 110, 50));
+
+            jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel6.setText("Filter: price");
+            add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
+
+            jCheckBox3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jCheckBox3.setForeground(new java.awt.Color(0, 0, 0));
+            jCheckBox3.setText("Mayor a $600");
+            add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+            jLabel7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel7.setText("Filter: vintage");
+            add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 150, 50));
+
+            jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 110, 50));
+
+            jLabel8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel8.setText("Filter: model");
+            add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 150, 50));
+
+            jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, 50));
+
+            jButton1.setText("Search");
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 90, 80));
+        }// </editor-fold>//GEN-END:initComponents
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
 }

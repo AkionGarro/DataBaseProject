@@ -40,74 +40,116 @@ public class insertarRelojes extends javax.swing.JPanel {
         jComboBox5 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableInfo = new javax.swing.JTable(){
+            private static final long serialVersionUID = 1L;
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(730, 700));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            };};
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Marca:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
+            setBackground(new java.awt.Color(255, 255, 255));
+            setPreferredSize(new java.awt.Dimension(730, 700));
+            setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Vintage:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 90, 30));
+            jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel6.setText("Brand:");
+            add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, 30));
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Modelo:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 80, 30));
+            jLabel7.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel7.setText("Buy Status:");
+            add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 110, 30));
 
-        jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Tipo:");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 190, 30));
+            jLabel8.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel8.setText("Model:");
+            add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 80, 30));
 
-        jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Condicion:");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 100, 30));
+            jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel9.setText("Type:");
+            add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 190, 30));
 
-        jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Descripcion:");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 190, 30));
+            jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel10.setText("Condition:");
+            add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 100, 30));
 
-        jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Precio:");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 190, 30));
+            jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel11.setText("Description:");
+            add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 190, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 140, -1));
+            jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel12.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel12.setText("Price:");
+            add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 190, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 140, -1));
+            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+            jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jComboBox1ActionPerformed(evt);
+                }
+            });
+            add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 140, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 140, -1));
+            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 140, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 140, -1));
+            jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, -1));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 140, -1));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 140, -1));
+            jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 140, -1));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 140, -1));
-    }// </editor-fold>//GEN-END:initComponents
+            jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 140, -1));
+            add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 140, -1));
+
+            jTextField2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jTextField2ActionPerformed(evt);
+                }
+            });
+            add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 140, -1));
+
+            jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel13.setText("Vintage:");
+            add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 90, 30));
+
+            jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+            jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jComboBox6ActionPerformed(evt);
+                }
+            });
+            add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 140, -1));
+
+            jButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            jButton1.setText("Add new clock");
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 160, 70));
+
+            tableInfo.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Title 1", "Title 2", "Title 3", "Title 4"
+                }
+            ));
+            jScrollPane2.setViewportView(tableInfo);
+
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 730, 430));
+        }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -117,21 +159,30 @@ public class insertarRelojes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
 }

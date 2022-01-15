@@ -26,21 +26,107 @@ public class cuenta extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableInfo = new javax.swing.JTable(){
+            private static final long serialVersionUID = 1L;
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-    }// </editor-fold>//GEN-END:initComponents
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            };};
+            jPanel1 = new javax.swing.JPanel();
+            jLabel6 = new javax.swing.JLabel();
+            jLabel1 = new javax.swing.JLabel();
+            jLabel7 = new javax.swing.JLabel();
+            jTextField1 = new javax.swing.JTextField();
+            jPasswordField1 = new javax.swing.JPasswordField();
+            jLabel8 = new javax.swing.JLabel();
+            jPasswordField2 = new javax.swing.JPasswordField();
+            jButton1 = new javax.swing.JButton();
+            jLabel5 = new javax.swing.JLabel();
+
+            setBackground(new java.awt.Color(255, 255, 255));
+            setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            tableInfo.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Title 1", "Title 2", "Title 3", "Title 4"
+                }
+            ));
+            jScrollPane2.setViewportView(tableInfo);
+
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 480));
+
+            jPanel1.setBackground(new java.awt.Color(62, 114, 179));
+            jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel6.setText("Email:");
+            jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 150, 30));
+
+            jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel1.setText("Foto");
+            jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
+
+            jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel7.setText("UserName:");
+            jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 140, -1));
+
+            jTextField1.setText("jTextField1");
+            jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 170, -1));
+
+            jPasswordField1.setText("jPasswordField1");
+            jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 170, -1));
+
+            jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel8.setText("Password:");
+            jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, -1));
+
+            jPasswordField2.setText("jPasswordField1");
+            jPanel1.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 170, -1));
+
+            jButton1.setText("Update");
+            jButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton1ActionPerformed(evt);
+                }
+            });
+            jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+
+            jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel5.setText("Relojes Personales");
+            jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 730, 50));
+
+            add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 220));
+        }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
 }

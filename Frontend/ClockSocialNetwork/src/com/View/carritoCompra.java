@@ -26,21 +26,41 @@ public class carritoCompra extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tableInfo = new javax.swing.JTable(){
+            private static final long serialVersionUID = 1L;
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-    }// </editor-fold>//GEN-END:initComponents
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            };};
+            jButton1 = new javax.swing.JButton();
+
+            setBackground(new java.awt.Color(255, 255, 255));
+            setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            tableInfo.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Title 1", "Title 2", "Title 3", "Title 4"
+                }
+            ));
+            jScrollPane2.setViewportView(tableInfo);
+
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 730, 620));
+
+            jButton1.setText("Buy All");
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
 }
