@@ -28,6 +28,7 @@ public class Controller_Country extends ControllerF {
         this.createFn="{ ? = call packagefnnew.fnNewCountry(?,?)}";
         this.listComboFn="{ ? = call packagefnlist.fnListCountryInfoBasic}";
         this.listComboVariable="nameCountry";
+        this.deleteFn= "{ ? = call packagedeleteTuple.fnDelCountry(?)}";
 }
 
     

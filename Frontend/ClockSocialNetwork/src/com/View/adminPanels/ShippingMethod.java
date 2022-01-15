@@ -50,7 +50,7 @@ public class ShippingMethod extends javax.swing.JPanel {
         createButton = new javax.swing.JButton();
         modifyButton = new javax.swing.JButton();
         nameField = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        companyName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -123,8 +123,8 @@ public class ShippingMethod extends javax.swing.JPanel {
         });
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 250, 30));
 
-        jTextField1.setColumns(20);
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 250, 40));
+        companyName.setColumns(20);
+        add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 250, 40));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("Shipping Method:");
@@ -134,7 +134,7 @@ public class ShippingMethod extends javax.swing.JPanel {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         try{
             if (!this.nameField.getText().isBlank()){
-                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Brand");
+                mainCont.createWindowMessage(controller.create(this.nameField.getText(), this.companyName.getText()), "Create Brand");
                 fillTable();
 
             }
@@ -152,13 +152,13 @@ public class ShippingMethod extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField companyName;
     private javax.swing.JButton createButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton modifyButton;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;

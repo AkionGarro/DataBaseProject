@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
+-- Archivo creado  - viernes-enero-14-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package PACKAGEDELETETUPLE
@@ -13,6 +13,7 @@ function fnDelBrand(p_name in varchar2)return varchar2;
 function fnDelBuyStatus(p_name in varchar2) return varchar2;
 function fnDelUserType(p_name in varchar2) return varchar2;
 function fnDelPaymentMethod(p_name in varchar2) return varchar2;
+function fnDelCountry(p_name in varchar2)return varchar2;
 end  packageDeleteTuple;
 
-/
+

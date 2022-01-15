@@ -185,7 +185,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="companyName">
       <Properties>
         <Property name="columns" type="int" value="20"/>
       </Properties>

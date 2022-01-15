@@ -118,6 +118,26 @@ exception
      val:='Wrong data';
      return val;
 end fnDelPaymentMethod;
+
+function fnDelCountry(p_name in varchar2) return varchar2
+is
+val varchar2(50);
+v_idC number(3);
+begin
+    v_idC:=packagegetid.getidCountry(p_name);
+    delete from Country where Country.idCountry=v_idC; 
+    val:='Deleted Successfully';
+    commit;
+    return val;
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Cannot be deleted';
+     return val;
+end fnDelCountry;
+
 end  packageDeleteTuple;
 
 
