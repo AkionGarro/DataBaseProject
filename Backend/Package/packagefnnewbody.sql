@@ -151,7 +151,7 @@ exception
 end fnNewCity;
 
 
-function  fnNewClockBuysale( p_idType in varchar2,  p_idModel in varchar2,
+function  fnNewClockBuysale(   p_idModel in varchar2,
 		 	                p_idCondition in varchar2,
 		                    p_descriptionClock in VARCHAR2,
 			                p_manufactureDate in DATE,
@@ -170,7 +170,6 @@ v_idUserS number(8);
 v_idBuyS number(8);
 
 begin
-    v_idType:=packagegetid.getidTypeClock(p_idType);
     v_idBrand:=packagegetid.getidBrand(p_idBrand);
     v_idModel:=packagegetid.getidModel(p_idModel,v_idBrand);
     v_idCondition:=packagegetid.getidCondition(p_idCondition);
@@ -178,12 +177,9 @@ begin
     v_idBuyS:=packagegetid.getIdBuyStatus(p_idbuyS);
 
 
-    packagepcd.new_clock(v_idType, v_idModel,
-		 	                v_idCondition ,
-		                    p_descriptionClock ,
-			                p_manufactureDate ,
-                            p_vintage ,
-                            p_price);
+INSERT INTO CLOCK(idClock,idModel,idCondition,descriptionClock,manufactureDate,vintage,price)
+values(s_Clock.nextval,v_idModel,v_idCondition,p_descriptionClock,p_manufactureDate,p_vintage,p_price);
+
     
     val:=packagefnnew.fnnewBuySale(v_idUserS , s_clock.currval,
                              v_idBuyS );
@@ -375,14 +371,9 @@ begin
         v_idAdDressCity:=packagegetid.getidCity(p_idCity,v_idaddressCountry);
         idDistrict:=packagegetid.getidDistrict(p_district,v_idAddresscity);
         v_userType:=packagegetid.getidUserType('User');
-    packagepcd.new_people(p_identification, 
-                             idType,
-                             idGender, 
-                             idCountry,
-		 	     p_birthdate,
-		             p_name ,
-			     p_surname ,
-			     p_secondsurname);
+  
+INSERT INTO PEOPLE(idPeople,identificationNumber,identificationType,gender,citenzenship,birthdate,namePeople,surname,secondsurname)
+values(s_people.nextval,p_identification,idType,idGender,idCountry,p_birthdate,p_name,p_surname,p_secondsurname);
     v_newidPeople:=packagegetid.getidpeople(p_identification);
     val:=packagefnnew.fnnewappuser(p_username , 
                              v_newIdPeople ,

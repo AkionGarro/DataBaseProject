@@ -120,9 +120,7 @@ values(s_CITY.nextval,p_Countryid,p_nameCity);
 
 end new_CITY;
 
-procedure new_CLOCK(
-
-                            p_idType in NUMBER, 
+procedure new_CLOCK( 
                             p_idModel in NUMBER,
 		 	                p_idCondition in NUMBER,
 		                    p_descriptionClock in VARCHAR2,
@@ -133,8 +131,8 @@ procedure new_CLOCK(
 
 is
 BEGIN
-INSERT INTO CLOCK(idClock,idType,idModel,idCondition,descriptionClock,manufactureDate,vintage,price)
-values(s_Clock.nextval,p_idType,p_idModel,p_idCondition,p_descriptionClock,p_manufactureDate,p_vintage,p_price);
+INSERT INTO CLOCK(idClock,idModel,idCondition,descriptionClock,manufactureDate,vintage,price)
+values(s_Clock.nextval,p_idModel,p_idCondition,p_descriptionClock,p_manufactureDate,p_vintage,p_price);
 
 END new_CLOCK;
 

@@ -41,8 +41,7 @@ procedure new_buySale(p_idUserS in VARCHAR2,
 procedure new_CITY(p_nameCity in VARCHAR2,
 				      p_Countryid in number);
 procedure new_CLOCK(
-
-                            p_idType in NUMBER, 
+ 
                             p_idModel in NUMBER,
 		 	                p_idCondition in NUMBER,
 		                    p_descriptionClock in VARCHAR2,

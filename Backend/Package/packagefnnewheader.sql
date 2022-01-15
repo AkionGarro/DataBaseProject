@@ -23,7 +23,7 @@ function  fnNewBuySale(p_idUserS in number, p_idClock in NUMBER,
 function  fnNewBuyStatus(p_nameB in varchar2, p_descriptionB in varchar2)return varchar2;
 
 function  fnNewCity(p_nameC in varchar2, p_idCountry in varchar2)return varchar2;
-function  fnNewClockBuysale( p_idType in varchar2,  
+function  fnNewClockBuysale(  
                             p_idModel in varchar2,
 		 	                p_idCondition in varchar2,
 		                    p_descriptionClock in VARCHAR2,
