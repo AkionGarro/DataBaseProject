@@ -30,7 +30,7 @@ public class Controller_ModelP extends ControllerF{
             CallableStatement cstmt = connect.prepareCall(this.createFn);
             cstmt.setString(2, nameD.trim());
             cstmt.setString(3, nameBrand.trim());
-            cstmt.setString(3, nameType.trim());
+            cstmt.setString(4, nameType.trim());
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             String result;

@@ -97,6 +97,7 @@ public class Model extends javax.swing.JPanel {
         nameField = new javax.swing.JTextField();
         comboType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+        createButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -140,7 +141,7 @@ public class Model extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, 30));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel3.setText("Type:");
@@ -178,6 +179,16 @@ public class Model extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel5.setText("Name:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 50));
+
+        createButton1.setBackground(new java.awt.Color(0, 0, 0));
+        createButton1.setForeground(new java.awt.Color(255, 255, 255));
+        createButton1.setText("Delete Brand");
+        createButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createButton1ActionPerformed(evt);
+            }
+        });
+        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -219,12 +230,31 @@ public class Model extends javax.swing.JPanel {
        fillModel();
     }//GEN-LAST:event_comboBrandItemStateChanged
 
+    private void createButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton1ActionPerformed
+                try{
+            if (this.comboBrand.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(controllerB.deleteT(this.comboBrand.getSelectedItem().toString() ), "Delete Brand");
+            fillBrand();
+            fillModel();
+        
+
+        }
+        else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+        }
+        }
+        catch(Exception e){
+                System.out.println(e.toString());
+        }    
+                // TODO add your handling code here:
+    }//GEN-LAST:event_createButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBrand;
     private javax.swing.JComboBox<String> comboModel;
     private javax.swing.JComboBox<String> comboType;
     private javax.swing.JButton createButton;
+    private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

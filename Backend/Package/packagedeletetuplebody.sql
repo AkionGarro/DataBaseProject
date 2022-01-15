@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
+-- Archivo creado  - viernes-enero-14-2022   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Package Body PACKAGEDELETETUPLE
@@ -56,7 +56,7 @@ exception
      val:='Not found'; 
      return val;
     when others then
-     val:='Wrong data';
+     val:='Cannot be deleted, it has models';
      return val;
 end fnDelBrand;
 
@@ -120,4 +120,4 @@ exception
 end fnDelPaymentMethod;
 end  packageDeleteTuple;
 
-/
+
