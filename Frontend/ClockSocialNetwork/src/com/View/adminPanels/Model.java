@@ -182,8 +182,8 @@ public class Model extends javax.swing.JPanel {
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
                      try{
-            if (!this.nameField.getText().isBlank()&&this.comboBrand.getSelectedItem().toString()!=null){
-                mainCont.createWindowMessage(controllerModelP.create(this.nameField.getText(),this.comboBrand.getSelectedItem().toString()), "Create Model");
+            if (!this.nameField.getText().isBlank()&&this.comboBrand.getSelectedItem().toString()!=null&& this.comboType.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(controllerModelP.create(this.nameField.getText(),this.comboBrand.getSelectedItem().toString(),this.comboType.getSelectedItem().toString()), "Create Model");
             fillBrand();
             fillModel();
         
@@ -200,7 +200,7 @@ public class Model extends javax.swing.JPanel {
     private void createButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton2ActionPerformed
                 try{
             if (!this.nameField.getText().isBlank()){
-                mainCont.createWindowMessage(controllerB.create(this.nameField.getText()), "Create Brand");
+                mainCont.createWindowMessage(controllerB.create(this.nameField.getText() ), "Create Brand");
             fillBrand();
             fillModel();
         

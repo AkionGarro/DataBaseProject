@@ -20,10 +20,25 @@ public class Controller_ModelP extends ControllerF{
                 if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
-        this.createFn="{ ? = call packagefnnew.fnNewmodelp(?,?)}";
+        this.createFn="{ ? = call packagefnnew.fnNewmodelp(?,?,?)}";
         this.listComboVariable="nameModel";
         this.listComboFn="{ ? = call packagefnlist.fnListModelPBasic(?)}";
     
     }
-
+        public String create(String nameD, String nameBrand, String nameType ){
+        try{
+            CallableStatement cstmt = connect.prepareCall(this.createFn);
+            cstmt.setString(2, nameD.trim());
+            cstmt.setString(3, nameBrand.trim());
+            cstmt.setString(3, nameType.trim());
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
+            cstmt.execute();
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+            System.out.println(result);
+            return result;
+        } catch(Exception e){
+        return e.toString();
+        }
+    }
 }
