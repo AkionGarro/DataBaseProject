@@ -630,7 +630,7 @@ val varchar2(50);
 
 begin
 
-    insert into phoneType(nameType) values(p_nameType);
+    insert into phoneType(idphonetype,nameType) values(s_phonetype.nextval,p_nameType);
     val:='Successfully Created';
     commit;
     return val;
