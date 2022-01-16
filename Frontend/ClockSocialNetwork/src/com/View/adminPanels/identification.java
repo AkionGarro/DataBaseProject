@@ -25,12 +25,13 @@ public class identification extends javax.swing.JPanel {
         controller = mainCont.getContIdentification();
         fillTable();
     }
-            private void fillTable(){
-        try{
-        this.tableInfo.setModel(controller.listInfoTable(""));
-        this.tableInfo.revalidate();
-        this.tableInfo.repaint();
-        }catch(Exception e){
+
+    private void fillTable() {
+        try {
+            this.tableInfo.setModel(controller.listInfoTable(""));
+            this.tableInfo.revalidate();
+            this.tableInfo.repaint();
+        } catch (Exception e) {
         }
     }
 

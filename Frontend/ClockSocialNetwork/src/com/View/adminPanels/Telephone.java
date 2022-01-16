@@ -15,7 +15,7 @@ import com.Controllers.Controller_PhoneType;
 public class Telephone extends javax.swing.JPanel {
 
     private Controller_Main mainCont = Controller_Main.getContMain();
-    private Controller_PhoneType controllerPhone;
+    private Controller_PhoneType controller;
 
     /**
      * Creates new form identification
@@ -23,15 +23,16 @@ public class Telephone extends javax.swing.JPanel {
     public Telephone() {
 
         initComponents();
-        controllerPhone = mainCont.getContPhoneType();
+        controller = mainCont.getContPhoneType();
         fillTable();
     }
-            private void fillTable(){
-        try{
-        this.tableInfo.setModel(controllerPhone.listInfoTable(""));
-        this.tableInfo.revalidate();
-        this.tableInfo.repaint();
-        }catch(Exception e){
+
+    private void fillTable() {
+        try {
+            this.tableInfo.setModel(controller.listInfoTable(""));
+            this.tableInfo.revalidate();
+            this.tableInfo.repaint();
+        } catch (Exception e) {
         }
     }
 
@@ -109,7 +110,7 @@ public class Telephone extends javax.swing.JPanel {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         try {
             if (!this.nameField.getText().isBlank()) {
-                mainCont.createWindowMessage(controllerPhone.create(this.nameField.getText()), "Create Identification");
+                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Phone Type");
                 fillTable();
 
             } else {
