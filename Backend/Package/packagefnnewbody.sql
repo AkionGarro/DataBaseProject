@@ -351,7 +351,7 @@ function  fnNewPeopleappuser(p_identification in VARCHAR2,
                              p_phoneNumber in number,
                              p_phoneCode in varchar2,
                              p_phoneType in varchar2)return varchar2 as
-val varchar2(50);
+val varchar2(64);
 idType number(3);
 idGender number(8);
 idCountry number(8);
@@ -364,33 +364,40 @@ v_idCountryPhone number(8);
 v_idPhoneType number(2);
 
 begin   
+  
+  
         idType:=packagegetid.getididentification(p_idType);
         idGender:=packagegetid.getidgender(p_idGender);
         idCountry:=packagegetid.getidCountry(p_idCountry);
-        v_idaddressCountry:=packagegetid.getidCountry(p_aCountry);
-        v_idAdDressCity:=packagegetid.getidCity(p_idCity,v_idaddressCountry);
+       v_idaddressCountry:=packagegetid.getidCountry(p_aCountry);
+        v_idAddressCity:=packagegetid.getidCity(p_idCity,v_idaddressCountry);
         idDistrict:=packagegetid.getidDistrict(p_district,v_idAddresscity);
         v_userType:=packagegetid.getidUserType('User');
         v_idCountryPhone:= packagegetid.getIdCountryWCode(p_phoneCode);
-        v_idPhoneType :=packageGetid.getIdPhoneType(v_idCountryPhone);
-
+       v_idPhoneType :=packageGetid.getIdPhoneType(p_phonetype);
+ 
 INSERT INTO PEOPLE(idPeople,identificationNumber,identificationType,gender,citenzenship,birthdate,namePeople,surname,secondsurname)
 values(s_people.nextval,p_identification,idType,idGender,idCountry,p_birthdate,p_name,p_surname,p_secondsurname);
+  
     v_newidPeople:=packagegetid.getidpeople(p_identification);
+    
     val:=packagefnnew.fnnewappuser(p_username , 
-                             v_newIdPeople ,
-                             v_userType , 
-                             iddistrict ,
+                            v_newIdPeople ,
+                         v_userType , 
+                            iddistrict ,
 		 	     p_password ,
 			     p_Email );
+
 INSERT INTO PHONE(phonenumber,iduser,idcountry,idtype) values (p_phoneNumber,s_appuser.currval,v_idCountryPhone,v_idPhoneType);
-    commit;
-    return val;
+   commit;
+  val:='You have been registered';
+   return val;
 exception
     WHEN no_data_found THEN
 
      rollback;
      val:='Missing information'; 
+
      return val;
     when dup_val_on_index then
 
@@ -398,8 +405,8 @@ exception
       val:='User already exists';
      return val;
     when others then
-
-     rollback;
+    
+    rollback;
      val:='Data error';
      return val;
 
@@ -647,4 +654,3 @@ exception
 end fnNewPhoneType;
 
 END PACKAGEFNNEW;
-
