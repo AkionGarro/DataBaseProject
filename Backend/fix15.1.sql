@@ -1,0 +1,7 @@
+--changes 15
+ALTER TABLE Country
+    ADD CONSTRAINT Country_codeCountry_U 
+    UNIQUE (codeCountry) 
+    USING INDEX
+    TABLESPACE pr_ind PCTFREE 20
+    STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);

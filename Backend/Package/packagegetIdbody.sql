@@ -146,4 +146,11 @@ begin
     select idCountry into idC from country where  country.codeCountry=p_codeCountry;
     return idC;
 end getIdCountryWCode;
+
+function getIdClock(p_idBuySale in number)return number is
+idC number(10);
+begin
+    select BUYSALE.idClock into idC from buysale where idBuysale=p_idBuysale;
+    return idC;
+end getIdClock;
 end packagegetid;
