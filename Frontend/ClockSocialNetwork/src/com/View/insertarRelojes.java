@@ -4,18 +4,98 @@
  */
 package com.View;
 
+import com.Controllers.Controller_Brand;
+import com.Controllers.Controller_Main;
+import com.Controllers.Controller_ModelP;
+import com.Controllers.Controller_TypeClock;
+import com.Controllers.Controller_Condition;
+import com.Controllers.Controller_BuyStatus;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author garroakion
  */
 public class insertarRelojes extends javax.swing.JPanel {
 
+    private Controller_Main mainCont = Controller_Main.getContMain();
+    private Controller_Brand controllerB;
+    private Controller_ModelP controllerModelP;
+    private Controller_TypeClock controllerType;
+    private Controller_Condition controllerCondition;
+    private Controller_BuyStatus controllerBuyStatus;
+
     /**
      * Creates new form insertarRelojes
      */
     public insertarRelojes() {
         initComponents();
+        controllerB = mainCont.getContBrand();
+        controllerModelP = mainCont.getContModelP();
+        controllerType = mainCont.getContTypeClock();
+        controllerCondition = mainCont.getContCondition();
+        controllerBuyStatus = mainCont.getContBuyStatus();
+        
+        fillBrand();
+        fillModel();
+        fillType();
+        fillCondition();
+        
+        
+
     }
+
+    private void fillBrand() {
+        try {
+            ArrayList<String> listC = controllerB.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboBrand.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+    }
+    
+
+    private void fillModel() {
+        try {
+            ArrayList<String> listC = controllerModelP.listInfoCombo(comboBrand.getSelectedItem().toString());
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboModel.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+    }
+
+    private void fillType() {
+        try {
+            ArrayList<String> listC = controllerType.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboType.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+    }
+
+    private void fillCondition() {
+        try {
+            ArrayList<String> listC = controllerCondition.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboCond.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+    }
+
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,11 +113,11 @@ public class insertarRelojes extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        comboBuyStatus = new javax.swing.JComboBox<>();
+        comboBrand = new javax.swing.JComboBox<>();
+        comboModel = new javax.swing.JComboBox<>();
+        comboCond = new javax.swing.JComboBox<>();
+        comboType = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -90,25 +170,30 @@ public class insertarRelojes extends javax.swing.JPanel {
             jLabel12.setText("Price:");
             add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 190, 30));
 
-            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
-            jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            comboBuyStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+            comboBuyStatus.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jComboBox1ActionPerformed(evt);
+                    comboBuyStatusActionPerformed(evt);
                 }
             });
-            add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 140, -1));
+            add(comboBuyStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 140, -1));
 
-            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 140, -1));
+            comboBrand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            comboBrand.addItemListener(new java.awt.event.ItemListener() {
+                public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                    comboBrandItemStateChanged(evt);
+                }
+            });
+            add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 140, -1));
 
-            jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, -1));
+            comboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, -1));
 
-            jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 140, -1));
+            comboCond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 140, -1));
 
-            jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 140, -1));
+            comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 140, -1));
             add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 140, -1));
 
             jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -151,9 +236,9 @@ public class insertarRelojes extends javax.swing.JPanel {
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 730, 430));
         }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void comboBuyStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBuyStatusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_comboBuyStatusActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -163,14 +248,19 @@ public class insertarRelojes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox6ActionPerformed
 
+    private void comboBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBrandItemStateChanged
+        fillModel();
+        
+    }//GEN-LAST:event_comboBrandItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboBrand;
+    private javax.swing.JComboBox<String> comboBuyStatus;
+    private javax.swing.JComboBox<String> comboCond;
+    private javax.swing.JComboBox<String> comboModel;
+    private javax.swing.JComboBox<String> comboType;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

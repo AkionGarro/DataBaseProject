@@ -17,63 +17,65 @@ import javax.swing.DefaultComboBoxModel;
  * @author garroakion
  */
 public class Model extends javax.swing.JPanel {
-    private  Controller_Main mainCont= Controller_Main.getContMain();
+
+    private Controller_Main mainCont = Controller_Main.getContMain();
     private Controller_Brand controllerB;
 
     private Controller_ModelP controllerModelP;
     private Controller_TypeClock controllerType;
+
     /**
      * Creates new form Model
      */
     public Model() {
         initComponents();
-        controllerB=mainCont.getContBrand();
-        controllerModelP=mainCont.getContModelP();
+        controllerB = mainCont.getContBrand();
+        controllerModelP = mainCont.getContModelP();
 
-        controllerType=mainCont.getContTypeClock();
+        controllerType = mainCont.getContTypeClock();
         fillType();
         fillBrand();
         fillModel();
-        
-       
+
     }
-    
-  
-        
-         private void fillBrand(){
-        try{
-            ArrayList<String> listC= controllerB.listInfoCombo();
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillBrand() {
+        try {
+            ArrayList<String> listC = controllerB.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboBrand.setModel(listF);
-            
-        }catch(Exception e){
-        System.out.println(e.toString());
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-    
+
     }
-        private void fillModel(){
-        try{
-           
-            ArrayList<String> listC= controllerModelP.listInfoCombo(this.comboBrand.getSelectedItem().toString());
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillModel() {
+        try {
+
+            ArrayList<String> listC = controllerModelP.listInfoCombo(this.comboBrand.getSelectedItem().toString());
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboModel.setModel(listF);
-            
-        }catch(Exception e){
-        System.out.println(e.toString());
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-    
+
     }
-     private void fillType(){
-        try{
-            ArrayList<String> listC= controllerType.listInfoCombo();
-            DefaultComboBoxModel listF=new DefaultComboBoxModel(listC.toArray());
+
+    private void fillType() {
+        try {
+            ArrayList<String> listC = controllerType.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboType.setModel(listF);
-            
-        }catch(Exception e){
-        System.out.println(e.toString());
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-    
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -178,60 +180,54 @@ public class Model extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
-                     try{
-            if (!this.nameField.getText().isBlank()&&this.comboBrand.getSelectedItem().toString()!=null&& this.comboType.getSelectedIndex()!=-1){
-                mainCont.createWindowMessage(controllerModelP.create(this.nameField.getText(),this.comboBrand.getSelectedItem().toString(),this.comboType.getSelectedItem().toString()), "Create Model");
-            fillBrand();
-            fillModel();
-        
+        try {
+            if (!this.nameField.getText().isBlank() && this.comboBrand.getSelectedItem().toString() != null && this.comboType.getSelectedIndex() != -1) {
+                mainCont.createWindowMessage(controllerModelP.create(this.nameField.getText(), this.comboBrand.getSelectedItem().toString(), this.comboType.getSelectedItem().toString()), "Create Model");
+                fillBrand();
+                fillModel();
 
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-        else {mainCont.createWindowMessage("Missing data", "Blank Fields");
-        }
-        }
-        catch(Exception e){
-                System.out.println(e.toString());
-        }    
     }//GEN-LAST:event_createButtonActionPerformed
 
     private void createButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton2ActionPerformed
-                try{
-            if (!this.nameField.getText().isBlank()){
-                mainCont.createWindowMessage(controllerB.create(this.nameField.getText() ), "Create Brand");
-            fillBrand();
-            fillModel();
-        
+        try {
+            if (!this.nameField.getText().isBlank()) {
+                mainCont.createWindowMessage(controllerB.create(this.nameField.getText()), "Create Brand");
+                fillBrand();
+                fillModel();
 
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-        else {mainCont.createWindowMessage("Missing data", "Blank Fields");
-        }
-        }
-        catch(Exception e){
-                System.out.println(e.toString());
-        }    
     }//GEN-LAST:event_createButton2ActionPerformed
 
     private void comboBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBrandItemStateChanged
-        
-       fillModel();
+
+        fillModel();
     }//GEN-LAST:event_comboBrandItemStateChanged
 
     private void createButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton1ActionPerformed
-                try{
-            if (this.comboBrand.getSelectedIndex()!=-1){
-                mainCont.createWindowMessage(controllerB.deleteT(this.comboBrand.getSelectedItem().toString() ), "Delete Brand");
-            fillBrand();
-            fillModel();
-        
+        try {
+            if (this.comboBrand.getSelectedIndex() != -1) {
+                mainCont.createWindowMessage(controllerB.deleteT(this.comboBrand.getSelectedItem().toString()), "Delete Brand");
+                fillBrand();
+                fillModel();
 
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-        else {mainCont.createWindowMessage("Missing data", "Blank Fields");
-        }
-        }
-        catch(Exception e){
-                System.out.println(e.toString());
-        }    
-                // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_createButton1ActionPerformed
 
 

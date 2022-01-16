@@ -62,47 +62,49 @@ public class cuenta extends javax.swing.JPanel {
 
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 480));
 
-            jPanel1.setBackground(new java.awt.Color(62, 114, 179));
+            jPanel1.setBackground(new java.awt.Color(255, 255, 255));
             jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
             jLabel6.setText("Email:");
-            jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 150, 30));
+            jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 150, 30));
 
+            jLabel1.setForeground(new java.awt.Color(0, 0, 0));
             jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             jLabel1.setText("Foto");
-            jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 90));
+            jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 120));
 
             jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
             jLabel7.setText("UserName:");
-            jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 140, -1));
+            jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 140, -1));
 
             jTextField1.setText("jTextField1");
-            jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 170, -1));
+            jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 170, -1));
 
             jPasswordField1.setText("jPasswordField1");
-            jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 170, -1));
+            jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 170, -1));
 
             jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
             jLabel8.setText("Password:");
-            jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, -1));
+            jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 150, -1));
 
             jPasswordField2.setText("jPasswordField1");
-            jPanel1.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 170, -1));
+            jPanel1.add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 170, -1));
 
+            jButton1.setBackground(new java.awt.Color(0, 0, 0));
             jButton1.setText("Update");
             jButton1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     jButton1ActionPerformed(evt);
                 }
             });
-            jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, -1, -1));
+            jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 110, 40));
 
             jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+            jLabel5.setForeground(new java.awt.Color(0, 0, 0));
             jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             jLabel5.setText("Relojes Personales");
             jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 730, 50));

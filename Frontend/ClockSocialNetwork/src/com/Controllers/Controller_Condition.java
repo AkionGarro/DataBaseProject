@@ -25,6 +25,8 @@ public class Controller_Condition extends ControllerF{
         }
         this.deleteFn="{ ? = call packagedeleteTuple.fnDelCondition(?)}";
         this.createFn="{ ? = call packagefnnew.fnNewCondition(?,?)}";
+        this.listComboFn="{ ? = call packagefnlist.fnListComboCondition}";
+         this.listComboVariable="namecondition";
     }
 
     public DefaultTableModel listInfo(){

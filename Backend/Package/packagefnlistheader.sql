@@ -1,6 +1,7 @@
 create or replace PACKAGE      "PACKAGEFNLIST" is
 
 function fnListConditionBasic return sys_RefCursor;
+function fnListComboCondition return sys_RefCursor;
 function fnListTypeClockBasic return sys_RefCursor;
 function fnListBrandBasic return sys_RefCursor;
 function fnListBrandFull return sys_refCursor;

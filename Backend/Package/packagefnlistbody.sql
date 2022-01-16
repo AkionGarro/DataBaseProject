@@ -7,6 +7,12 @@ BEGIN
     return cCursor;
 end fnListConditionBasic;
 
+function fnListComboCondition return sys_refCursor is
+cCursor sys_refCursor;
+begin open cCursor for select namecondition from CONDITION;
+    return cCursor;
+end fnListComboCondition;
+
 function fnListTypeClockBasic return sys_refcursor is
 cCursor SYS_REFCURSOR;
 BEGIN

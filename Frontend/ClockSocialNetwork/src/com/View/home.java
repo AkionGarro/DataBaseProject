@@ -93,6 +93,7 @@ public class home extends javax.swing.JPanel {
         option1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Principal");
         option1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 160, -1));
 
@@ -117,6 +118,7 @@ public class home extends javax.swing.JPanel {
         option2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Insertar Relojes");
         option2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 180, -1));
 
@@ -141,6 +143,7 @@ public class home extends javax.swing.JPanel {
         option3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Favoritos");
         option3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 190, -1));
 
@@ -165,6 +168,7 @@ public class home extends javax.swing.JPanel {
         option4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Carrito de Compra");
         option4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 190, 30));
 
@@ -189,6 +193,7 @@ public class home extends javax.swing.JPanel {
         option5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Chats");
         option5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 190, 30));
 
@@ -216,6 +221,7 @@ public class home extends javax.swing.JPanel {
         option8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Perfil");
         option8.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2, 190, 30));
 
@@ -240,6 +246,7 @@ public class home extends javax.swing.JPanel {
         option6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Estadísticas");
         option6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2, 190, 30));
 
@@ -263,6 +270,7 @@ public class home extends javax.swing.JPanel {
         option7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Buscar Relojes");
         option7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 190, 30));
 
