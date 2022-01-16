@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - viernes-enero-14-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package Body PACKAGEGETID
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE BODY "PR"."PACKAGEGETID" AS
+create or replace PACKAGE BODY      "PACKAGEGETID" AS
 function getIdUserName(p_username in varchar2)return number is
 idUser number(8);
 begin
@@ -147,6 +140,10 @@ begin
     return idC;
 end getidPhonetype;
 
+function getIdCountryWCode(p_codeCountry in varchar2)return number is
+idC number(8);
+begin 
+    select idCountry into idC from country where  country.codeCountry=p_codeCountry;
+    return idC;
+end getIdCountryWCode;
 end packagegetid;
-
-

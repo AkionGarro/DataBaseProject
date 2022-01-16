@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - viernes-enero-14-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package PACKAGEFNNEW
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE "PR"."PACKAGEFNNEW" is
+create or replace PACKAGE      "PACKAGEFNNEW" is
 
 function  fnNewappuser(p_username in VARCHAR2, 
                              p_idNumber in number,
@@ -57,12 +50,15 @@ function  fnNewPeopleappuser(p_identification in VARCHAR2,
                              p_birthdate in DATE,
                              p_name in VARCHAR2,
                              p_surname in VARCHAR2,
-                             p_secondsurname VARCHAR2,p_username in VARCHAR2, 
-                            
-                              
+                             p_secondsurname VARCHAR2,p_username in VARCHAR2,                              
+                             p_password in VARCHAR2,
+                             p_Email in VARCHAR2,
                              p_district in varchar2,
-		 	     p_password in VARCHAR2,
-			     p_Email in VARCHAR2,p_idCity in varchar2, p_aCountry in varchar2)return varchar2;
+                             p_idCity in varchar2,
+                             p_aCountry in varchar2,
+                             p_phoneNumber in number,
+                             p_phoneCode in varchar2,
+                             p_phoneType in varchar2)return varchar2;
 function  fnNewReview(p_descriptionR in VARCHAR2, p_rating in NUMBER)return varchar2;
 function  fnNewSellerRating(p_idUser in varchar2, p_rating in number)return varchar2;
 function  fnNewShCart_appuserxclock(p_idappuser in varchar2,
@@ -81,4 +77,3 @@ function fnNewPhone(p_number in number,p_username in varchar2,p_nametype in varc
 function fnNewPhoneType(p_nameType in varchar2)return varchar2;
 
 end packagefnnew;
-

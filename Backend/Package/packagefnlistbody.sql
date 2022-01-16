@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package Body PACKAGEFNLIST
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE BODY "PR"."PACKAGEFNLIST" AS
+create or replace PACKAGE BODY      "PACKAGEFNLIST" AS
 
 function fnListConditionBasic return sys_Refcursor is
 cCursor SYS_REFCURSOR;
@@ -148,5 +141,4 @@ return ccursor;
 end fnListCodeCountry;
 
 end packagefnlist;
-
 

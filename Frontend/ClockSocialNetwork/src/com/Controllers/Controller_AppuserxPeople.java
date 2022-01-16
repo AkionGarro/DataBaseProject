@@ -35,23 +35,35 @@ public class Controller_AppuserxPeople {
                             String  p_surname ,
                             String p_secondsurname ,
                             String p_username,  
-                            String  p_district ,
+                             
 		 	    String  p_password ,
-			    String  p_Email ){
+			    String  p_Email, 
+                            String  p_district,
+                            String p_City,
+                            String p_addressCountry,
+                            String p_phoneNumber, 
+                            String p_phoneCode,
+                            String p_phoneType
+                                    ){
         try{
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewPeopleappuser(?,?,?,?,?,?,?,?,?,?,?,?)}");
-            cstmt.setString(2, p_identification);
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewPeopleappuser(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            cstmt.setString(2, p_identification.trim());
             cstmt.setString(3, p_idType);
             cstmt.setString(4, p_idGender);
             cstmt.setString(5, p_idCountry);
             cstmt.setDate(6, p_birthdate);
-            cstmt.setString(7, p_name);
-            cstmt.setString(8, p_surname);
-            cstmt.setString(9, p_secondsurname);
+            cstmt.setString(7, p_name.trim());
+            cstmt.setString(8, p_surname.trim());
+            cstmt.setString(9, p_secondsurname.trim());
             cstmt.setString(10, p_username);
-            cstmt.setString(11, p_district);
-            cstmt.setString(12, p_password);
-            cstmt.setString(13, p_Email);
+            cstmt.setString(11, p_password);
+            cstmt.setString(12, p_Email);
+            cstmt.setString(13, p_district);
+            cstmt.setString(14, p_City);
+            cstmt.setString(15, p_addressCountry);
+            cstmt.setInt(16, Integer.parseInt(p_phoneNumber));
+            cstmt.setString(17, p_phoneCode);
+            cstmt.setString(18, p_phoneType);
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             String result;

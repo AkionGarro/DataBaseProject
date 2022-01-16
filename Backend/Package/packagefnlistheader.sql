@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - jueves-enero-13-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package PACKAGEFNLIST
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE "PR"."PACKAGEFNLIST" is
+create or replace PACKAGE      "PACKAGEFNLIST" is
 
 function fnListConditionBasic return sys_RefCursor;
 function fnListTypeClockBasic return sys_RefCursor;
@@ -30,5 +23,4 @@ function fnListCodeCountry return sys_refcursor;
 
 
 end packagefnlist;
-
 

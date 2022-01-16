@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - viernes-enero-14-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package Body PACKAGEFNNEW
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE BODY "PR"."PACKAGEFNNEW" AS
+create or replace PACKAGE BODY      "PACKAGEFNNEW" AS
 function  fnNewappuser(p_username in VARCHAR2, 
                              p_idNumber in number,
                              p_userType in NUMBER, 
@@ -180,7 +173,7 @@ begin
 INSERT INTO CLOCK(idClock,idModel,idCondition,descriptionClock,manufactureDate,vintage,price)
 values(s_Clock.nextval,v_idModel,v_idCondition,p_descriptionClock,p_manufactureDate,p_vintage,p_price);
 
-    
+
     val:=packagefnnew.fnnewBuySale(v_idUserS , s_clock.currval,
                              v_idBuyS );
     commit;
@@ -226,7 +219,7 @@ val varchar2(50);
 v_idCity number(8);
 v_idCountry number(8);
 begin
-   
+
     v_idCountry:=packagegetid.getidCountry(p_nameCountry);
     v_idCity:=packagegetId.getIdCity(p_namecity,v_idCountry);
     dbms_output.put_line('this happened');
@@ -273,7 +266,7 @@ as
 val varchar2(50);
 
 begin
-    
+
     packagepcd.new_identification(p_identification);
     commit;
     val:='Successfully Created';
@@ -350,9 +343,14 @@ function  fnNewPeopleappuser(p_identification in VARCHAR2,
                              p_name in VARCHAR2,
                              p_surname in VARCHAR2,
                              p_secondsurname VARCHAR2,p_username in VARCHAR2, 
+                             p_password in VARCHAR2,
+                             p_Email in VARCHAR2,
                              p_district in varchar2,
-		 	     p_password in VARCHAR2,
-			     p_Email in VARCHAR2,p_idCity in varchar2, p_aCountry in varchar2)return varchar2 as
+                             p_idCity in varchar2,
+                             p_aCountry in varchar2,
+                             p_phoneNumber in number,
+                             p_phoneCode in varchar2,
+                             p_phoneType in varchar2)return varchar2 as
 val varchar2(50);
 idType number(3);
 idGender number(8);
@@ -362,6 +360,8 @@ v_idAddressCountry number(8);
 v_idAddressCity number(8);
 v_userType number(2);
 v_newidPeople number(8);
+v_idCountryPhone number(8);
+v_idPhoneType number(2);
 
 begin   
         idType:=packagegetid.getididentification(p_idType);
@@ -371,7 +371,9 @@ begin
         v_idAdDressCity:=packagegetid.getidCity(p_idCity,v_idaddressCountry);
         idDistrict:=packagegetid.getidDistrict(p_district,v_idAddresscity);
         v_userType:=packagegetid.getidUserType('User');
-  
+        v_idCountryPhone:= packagegetid.getIdCountryWCode(p_phoneCode);
+        v_idPhoneType :=packageGetid.getIdPhoneType(v_idCountryPhone);
+
 INSERT INTO PEOPLE(idPeople,identificationNumber,identificationType,gender,citenzenship,birthdate,namePeople,surname,secondsurname)
 values(s_people.nextval,p_identification,idType,idGender,idCountry,p_birthdate,p_name,p_surname,p_secondsurname);
     v_newidPeople:=packagegetid.getidpeople(p_identification);
@@ -381,21 +383,22 @@ values(s_people.nextval,p_identification,idType,idGender,idCountry,p_birthdate,p
                              iddistrict ,
 		 	     p_password ,
 			     p_Email );
+INSERT INTO PHONE(phonenumber,iduser,idcountry,idtype) values (p_phoneNumber,s_appuser.currval,v_idCountryPhone,v_idPhoneType);
     commit;
     return val;
 exception
     WHEN no_data_found THEN
-     
+
      rollback;
      val:='Missing information'; 
      return val;
     when dup_val_on_index then
-    
+
      rollback;
       val:='User already exists';
      return val;
     when others then
-     
+
      rollback;
      val:='Data error';
      return val;
@@ -644,5 +647,4 @@ exception
 end fnNewPhoneType;
 
 END PACKAGEFNNEW;
-
 

@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - viernes-enero-14-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package PACKAGEGETID
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE "PR"."PACKAGEGETID" AS
+create or replace PACKAGE      "PACKAGEGETID" AS
 function getIdUserName(p_username in varchar2)return number;
 
 function getIdBrand(p_nameBrand in varchar2)return number;
@@ -39,5 +32,5 @@ function getidTypeClock(p_nameC in varchar2)return number;
 
 function getidUsertype(p_nameC in varchar2)return number;
 function getidPhoneType(p_name in varchar2) return number;
+function getIdCountryWCode(p_codeCountry in varchar2)return number;
 end packagegetid;
-

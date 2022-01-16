@@ -30,6 +30,10 @@ public class Controller_Main {
      private Controller_ShippingMethod contShippingMethod;
      private Controller_Identification contIdentification;
      
+     private Controller_AppuserxPeople contAppuserPeople;
+     
+     private Controller_PhoneType contPhoneType;
+     
      public static Connection connect=(Connection) new DB_Connection().obtainConnection(); 
      private static Controller_Main mainController= new Controller_Main();
      
@@ -50,11 +54,10 @@ public class Controller_Main {
        contDistrict=new Controller_District();
        contModelP=new Controller_ModelP();
        contGender=new Controller_Gender();
-       
-      
+       contAppuserPeople=new Controller_AppuserxPeople();
        contShippingMethod= new Controller_ShippingMethod();
        contIdentification=new Controller_Identification();
-       
+       contPhoneType=new Controller_PhoneType();
        
     }
 
@@ -120,8 +123,20 @@ public class Controller_Main {
         
     }
 
+    public Controller_AppuserxPeople getContAppUserPeople() {
+        return contAppuserPeople;
+    }
+
 
     public Controller_Identification getContIdentification(){
         return contIdentification;
+    }
+
+    public Controller_AppuserxPeople getContAppuserPeople() {
+        return contAppuserPeople;
+    }
+
+    public Controller_PhoneType getContPhoneType() {
+        return contPhoneType;
     }
 }
