@@ -931,9 +931,10 @@ public class login extends javax.swing.JFrame {
         try{
         java.util.Date utilDate = this.dateChooser.getDate();
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        System.out.println(sqlDate.toString());
         mainCont.createWindowMessage(this.controllerAppUser.create(
         this.identificationField.getText(),
-        this.identificationField.getText(), 
+        this.comboIdentification.getSelectedItem().toString(), 
         this.comboGender.getSelectedItem().toString(), 
         this.comboCitizenship.getSelectedItem().toString(),
         sqlDate,
@@ -944,8 +945,8 @@ public class login extends javax.swing.JFrame {
         this.passwordTextField.getText(), 
         this.emailTextField.getText(), 
         this.comboDistrict.getSelectedItem().toString(), 
-        this.comboCity.toString(), 
-        this.comboCountry.toString(),
+        this.comboCity.getSelectedItem().toString(), 
+        this.comboCountry.getSelectedItem().toString(),
         this.phoneField.getText(),
         this.comboCodeCountry.getSelectedItem().toString(),
         this.comboPhoneType.getSelectedItem().toString()
