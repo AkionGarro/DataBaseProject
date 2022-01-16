@@ -61,6 +61,7 @@ public class login extends javax.swing.JFrame {
         this.fillComboIdentificationType();
         this.fillComboCitizen();
         this.fillComboGender();
+        this.fillPhoneType();
         
     }
 
