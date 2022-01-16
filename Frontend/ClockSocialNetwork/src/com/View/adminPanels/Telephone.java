@@ -6,28 +6,29 @@ package com.View.adminPanels;
 
 import com.Controllers.Controller_Identification;
 import com.Controllers.Controller_Main;
+import com.Controllers.Controller_PhoneType;
 
 /**
  *
  * @author garroakion
  */
-public class identification extends javax.swing.JPanel {
+public class Telephone extends javax.swing.JPanel {
 
     private Controller_Main mainCont = Controller_Main.getContMain();
-    private Controller_Identification controller;
+    private Controller_PhoneType controllerPhone;
 
     /**
      * Creates new form identification
      */
-    public identification() {
+    public Telephone() {
 
         initComponents();
-        controller = mainCont.getContIdentification();
+        controllerPhone = mainCont.getContPhoneType();
         fillTable();
     }
             private void fillTable(){
         try{
-        this.tableInfo.setModel(controller.listInfoTable(""));
+        this.tableInfo.setModel(controllerPhone.listInfoTable(""));
         this.tableInfo.revalidate();
         this.tableInfo.repaint();
         }catch(Exception e){
@@ -56,12 +57,15 @@ public class identification extends javax.swing.JPanel {
             nameField = new javax.swing.JTextField();
 
             setBackground(new java.awt.Color(255, 255, 255));
+            setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
             jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-            jLabel3.setText("Identification Name:");
+            jLabel3.setText("Telephone type:");
             add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
+
+            jScrollPane2.setMinimumSize(new java.awt.Dimension(730, 660));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -76,7 +80,7 @@ public class identification extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 730, 600));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 730, 540));
 
             createButton.setBackground(new java.awt.Color(0, 0, 0));
             createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +109,7 @@ public class identification extends javax.swing.JPanel {
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
         try {
             if (!this.nameField.getText().isBlank()) {
-                mainCont.createWindowMessage(controller.create(this.nameField.getText()), "Create Identification");
+                mainCont.createWindowMessage(controllerPhone.create(this.nameField.getText()), "Create Identification");
                 fillTable();
 
             } else {

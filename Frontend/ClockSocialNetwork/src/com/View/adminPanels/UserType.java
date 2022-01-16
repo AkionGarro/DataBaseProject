@@ -60,6 +60,8 @@ public class UserType extends javax.swing.JPanel {
             jLabel5 = new javax.swing.JLabel();
 
             setBackground(new java.awt.Color(255, 255, 255));
+            setMinimumSize(new java.awt.Dimension(730, 660));
+            setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             tableInfo.setBackground(new java.awt.Color(255, 255, 255));

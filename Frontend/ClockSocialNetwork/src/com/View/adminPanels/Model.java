@@ -100,6 +100,7 @@ public class Model extends javax.swing.JPanel {
         createButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(730, 660));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N

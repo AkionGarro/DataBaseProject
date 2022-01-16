@@ -23,7 +23,7 @@ public class DB_Connection {
     private void openConnection(){
         try{
             Class.forName("oracle.jdbc.OracleDriver");
-            conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:DBPRUEBA","pr","pr");
+            conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:ProyectoBD","pr","pr");
           if (conn!=null){
             System.out.println("Successfull connection");   
             } 

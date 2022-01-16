@@ -53,6 +53,7 @@ public class Gender extends javax.swing.JPanel {
             nameField = new javax.swing.JTextField();
 
             setBackground(new java.awt.Color(255, 255, 255));
+            setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N

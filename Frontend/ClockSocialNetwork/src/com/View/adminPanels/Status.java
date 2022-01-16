@@ -45,6 +45,7 @@ public class Status extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(730, 660));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));

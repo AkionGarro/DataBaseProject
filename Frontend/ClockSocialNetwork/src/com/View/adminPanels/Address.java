@@ -104,7 +104,6 @@ public class Address extends javax.swing.JPanel {
         tableInfo = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         comboDistrict = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
         comboCityF = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -116,10 +115,11 @@ public class Address extends javax.swing.JPanel {
         modifyButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(730, 700));
+        setPreferredSize(new java.awt.Dimension(730, 660));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("City:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
 
@@ -132,6 +132,7 @@ public class Address extends javax.swing.JPanel {
         add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cod:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, 30));
 
@@ -171,15 +172,12 @@ public class Address extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 730, 460));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Country:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
         comboDistrict.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(comboDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 300, 30));
-
-        jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel5.setText("Country:");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
         comboCityF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboCityF.addItemListener(new java.awt.event.ItemListener() {
@@ -190,10 +188,12 @@ public class Address extends javax.swing.JPanel {
         add(comboCityF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 300, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("District Name:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Agregar:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
 
@@ -340,7 +340,6 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;

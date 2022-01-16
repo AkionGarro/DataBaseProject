@@ -59,6 +59,7 @@ public class ClockType extends javax.swing.JPanel {
             createButton1 = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
+            setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             deleteB.setBackground(new java.awt.Color(0, 0, 0));
