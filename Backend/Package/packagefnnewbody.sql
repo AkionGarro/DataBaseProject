@@ -155,7 +155,7 @@ function  fnNewClockBuysale(   p_idModel in varchar2,
                             p_idBrand in varchar2)return varchar2
 as
 val varchar2(50);
-v_idType number(3);
+
 v_idModel number(10);
 v_idBrand number(10);
 v_idCondition number(2);
@@ -168,14 +168,16 @@ begin
     v_idCondition:=packagegetid.getidCondition(p_idCondition);
     v_idUserS:=packagegetid.getIdusername(p_idUsers);
     v_idBuyS:=packagegetid.getIdBuyStatus(p_idbuyS);
+    
 
 
 INSERT INTO CLOCK(idClock,idModel,idCondition,descriptionClock,manufactureDate,vintage,price)
-values(s_Clock.nextval,v_idModel,v_idCondition,p_descriptionClock,p_manufactureDate,p_vintage,p_price);
+values(s_Clock.nextval,v_idModel,v_idCondition,p_descriptionClock,p_manufactureDate,'1',p_price);
 
 
     val:=packagefnnew.fnnewBuySale(v_idUserS , s_clock.currval,
-                             v_idBuyS );
+                        v_idBuyS );
+                      
     commit;
     return val;
 exception
@@ -364,8 +366,8 @@ v_idCountryPhone number(8);
 v_idPhoneType number(2);
 
 begin   
-  
-  
+
+
         idType:=packagegetid.getididentification(p_idType);
         idGender:=packagegetid.getidgender(p_idGender);
         idCountry:=packagegetid.getidCountry(p_idCountry);
@@ -375,12 +377,12 @@ begin
         v_userType:=packagegetid.getidUserType('User');
         v_idCountryPhone:= packagegetid.getIdCountryWCode(p_phoneCode);
        v_idPhoneType :=packageGetid.getIdPhoneType(p_phonetype);
- 
+
 INSERT INTO PEOPLE(idPeople,identificationNumber,identificationType,gender,citenzenship,birthdate,namePeople,surname,secondsurname)
 values(s_people.nextval,p_identification,idType,idGender,idCountry,p_birthdate,p_name,p_surname,p_secondsurname);
-  
+
     v_newidPeople:=packagegetid.getidpeople(p_identification);
-    
+
     val:=packagefnnew.fnnewappuser(p_username , 
                             v_newIdPeople ,
                          v_userType , 
@@ -405,7 +407,7 @@ exception
       val:='User already exists';
      return val;
     when others then
-    
+
     rollback;
      val:='Data error';
      return val;

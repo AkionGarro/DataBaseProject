@@ -146,5 +146,36 @@ begin open ccUrsor for select codeCountry from country;
 return ccursor;
 end fnListCodeCountry;
 
-end packagefnlist;
+function fnListAllClocksFsell return sys_refcursor is
+cCursor sys_refcursor;
+v_idStatusSale number(3);
+begin
+v_idStatusSale:= packagegetid.getidbuystatus('For Sale');
+open ccursor for select buysale.idbuysale, 
+                              appuser.username,
+                              typeclock.nameType, 
+                              brand.nameBrand, 
+                              modelp.nameModel,
+                              condition.nameCondition,
+                              clock.manufacturedate,
+                              clock.descriptionclock 
+                              from buysale 
+                              inner join clock on  buysale.idbuystatus=v_idStatusSale and buysale.idClock=clock.idClock
+                              inner join condition on clock.idcondition=condition.idcondition
+                              inner join modelp on clock.idmodel=modelp.idmodel
+                              inner join brand  on brand.idbrand=modelp.idbrand
+                              inner join typeclock on typeclock.idtype=modelp.idtypeclock
+                              inner join appuser on appuser.idappuser=buysale.iduserseller;
+                            
 
+return ccursor;
+
+end fnListAllClocksFsell;
+
+function fnListBuyStatusComboBasic return sys_refcursor is
+cCursor sys_refCursor;
+begin open cCursor for select status from BUYSTATUS;
+    return cCursor;
+end fnListBuyStatusComboBasic;
+
+end packagefnlist;

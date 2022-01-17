@@ -25,6 +25,8 @@ public class Controller_BuyStatus extends ControllerF {
         }
         this.deleteFn="{ ? = call packagedeleteTuple.fnDelBuyStatus(?)}";
         this.createFn="{ ? = call packagefnnew.fnNewBuyStatus(?,?)}";
+        this.listComboFn="{ ? = call packagefnlist.fnListBuyStatusComboBasic}";
+        this.listComboVariable="status";
     }
 
 

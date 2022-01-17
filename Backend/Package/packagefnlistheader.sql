@@ -21,7 +21,6 @@ function fnListPhonesFromUser(username in varchar2) return SYS_REFCURSOR;
 function fnListModelPBasic(nameBrand in varchar2) return SYs_refcursor;
 function fnListTypeClockInfoBasic return sys_refcursor;
 function fnListCodeCountry return sys_refcursor;
-
-
+function fnListAllClocksFsell return sys_refcursor;
+function fnListBuyStatusComboBasic return sys_refcursor;
 end packagefnlist;
-
