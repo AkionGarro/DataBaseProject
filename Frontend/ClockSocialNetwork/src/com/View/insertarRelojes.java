@@ -47,6 +47,7 @@ public class insertarRelojes extends javax.swing.JPanel {
         fillType();
         fillCondition();
         fillBuyStatus();
+        fillTable();
         
 
     }
@@ -300,11 +301,12 @@ public class insertarRelojes extends javax.swing.JPanel {
         mainCont.getUsername(), 
         this.comboBuyStatus.getSelectedItem().toString(),
         this.comboBrand.getSelectedItem().toString()
+        
          ), "Creating Clock");
 
         
         
-        
+        fillTable();
 
         }
         catch(Exception e){

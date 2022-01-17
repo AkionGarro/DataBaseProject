@@ -174,10 +174,11 @@ begin
 INSERT INTO CLOCK(idClock,idModel,idCondition,descriptionClock,manufactureDate,vintage,price)
 values(s_Clock.nextval,v_idModel,v_idCondition,p_descriptionClock,p_manufactureDate,'1',p_price);
 
-
-    val:=packagefnnew.fnnewBuySale(v_idUserS , s_clock.currval,
-                        v_idBuyS );
-                      
+INSERT INTO BUYSALE(idBuySale,idUserSeller,idClock,idBuyStatus,datePost)
+values(s_BUYSALE.nextval,v_idUserS,s_clock.currval,
+                       v_idBuyS,SYSDATE);
+  
+       val:='Your clock has been registered';               
     commit;
     return val;
 exception

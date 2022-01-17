@@ -23,5 +23,5 @@ function fnListTypeClockInfoBasic return sys_refcursor;
 function fnListCodeCountry return sys_refcursor;
 function fnListAllClocksFsell return sys_refcursor;
 function fnListBuyStatusComboBasic return sys_refcursor;
-function fnListMyClocks(p_username in varchar2) return sys_refcursor;  
+function fnListMyClocks(p_username in varchar2) return sys_refcursor;
 end packagefnlist;

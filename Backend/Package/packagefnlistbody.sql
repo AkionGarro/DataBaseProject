@@ -151,14 +151,15 @@ cCursor sys_refcursor;
 v_idStatusSale number(3);
 begin
 v_idStatusSale:= packagegetid.getidbuystatus('For Sale');
-open ccursor for select buysale.idbuysale, 
+open ccursor for select buysale.idbuysale, buysale.datepost, 
                               appuser.username,
                               typeclock.nameType, 
                               brand.nameBrand, 
                               modelp.nameModel,
                               condition.nameCondition,
                               clock.manufacturedate,
-                              clock.descriptionclock 
+                              clock.descriptionclock,
+                              clock.price
                               from buysale 
                               inner join clock on  buysale.idbuystatus=v_idStatusSale and buysale.idClock=clock.idClock
                               inner join condition on clock.idcondition=condition.idcondition

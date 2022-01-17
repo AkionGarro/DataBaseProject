@@ -95,5 +95,52 @@ public class Controller_BuySale {
             return null;
         }
     }
+          
+      public DefaultTableModel listClocksForSale(){
+        try{
+            DefaultTableModel table=new DefaultTableModel();
+
+            table.addColumn("ID");
+            table.addColumn("Posted");
+            table.addColumn("By");
+            table.addColumn("Type");
+            table.addColumn("Brand");
+            table.addColumn("Model");
+            table.addColumn("Condition");
+            table.addColumn("Manufacture Date");
+            table.addColumn("Description");
+            table.addColumn("Price");
+            
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListAllClocksFsell}");
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            
+            cstmt.execute();
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            String data[]= new  String[10];
+            
+            while(rs.next()){
+                data[0]=Integer.toString(rs.getInt("idbuysale"));
+                data[1]=rs.getDate("datepost").toString();
+                data[2]=rs.getString("username");
+                 data[3]=rs.getString("nametype");
+                 data[4]=rs.getString("namebrand");
+                data[5]=rs.getString("namemodel");
+                 data[6]=rs.getString("namecondition");
+                 data[7]=rs.getDate("manufacturedate").toString();
+                 data[8]=rs.getString("descriptionclock");
+                data[9]=Integer.toString(rs.getInt("price"));
+                 table.addRow(data);
+            }
+            //rs.close();
+            return table;
+        }catch(Exception e){
+            System.out.println(e.toString());
+            return null;
+        }
+    }
     
 }

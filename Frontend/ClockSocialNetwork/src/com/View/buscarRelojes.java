@@ -5,6 +5,7 @@
 package com.View;
 
 import com.Controllers.Controller_Brand;
+import com.Controllers.Controller_BuySale;
 import com.Controllers.Controller_BuyStatus;
 import com.Controllers.Controller_Condition;
 import com.Controllers.Controller_Main;
@@ -24,6 +25,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     private Controller_ModelP controllerModelP;
     private Controller_TypeClock controllerType;
     private Controller_Condition controllerCondition;
+    private Controller_BuySale controllerBuySale;
 
     /**
      * Creates new form buscarRelojes
@@ -34,10 +36,12 @@ public class buscarRelojes extends javax.swing.JPanel {
         controllerModelP = mainCont.getContModelP();
         controllerType = mainCont.getContTypeClock();
         controllerCondition = mainCont.getContCondition();
+        controllerBuySale=mainCont.getContBuySale();
         fillBrand();
         fillModel();
         fillType();
         fillCondition();
+        fillTable();
     }
 
     
@@ -89,6 +93,15 @@ public class buscarRelojes extends javax.swing.JPanel {
         }
 
     }
+        private void fillTable(){
+        try{
+        this.tableInfo.setModel(controllerBuySale.listClocksForSale());
+        this.tableInfo.revalidate();
+        this.tableInfo.repaint();
+        }catch(Exception e){
+        }
+    }
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
