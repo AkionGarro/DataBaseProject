@@ -8,6 +8,7 @@ import com.Controllers.Controller_Gender;
 import com.Controllers.Controller_Identification;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_PhoneType;
+import com.Model.encoder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class login extends javax.swing.JFrame {
     private Controller_AppuserxPeople controllerAppUser;
     private Controller_Gender controllerGender;
     private Controller_PhoneType controllerPhoneType;
+    private encoder encoderPassword;
 
     public login() {
         initComponents();
@@ -52,9 +54,10 @@ public class login extends javax.swing.JFrame {
         controllerCity = mainCont.getContCity();
         controllerDistrict = mainCont.getContDistrict();
         controllerIdentification = mainCont.getContIdentification();
-        controllerAppUser=mainCont.getContAppUserPeople();
-        controllerGender=mainCont.getContGender();
-        controllerPhoneType=mainCont.getContPhoneType();
+        controllerAppUser = mainCont.getContAppUserPeople();
+        controllerGender = mainCont.getContGender();
+        controllerPhoneType = mainCont.getContPhoneType();
+        encoderPassword = new encoder();
         this.fillCountry();
         this.fillComboCitizen();
         this.fillComboCodeCountry();
@@ -62,7 +65,7 @@ public class login extends javax.swing.JFrame {
         this.fillComboCitizen();
         this.fillComboGender();
         this.fillPhoneType();
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -380,7 +383,7 @@ public class login extends javax.swing.JFrame {
         backPanel.setLayout(backPanelLayout);
         backPanelLayout.setHorizontalGroup(
             backPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
         backPanelLayout.setVerticalGroup(
             backPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -515,7 +518,7 @@ public class login extends javax.swing.JFrame {
         exitPanel1Layout.setVerticalGroup(
             exitPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 1, Short.MAX_VALUE)
                 .addComponent(exitButton1))
         );
 
@@ -879,8 +882,8 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonMouseClicked
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
-        loginPanel.setBackground(new Color(62,114,179));
-        logoPanel.setBackground(new Color(62,114,179));
+        loginPanel.setBackground(new Color(62, 114, 179));
+        logoPanel.setBackground(new Color(62, 114, 179));
 
         loginSection.setLocation(0, 0);
         content.removeAll();
@@ -917,53 +920,101 @@ public class login extends javax.swing.JFrame {
         exitPanel1.setBackground(new Color(62, 114, 179));
     }//GEN-LAST:event_exitButton1MouseExited
 
+    private Boolean checkEmptyFields() {
+        Boolean flag = false;
+
+        if (this.identificationField.getText().isEmpty()
+                || this.comboIdentification.getSelectedItem().toString().isEmpty()
+                || this.comboGender.getSelectedItem().toString().isEmpty()
+                || this.comboCitizenship.getSelectedItem().toString().isEmpty()
+                || this.dateChooser.getDate().toString().isEmpty()
+                || this.nameField.getText().isEmpty()
+                || this.lastNameField.getText().isEmpty()
+                || this.secondLastNameField.getText().isEmpty()
+                || this.usernameField.getText().isEmpty()
+                || this.passwordTextField.getText().isEmpty()
+                || this.emailTextField.getText().isEmpty()
+                || this.comboDistrict.getSelectedItem().toString().isEmpty()
+                || this.comboCity.getSelectedItem().toString().isEmpty()
+                || this.comboCountry.getSelectedItem().toString().isEmpty()
+                || this.phoneField.getText().isEmpty()
+                || this.comboCodeCountry.getSelectedItem().toString().isEmpty()
+                || this.comboPhoneType.getSelectedItem().toString().isEmpty()) {
+            flag = true;
+        }else{
+            flag =false;
+        }
+
+        return flag;
+    }
+
+    private void cleanFields() {
+        this.nameField.setText("");
+        this.lastNameField.setText("");
+        this.secondLastNameField.setText("");
+        this.comboGender.setSelectedItem(null);
+        this.comboCitizenship.setSelectedItem(null);
+        this.dateChooser.setDate(null);
+        this.phoneField.setText("");
+        this.comboCodeCountry.setSelectedItem(null);
+        this.comboPhoneType.setSelectedItem(null);
+        this.usernameField.setText("");
+        this.passwordTextField.setText("");
+        this.comboCountry.setSelectedItem(null);
+        this.comboCity.setSelectedItem(null);
+        this.comboDistrict.setSelectedItem(null);
+        this.identificationField.setText("");
+        this.comboIdentification.setSelectedItem(null);
+        this.emailTextField.setText("");
+    }
+
+
     private void registerButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseClicked
 
-        loginPanel.setBackground(new Color(62,114,179));
-        logoPanel.setBackground(new Color(62,114,179));
+        
+        if (checkEmptyFields() == false) {
+            try {
+                java.util.Date utilDate = this.dateChooser.getDate();
+                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+                System.out.println(sqlDate.toString());
+                mainCont.createWindowMessage(this.controllerAppUser.create(
+                        this.identificationField.getText(),
+                        this.comboIdentification.getSelectedItem().toString(),
+                        this.comboGender.getSelectedItem().toString(),
+                        this.comboCitizenship.getSelectedItem().toString(),
+                        sqlDate,
+                        this.nameField.getText(),
+                        this.lastNameField.getText(),
+                        this.secondLastNameField.getText(),
+                        this.usernameField.getText(),
+                        encoderPassword.ecnode(this.passwordTextField.getText()),
+                        this.emailTextField.getText(),
+                        this.comboDistrict.getSelectedItem().toString(),
+                        this.comboCity.getSelectedItem().toString(),
+                        this.comboCountry.getSelectedItem().toString(),
+                        this.phoneField.getText(),
+                        this.comboCodeCountry.getSelectedItem().toString(),
+                        this.comboPhoneType.getSelectedItem().toString()
+                ), "Create User");
 
-        loginSection.setLocation(0, 0);
-        content.removeAll();
-        content.add(loginSection, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-        
-        try{
-        java.util.Date utilDate = this.dateChooser.getDate();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        System.out.println(sqlDate.toString());
-        mainCont.createWindowMessage(this.controllerAppUser.create(
-        this.identificationField.getText(),
-        this.comboIdentification.getSelectedItem().toString(), 
-        this.comboGender.getSelectedItem().toString(), 
-        this.comboCitizenship.getSelectedItem().toString(),
-        sqlDate,
-        this.nameField.getText(), 
-        this.lastNameField.getText(),
-        this.secondLastNameField.getText(), 
-        this.usernameField.getText(),
-        this.passwordTextField.getText(), 
-        this.emailTextField.getText(), 
-        this.comboDistrict.getSelectedItem().toString(), 
-        this.comboCity.getSelectedItem().toString(), 
-        this.comboCountry.getSelectedItem().toString(),
-        this.phoneField.getText(),
-        this.comboCodeCountry.getSelectedItem().toString(),
-        this.comboPhoneType.getSelectedItem().toString()
-   
-         ), "Create User");
+                cleanFields();
+                loginPanel.setBackground(new Color(62, 114, 179));
+                logoPanel.setBackground(new Color(62, 114, 179));
 
-        
-        
-        
+                loginSection.setLocation(0, 0);
+                content.removeAll();
+                content.add(loginSection, BorderLayout.CENTER);
+                content.revalidate();
+                content.repaint();
 
-        }
-        catch(Exception e){
+            } catch (Exception e) {
                 System.out.println(e.toString());
-        }   
-        
-        
-        
+            }
+        } else {
+            mainCont.createWindowMessage("Empty Fields","Error");
+        }
+
+
     }//GEN-LAST:event_registerButtonPanelMouseClicked
 
     private void registerButtonPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseEntered
@@ -1116,7 +1167,8 @@ public class login extends javax.swing.JFrame {
         }
 
     }
-   private void fillComboGender() {
+
+    private void fillComboGender() {
         try {
             ArrayList<String> listC = controllerGender.listInfoCombo();
             DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
@@ -1127,8 +1179,6 @@ public class login extends javax.swing.JFrame {
         }
 
     }
-    
-    
 
     private void fillComboCodeCountry() {
         try {
@@ -1187,6 +1237,7 @@ public class login extends javax.swing.JFrame {
         }
 
     }
+
     private void fillPhoneType() {
         try {
             ArrayList<String> listC = controllerPhoneType.listInfoCombo();
