@@ -7,6 +7,8 @@ import java.sql.Connection;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
 import java.sql.Date;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -46,6 +48,51 @@ public class Controller_BuySale {
             return result;
         } catch(Exception e){
         return e.toString();
+        }
+    }
+        
+             
+          public DefaultTableModel listMyClocks(String username){
+        try{
+            DefaultTableModel table=new DefaultTableModel();
+
+            table.addColumn("ID");
+            table.addColumn("Type");
+            table.addColumn("Brand");
+            table.addColumn("Model");
+            table.addColumn("Condition");
+            table.addColumn("Manufacture date");
+            table.addColumn("Description");
+            table.addColumn("Price");
+            table.addColumn("Status");
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListMyClocks(?)}");
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setString(2, username);
+            cstmt.execute();
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            String data[]= new  String[9];
+            
+            while(rs.next()){
+                data[0]=Integer.toString(rs.getInt("idbuysale"));
+                data[1]=rs.getString("nametype");
+                data[2]=rs.getString("namebrand");
+                 data[3]=rs.getString("namemodel");
+                 data[4]=rs.getString("namecondition");
+                 data[5]=rs.getDate("manufacturedate").toString();
+                 data[6]=rs.getString("descriptionclock");
+                 data[7]=Integer.toString(rs.getInt("p"));
+                 data[8]=rs.getString("status");
+                table.addRow(data);
+            }
+            //rs.close();
+            return table;
+        }catch(Exception e){
+            System.out.println(e.toString());
+            return null;
         }
     }
     

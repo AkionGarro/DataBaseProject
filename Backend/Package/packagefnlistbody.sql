@@ -178,4 +178,30 @@ begin open cCursor for select status from BUYSTATUS;
     return cCursor;
 end fnListBuyStatusComboBasic;
 
+function fnListMyClocks(p_username in varchar2) return sys_refcursor is
+cCursor sys_refcursor;
+idUSer number(10);
+begin
+idUser:=packagegetid.getidusername(p_username);
+open ccursor for select buysale.idbuysale, 
+                              typeclock.nameType, 
+                              brand.nameBrand, 
+                              modelp.nameModel,
+                              condition.nameCondition,
+                              clock.manufacturedate,
+                              clock.descriptionclock,
+                              clock.price as p,
+                              buyStatus.status
+                              from buysale
+                              inner join clock on buysale.iduserseller=iduser  and buysale.idClock=clock.idClock 
+                              inner join condition on clock.idcondition=condition.idcondition
+                              inner join modelp on clock.idmodel=modelp.idmodel
+                              inner join brand  on brand.idbrand=modelp.idbrand
+                              inner join typeclock on typeclock.idtype=modelp.idtypeclock
+                              inner join buystatus on buySale.idbuystatus=buystatus.idbuystatus;
+                            
+
+return ccursor;
+
+end fnListMyClocks;
 end packagefnlist;

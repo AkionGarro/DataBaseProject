@@ -112,6 +112,16 @@ public class insertarRelojes extends javax.swing.JPanel {
         }
 
     }
+    
+    private void fillTable(){
+        try{
+        this.tableInfo.setModel(controllerBuySale.listMyClocks(mainCont.getUsername()));
+        this.tableInfo.revalidate();
+        this.tableInfo.repaint();
+        }catch(Exception e){
+        }
+    }
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
