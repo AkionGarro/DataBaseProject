@@ -90,7 +90,7 @@ public class PaymentMethod extends javax.swing.JPanel {
                 deleteBActionPerformed(evt);
             }
         });
-        add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 70, 30));
+        add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 70, 30));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.addActionListener(new java.awt.event.ActionListener() {

@@ -26,7 +26,7 @@ public class Controller_City extends  ControllerF{
         }
             this.createFn="{ ? = call packagefnnew.fnNewCity(?,?)}";
             this.listComboVariable="nameCity";
-           
+           this.deleteFn="{ ? = call packagedeleteTuple.fnDelCity(?,?)}";
 }
     
     

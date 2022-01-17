@@ -98,6 +98,7 @@ public class Model extends javax.swing.JPanel {
         comboType = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         createButton1 = new javax.swing.JButton();
+        deleteModelButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 660));
@@ -159,7 +160,7 @@ public class Model extends javax.swing.JPanel {
                 createButton2ActionPerformed(evt);
             }
         });
-        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 100, 30));
+        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 130, 30));
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 110, -1));
 
         comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -177,7 +178,17 @@ public class Model extends javax.swing.JPanel {
                 createButton1ActionPerformed(evt);
             }
         });
-        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, -1, 30));
+        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 120, 30));
+
+        deleteModelButton.setBackground(new java.awt.Color(0, 0, 0));
+        deleteModelButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteModelButton.setText("Delete Model");
+        deleteModelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteModelButtonActionPerformed(evt);
+            }
+        });
+        add(deleteModelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -231,6 +242,22 @@ public class Model extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_createButton1ActionPerformed
 
+    private void deleteModelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteModelButtonActionPerformed
+             try {
+            if (this.comboBrand.getSelectedIndex() != -1) {
+                mainCont.createWindowMessage(controllerModelP.deleteT(this.comboModel.getSelectedItem().toString(),this.comboBrand.getSelectedItem().toString()), "Delete Model");
+                fillBrand();
+                fillModel();
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteModelButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBrand;
@@ -239,6 +266,7 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JButton createButton;
     private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
+    private javax.swing.JButton deleteModelButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -48,6 +48,7 @@ public class ShippingMethod extends javax.swing.JPanel {
         nameField = new javax.swing.JTextField();
         companyName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        deleteB = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 660));
@@ -70,7 +71,7 @@ public class ShippingMethod extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 730, 570));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 730, 430));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,7 +86,12 @@ public class ShippingMethod extends javax.swing.JPanel {
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton.setText("Modify");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 70, 30));
+        modifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyButtonActionPerformed(evt);
+            }
+        });
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 70, 30));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.setColumns(20);
@@ -102,6 +108,16 @@ public class ShippingMethod extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("Shipping Method:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 180, 50));
+
+        deleteB.setBackground(new java.awt.Color(0, 0, 0));
+        deleteB.setForeground(new java.awt.Color(255, 255, 255));
+        deleteB.setText("Delete");
+        deleteB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBActionPerformed(evt);
+            }
+        });
+        add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -123,10 +139,26 @@ public class ShippingMethod extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
+    private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyButtonActionPerformed
+
+    private void deleteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBActionPerformed
+       
+        int row = this.tableInfo.getSelectedRow();
+        if (row!=-1){
+            String name = this.tableInfo.getModel().getValueAt(row, 0).toString();
+            String company = this.tableInfo.getModel().getValueAt(row, 1).toString();
+            mainCont.createWindowMessage(controller.deleteT(name,company), "Delete");
+            fillTable();
+        }
+    }//GEN-LAST:event_deleteBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField companyName;
     private javax.swing.JButton createButton;
+    private javax.swing.JButton deleteB;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;

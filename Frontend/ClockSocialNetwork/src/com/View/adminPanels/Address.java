@@ -99,7 +99,7 @@ public class Address extends javax.swing.JPanel {
         comboCountry = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         createButton = new javax.swing.JButton();
-        modifyButton = new javax.swing.JButton();
+        deleteCountry = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableInfo = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -113,13 +113,14 @@ public class Address extends javax.swing.JPanel {
         nameTextField2 = new javax.swing.JTextField();
         countryCodeField = new javax.swing.JTextField();
         modifyButton1 = new javax.swing.JButton();
+        deleteCity = new javax.swing.JButton();
+        deleteDistrict = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 660));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("City:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
 
@@ -132,9 +133,8 @@ public class Address extends javax.swing.JPanel {
         add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cod:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, -1, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, 30));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,15 +146,15 @@ public class Address extends javax.swing.JPanel {
         });
         add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 120, 30));
 
-        modifyButton.setBackground(new java.awt.Color(0, 0, 0));
-        modifyButton.setForeground(new java.awt.Color(255, 255, 255));
-        modifyButton.setText("Delete Country");
-        modifyButton.addActionListener(new java.awt.event.ActionListener() {
+        deleteCountry.setBackground(new java.awt.Color(0, 0, 0));
+        deleteCountry.setForeground(new java.awt.Color(255, 255, 255));
+        deleteCountry.setText("Delete Country");
+        deleteCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifyButtonActionPerformed(evt);
+                deleteCountryActionPerformed(evt);
             }
         });
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 130, 30));
+        add(deleteCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 130, 30));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,7 +172,6 @@ public class Address extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 730, 460));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Country:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
@@ -188,12 +187,10 @@ public class Address extends javax.swing.JPanel {
         add(comboCityF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 300, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("District Name:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Agregar:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
 
@@ -233,12 +230,32 @@ public class Address extends javax.swing.JPanel {
             }
         });
         add(nameTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 110, -1));
-        add(countryCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 120, -1));
+        add(countryCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 120, -1));
 
         modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton1.setText("Modify");
         add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 70, 30));
+
+        deleteCity.setBackground(new java.awt.Color(0, 0, 0));
+        deleteCity.setForeground(new java.awt.Color(255, 255, 255));
+        deleteCity.setText("Delete City");
+        deleteCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCityActionPerformed(evt);
+            }
+        });
+        add(deleteCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 130, 30));
+
+        deleteDistrict.setBackground(new java.awt.Color(0, 0, 0));
+        deleteDistrict.setForeground(new java.awt.Color(255, 255, 255));
+        deleteDistrict.setText("Delete District");
+        deleteDistrict.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteDistrictActionPerformed(evt);
+            }
+        });
+        add(deleteDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 130, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -307,7 +324,7 @@ public class Address extends javax.swing.JPanel {
        this.fillDistrict();
     }//GEN-LAST:event_comboCityFItemStateChanged
 
-    private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
+    private void deleteCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCountryActionPerformed
                       try{
             if (comboCountry.getSelectedIndex()!=-1){
                 mainCont.createWindowMessage(this.controllerCountry.deleteT(this.comboCountry.getSelectedItem().toString()), "Deleting Country");
@@ -321,11 +338,42 @@ public class Address extends javax.swing.JPanel {
             System.out.println(e.toString());
         }        
             
-    }//GEN-LAST:event_modifyButtonActionPerformed
+    }//GEN-LAST:event_deleteCountryActionPerformed
 
     private void nameTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTextField2ActionPerformed
+
+    private void deleteCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCityActionPerformed
+                      try{
+            if (comboCountry.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(this.controllerCity.deleteT(this.comboCityF.getSelectedItem().toString(), this.comboCountry.getSelectedItem().toString()), "Deleting City");
+                fillCountry();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+            
+    }//GEN-LAST:event_deleteCityActionPerformed
+
+    private void deleteDistrictActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteDistrictActionPerformed
+                             try{
+            if (comboCountry.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(this.controllerDistrict.deleteT(this.comboDistrict.getSelectedItem().toString(), this.comboCityF.getSelectedItem().toString(), this.comboCountry.getSelectedItem().toString()), "Deleting District");
+                fillCountry();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }    
+    }//GEN-LAST:event_deleteDistrictActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -337,13 +385,15 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
     private javax.swing.JButton createButton3;
+    private javax.swing.JButton deleteCity;
+    private javax.swing.JButton deleteCountry;
+    private javax.swing.JButton deleteDistrict;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton modifyButton;
     private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameTextField2;
     private javax.swing.JTable tableInfo;

@@ -23,6 +23,7 @@ public class Controller_ModelP extends ControllerF{
         this.createFn="{ ? = call packagefnnew.fnNewmodelp(?,?,?)}";
         this.listComboVariable="nameModel";
         this.listComboFn="{ ? = call packagefnlist.fnListModelPBasic(?)}";
+        this.deleteFn="{ ? = call packagedeleteTuple.fnDelModelP(?,?)}";
     
     }
         public String create(String nameD, String nameBrand, String nameType ){

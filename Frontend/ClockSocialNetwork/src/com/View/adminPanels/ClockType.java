@@ -70,7 +70,7 @@ public class ClockType extends javax.swing.JPanel {
                     deleteBActionPerformed(evt);
                 }
             });
-            add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
+            add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 80, 30));
 
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -80,7 +80,7 @@ public class ClockType extends javax.swing.JPanel {
                     modifyButtonActionPerformed(evt);
                 }
             });
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 80, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +136,7 @@ public class ClockType extends javax.swing.JPanel {
         int row = this.tableInfo.getSelectedRow();
         if (row!=-1){
             String value = this.tableInfo.getModel().getValueAt(row, column).toString();
-            mainCont.createWindowMessage(controller.deleteT(value), "Delete");
+            mainCont.createWindowMessage(controller.deleteT(value), "Delete Clock Type");
             fillTable();
         }
     // TODO add your handling code here:

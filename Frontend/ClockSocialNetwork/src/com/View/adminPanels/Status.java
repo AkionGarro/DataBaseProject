@@ -43,6 +43,7 @@ public class Status extends javax.swing.JPanel {
         tableInfo = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        deleteButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 660));
@@ -69,7 +70,7 @@ public class Status extends javax.swing.JPanel {
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton.setText("Modify");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 70, 30));
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 70, 30));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -97,14 +98,22 @@ public class Status extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 730, 510));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Description:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Name of the status:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+
+        deleteButton.setBackground(new java.awt.Color(0, 0, 0));
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
@@ -134,9 +143,25 @@ public class Status extends javax.swing.JPanel {
         }        // TODO add your handling code here:
     }//GEN-LAST:event_createButtonActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+                     try {
+            if (this.tableInfo.getSelectedRow() != -1) {
+                mainCont.createWindowMessage(controller.deleteT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Delete Status");
+                fillTable();
+                
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JTextArea descriptionField;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

@@ -25,6 +25,7 @@ public class Controller_UserType extends ControllerF {
         }
         this.deleteFn="{ ? = call packagedeleteTuple.fnDelUserType(?)}";
         this.createFn="{ ? = call packagefnnew.fnNewUserType(?,?)}";
+        this.deleteFn= "{ ? = call packagedeleteTuple.fnDelUserType(?)}";
     }
    
     

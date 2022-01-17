@@ -22,6 +22,7 @@ public class Controller_PhoneType extends ControllerF {
         this.createFn = "{ ? = call packagefnnew.fnNewPhoneType(?)}";
         this.listComboFn = "{ ? = call packagefnlist.fnListPhoneType}";
         this.listComboVariable = "nameType";
+        this.deleteFn="{ ? = call packagedeleteTuple.fnDelPhoneType(?)}";
     }
 
 }

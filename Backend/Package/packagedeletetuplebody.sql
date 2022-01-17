@@ -182,8 +182,10 @@ val varchar2(50);
 v_idCountry number(8);
 v_idCity number(8);
 begin
-    v_idCountry:=packagegetid.getIdCountry(p_nameCountry);
-    v_idCity:=packagegetid.getIdCity(p_nameCity,p_nameCountry);
+    select idCity into v_idcity from city 
+    inner join country on  country.nameCountry=p_nameCountry and city.idCountry=country.idCountry and city.nameCity=p_nameCity; 
+    --v_idCountry:=packagegetid.getIdCountry(p_nameCountry);
+  --  v_idCity:=packagegetid.getIdCity(p_nameCity,v_idCity);
     delete from city where city.idCity=v_idCity; 
     val:='Successfully Deleted ';
     commit;
@@ -193,10 +195,32 @@ exception
      val:='Not found'; 
      return val;
     when others then
-     val:='Wrong data';
+     val:='Cannot delete, it has districts';
      return val;
 end fnDelCity;
-
+function fnDelDistrict(p_nameDistrict in varchar2, p_nameCity in varchar2, p_nameCountry in varchar2)return varchar2
+ is
+val varchar2(50);
+v_idCountry number(8);
+v_idDistrict number(10);
+begin
+    select idDistrict into v_idDistrict from district 
+    inner join city on city.nameCity=p_nameCity and district.idCity=city.idCity and district.nameDistrict=p_nameDistrict
+    inner join country on city.idCountry=country.idCountry   and country.nameCountry=p_nameCountry; 
+    --v_idCountry:=packagegetid.getIdCountry(p_nameCountry);
+  --  v_idCity:=packagegetid.getIdCity(p_nameCity,v_idCity);
+   delete from district where district.iddistrict=v_idDistrict; 
+    val:='Successfully Deleted ';
+    commit;
+    return v_idDistrict ;
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Cannot delete, a user lives here';
+     return val;
+end fnDelDistrict;
 
 function fnDelBuySaleClock(p_id_buySale in number) return varchar2 is
 val varchar2(50);
@@ -223,10 +247,11 @@ exception
 end fnDelBuySaleClock;
 function fnDelModelP(p_nameModel in varchar2,p_nameBrand in varchar2)return varchar2 is
 val varchar2(50);
-v_idBrand number(10);
+v_idModelP number(10);
 begin
-    v_idBrand:=packagegetid.getidBrand(p_nameBrand);
-    delete from MODELP where (MODELP.idBrand=v_idBrand and MODELP.nameModel=p_nameModel); 
+   select modelP.idModel into v_idModelP from modelP
+    inner join brand on brand.nameBrand= p_nameBrand and  modelp.idBrand=brand.idBrand and modelp.nameModel=p_nameModel ;
+    delete from MODELP where (MODELP.idModel=v_idModelP); 
     val:='Successfully Deleted';
     commit;
     return val;
@@ -289,5 +314,23 @@ exception
      val:='Wrong data';
      return val;
 end fnDelWlist;
-end  packageDeleteTuple;
 
+function fnDelPhoneType(p_namePhoneType in varchar2) return varchar2 is
+val varchar2(50);
+
+begin
+   
+    delete from phonetype where phonetype.nameType=p_namePhoneType; 
+    val:='Successfully Deleted';
+    commit;
+    return val;
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnDelPhoneType;
+
+end  packageDeleteTuple;

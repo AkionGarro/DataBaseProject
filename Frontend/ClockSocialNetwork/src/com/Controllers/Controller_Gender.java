@@ -24,6 +24,7 @@ public class Controller_Gender extends ControllerF{
             this.createFn="{ ? = call packagefnnew.fnNewGender(?)}";
             this.listComboVariable="nameGender";
             this.listComboFn="{ ? = call packagefnlist.fnListGenderBasic}";
+            this.deleteFn= "{ ? = call packagedeleteTuple.fnDelGender(?)}";
             
     }
     

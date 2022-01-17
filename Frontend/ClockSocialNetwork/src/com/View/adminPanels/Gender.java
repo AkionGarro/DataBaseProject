@@ -51,6 +51,7 @@ public class Gender extends javax.swing.JPanel {
             createButton = new javax.swing.JButton();
             modifyButton = new javax.swing.JButton();
             nameField = new javax.swing.JTextField();
+            deleteButton = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setPreferredSize(new java.awt.Dimension(730, 660));
@@ -73,7 +74,7 @@ public class Gender extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 730, 600));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 480));
 
             createButton.setBackground(new java.awt.Color(0, 0, 0));
             createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,8 +88,8 @@ public class Gender extends javax.swing.JPanel {
 
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
-            modifyButton.setText("Modify");
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 70, 30));
+            modifyButton.setText("Change");
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 80, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +98,16 @@ public class Gender extends javax.swing.JPanel {
                 }
             });
             add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 300, 30));
+
+            deleteButton.setBackground(new java.awt.Color(0, 0, 0));
+            deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+            deleteButton.setText("Delete");
+            deleteButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    deleteButtonActionPerformed(evt);
+                }
+            });
+            add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 80, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -117,9 +128,26 @@ public class Gender extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+                      try{
+            if (tableInfo.getSelectedRow()!=-1){
+                mainCont.createWindowMessage(this.controller.deleteT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Deleting Gender");
+                fillTable();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+          
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton modifyButton;

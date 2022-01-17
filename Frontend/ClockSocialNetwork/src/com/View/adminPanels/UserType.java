@@ -58,15 +58,13 @@ public class UserType extends javax.swing.JPanel {
             descriptionField = new javax.swing.JTextArea();
             jLabel4 = new javax.swing.JLabel();
             jLabel5 = new javax.swing.JLabel();
+            deleteButton = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setMinimumSize(new java.awt.Dimension(730, 660));
             setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-            tableInfo.setBackground(new java.awt.Color(255, 255, 255));
-            tableInfo.setBorder(null);
-            tableInfo.setForeground(new java.awt.Color(0, 0, 0));
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
 
                 new Object [][] {
@@ -86,7 +84,7 @@ public class UserType extends javax.swing.JPanel {
         tableInfo.setName(""); // NOI18N
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 730, 530));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 730, 450));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,8 +98,8 @@ public class UserType extends javax.swing.JPanel {
 
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
-        modifyButton.setText("Modify");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, -1));
+        modifyButton.setText("Change");
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -122,14 +120,22 @@ public class UserType extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 230, 60));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Description:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Name of the user type:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
+
+        deleteButton.setBackground(new java.awt.Color(0, 0, 0));
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -150,9 +156,26 @@ public class UserType extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+                         try{
+            if (tableInfo.getSelectedRow()!=-1){
+                mainCont.createWindowMessage(this.controller.deleteT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Deleting UserType");
+                fillTable();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+          
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JTextArea descriptionField;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

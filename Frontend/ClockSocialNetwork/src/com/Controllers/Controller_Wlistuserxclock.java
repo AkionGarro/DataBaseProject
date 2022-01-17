@@ -21,6 +21,7 @@ public class Controller_Wlistuserxclock  {
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
+            
     }
      
     

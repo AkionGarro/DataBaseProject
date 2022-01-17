@@ -22,6 +22,7 @@ public class Controller_ShippingMethod extends ControllerF {
             connect=(Connection) new DB_Connection().obtainConnection();
         }
         this.createFn="{ ? = call packagefnnew.fnNewShippingMethod(?,?)}";
+        this.deleteFn="{ ? = call packagedeletetuple.fnDelShippingMethod(?,?)}";
     }
         public DefaultTableModel listInfo(){
         try{

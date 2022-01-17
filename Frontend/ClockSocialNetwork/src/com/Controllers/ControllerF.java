@@ -46,6 +46,9 @@ public class ControllerF {
         }
     }
     
+
+    
+    
         public String deleteT(int param)
         {
         try{
@@ -70,7 +73,7 @@ public class ControllerF {
             param=param.trim();
             CallableStatement cstmt = connect.prepareCall(deleteFn);
             cstmt.setString(2, param);
-            cstmt.setString(3, param);
+            cstmt.setString(3, param2);
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
             cstmt.execute();
             

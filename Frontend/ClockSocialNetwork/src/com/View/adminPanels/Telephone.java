@@ -56,13 +56,13 @@ public class Telephone extends javax.swing.JPanel {
             createButton = new javax.swing.JButton();
             modifyButton = new javax.swing.JButton();
             nameField = new javax.swing.JTextField();
+            modifyButton1 = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Telephone type:");
             add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
 
@@ -91,12 +91,12 @@ public class Telephone extends javax.swing.JPanel {
                     createButtonActionPerformed(evt);
                 }
             });
-            add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 70, 30));
+            add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, 30));
 
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
             modifyButton.setText("Modify");
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 70, 30));
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 70, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +105,16 @@ public class Telephone extends javax.swing.JPanel {
                 }
             });
             add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 230, 30));
+
+            modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
+            modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
+            modifyButton1.setText("Delete");
+            modifyButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    modifyButton1ActionPerformed(evt);
+                }
+            });
+            add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 70, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -125,12 +135,29 @@ public class Telephone extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameFieldActionPerformed
 
+    private void modifyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButton1ActionPerformed
+                        try{
+            if (tableInfo.getSelectedRow()!=-1){
+                mainCont.createWindowMessage(this.controller.deleteT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Deleting Phone Type");
+                fillTable();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+          
+    }//GEN-LAST:event_modifyButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createButton;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton modifyButton;
+    private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
