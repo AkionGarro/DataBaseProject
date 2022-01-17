@@ -17,7 +17,7 @@ public class Controller_Main {
     
      private Controller_Condition contCondition;
      private Controller_TypeClock contTypeClock;
-    private Controller_Brand contBrand;
+     private Controller_Brand contBrand;
      private Controller_BuyStatus contBuyStatus;
      private Controller_UserType contUserType;
      private Controller_PaymentMethod contPaymentMethod;
@@ -36,7 +36,7 @@ public class Controller_Main {
      private static Controller_Main mainController= new Controller_Main();
      
      
-    private String username="bolseador";
+    private String username="GarroAkion";
      
     
      
