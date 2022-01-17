@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/garroakion/Desktop/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/buscarRelojes.java</file>
-            <file>file:/C:/Users/garroakion/Desktop/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/Gender.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_Main.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_BuySale.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/identification.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_AppuserxPeople.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/UserType.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/Telephone.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_PhoneType.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/login.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/ControllerF.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Connect/DB_Connection.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_Identification.java</file>
         </group>
     </open-files>
 </project-private>

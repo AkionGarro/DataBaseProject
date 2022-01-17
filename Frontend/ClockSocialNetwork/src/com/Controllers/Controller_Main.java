@@ -25,17 +25,18 @@ public class Controller_Main {
      private Controller_City contCity;
      private Controller_District contDistrict;
      private Controller_ModelP contModelP;
-    
      private Controller_Gender contGender;
      private Controller_ShippingMethod contShippingMethod;
      private Controller_Identification contIdentification;
-     
      private Controller_AppuserxPeople contAppuserPeople;
-     
      private Controller_PhoneType contPhoneType;
+     private Controller_BuySale contBuySale;
      
      public static Connection connect=(Connection) new DB_Connection().obtainConnection(); 
      private static Controller_Main mainController= new Controller_Main();
+     
+     
+    private String username="bolseador";
      
     
      
@@ -58,6 +59,7 @@ public class Controller_Main {
        contShippingMethod= new Controller_ShippingMethod();
        contIdentification=new Controller_Identification();
        contPhoneType=new Controller_PhoneType();
+       contBuySale=new Controller_BuySale();
        
     }
 
@@ -138,5 +140,13 @@ public class Controller_Main {
 
     public Controller_PhoneType getContPhoneType() {
         return contPhoneType;
+    }
+
+    public Controller_BuySale getContBuySale() {
+        return contBuySale;
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
