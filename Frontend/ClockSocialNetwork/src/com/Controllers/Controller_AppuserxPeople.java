@@ -11,6 +11,11 @@ import java.sql.Connection;
 import oracle.jdbc.OracleCallableStatement;
 import oracle.jdbc.internal.OracleTypes;
 import java.sql.Date;
+import java.sql.ResultSet;
+import com.View.User;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Jonathan
@@ -18,34 +23,31 @@ import java.sql.Date;
 public class Controller_AppuserxPeople {
 
     public Controller_AppuserxPeople() {
-    if (connect==null){//creates the connection to the database
-            connect=(Connection) new DB_Connection().obtainConnection();
-    }
-    
-    
+        if (connect == null) {//creates the connection to the database
+            connect = (Connection) new DB_Connection().obtainConnection();
+        }
+
     }
 
-    
-    public String create(String p_identification , 
-                            String p_idType, 
-                            String p_idGender , 
-                            String p_idCountry ,
-                            Date p_birthdate, 
-                            String  p_name,
-                            String  p_surname ,
-                            String p_secondsurname ,
-                            String p_username,  
-                             
-		 	    String  p_password ,
-			    String  p_Email, 
-                            String  p_district,
-                            String p_City,
-                            String p_addressCountry,
-                            String p_phoneNumber, 
-                            String p_phoneCode,
-                            String p_phoneType
-                                    ){
-        try{
+    public String create(String p_identification,
+            String p_idType,
+            String p_idGender,
+            String p_idCountry,
+            Date p_birthdate,
+            String p_name,
+            String p_surname,
+            String p_secondsurname,
+            String p_username,
+            String p_password,
+            String p_Email,
+            String p_district,
+            String p_City,
+            String p_addressCountry,
+            String p_phoneNumber,
+            String p_phoneCode,
+            String p_phoneType
+    ) {
+        try {
             CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewPeopleappuser(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             cstmt.setString(2, p_identification.trim());
             cstmt.setString(3, p_idType);
@@ -67,11 +69,38 @@ public class Controller_AppuserxPeople {
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
+            result = ((OracleCallableStatement) cstmt).getString(1);
             System.out.println(result);
             return result;
-        } catch(Exception e){
-        return "Wrong data, was not created";
+        } catch (Exception e) {
+            return "Wrong data, was not created";
         }
-}
+    }
+
+    public User getUser(String p_username) {
+        User user = null;
+        try {
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packageconsults.fngetUserInfo(?)}");
+            cstmt.setString(2, p_username);
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.execute();
+            ResultSet result;
+            result = ((OracleCallableStatement) cstmt).getCursor(1);
+
+            while (result.next()) {
+                user = new User();
+                user.setUsername(result.getString("username"));
+                user.setUserType(result.getInt("usertype"));
+                user.setPassword(result.getString("passworda"));
+                user.setUserId(result.getInt("idappuser"));
+                return user;
+            }
+
+        } catch (Exception e) {
+            return null;
+        }
+        return user;
+    }
+
 }

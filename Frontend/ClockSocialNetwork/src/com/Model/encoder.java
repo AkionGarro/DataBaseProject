@@ -13,7 +13,7 @@ import org.apache.commons.codec.binary.Base64;
  * @author Somos Programadores
  * Facebook https://web.facebook.com/developers08062019
  */
-public class encoder {
+public class Encoder {
          String secretKey = "SomosProgramadores";
     
         public String ecnode(String cadena) {

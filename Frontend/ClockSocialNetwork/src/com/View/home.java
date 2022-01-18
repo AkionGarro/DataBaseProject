@@ -31,9 +31,6 @@ public class home extends javax.swing.JPanel {
 
         menu = new javax.swing.JPanel();
         menuLabel = new javax.swing.JLabel();
-        option1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         option2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -77,31 +74,6 @@ public class home extends javax.swing.JPanel {
         menuLabel.setText("Menu");
         menu.add(menuLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 30));
 
-        option1.setBackground(new java.awt.Color(62, 114, 179));
-        option1.setBorder(null);
-        option1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                option1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                option1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                option1MouseExited(evt);
-            }
-        });
-        option1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Principal");
-        option1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 160, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/home_32px.png"))); // NOI18N
-        option1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        menu.add(option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 270, 40));
-
         option2.setBackground(new java.awt.Color(62, 114, 179));
         option2.setBorder(null);
         option2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,7 +91,7 @@ public class home extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Insertar Relojes");
+        jLabel3.setText("Create Clock");
         option2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 180, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/add_32px.png"))); // NOI18N
@@ -144,7 +116,7 @@ public class home extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Favoritos");
+        jLabel4.setText("Favorites");
         option3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 190, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/star_32px.png"))); // NOI18N
@@ -169,7 +141,7 @@ public class home extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Carrito de Compra");
+        jLabel5.setText("Shopping Cart");
         option4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 190, 30));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/shopping_cart_32px.png"))); // NOI18N
@@ -222,7 +194,7 @@ public class home extends javax.swing.JPanel {
 
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Perfil");
+        jLabel16.setText("Profile");
         option8.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2, 190, 30));
 
         menu.add(option8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 270, 40));
@@ -247,7 +219,7 @@ public class home extends javax.swing.JPanel {
 
         jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Estadísticas");
+        jLabel13.setText(" Statistics");
         option6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 2, 190, 30));
 
         menu.add(option6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 270, 40));
@@ -271,7 +243,7 @@ public class home extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Buscar Relojes");
+        jLabel1.setText("Main");
         option7.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 190, 30));
 
         menu.add(option7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 270, 40));
@@ -356,14 +328,6 @@ public class home extends javax.swing.JPanel {
         exitPanel2.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_exitButton2MouseExited
 
-    private void option1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseEntered
-        option1.setBackground(new Color(0,0,200));
-    }//GEN-LAST:event_option1MouseEntered
-
-    private void option1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseExited
-        option1.setBackground(new Color(62,114,179));
-    }//GEN-LAST:event_option1MouseExited
-
     private void option7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseEntered
         option7.setBackground(new Color(0,0,200));
     }//GEN-LAST:event_option7MouseEntered
@@ -419,16 +383,6 @@ public class home extends javax.swing.JPanel {
     private void option8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option8MouseExited
         option8.setBackground(new Color(62,114,179));
     }//GEN-LAST:event_option8MouseExited
-
-    private void option1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option1MouseClicked
-        principal p1 = new principal();
-        p1.setSize(730, 700);
-        p1.setLocation(0,0);
-        homeContent.removeAll();
-        homeContent.add(p1,BorderLayout.CENTER);
-        homeContent.revalidate();
-        homeContent.repaint();
-    }//GEN-LAST:event_option1MouseClicked
 
     private void option7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_option7MouseClicked
         buscarRelojes p1 = new buscarRelojes();
@@ -513,19 +467,16 @@ public class home extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel menuBar;
     private javax.swing.JLabel menuLabel;
-    private javax.swing.JPanel option1;
     private javax.swing.JPanel option2;
     private javax.swing.JPanel option3;
     private javax.swing.JPanel option4;

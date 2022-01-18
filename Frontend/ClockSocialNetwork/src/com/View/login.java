@@ -8,13 +8,15 @@ import com.Controllers.Controller_Gender;
 import com.Controllers.Controller_Identification;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_PhoneType;
-import com.Model.encoder;
+import com.Model.Encoder;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -31,7 +33,9 @@ public class login extends javax.swing.JFrame {
     private Controller_AppuserxPeople controllerAppUser;
     private Controller_Gender controllerGender;
     private Controller_PhoneType controllerPhoneType;
-    private encoder encoderPassword;
+    private Controller_AppuserxPeople controllerAppuserxPeople;
+    private Encoder encoderPassword;
+    private User user;
 
     public login() {
         initComponents();
@@ -57,7 +61,10 @@ public class login extends javax.swing.JFrame {
         controllerAppUser = mainCont.getContAppUserPeople();
         controllerGender = mainCont.getContGender();
         controllerPhoneType = mainCont.getContPhoneType();
-        encoderPassword = new encoder();
+        controllerAppuserxPeople = mainCont.getContAppUserPeople();
+        encoderPassword = new Encoder();
+        user = new User();
+
         this.fillCountry();
         this.fillComboCitizen();
         this.fillComboCodeCountry();
@@ -255,9 +262,8 @@ public class login extends javax.swing.JFrame {
         loginSection.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 480, 10));
 
         usernameTextField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        usernameTextField.setForeground(new java.awt.Color(255, 255, 255));
+        usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
         usernameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField.setText("Ingrese su nombre de usuario");
         usernameTextField.setBorder(null);
         usernameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -278,9 +284,8 @@ public class login extends javax.swing.JFrame {
         loginSection.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 480, 10));
 
         userPasswordField.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        userPasswordField.setForeground(new java.awt.Color(255, 255, 255));
+        userPasswordField.setForeground(new java.awt.Color(0, 0, 0));
         userPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        userPasswordField.setText("**************");
         userPasswordField.setBorder(null);
         userPasswordField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -792,7 +797,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameTextFieldActionPerformed
 
     private void usernameTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameTextFieldMouseClicked
-
+        /*
         if (usernameTextField.getText().equals("Ingrese su nombre de usuario")) {
             usernameTextField.setText("");
             usernameTextField.setForeground(Color.black);
@@ -801,11 +806,12 @@ public class login extends javax.swing.JFrame {
             userPasswordField.setText("**************");
             userPasswordField.setForeground(Color.GRAY);
         }
-
+         */
     }//GEN-LAST:event_usernameTextFieldMouseClicked
 
-    private void userPasswordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userPasswordFieldMouseClicked
 
+    private void userPasswordFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userPasswordFieldMouseClicked
+        /*
         if (String.valueOf(userPasswordField.getPassword()).equals("**************")) {
             userPasswordField.setText("");
             userPasswordField.setForeground(Color.black);
@@ -814,7 +820,7 @@ public class login extends javax.swing.JFrame {
             usernameTextField.setText("Ingrese su nombre de usuario");
             usernameTextField.setForeground(Color.GRAY);
         }
-
+         */
     }//GEN-LAST:event_userPasswordFieldMouseClicked
 
     private void loginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseExited
@@ -860,24 +866,55 @@ public class login extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitButtonMouseClicked
 
-    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
-        if (usernameTextField.getText().equals("admin")) {
-            homeAdmin h1 = new homeAdmin();
-            h1.setSize(1000, 700);
-            h1.setLocation(0, 0);
-            homePanel.removeAll();
-            homePanel.add(h1, BorderLayout.CENTER);
-            homePanel.revalidate();
-            homePanel.repaint();
-        } else {
-            home h1 = new home();
-            h1.setSize(1000, 700);
-            h1.setLocation(0, 0);
-            homePanel.removeAll();
-            homePanel.add(h1, BorderLayout.CENTER);
-            homePanel.revalidate();
-            homePanel.repaint();
+    private boolean checkEmptyLogin() {
+        boolean flag = false;
+        if (this.usernameTextField.getText().isEmpty() || this.userPasswordField.getText().isEmpty()) {
+            flag = true;
         }
+        return flag;
+    }
+
+    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
+        User user = new User();
+        Encoder encoder = new Encoder();
+
+        if (checkEmptyLogin() == false) {
+
+            String password = encoder.ecnode(userPasswordField.getText().trim());
+            try {
+
+                user = controllerAppuserxPeople.getUser(usernameTextField.getText());
+
+                if (password.equals(user.getPassword())) {
+                    if (user.getUserType() == 14) {
+                        home h1 = new home();
+                        h1.setSize(1000, 700);
+                        h1.setLocation(0, 0);
+                        homePanel.removeAll();
+                        homePanel.add(h1, BorderLayout.CENTER);
+                        homePanel.revalidate();
+                        homePanel.repaint();
+                    } else {
+                        homeAdmin h1 = new homeAdmin();
+                        h1.setSize(1000, 700);
+                        h1.setLocation(0, 0);
+                        homePanel.removeAll();
+                        homePanel.add(h1, BorderLayout.CENTER);
+                        homePanel.revalidate();
+                        homePanel.repaint();
+                    }
+                } else {
+                    mainCont.createWindowMessage("Wrong Password", "Error");
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.toString());
+            }
+
+        } else {
+            mainCont.createWindowMessage("Empty Fields", "Error");
+        }
+
 
     }//GEN-LAST:event_loginButtonMouseClicked
 
@@ -941,8 +978,8 @@ public class login extends javax.swing.JFrame {
                 || this.comboCodeCountry.getSelectedItem().toString().isEmpty()
                 || this.comboPhoneType.getSelectedItem().toString().isEmpty()) {
             flag = true;
-        }else{
-            flag =false;
+        } else {
+            flag = false;
         }
 
         return flag;
@@ -971,7 +1008,6 @@ public class login extends javax.swing.JFrame {
 
     private void registerButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseClicked
 
-        
         if (checkEmptyFields() == false) {
             try {
                 java.util.Date utilDate = this.dateChooser.getDate();
@@ -1011,7 +1047,7 @@ public class login extends javax.swing.JFrame {
                 System.out.println(e.toString());
             }
         } else {
-            mainCont.createWindowMessage("Empty Fields","Error");
+            mainCont.createWindowMessage("Empty Fields", "Error");
         }
 
 

@@ -95,7 +95,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     }
         private void fillTable(){
         try{
-        this.tableInfo.setModel(controllerBuySale.listClocksForSale());
+       this.tableInfo.setModel(controllerBuySale.listMyClocks(mainCont.getUsername()));
         this.tableInfo.revalidate();
         this.tableInfo.repaint();
         }catch(Exception e){

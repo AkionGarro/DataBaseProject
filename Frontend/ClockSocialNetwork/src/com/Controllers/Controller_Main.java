@@ -7,6 +7,7 @@ package com.Controllers;
 import com.Connect.DB_Connection;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
+import com.View.User;
 
 /**
  *
@@ -32,14 +33,15 @@ public class Controller_Main {
      private Controller_PhoneType contPhoneType;
      private Controller_BuySale contBuySale;
      
+  
      public static Connection connect=(Connection) new DB_Connection().obtainConnection(); 
      private static Controller_Main mainController= new Controller_Main();
      
+   
+    private String username="GarroAkion";
      
-    private String username="bolseador";
-     
-    
-     
+   
+      
     public  Controller_Main(){
       //  if (connect==null){//creates the connection to the database
         //    connect=(Connection) new DB_Connection().obtainConnection();
@@ -60,6 +62,8 @@ public class Controller_Main {
        contIdentification=new Controller_Identification();
        contPhoneType=new Controller_PhoneType();
        contBuySale=new Controller_BuySale();
+      
+       
        
     }
 
@@ -134,9 +138,7 @@ public class Controller_Main {
         return contIdentification;
     }
 
-    public Controller_AppuserxPeople getContAppuserPeople() {
-        return contAppuserPeople;
-    }
+
 
     public Controller_PhoneType getContPhoneType() {
         return contPhoneType;
@@ -149,4 +151,8 @@ public class Controller_Main {
     public String getUsername() {
         return username;
     }
+
+
+    
+    
 }
