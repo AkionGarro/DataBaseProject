@@ -7,3 +7,7 @@ Frontend/ClockSocialNetwork/src/com/Connect/DB_Connection.java
 *.class
 *.properties
 Frontend/ClockSocialNetwork/build
+\Frontend\ClockSocialNetwork\build\
+/Frontend/ClockSocialNetwork/build/
+Frontend/ClockSocialNetwork/build/
+Frontend/ClockSocialNetwork/build
