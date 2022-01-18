@@ -104,7 +104,7 @@ function getIdPeople(p_identification in varchar2) return number is
 idC number(8);
 begin
 idC:=99999999;
-select idPeople into idC from People where(people.identificationnumber=p_identification);
+select identificationnumber into idC from People where(people.identificationnumber=p_identification);
 return idC;
 end getIDPeople;
 

@@ -382,10 +382,10 @@ begin
 INSERT INTO PEOPLE(idPeople,identificationNumber,identificationType,gender,citenzenship,birthdate,namePeople,surname,secondsurname)
 values(s_people.nextval,p_identification,idType,idGender,idCountry,p_birthdate,p_name,p_surname,p_secondsurname);
 
-    v_newidPeople:=packagegetid.getidpeople(p_identification);
+    ----v_newidPeople:=packagegetid.getidpeople(p_identification);
 
     val:=packagefnnew.fnnewappuser(p_username , 
-                            v_newIdPeople ,
+                            s_people.currval ,
                          v_userType , 
                             iddistrict ,
 		 	     p_password ,
