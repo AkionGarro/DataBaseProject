@@ -880,7 +880,7 @@ public class login extends javax.swing.JFrame {
 
         if (checkEmptyLogin() == false) {
 
-            String password = encoder.ecnode(userPasswordField.getText().trim());
+            String password = encoder.encode(userPasswordField.getText().trim());
             try {
 
                 user = controllerAppuserxPeople.getUser(usernameTextField.getText());
@@ -1023,7 +1023,7 @@ public class login extends javax.swing.JFrame {
                         this.lastNameField.getText(),
                         this.secondLastNameField.getText(),
                         this.usernameField.getText(),
-                        encoderPassword.ecnode(this.passwordTextField.getText()),
+                        encoderPassword.encode(this.passwordTextField.getText()),
                         this.emailTextField.getText(),
                         this.comboDistrict.getSelectedItem().toString(),
                         this.comboCity.getSelectedItem().toString(),
