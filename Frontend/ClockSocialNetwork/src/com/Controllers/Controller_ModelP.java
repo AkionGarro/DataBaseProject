@@ -24,6 +24,7 @@ public class Controller_ModelP extends ControllerF{
         this.listComboVariable="nameModel";
         this.listComboFn="{ ? = call packagefnlist.fnListModelPBasic(?)}";
         this.deleteFn="{ ? = call packagedeleteTuple.fnDelModelP(?,?)}";
+        this.updateFn="{ ? = call packageupdate.fnUpdtModelP(?,?,?)}";
     
     }
         public String create(String nameD, String nameBrand, String nameType ){

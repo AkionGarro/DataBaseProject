@@ -30,6 +30,7 @@ public class Controller_Brand extends ControllerF{
         this.createFn="{ ? = call packagefnnew.fnNewBrand(?)}";
         this.listComboFn="{ ? = call packagefnlist.fnListBrandBasic}";
         this.listComboVariable="nameBrand";
+        this.updateFn="{ ? = call packageupdate.fnUpdtBrand(?,?)}";
     }
     //returns array with the list of conditions from database sysrefcursor
 

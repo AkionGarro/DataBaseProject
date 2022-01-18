@@ -163,7 +163,13 @@ public class ClockType extends javax.swing.JPanel {
     }//GEN-LAST:event_createButton1ActionPerformed
 
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
-        // TODO add your handling code here:
+               int column = 0;
+        int row = this.tableInfo.getSelectedRow();
+        if (row!=-1){
+            String value = this.tableInfo.getModel().getValueAt(row, column).toString();
+            mainCont.createWindowMessage(controller.updateT(value,this.nameField.getText()), "Delete Clock Type");
+            fillTable();
+        }
     }//GEN-LAST:event_modifyButtonActionPerformed
 
 

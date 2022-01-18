@@ -89,6 +89,11 @@ public class Gender extends javax.swing.JPanel {
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
             modifyButton.setText("Change");
+            modifyButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    modifyButtonActionPerformed(evt);
+                }
+            });
             add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 80, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
@@ -143,6 +148,22 @@ public class Gender extends javax.swing.JPanel {
         }        
           
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
+
+                      try{
+            if (tableInfo.getSelectedRow()!=-1){
+                mainCont.createWindowMessage(this.controller.updateT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(),this.nameField.getText()), "Updating Gender");
+                fillTable();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+              }//GEN-LAST:event_modifyButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

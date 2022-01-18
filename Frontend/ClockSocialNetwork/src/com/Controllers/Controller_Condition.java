@@ -27,6 +27,7 @@ public class Controller_Condition extends ControllerF{
         this.createFn="{ ? = call packagefnnew.fnNewCondition(?,?)}";
         this.listComboFn="{ ? = call packagefnlist.fnListComboCondition}";
          this.listComboVariable="namecondition";
+         this.updateFn="{ ? = call packageupdate.fnUpdtCondition(?,?)}";
     }
 
     public DefaultTableModel listInfo(){

@@ -103,6 +103,11 @@ public class PaymentMethod extends javax.swing.JPanel {
         modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton1.setText("Modify");
+        modifyButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyButton1ActionPerformed(evt);
+            }
+        });
         add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -134,6 +139,16 @@ public class PaymentMethod extends javax.swing.JPanel {
             fillTable();
         }
     }//GEN-LAST:event_deleteBActionPerformed
+
+    private void modifyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButton1ActionPerformed
+             int column = 0;
+        int row = this.tableInfo.getSelectedRow();
+        if (row!=-1){
+            String value = this.tableInfo.getModel().getValueAt(row, column).toString();
+            mainCont.createWindowMessage(controller.updateT(value,this.nameField.getText()), "Update Payment Method Name");
+            fillTable();
+        }
+    }//GEN-LAST:event_modifyButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

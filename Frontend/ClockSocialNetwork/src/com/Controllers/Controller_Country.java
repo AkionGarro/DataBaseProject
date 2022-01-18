@@ -29,6 +29,7 @@ public class Controller_Country extends ControllerF {
         this.listComboFn="{ ? = call packagefnlist.fnListCountryInfoBasic}";
         this.listComboVariable="nameCountry";
         this.deleteFn= "{ ? = call packagedeleteTuple.fnDelCountry(?)}";
+        this.updateFn="{ ? = call packageupdate.fnUpdtCountry(?,?)}";
 }
 
     public ArrayList<String> listCodeCombo(){

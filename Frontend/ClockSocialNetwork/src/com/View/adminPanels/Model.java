@@ -99,6 +99,8 @@ public class Model extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         createButton1 = new javax.swing.JButton();
         deleteModelButton = new javax.swing.JButton();
+        modifyBrand = new javax.swing.JButton();
+        modifyModel = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 660));
@@ -121,7 +123,7 @@ public class Model extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 730, 500));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 730, 380));
 
         createButton.setBackground(new java.awt.Color(0, 0, 0));
         createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,7 +133,7 @@ public class Model extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, -1, 30));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 170, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel3.setText("Type:");
@@ -160,7 +162,7 @@ public class Model extends javax.swing.JPanel {
                 createButton2ActionPerformed(evt);
             }
         });
-        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 130, 30));
+        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 150, 30));
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 110, -1));
 
         comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -178,7 +180,7 @@ public class Model extends javax.swing.JPanel {
                 createButton1ActionPerformed(evt);
             }
         });
-        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 120, 30));
+        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 150, 30));
 
         deleteModelButton.setBackground(new java.awt.Color(0, 0, 0));
         deleteModelButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,7 +190,27 @@ public class Model extends javax.swing.JPanel {
                 deleteModelButtonActionPerformed(evt);
             }
         });
-        add(deleteModelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 120, 30));
+        add(deleteModelButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 170, 30));
+
+        modifyBrand.setBackground(new java.awt.Color(0, 0, 0));
+        modifyBrand.setForeground(new java.awt.Color(255, 255, 255));
+        modifyBrand.setText("Update Brand's Name");
+        modifyBrand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyBrandActionPerformed(evt);
+            }
+        });
+        add(modifyBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 150, 30));
+
+        modifyModel.setBackground(new java.awt.Color(0, 0, 0));
+        modifyModel.setForeground(new java.awt.Color(255, 255, 255));
+        modifyModel.setText("Update Model's Name");
+        modifyModel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyModelActionPerformed(evt);
+            }
+        });
+        add(modifyModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 170, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
@@ -258,6 +280,36 @@ public class Model extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteModelButtonActionPerformed
 
+    private void modifyBrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyBrandActionPerformed
+        try {
+            if (this.comboBrand.getSelectedIndex() != -1) {
+                mainCont.createWindowMessage(controllerB.updateT(this.comboBrand.getSelectedItem().toString(),this.nameField.getText()), "Update Brand");
+                fillBrand();
+                fillModel();
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_modifyBrandActionPerformed
+
+    private void modifyModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyModelActionPerformed
+             try {
+            if (this.comboBrand.getSelectedIndex() != -1) {
+                mainCont.createWindowMessage(controllerB.updateT(this.comboBrand.getSelectedItem().toString(),this.comboModel.getSelectedItem().toString(),this.nameField.getText()), "Update Model");
+                fillBrand();
+                fillModel();
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_modifyModelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBrand;
@@ -272,6 +324,8 @@ public class Model extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton modifyBrand;
+    private javax.swing.JButton modifyModel;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables

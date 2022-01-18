@@ -43,79 +43,84 @@ public class Condition extends javax.swing.JPanel {
         descriptionField = new javax.swing.JTextArea();
         buttonModifyC = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tableInfo = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        buttonDelete = new javax.swing.JButton();
+        tableInfo = new javax.swing.JTable(){
+            private static final long serialVersionUID = 1L;
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(730, 660));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            };};
+            jLabel6 = new javax.swing.JLabel();
+            jLabel7 = new javax.swing.JLabel();
+            buttonDelete = new javax.swing.JButton();
 
-        buttonAddC.setBackground(new java.awt.Color(0, 0, 0));
-        buttonAddC.setForeground(new java.awt.Color(255, 255, 255));
-        buttonAddC.setText("Add");
-        buttonAddC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAddCActionPerformed(evt);
-            }
-        });
-        add(buttonAddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 70, 30));
+            setBackground(new java.awt.Color(255, 255, 255));
+            setPreferredSize(new java.awt.Dimension(730, 660));
+            setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nameConditionField.setDocument(new limitText.JTextFieldLimit(20));
-        add(nameConditionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 237, -1));
+            buttonAddC.setBackground(new java.awt.Color(0, 0, 0));
+            buttonAddC.setForeground(new java.awt.Color(255, 255, 255));
+            buttonAddC.setText("Add");
+            buttonAddC.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    buttonAddCActionPerformed(evt);
+                }
+            });
+            add(buttonAddC, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 70, 30));
 
-        descriptionField.setColumns(20);
-        descriptionField.setRows(5);
-        descriptionField.setDocument(new limitText.JTextFieldLimit(50));
-        descriptionField.setLineWrap(true);
-        jScrollPane1.setViewportView(descriptionField);
+            nameConditionField.setDocument(new limitText.JTextFieldLimit(20));
+            add(nameConditionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 237, -1));
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 237, 80));
+            descriptionField.setColumns(20);
+            descriptionField.setRows(5);
+            descriptionField.setDocument(new limitText.JTextFieldLimit(50));
+            descriptionField.setLineWrap(true);
+            jScrollPane1.setViewportView(descriptionField);
 
-        buttonModifyC.setBackground(new java.awt.Color(0, 0, 0));
-        buttonModifyC.setForeground(new java.awt.Color(255, 255, 255));
-        buttonModifyC.setText("Modify");
-        buttonModifyC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonModifyCActionPerformed(evt);
-            }
-        });
-        add(buttonModifyC, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 70, 30));
+            add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 237, 80));
 
-        tableInfo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(tableInfo);
+            buttonModifyC.setBackground(new java.awt.Color(0, 0, 0));
+            buttonModifyC.setForeground(new java.awt.Color(255, 255, 255));
+            buttonModifyC.setText("Modify");
+            buttonModifyC.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    buttonModifyCActionPerformed(evt);
+                }
+            });
+            add(buttonModifyC, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 70, 30));
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 550));
+            tableInfo.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Title 1", "Title 2", "Title 3", "Title 4"
+                }
+            ));
+            jScrollPane2.setViewportView(tableInfo);
 
-        jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel6.setText("Description:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 40));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 550));
 
-        jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel7.setText("Condition's Name:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 30));
+            jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel6.setText("Description:");
+            add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 40));
 
-        buttonDelete.setBackground(new java.awt.Color(0, 0, 0));
-        buttonDelete.setForeground(new java.awt.Color(255, 255, 255));
-        buttonDelete.setText("Delete");
-        buttonDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonDeleteActionPerformed(evt);
-            }
-        });
-        add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 70, 30));
-    }// </editor-fold>//GEN-END:initComponents
+            jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel7.setText("Condition's Name:");
+            add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 30));
+
+            buttonDelete.setBackground(new java.awt.Color(0, 0, 0));
+            buttonDelete.setForeground(new java.awt.Color(255, 255, 255));
+            buttonDelete.setText("Delete");
+            buttonDelete.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    buttonDeleteActionPerformed(evt);
+                }
+            });
+            add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 70, 30));
+        }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAddCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddCActionPerformed
         try {
@@ -141,7 +146,18 @@ public class Condition extends javax.swing.JPanel {
         }
     }
     private void buttonModifyCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModifyCActionPerformed
-        // TODO add your handling code here:
+                    try {
+            if (this.tableInfo.getSelectedRow() != -1) {
+                mainCont.createWindowMessage(controller.updateT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(), this.nameConditionField.getText()), "Delete Condition");
+                fillTable();
+                
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
     }//GEN-LAST:event_buttonModifyCActionPerformed
 
     private void buttonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDeleteActionPerformed

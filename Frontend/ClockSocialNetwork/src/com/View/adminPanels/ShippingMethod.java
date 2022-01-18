@@ -140,7 +140,13 @@ public class ShippingMethod extends javax.swing.JPanel {
     }//GEN-LAST:event_nameFieldActionPerformed
 
     private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
-        // TODO add your handling code here:
+              int row = this.tableInfo.getSelectedRow();
+        if (row!=-1){
+            String name = this.tableInfo.getModel().getValueAt(row, 0).toString();
+            String company = this.tableInfo.getModel().getValueAt(row, 1).toString();
+            mainCont.createWindowMessage(controller.updateT(name,company, this.nameField.getText()), "Update Name of Shipping Method");
+            fillTable();
+        }
     }//GEN-LAST:event_modifyButtonActionPerformed
 
     private void deleteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBActionPerformed

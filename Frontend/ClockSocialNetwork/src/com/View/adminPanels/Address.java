@@ -112,9 +112,11 @@ public class Address extends javax.swing.JPanel {
         createButton3 = new javax.swing.JButton();
         nameTextField2 = new javax.swing.JTextField();
         countryCodeField = new javax.swing.JTextField();
-        modifyButton1 = new javax.swing.JButton();
+        modifyDistrict = new javax.swing.JButton();
         deleteCity = new javax.swing.JButton();
         deleteDistrict = new javax.swing.JButton();
+        modifyCountry = new javax.swing.JButton();
+        modifyCity = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(730, 660));
@@ -144,7 +146,7 @@ public class Address extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 120, 30));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 120, 30));
 
         deleteCountry.setBackground(new java.awt.Color(0, 0, 0));
         deleteCountry.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,7 +156,7 @@ public class Address extends javax.swing.JPanel {
                 deleteCountryActionPerformed(evt);
             }
         });
-        add(deleteCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 130, 30));
+        add(deleteCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 130, 30));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -169,7 +171,7 @@ public class Address extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 730, 460));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 730, 310));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("Country:");
@@ -212,7 +214,7 @@ public class Address extends javax.swing.JPanel {
                 createButton2ActionPerformed(evt);
             }
         });
-        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 120, 30));
+        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 120, 30));
 
         createButton3.setBackground(new java.awt.Color(0, 0, 0));
         createButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -222,7 +224,7 @@ public class Address extends javax.swing.JPanel {
                 createButton3ActionPerformed(evt);
             }
         });
-        add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 120, 30));
+        add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 120, 30));
 
         nameTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,10 +234,15 @@ public class Address extends javax.swing.JPanel {
         add(nameTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 110, -1));
         add(countryCodeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 120, -1));
 
-        modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
-        modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
-        modifyButton1.setText("Modify");
-        add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 70, 30));
+        modifyDistrict.setBackground(new java.awt.Color(0, 0, 0));
+        modifyDistrict.setForeground(new java.awt.Color(255, 255, 255));
+        modifyDistrict.setText("Modify District");
+        modifyDistrict.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyDistrictActionPerformed(evt);
+            }
+        });
+        add(modifyDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 120, 30));
 
         deleteCity.setBackground(new java.awt.Color(0, 0, 0));
         deleteCity.setForeground(new java.awt.Color(255, 255, 255));
@@ -245,7 +252,7 @@ public class Address extends javax.swing.JPanel {
                 deleteCityActionPerformed(evt);
             }
         });
-        add(deleteCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 130, 30));
+        add(deleteCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 130, 30));
 
         deleteDistrict.setBackground(new java.awt.Color(0, 0, 0));
         deleteDistrict.setForeground(new java.awt.Color(255, 255, 255));
@@ -255,7 +262,27 @@ public class Address extends javax.swing.JPanel {
                 deleteDistrictActionPerformed(evt);
             }
         });
-        add(deleteDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 130, 30));
+        add(deleteDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 130, 30));
+
+        modifyCountry.setBackground(new java.awt.Color(0, 0, 0));
+        modifyCountry.setForeground(new java.awt.Color(255, 255, 255));
+        modifyCountry.setText("Modify Country");
+        modifyCountry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyCountryActionPerformed(evt);
+            }
+        });
+        add(modifyCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 130, 30));
+
+        modifyCity.setBackground(new java.awt.Color(0, 0, 0));
+        modifyCity.setForeground(new java.awt.Color(255, 255, 255));
+        modifyCity.setText("Modify City");
+        modifyCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyCityActionPerformed(evt);
+            }
+        });
+        add(modifyCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -375,6 +402,53 @@ public class Address extends javax.swing.JPanel {
         }    
     }//GEN-LAST:event_deleteDistrictActionPerformed
 
+    private void modifyDistrictActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyDistrictActionPerformed
+                                  try{
+            if (comboCountry.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(this.controllerDistrict.updateT(this.comboDistrict.getSelectedItem().toString(),comboCityF.getSelectedItem().toString(), comboCountry.getSelectedItem().toString(),  this.nameTextField2.getText()), "Updating Country");
+                fillCountry();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+          
+    }//GEN-LAST:event_modifyDistrictActionPerformed
+
+    private void modifyCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCountryActionPerformed
+                          try{
+            if (comboCountry.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(this.controllerCountry.updateT(this.comboCountry.getSelectedItem().toString(),this.nameTextField2.getText()), "Updating Country");
+                fillCountry();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }        
+          
+    }//GEN-LAST:event_modifyCountryActionPerformed
+
+    private void modifyCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyCityActionPerformed
+                 try{
+            if (this.comboCityF.getSelectedIndex()!=-1){
+                mainCont.createWindowMessage(this.controllerCity.updateT(this.comboCityF.getSelectedItem().toString(), this.comboCountry.getSelectedItem().toString(), this.nameTextField2.getText()), "Renaming City");
+                fillCountry();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }      
+    }//GEN-LAST:event_modifyCityActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboCityF;
@@ -394,7 +468,9 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton modifyButton1;
+    private javax.swing.JButton modifyCity;
+    private javax.swing.JButton modifyCountry;
+    private javax.swing.JButton modifyDistrict;
     private javax.swing.JTextField nameTextField2;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables

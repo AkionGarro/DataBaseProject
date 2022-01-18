@@ -19,12 +19,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Controller_District{
     String deleteFn;
+    String updateFn;
     public Controller_District() {
     
             if (connect==null){//creates the connection to the database
             connect=(Connection) new DB_Connection().obtainConnection();
         }
-            this.deleteFn="{ ? = call packagedeleteTuple.fnDelDistrict(?,?,?)";
+            this.deleteFn="{ ? = call packagedeleteTuple.fnDelDistrict(?,?,?)}";
+            this.updateFn="{ ? = call packageupdate.fnUpdtDistrict(?,?,?,?)}";
 }
     
     
@@ -65,6 +67,30 @@ public class Controller_District{
         return  e.toString();
         }
     }
+    
+    
+        public String updateT(String param,String param2, String param3,String param4)
+        {
+        try{
+            param=param.trim();
+            CallableStatement cstmt = connect.prepareCall(updateFn);
+            cstmt.setString(2, param);
+            cstmt.setString(3, param2);
+            cstmt.setString(4, param3);
+            cstmt.setString(5, param4);
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
+            
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+            System.out.println(result);
+            return result;
+        } catch(Exception e){
+        return  e.toString();
+        }
+    }
+    
+    
     
     
         public ArrayList<String> listInfo(String nameCity, String nameCountry){

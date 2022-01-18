@@ -70,6 +70,11 @@ public class Status extends javax.swing.JPanel {
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton.setText("Modify");
+        modifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifyButtonActionPerformed(evt);
+            }
+        });
         add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 70, 30));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -157,6 +162,21 @@ public class Status extends javax.swing.JPanel {
             System.out.println(e.toString());
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void modifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButtonActionPerformed
+                            try {
+            if (this.tableInfo.getSelectedRow() != -1) {
+                mainCont.createWindowMessage(controller.updateT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(),this.nameField.toString()), "Update Status Name");
+                fillTable();
+                
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_modifyButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

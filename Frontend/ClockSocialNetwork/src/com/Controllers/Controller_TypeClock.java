@@ -28,6 +28,7 @@ public class Controller_TypeClock extends ControllerF {
        this.createFn="{ ? = call packagefnnew.fnNewTypeClock(?,?)}";
        this.listComboVariable="nameType";
        this.listComboFn="{ ? = call packagefnlist.fnListTypeClockBasic}";
+       this.updateFn="{ ? = call packageupdate.fnUpdtTypeClock(?,?)}";
     }
     
     //Returns array with information(typeClock) requested  from the database

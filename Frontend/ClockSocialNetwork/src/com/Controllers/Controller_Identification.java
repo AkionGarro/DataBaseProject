@@ -26,6 +26,7 @@ public class Controller_Identification extends ControllerF {
             this.listComboFn="{ ? = call packagefnlist.fnListIdentification}";
             this.listComboVariable="typeid";
             this.deleteFn= "{ ? = call packagedeleteTuple.fnDelIdentification(?)}";
+            this.updateFn="{ ? = call packageupdate.fnUpdtIdentification(?,?)}";
     }
     
 

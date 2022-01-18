@@ -18,7 +18,7 @@ import oracle.jdbc.internal.OracleTypes;
  */
 public class ControllerF {
     protected String deleteFn;
-   
+    protected String updateFn;
     protected String createFn;
     protected String listComboFn;
     protected String listComboVariable;
@@ -45,9 +45,7 @@ public class ControllerF {
         return  e.toString();
         }
     }
-    
 
-    
     
         public String deleteT(int param)
         {
@@ -55,6 +53,25 @@ public class ControllerF {
             
             CallableStatement cstmt = connect.prepareCall(deleteFn);
             cstmt.setInt(2, param);
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
+            
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+            System.out.println(result);
+            return result;
+        } catch(Exception e){
+        return  e.toString();
+        }
+    }
+        
+        public String updateT(int param,int param2)
+        {
+        try{
+            
+            CallableStatement cstmt = connect.prepareCall(updateFn);
+            cstmt.setInt(2, param);
+             cstmt.setInt(3, param2);
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
             cstmt.execute();
             
@@ -86,6 +103,47 @@ public class ControllerF {
         }
     }
     
+      
+     public String updateT(String param,String param2)
+        {
+        try{
+            param=param.trim();
+            CallableStatement cstmt = connect.prepareCall(updateFn);
+            cstmt.setString(2, param);
+            cstmt.setString(3, param2);
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
+            
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+            System.out.println(result);
+            return result;
+        } catch(Exception e){
+        return  e.toString();
+        }
+    }
+    
+        public String updateT(String param,String param2, String param3)
+        {
+        try{
+            param=param.trim();
+            CallableStatement cstmt = connect.prepareCall(updateFn);
+            cstmt.setString(2, param);
+            cstmt.setString(3, param2);
+            cstmt.setString(4, param3);
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
+            
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+            System.out.println(result);
+            return result;
+        } catch(Exception e){
+        return  e.toString();
+        }
+    }
+    
+     
     public String create(String nameD, String description){
         try{
             CallableStatement cstmt = connect.prepareCall(this.createFn);
