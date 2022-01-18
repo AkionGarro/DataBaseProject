@@ -153,4 +153,6 @@ begin
     select BUYSALE.idClock into idC from buysale where idBuysale=p_idBuysale;
     return idC;
 end getIdClock;
+
+
 end packagegetid;

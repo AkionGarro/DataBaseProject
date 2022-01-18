@@ -57,6 +57,7 @@ public class ClockType extends javax.swing.JPanel {
             jLabel7 = new javax.swing.JLabel();
             jLabel8 = new javax.swing.JLabel();
             createButton1 = new javax.swing.JButton();
+            modifyButton1 = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setPreferredSize(new java.awt.Dimension(730, 660));
@@ -74,13 +75,13 @@ public class ClockType extends javax.swing.JPanel {
 
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
-            modifyButton.setText("Modify");
+            modifyButton.setText("Change Type");
             modifyButton.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     modifyButtonActionPerformed(evt);
                 }
             });
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 80, 30));
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, 120, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +130,16 @@ public class ClockType extends javax.swing.JPanel {
                 }
             });
             add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+
+            modifyButton1.setBackground(new java.awt.Color(0, 0, 0));
+            modifyButton1.setForeground(new java.awt.Color(255, 255, 255));
+            modifyButton1.setText("Change Description");
+            modifyButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    modifyButton1ActionPerformed(evt);
+                }
+            });
+            add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 150, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void deleteBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBActionPerformed
@@ -167,10 +178,20 @@ public class ClockType extends javax.swing.JPanel {
         int row = this.tableInfo.getSelectedRow();
         if (row!=-1){
             String value = this.tableInfo.getModel().getValueAt(row, column).toString();
-            mainCont.createWindowMessage(controller.updateT(value,this.nameField.getText()), "Delete Clock Type");
+            mainCont.createWindowMessage(controller.updateT(value,this.nameField.getText()), "Update Clock Type");
             fillTable();
         }
     }//GEN-LAST:event_modifyButtonActionPerformed
+
+    private void modifyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyButton1ActionPerformed
+        int column = 0;
+        int row = this.tableInfo.getSelectedRow();
+        if (row!=-1){
+            String value = this.tableInfo.getModel().getValueAt(row, column).toString();
+            mainCont.createWindowMessage(controller.updateD(value,this.descriptionField.getText()), "Update Clock Type");
+            fillTable();
+        }
+    }//GEN-LAST:event_modifyButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -182,6 +203,7 @@ public class ClockType extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton modifyButton;
+    private javax.swing.JButton modifyButton1;
     private javax.swing.JTextField nameField;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables

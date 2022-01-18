@@ -44,10 +44,11 @@ public class insertarRelojes extends javax.swing.JPanel {
         this.manufactureDate.setLocale(Locale.ENGLISH);
         fillBrand();
         fillModel();
-        fillType();
+ 
         fillCondition();
         fillBuyStatus();
         fillTable();
+       
         
 
     }
@@ -77,17 +78,6 @@ public class insertarRelojes extends javax.swing.JPanel {
 
     }
 
-    private void fillType() {
-        try {
-            ArrayList<String> listC = controllerType.listInfoCombo();
-            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
-            this.comboType.setModel(listF);
-
-        } catch (Exception e) {
-            System.out.println(e.toString());
-        }
-
-    }
 
     private void fillCondition() {
         try {
@@ -136,7 +126,6 @@ public class insertarRelojes extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -144,7 +133,6 @@ public class insertarRelojes extends javax.swing.JPanel {
         comboBrand = new javax.swing.JComboBox<>();
         comboModel = new javax.swing.JComboBox<>();
         comboCond = new javax.swing.JComboBox<>();
-        comboType = new javax.swing.JComboBox<>();
         priceField = new javax.swing.JTextField();
         descriptionField = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -176,17 +164,13 @@ public class insertarRelojes extends javax.swing.JPanel {
             jLabel8.setText("Model:");
             add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 80, 30));
 
-            jLabel9.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-            jLabel9.setText("Type:");
-            add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 190, 30));
-
             jLabel10.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel10.setText("Condition:");
             add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 100, 30));
 
             jLabel11.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel11.setText("Manufacture Date");
-            add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 190, 30));
+            add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 190, 30));
 
             jLabel12.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel12.setText("Price:");
@@ -214,9 +198,6 @@ public class insertarRelojes extends javax.swing.JPanel {
             comboCond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
             add(comboCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 140, -1));
 
-            comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 140, -1));
-
             priceField.setColumns(10);
             add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 140, -1));
 
@@ -226,11 +207,11 @@ public class insertarRelojes extends javax.swing.JPanel {
                     descriptionFieldActionPerformed(evt);
                 }
             });
-            add(descriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 240, 30));
+            add(descriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 240, 30));
 
             jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel13.setText("Vintage:");
-            add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 90, 30));
+            add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 90, 30));
 
             jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
             jComboBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +219,7 @@ public class insertarRelojes extends javax.swing.JPanel {
                     jComboBox6ActionPerformed(evt);
                 }
             });
-            add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 140, -1));
+            add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, -1));
 
             jButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jButton1.setText("Add new clock");
@@ -247,7 +228,7 @@ public class insertarRelojes extends javax.swing.JPanel {
                     jButton1ActionPerformed(evt);
                 }
             });
-            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 160, 70));
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 160, 70));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -263,11 +244,11 @@ public class insertarRelojes extends javax.swing.JPanel {
             jScrollPane2.setViewportView(tableInfo);
 
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 730, 430));
-            add(manufactureDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 140, -1));
+            add(manufactureDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, -1));
 
             jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel14.setText("Description:");
-            add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 190, 30));
+            add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void comboBuyStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBuyStatusActionPerformed
@@ -323,7 +304,6 @@ public class insertarRelojes extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboBuyStatus;
     private javax.swing.JComboBox<String> comboCond;
     private javax.swing.JComboBox<String> comboModel;
-    private javax.swing.JComboBox<String> comboType;
     private javax.swing.JTextField descriptionField;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox6;
@@ -335,7 +315,6 @@ public class insertarRelojes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private com.toedter.calendar.JDateChooser manufactureDate;
     private javax.swing.JTextField priceField;

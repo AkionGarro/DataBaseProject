@@ -24,6 +24,8 @@ public class Controller_ShippingMethod extends ControllerF {
         this.createFn="{ ? = call packagefnnew.fnNewShippingMethod(?,?)}";
         this.deleteFn="{ ? = call packagedeletetuple.fnDelShippingMethod(?,?)}";
         this.updateFn="{ ? = call packageupdate.fnUpdtShippingMethod(?,?,?)}";
+        this.listComboFn="{ ? = call packagefnlist.fnListShippingMethodBasic}";
+        this.listComboVariable="namesm";
     }
         public DefaultTableModel listInfo(){
         try{

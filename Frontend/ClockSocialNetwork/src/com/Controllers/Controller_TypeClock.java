@@ -61,5 +61,13 @@ public class Controller_TypeClock extends ControllerF {
         }
     }
     
+    public String updateD(String nameType, String description){
+        String backup=this.updateFn;
+        this.updateFn="{ ? = call packageupdate.fnUpdtTypeClockDescription(?,?)}";
+        String result=this.updateT(nameType, description);
+        this.updateFn=backup;
+        return result;
+    }
+    
 
 }

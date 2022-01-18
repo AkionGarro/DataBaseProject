@@ -42,6 +42,24 @@ public class Controller_History_appuserxbuysale{
     }
     
 
-    
+        public String buyClock(String p_username, int p_idbuysale, String p_paymentmethod, String p_shippingmethod  ){
+        try{
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewBuy(?,?,?,?)}");
+            cstmt.setString(2, p_username);
+            cstmt.setInt(3, p_idbuysale);
+            cstmt.setString(4, p_paymentmethod);
+            cstmt.setString(5, p_shippingmethod);
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
+            
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+            System.out.println(result);
+            return result;//if the tuple was created
+           
+        } catch(Exception e){
+        return "Wrong data ";
+        }
+    }
 
 }

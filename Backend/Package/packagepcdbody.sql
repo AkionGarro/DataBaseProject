@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - viernes-enero-14-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package Body PACKAGEPCD
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE BODY "PR"."PACKAGEPCD" AS
+create or replace PACKAGE BODY      "PACKAGEPCD" AS
 procedure new_APPUSER(p_username in VARCHAR2, 
                              p_idNumber in number,
                              p_userType in NUMBER, 
@@ -147,7 +140,7 @@ end new_CONDITION;
 
 procedure new_DISTRICT(p_nameDistrict in VARCHAR2, 
                         p_idCity in NUMBER)
-                        
+
 is
 BEGIN
 INSERT INTO DISTRICT(idDistrict,nameDistrict,idCity)

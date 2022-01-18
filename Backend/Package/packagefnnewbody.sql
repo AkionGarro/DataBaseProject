@@ -1,4 +1,6 @@
 create or replace PACKAGE BODY      "PACKAGEFNNEW" AS
+
+-- Every function returns varchar2 telling if the operation was successfull or not, using exceptions for null values and duplicates
 function  fnNewappuser(p_username in VARCHAR2, 
                              p_idNumber in number,
                              p_userType in NUMBER, 
@@ -656,4 +658,43 @@ exception
      return val;
 end fnNewPhoneType;
 
+function fnNewBuy(p_username in varchar2, p_idbuysale in number, p_paymentmethod in varchar2,p_shippingmethod in varchar2 ) return varchar2 is
+val varchar2(50);
+v_idAppUser number(8);
+v_idPayment number(3);
+v_idShipping number(4);
+v_idSeller number(8);
+begin
+    v_idAppUser:=packagegetid.getidUsername(p_username);
+    v_idPayment:=packagegetid.getidPaymentMethod(p_paymentmethod);
+    v_idShipping:=packagegetid.getidShippingMethod(p_shippingmethod);
+    Select iduserseller into v_idSeller from buysale where buysale.idbuysale=p_idBuysale;
+    if v_idSeller=v_idAppuser then
+     return 'This item is yours';
+    end if;
+        
+    update buysale set   idShippingM=v_idShipping,
+                         idpaymentm=v_idPayment,
+                         iduserbuyer=v_idAppuser,
+                         datesale=SYSDATE,
+                         idBuyStatus=2
+                         where buysale.idbuysale=p_idbuysale; 
+    insert into HISTORY_APPUSERXBUYSALE(IDUSER,IDBUYSALE)values(v_idAppUser,p_idBuySale);
+    val:='You have bought the clock';
+    return val;
+    commit;
+exception
+    WHEN no_data_found THEN
+     rollback;
+     val:='Wrong or missing information'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Already Bought';   
+     return val;
+    when others then
+     rollback;
+     val:='Wrong data';
+     return val;
+end fnNewBuy;
 END PACKAGEFNNEW;

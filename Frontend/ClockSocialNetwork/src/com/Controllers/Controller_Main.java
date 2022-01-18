@@ -32,6 +32,8 @@ public class Controller_Main {
      private Controller_AppuserxPeople contAppuserPeople;
      private Controller_PhoneType contPhoneType;
      private Controller_BuySale contBuySale;
+     private Controller_History_appuserxbuysale contBuyClock;
+    
      
   
      public static Connection connect=(Connection) new DB_Connection().obtainConnection(); 
@@ -62,7 +64,8 @@ public class Controller_Main {
        contIdentification=new Controller_Identification();
        contPhoneType=new Controller_PhoneType();
        contBuySale=new Controller_BuySale();
-      
+      contBuyClock=new Controller_History_appuserxbuysale();
+     
        
        
     }
@@ -152,7 +155,15 @@ public class Controller_Main {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public Controller_History_appuserxbuysale getContBuyClock() {
+        return contBuyClock;
+    }
+
+    
     
     
 }

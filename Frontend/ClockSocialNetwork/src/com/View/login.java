@@ -16,7 +16,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
+import limitText.JTextFieldLimit;
 
 /**
  *
@@ -72,6 +74,7 @@ public class login extends javax.swing.JFrame {
         this.fillComboCitizen();
         this.fillComboGender();
         this.fillPhoneType();
+        this.dateChooser.setLocale(Locale.ENGLISH);
 
     }
 
@@ -262,7 +265,6 @@ public class login extends javax.swing.JFrame {
         loginSection.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 480, 10));
 
         usernameTextField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        usernameTextField.setForeground(new java.awt.Color(0, 0, 0));
         usernameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         usernameTextField.setBorder(null);
         usernameTextField.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -284,7 +286,6 @@ public class login extends javax.swing.JFrame {
         loginSection.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 480, 10));
 
         userPasswordField.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        userPasswordField.setForeground(new java.awt.Color(0, 0, 0));
         userPasswordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         userPasswordField.setBorder(null);
         userPasswordField.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -402,6 +403,7 @@ public class login extends javax.swing.JFrame {
         usernameField.setForeground(new java.awt.Color(255, 255, 255));
         usernameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         usernameField.setBorder(null);
+        usernameField.setDocument(new JTextFieldLimit(10));
         usernameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 usernameFieldMouseClicked(evt);
@@ -436,6 +438,7 @@ public class login extends javax.swing.JFrame {
         emailTextField.setForeground(new java.awt.Color(255, 255, 255));
         emailTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         emailTextField.setBorder(null);
+        emailTextField.setDocument (new JTextFieldLimit(30));
         emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTextFieldActionPerformed(evt);
@@ -523,7 +526,7 @@ public class login extends javax.swing.JFrame {
         exitPanel1Layout.setVerticalGroup(
             exitPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitPanel1Layout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(exitButton1))
         );
 
@@ -572,6 +575,7 @@ public class login extends javax.swing.JFrame {
         nameField.setForeground(new java.awt.Color(255, 255, 255));
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nameField.setBorder(null);
+        nameField.setDocument (new JTextFieldLimit(10));
         nameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nameFieldMouseClicked(evt);
@@ -590,6 +594,7 @@ public class login extends javax.swing.JFrame {
         lastNameField.setForeground(new java.awt.Color(255, 255, 255));
         lastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         lastNameField.setBorder(null);
+        lastNameField.setDocument(new JTextFieldLimit(10));
         lastNameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lastNameFieldMouseClicked(evt);
@@ -608,6 +613,7 @@ public class login extends javax.swing.JFrame {
         secondLastNameField.setForeground(new java.awt.Color(255, 255, 255));
         secondLastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondLastNameField.setBorder(null);
+        secondLastNameField.setDocument(new JTextFieldLimit(10));
         secondLastNameField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 secondLastNameFieldMouseClicked(evt);
@@ -650,6 +656,7 @@ public class login extends javax.swing.JFrame {
         identificationField.setForeground(new java.awt.Color(255, 255, 255));
         identificationField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         identificationField.setBorder(null);
+        identificationField.setDocument(new JTextFieldLimit(10));
         identificationField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 identificationFieldMouseClicked(evt);
@@ -688,6 +695,7 @@ public class login extends javax.swing.JFrame {
         phoneField.setForeground(new java.awt.Color(255, 255, 255));
         phoneField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         phoneField.setBorder(null);
+        phoneField.setDocument(new JTextFieldLimit(8));
         phoneField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 phoneFieldMouseClicked(evt);
@@ -884,7 +892,7 @@ public class login extends javax.swing.JFrame {
             try {
 
                 user = controllerAppuserxPeople.getUser(usernameTextField.getText());
-
+                this.mainCont.setUsername(user.getUsername());
                 if (password.equals(user.getPassword())) {
                     if (user.getUserType() == 14) {
                         home h1 = new home();

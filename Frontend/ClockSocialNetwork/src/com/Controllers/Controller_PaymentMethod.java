@@ -24,7 +24,8 @@ public class Controller_PaymentMethod extends ControllerF{
             this.createFn="{ ? = call packagefnnew.fnNewPaymentMethod(?)}";
             this.deleteFn="{ ? = call packagedeletetuple.fnDelPaymentMethod(?)}";
             this.updateFn="{ ? = call packageupdate.fnUpdtPaymentMethod(?,?)}";
-            
+            this.listComboFn="{ ? = call packagefnlist.fnListPayMethodBasic";
+            this.listComboVariable="type";
     }
    
     

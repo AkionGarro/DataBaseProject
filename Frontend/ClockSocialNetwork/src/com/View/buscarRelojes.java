@@ -8,8 +8,11 @@ import com.Controllers.Controller_Brand;
 import com.Controllers.Controller_BuySale;
 import com.Controllers.Controller_BuyStatus;
 import com.Controllers.Controller_Condition;
+import com.Controllers.Controller_History_appuserxbuysale;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_ModelP;
+import com.Controllers.Controller_PaymentMethod;
+import com.Controllers.Controller_ShippingMethod;
 import com.Controllers.Controller_TypeClock;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
@@ -26,7 +29,9 @@ public class buscarRelojes extends javax.swing.JPanel {
     private Controller_TypeClock controllerType;
     private Controller_Condition controllerCondition;
     private Controller_BuySale controllerBuySale;
-
+    private Controller_History_appuserxbuysale controllerBuyClock;
+    private Controller_ShippingMethod controllerShippingMethod;
+    private Controller_PaymentMethod controllerPaymentMethod;
     /**
      * Creates new form buscarRelojes
      */
@@ -37,11 +42,16 @@ public class buscarRelojes extends javax.swing.JPanel {
         controllerType = mainCont.getContTypeClock();
         controllerCondition = mainCont.getContCondition();
         controllerBuySale=mainCont.getContBuySale();
+        controllerBuyClock=mainCont.getContBuyClock();
+        controllerShippingMethod=mainCont.getContShippingMethod();
+        controllerPaymentMethod=mainCont.getContPaymentMethod();
         fillBrand();
         fillModel();
         fillType();
         fillCondition();
         fillTable();
+        fillShippingMethod();
+        fillPaymentMethod();
     }
 
     
@@ -95,12 +105,36 @@ public class buscarRelojes extends javax.swing.JPanel {
     }
         private void fillTable(){
         try{
-       this.tableInfo.setModel(controllerBuySale.listMyClocks(mainCont.getUsername()));
+       this.tableInfo.setModel(controllerBuySale.listClocksForSale());
         this.tableInfo.revalidate();
         this.tableInfo.repaint();
         }catch(Exception e){
         }
     }
+        private void fillShippingMethod(){
+             
+        try {
+            ArrayList<String> listC = this.controllerShippingMethod.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboShipping.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+            }
+       private void fillPaymentMethod(){
+             
+        try {
+            ArrayList<String> listC = this.controllerPaymentMethod.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboPayment.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+            }
      
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,12 +167,14 @@ public class buscarRelojes extends javax.swing.JPanel {
             jButton1 = new javax.swing.JButton();
             jRadioButton1 = new javax.swing.JRadioButton();
             jRadioButton2 = new javax.swing.JRadioButton();
+            buyButton = new javax.swing.JButton();
+            comboShipping = new javax.swing.JComboBox<>();
+            comboPayment = new javax.swing.JComboBox<>();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Filter: brand:");
             add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 150, 50));
 
@@ -155,10 +191,9 @@ public class buscarRelojes extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 730, 460));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 730, 390));
 
             jCheckBox2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-            jCheckBox2.setForeground(new java.awt.Color(0, 0, 0));
             jCheckBox2.setText("Si");
             jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,25 +211,21 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 110, 50));
 
             jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel4.setForeground(new java.awt.Color(0, 0, 0));
             jLabel4.setText("Filter: condition");
             add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 180, 50));
 
             jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel5.setForeground(new java.awt.Color(0, 0, 0));
             jLabel5.setText("Filter: type");
             add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 150, 50));
 
             comboCond.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(comboCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 110, 50));
+            add(comboCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 110, 50));
 
             jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
             jLabel6.setText("Filter: price");
             add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 50));
 
             jLabel7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
             jLabel7.setText("Filter: vintage");
             add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 150, 50));
 
@@ -202,7 +233,6 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 110, 50));
 
             jLabel8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
             jLabel8.setText("Filter: model");
             add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 150, 50));
 
@@ -210,19 +240,31 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, 50));
 
             jButton1.setText("Search");
-            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 90, 80));
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 90, 80));
 
             buttonGroup1.add(jRadioButton1);
             jRadioButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-            jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
             jRadioButton1.setText("Above $600");
             add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
             buttonGroup1.add(jRadioButton2);
             jRadioButton2.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-            jRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
             jRadioButton2.setText("Under $600");
             add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
+
+            buyButton.setText("BUY");
+            buyButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    buyButtonActionPerformed(evt);
+                }
+            });
+            add(buyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 90, 80));
+
+            comboShipping.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboShipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 110, 50));
+
+            comboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 110, 50));
         }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
@@ -233,12 +275,30 @@ public class buscarRelojes extends javax.swing.JPanel {
        fillModel();
     }//GEN-LAST:event_comboBrandItemStateChanged
 
+    private void buyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyButtonActionPerformed
+                try {
+            if (this.tableInfo.getSelectedRow()!=-1) {
+                mainCont.createWindowMessage(controllerBuyClock.buyClock(mainCont.getUsername(),Integer.parseInt(tableInfo.getValueAt(tableInfo.getSelectedRow(),0).toString()),
+                        this.comboPayment.getSelectedItem().toString(), this.comboShipping.getSelectedItem().toString()), "Clock Acquired");
+                fillTable();
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_buyButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton buyButton;
     private javax.swing.JComboBox<String> comboBrand;
     private javax.swing.JComboBox<String> comboCond;
     private javax.swing.JComboBox<String> comboModel;
+    private javax.swing.JComboBox<String> comboPayment;
+    private javax.swing.JComboBox<String> comboShipping;
     private javax.swing.JComboBox<String> comboType;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox2;

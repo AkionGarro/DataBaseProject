@@ -1,11 +1,4 @@
---------------------------------------------------------
--- Archivo creado  - viernes-enero-14-2022   
---------------------------------------------------------
---------------------------------------------------------
---  DDL for Package PACKAGEPCD
---------------------------------------------------------
-
-  CREATE OR REPLACE PACKAGE "PR"."PACKAGEPCD" is
+create or replace PACKAGE      "PACKAGEPCD" is
 procedure new_APPUSER(p_username in VARCHAR2, 
                              p_idNumber in number,
                              p_userType in NUMBER, 
@@ -41,7 +34,7 @@ procedure new_buySale(p_idUserS in VARCHAR2,
 procedure new_CITY(p_nameCity in VARCHAR2,
 				      p_Countryid in number);
 procedure new_CLOCK(
- 
+
                             p_idModel in NUMBER,
 		 	                p_idCondition in NUMBER,
 		                    p_descriptionClock in VARCHAR2,
@@ -78,4 +71,3 @@ procedure new_WLISTUSERXCLOCK(
                         p_idClock in NUMBER);
 
 END PACKAGEPCD;
-

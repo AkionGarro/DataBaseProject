@@ -4,17 +4,26 @@
  */
 package com.View;
 
+import com.Controllers.Controller_BuySale;
+import com.Controllers.Controller_History_appuserxbuysale;
+import com.Controllers.Controller_Main;
+
 /**
  *
  * @author garroakion
  */
 public class cuenta extends javax.swing.JPanel {
-
+    private Controller_Main mainCont = Controller_Main.getContMain();
+    private Controller_BuySale controllerBuySale;
+    
     /**
      * Creates new form cuenta
      */
     public cuenta() {
         initComponents();
+        
+        controllerBuySale=mainCont.getContBuySale();
+        fillTable();
     }
 
     /**
@@ -66,17 +75,14 @@ public class cuenta extends javax.swing.JPanel {
             jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
             jLabel6.setText("Email:");
             jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 150, 30));
 
-            jLabel1.setForeground(new java.awt.Color(0, 0, 0));
             jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             jLabel1.setText("Foto");
             jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 120));
 
             jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
             jLabel7.setText("UserName:");
             jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 140, -1));
 
@@ -87,7 +93,6 @@ public class cuenta extends javax.swing.JPanel {
             jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 170, -1));
 
             jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
             jLabel8.setText("Password:");
             jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 150, -1));
 
@@ -104,9 +109,8 @@ public class cuenta extends javax.swing.JPanel {
             jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 110, 40));
 
             jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-            jLabel5.setForeground(new java.awt.Color(0, 0, 0));
             jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            jLabel5.setText("Relojes Personales");
+            jLabel5.setText("My Clocks");
             jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 730, 50));
 
             add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 220));
@@ -116,7 +120,15 @@ public class cuenta extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-
+    
+     private void fillTable(){
+        try{
+       this.tableInfo.setModel(controllerBuySale.listBoughtClocks(mainCont.getUsername()));
+        this.tableInfo.revalidate();
+        this.tableInfo.repaint();
+        }catch(Exception e){
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

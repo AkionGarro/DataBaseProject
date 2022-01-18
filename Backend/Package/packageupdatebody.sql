@@ -36,6 +36,25 @@ exception
      val:='Wrong data';
      return val;
 end fnUpdtTypeClock;
+
+function fnUpdtTypeClockDescription(p_name in varchar2, p_newName in varchar2) return varchar2 is
+val varchar2(50);
+v_idC number(2);
+begin
+    v_idC:=packagegetid.getIdTypeClock(p_name);
+    UPDATE typeClock set descriptionT=p_newName where typeClock.idType=v_idC; 
+    val:='Successfully Updated';
+    commit;
+    return val;
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnUpdtTypeClockDescription;
+
 function fnUpdtBrand(p_name in varchar2, p_newName in varchar2) return varchar2 is
 val varchar2(50);
 v_idC number(10);
@@ -279,5 +298,3 @@ exception
 end fnUpdtPhoneType;
 
 end PACKAGEUPDATE;
-
-

@@ -1,10 +1,10 @@
 create or replace PACKAGE BODY      "PACKAGEDELETETUPLE" is
-
+---using the packagegetid function, every function looks for the id of the desired log to delete , then executed the delete instruction
 function fnDelCondition(p_name in varchar2) return varchar2 is
 val varchar2(50);
 v_idCondition number(2);
 begin
-    v_idCondition:=packagegetid.getIdCondition(p_name);
+    v_idCondition:=packagegetid.getIdCondition(p_name);--looks for id then deletes
     delete from condition where condition.idcondition=v_idcondition; 
     val:='Successfully Deleted';
     commit;
@@ -22,7 +22,7 @@ function fnDelTypeClock(p_name in varchar2) return varchar2 is
 val varchar2(50);
 v_idC number(2);
 begin
-    v_idC:=packagegetid.getIdTypeClock(p_name);
+    v_idC:=packagegetid.getIdTypeClock(p_name);--looks for id then deletes
     delete from typeClock where typeClock.idType=v_idC; 
     val:='Successfully Deleted';
     commit;
@@ -39,7 +39,7 @@ function fnDelBrand(p_name in varchar2) return varchar2 is
 val varchar2(50);
 v_idC number(10);
 begin
-    v_idC:=packagegetid.getIdBrand(p_name);
+    v_idC:=packagegetid.getIdBrand(p_name);--looks for id then deletes
     delete from Brand where brand.idBrand=v_idC; 
     val:='Successfully Deleted';
     commit;
@@ -57,7 +57,7 @@ function fnDelBuyStatus(p_name in varchar2) return varchar2 is
 val varchar2(50);
 v_idC number(3);
 begin
-    v_idC:=packagegetid.getIdBuyStatus(p_name);
+    v_idC:=packagegetid.getIdBuyStatus(p_name);--looks for id then deletes
     delete from BuyStatus where BuyStatus.idBuyStatus=v_idC; 
     val:='Successfully Deleted';
     commit;
@@ -79,7 +79,7 @@ begin
     val:='This user type cannot be deleted';
     return val;
     END IF;
-    v_idC:=packagegetid.getidusertype(p_name);
+    v_idC:=packagegetid.getidusertype(p_name);--looks for id then deletes
     delete from UserType where Usertype.idUserType=v_idC; 
     val:='Successfully Deleted';
     commit;
@@ -98,7 +98,7 @@ is
 val varchar2(50);
 v_idC number(3);
 begin
-    v_idC:=packagegetid.getidPaymentMethod(p_name);
+    v_idC:=packagegetid.getidPaymentMethod(p_name);--looks for id then deletes
     delete from PaymentMethod where PaymentMethod.idPay=v_idC; 
     val:='Successfully Deleted';
     commit;
@@ -117,7 +117,7 @@ is
 val varchar2(50);
 v_idC number(3);
 begin
-    v_idC:=packagegetid.getidCountry(p_name);
+    v_idC:=packagegetid.getidCountry(p_name);--looks for id then deletes
     delete from Country where Country.idCountry=v_idC; 
     val:='Deleted Successfully';
     commit;
@@ -134,7 +134,7 @@ end fnDelCountry;
 function fnDelPhone(p_phonenumber in number) return varchar2 is
 val varchar2(50);
 begin
-    delete from phone where phone.phonenumber=p_phonenumber; 
+    delete from phone where phone.phonenumber=p_phonenumber; --looks for id then deletes
     val:='Successfully Deleted';
     commit;
     return val;
@@ -150,7 +150,7 @@ end fnDelPhone;
 function fnDelGender(p_name in varchar2) return varchar2 is
 val varchar2(50);
 begin
-    delete from gender where gender.nameGender=p_name; 
+    delete from gender where gender.nameGender=p_name; --looks for id then deletes
     val:='Successfully Deleted';
     commit;
     return val;
@@ -165,7 +165,7 @@ end fnDelGender;
 function fnDelIdentification(p_name in varchar2) return varchar2 is
 val varchar2(50);
 begin
-    delete from identification where Identification.TypeID=p_name; 
+    delete from identification where Identification.TypeID=p_name; --looks for id then deletes
     val:='Successfully Deleted';
     commit;
     return val;
@@ -249,7 +249,7 @@ function fnDelModelP(p_nameModel in varchar2,p_nameBrand in varchar2)return varc
 val varchar2(50);
 v_idModelP number(10);
 begin
-   select modelP.idModel into v_idModelP from modelP
+   select modelP.idModel into v_idModelP from modelP  --looks for id then deletes
     inner join brand on brand.nameBrand= p_nameBrand and  modelp.idBrand=brand.idBrand and modelp.nameModel=p_nameModel ;
     delete from MODELP where (MODELP.idModel=v_idModelP); 
     val:='Successfully Deleted';
@@ -268,7 +268,7 @@ end fnDelModelP;
 function fnDelShippingMethod(p_nameShipping in varchar2,p_nameCompany in varchar2)return varchar2 is
 val varchar2(50);
 begin
-    delete from SHIPPINGMETHOD where SHIPPINGMETHOD.namesm=p_nameShipping and SHIPPINGMETHOD.Company=p_nameCompany; 
+    delete from SHIPPINGMETHOD where SHIPPINGMETHOD.namesm=p_nameShipping and SHIPPINGMETHOD.Company=p_nameCompany; --looks for id then deletes
     val:='Successfully Deleted';
     commit;
     return val;
@@ -284,7 +284,7 @@ function fnDelShCart(p_idBuySale in number)return varchar2 is
 val varchar2(50);
 v_idClock number(10);
 begin
-    v_idClock:=packagegetid.getidClock(p_idBuySale);
+    v_idClock:=packagegetid.getidClock(p_idBuySale);--looks for id then deletes
     delete from SHCART_APPUSERXCLOCK where SHCART_APPUSERXCLOCK.idClock=v_idClock; 
     val:='Successfully Deleted';
     commit;
@@ -301,7 +301,7 @@ function fnDelWlist(p_idBuySale in number)return varchar2 is
 val varchar2(50);
 v_idClock number(10);
 begin
-    v_idClock:=packagegetid.getidClock(p_idBuySale);
+    v_idClock:=packagegetid.getidClock(p_idBuySale);--looks for id then deletes
     delete from WLISTUSERXCLOCK where WLISTUSERXCLOCK.idClock=v_idClock; 
     val:='Successfully Deleted';
     commit;
@@ -320,7 +320,7 @@ val varchar2(50);
 
 begin
    
-    delete from phonetype where phonetype.nameType=p_namePhoneType; 
+    delete from phonetype where phonetype.nameType=p_namePhoneType; --looks for id then deletes
     val:='Successfully Deleted';
     commit;
     return val;
