@@ -15,24 +15,26 @@ import javax.swing.table.DefaultTableModel;
  * @author Jonathan
  */
 public class Controller_BuySale {
+
     public Controller_BuySale() {
-            if (connect==null){//creates the connection to the database
-            connect=(Connection) new DB_Connection().obtainConnection();
+        if (connect == null) {//creates the connection to the database
+            connect = (Connection) new DB_Connection().obtainConnection();
         }
-    
+
     }
+
     //users=userseller buys=buystatus for sale , not for sale
-        public String create(String p_idModel,
-		 	                String p_idCondition ,
-		                    String p_descriptionClock ,
-			            Date manufactureDate ,
-                            String p_vintage , int p_price , String p_idUserS,
-                            String p_idBuyS,String p_idBrand){
-        try{
+    public String create(String p_idModel,
+            String p_idCondition,
+            String p_descriptionClock,
+            Date manufactureDate,
+            String p_vintage, int p_price, String p_idUserS,
+            String p_idBuyS, String p_idBrand) {
+        try {
             CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnnew.fnNewClockBuySale(?,?,?,?,?,?,?,?,?)}");
-            
+
             cstmt.setString(2, p_idModel);
-             cstmt.setString(3, p_idCondition);
+            cstmt.setString(3, p_idCondition);
             cstmt.setString(4, p_descriptionClock.trim());
             cstmt.setDate(5, manufactureDate);
             cstmt.setString(6, "..");
@@ -43,18 +45,17 @@ public class Controller_BuySale {
             cstmt.registerOutParameter(1, OracleTypes.VARCHAR);
             cstmt.execute();
             String result;
-            result = ((OracleCallableStatement)cstmt).getString(1);
+            result = ((OracleCallableStatement) cstmt).getString(1);
             System.out.println(result);
             return result;
-        } catch(Exception e){
-        return e.toString();
+        } catch (Exception e) {
+            return e.toString();
         }
     }
-        
-             
-          public DefaultTableModel listMyClocks(String username){
-        try{
-            DefaultTableModel table=new DefaultTableModel();
+
+    public DefaultTableModel listMyClocks(String username) {
+        try {
+            DefaultTableModel table = new DefaultTableModel();
 
             table.addColumn("ID");
             table.addColumn("Type");
@@ -66,39 +67,39 @@ public class Controller_BuySale {
             table.addColumn("Price");
             table.addColumn("Status");
             //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListMyClocks(?)}");
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnlist.fnListMyClocks(?)}");
 
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.setString(2, username);
             cstmt.execute();
 
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            String data[]= new  String[9];
-            
-            while(rs.next()){
-                data[0]=Integer.toString(rs.getInt("idbuysale"));
-                data[1]=rs.getString("nametype");
-                data[2]=rs.getString("namebrand");
-                 data[3]=rs.getString("namemodel");
-                 data[4]=rs.getString("namecondition");
-                 data[5]=rs.getDate("manufacturedate").toString();
-                 data[6]=rs.getString("descriptionclock");
-                 data[7]=Integer.toString(rs.getInt("p"));
-                 data[8]=rs.getString("status");
+            ResultSet rs = ((OracleCallableStatement) cstmt).getCursor(1);
+
+            String data[] = new String[9];
+
+            while (rs.next()) {
+                data[0] = Integer.toString(rs.getInt("idbuysale"));
+                data[1] = rs.getString("nametype");
+                data[2] = rs.getString("namebrand");
+                data[3] = rs.getString("namemodel");
+                data[4] = rs.getString("namecondition");
+                data[5] = rs.getDate("manufacturedate").toString();
+                data[6] = rs.getString("descriptionclock");
+                data[7] = Integer.toString(rs.getInt("p"));
+                data[8] = rs.getString("status");
                 table.addRow(data);
             }
             //rs.close();
             return table;
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
             return null;
         }
     }
-          
-      public DefaultTableModel listClocksForSale(){
-        try{
-            DefaultTableModel table=new DefaultTableModel();
+
+    public DefaultTableModel listClocksForSale() {
+        try {
+            DefaultTableModel table = new DefaultTableModel();
 
             table.addColumn("ID");
             table.addColumn("Posted");
@@ -110,45 +111,43 @@ public class Controller_BuySale {
             table.addColumn("Manufacture Date");
             table.addColumn("Description");
             table.addColumn("Price");
-            
+
             //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListAllClocksFsell}");
-             
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnlist.fnListAllClocksFsell}");
+
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-            
+
             cstmt.execute();
 
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            String data[]= new  String[10];
-            
-            while(rs.next()){
-                data[0]=Integer.toString(rs.getInt("idbuysale"));
-                data[1]=rs.getDate("datepost").toString();
-                data[2]=rs.getString("username");
-                 data[3]=rs.getString("nametype");
-                 data[4]=rs.getString("namebrand");
-                data[5]=rs.getString("namemodel");
-                 data[6]=rs.getString("namecondition");
-                 data[7]=rs.getDate("manufacturedate").toString();
-                 data[8]=rs.getString("descriptionclock");
-                data[9]=Integer.toString(rs.getInt("price"));
-                 table.addRow(data);
+            ResultSet rs = ((OracleCallableStatement) cstmt).getCursor(1);
+
+            String data[] = new String[10];
+
+            while (rs.next()) {
+                data[0] = Integer.toString(rs.getInt("idbuysale"));
+                data[1] = rs.getDate("datepost").toString();
+                data[2] = rs.getString("username");
+                data[3] = rs.getString("nametype");
+                data[4] = rs.getString("namebrand");
+                data[5] = rs.getString("namemodel");
+                data[6] = rs.getString("namecondition");
+                data[7] = rs.getDate("manufacturedate").toString();
+                data[8] = rs.getString("descriptionclock");
+                data[9] = Integer.toString(rs.getInt("price"));
+                table.addRow(data);
             }
             //rs.close();
             return table;
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
             return null;
         }
     }
-      
-      
-      
-        public DefaultTableModel listBoughtClocks(String username){
-        try{
-            DefaultTableModel table=new DefaultTableModel();
-             
+
+    public DefaultTableModel listBoughtClocks(String username) {
+        try {
+            DefaultTableModel table = new DefaultTableModel();
+
             table.addColumn("ID");
             table.addColumn("Bought");
             table.addColumn("From");
@@ -161,39 +160,89 @@ public class Controller_BuySale {
             table.addColumn("Price");
             table.addColumn("Payment Method");
             table.addColumn("Shipping Method");
-            
+
             //calls function that returns the list
-            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListBoughtClocks(?)}");
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packagefnlist.fnListBoughtClocks(?)}");
             cstmt.setString(2, username);
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-            
+
             cstmt.execute();
 
-            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
-            
-            String data[]= new  String[12];
-            
-            while(rs.next()){
-                data[0]=Integer.toString(rs.getInt("idbuysale"));
-                data[1]=rs.getDate("datesale").toString();
-                data[2]=rs.getString("username");
-                 data[3]=rs.getString("nametype");
-                 data[4]=rs.getString("namebrand");
-                data[5]=rs.getString("namemodel");
-                 data[6]=rs.getString("namecondition");
-                 data[7]=rs.getDate("manufacturedate").toString();
-                 data[8]=rs.getString("descriptionclock");
-                data[9]=Integer.toString(rs.getInt("p"));
-                data[10]=rs.getString("type");
-                data[11]=rs.getString("namesm");
-                 table.addRow(data);
+            ResultSet rs = ((OracleCallableStatement) cstmt).getCursor(1);
+
+            String data[] = new String[12];
+
+            while (rs.next()) {
+                data[0] = Integer.toString(rs.getInt("idbuysale"));
+                data[1] = rs.getDate("datesale").toString();
+                data[2] = rs.getString("username");
+                data[3] = rs.getString("nametype");
+                data[4] = rs.getString("namebrand");
+                data[5] = rs.getString("namemodel");
+                data[6] = rs.getString("namecondition");
+                data[7] = rs.getDate("manufacturedate").toString();
+                data[8] = rs.getString("descriptionclock");
+                data[9] = Integer.toString(rs.getInt("p"));
+                data[10] = rs.getString("type");
+                data[11] = rs.getString("namesm");
+                table.addRow(data);
             }
             //rs.close();
             return table;
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
             return null;
         }
     }
-    
+
+    public DefaultTableModel listClocksWithFilters(String p_condition, String p_type, String p_brand, String p_model) {
+        try {
+            DefaultTableModel table = new DefaultTableModel();
+
+            table.addColumn("ID");
+            table.addColumn("Posted");
+            table.addColumn("By");
+            table.addColumn("Type");
+            table.addColumn("Brand");
+            table.addColumn("Model");
+            table.addColumn("Condition");
+            table.addColumn("Manufacture Date");
+            table.addColumn("Description");
+            table.addColumn("Price");
+
+            //calls function that returns the list
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packageconsults.fngetClocksWithFilters(?,?,?,?)}");
+            cstmt.setString(2, p_condition);
+            cstmt.setString(3, p_type);
+            cstmt.setString(4, p_brand);
+            cstmt.setString(5, p_model);
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
+            cstmt.execute();
+
+            ResultSet rs = ((OracleCallableStatement) cstmt).getCursor(1);
+
+            String data[] = new String[10];
+
+            while (rs.next()) {
+                data[0] = Integer.toString(rs.getInt("idbuysale"));
+                data[1] = rs.getDate("datepost").toString();
+                data[2] = rs.getString("username");
+                data[3] = rs.getString("nametype");
+                data[4] = rs.getString("namebrand");
+                data[5] = rs.getString("namemodel");
+                data[6] = rs.getString("namecondition");
+                data[7] = rs.getDate("manufacturedate").toString();
+                data[8] = rs.getString("descriptionclock");
+                data[9] = Integer.toString(rs.getInt("price"));
+                table.addRow(data);
+            }
+            //rs.close();
+            return table;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return null;
+        }
+    }
+
 }

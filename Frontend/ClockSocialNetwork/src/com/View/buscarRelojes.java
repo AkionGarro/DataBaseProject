@@ -244,6 +244,11 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 110, 50));
 
             jButton1.setText("Search");
+            jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    jButton1MouseClicked(evt);
+                }
+            });
             add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 90, 80));
 
             buttonGroup1.add(jRadioButton1);
@@ -314,6 +319,21 @@ public class buscarRelojes extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_shCartButtonActionPerformed
+    private void fillTableFilters() {
+        try {
+            this.tableInfo.setModel(controllerBuySale.
+                    listClocksWithFilters(comboCond.getSelectedItem().toString(),
+                            comboType.getSelectedItem().toString(),
+                            comboBrand.getSelectedItem().toString(),
+                            comboModel.getSelectedItem().toString()));
+            this.tableInfo.revalidate();
+            this.tableInfo.repaint();
+        } catch (Exception e) {
+        }
+    }
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+         fillTableFilters();
+    }//GEN-LAST:event_jButton1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
