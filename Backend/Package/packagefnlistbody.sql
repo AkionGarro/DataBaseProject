@@ -166,7 +166,8 @@ open ccursor for select buysale.idbuysale, buysale.datepost,
                               inner join modelp on clock.idmodel=modelp.idmodel
                               inner join brand  on brand.idbrand=modelp.idbrand
                               inner join typeclock on typeclock.idtype=modelp.idtypeclock
-                              inner join appuser on appuser.idappuser=buysale.iduserseller;
+                              inner join appuser on appuser.idappuser=buysale.iduserseller
+                              where buysale.idbuystatus=v_idStatusSale ;
                             
 
 return ccursor;
@@ -205,4 +206,69 @@ open ccursor for select buysale.idbuysale,
 return ccursor;
 
 end fnListMyClocks;
+
+function fnListBoughtClocks(p_username in varchar2) return sys_refcursor is
+cCursor sys_refcursor;
+idUSer number(10);
+begin
+idUser:=packagegetid.getidusername(p_username);
+open ccursor for select buysale.idbuysale, 
+                             buysale.datesale,
+                              typeclock.nameType, 
+                              brand.nameBrand, 
+                              modelp.nameModel,
+                              condition.nameCondition,
+                              clock.manufacturedate,
+                              clock.descriptionclock,
+                              clock.price as p,
+                              appuser.username,
+                              paymentmethod.type,
+                              shippingmethod.namesm
+                            --  from HISTORY_APPUSERXBUYSALE
+                              from  buysale 
+                               
+                              inner join clock on  buysale.idClock=clock.idClock 
+                              
+          
+                              inner join condition on clock.idcondition=condition.idcondition
+                              inner join modelp on clock.idmodel=modelp.idmodel
+                              inner join brand  on brand.idbrand=modelp.idbrand
+                              inner join typeclock on typeclock.idtype=modelp.idtypeclock
+                              inner join paymentmethod on buysale.idpaymentm=paymentmethod.idpay
+                              inner join shippingmethod on buysale.idshippingm=shippingmethod.idshipping
+                              inner join appuser on buysale.iduserseller=appuser.idappuser
+                              where buysale.iduserbuyer =iduser;
+                               
+return ccursor;
+
+end fnListBoughtClocks;
+
+
+function fnListShoppingCart(p_username in varchar2) return sys_refcursor is
+cCursor sys_refcursor;
+v_idUSer number(10);
+begin
+v_idUser:=packagegetid.getidusername(p_username);
+open ccursor for select buysale.idbuysale, buysale.datepost, 
+                              appuser.username,
+                              typeclock.nameType, 
+                              brand.nameBrand, 
+                              modelp.nameModel,
+                              condition.nameCondition,
+                              clock.manufacturedate,
+                              clock.descriptionclock,
+                              clock.price
+                              from shcart_appuserxclock
+                              inner join clock on  shcart_appuserxclock.idClock=clock.idClock
+                              inner join buysale on buysale.idclock=clock.idclock
+                              inner join condition on clock.idcondition=condition.idcondition
+                              inner join modelp on clock.idmodel=modelp.idmodel
+                              inner join brand  on brand.idbrand=modelp.idbrand
+                              inner join typeclock on typeclock.idtype=modelp.idtypeclock
+                              inner join appuser on appuser.idappuser=buysale.iduserseller
+                              where shcart_appuserxclock.iduser=v_idUser ;
+return ccursor; 
+end fnListShoppingCart;
+
+
 end packagefnlist;

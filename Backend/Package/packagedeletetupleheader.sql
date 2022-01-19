@@ -47,10 +47,10 @@ function fnDelModelP(p_nameModel in varchar2,p_nameBrand in varchar2)return varc
 function fnDelShippingMethod(p_nameShipping in varchar2,p_nameCompany in varchar2)return varchar2;
 
 --fnDelShCart receives param p_idBuysale is the name of the buysale in shoppingcart to delete
-function fnDelShCart(p_idBuySale in number)return varchar2;
+function fnDelShCart(p_username in varchar2,p_idBuySale in number)return varchar2;
 
 --fnDelWlist receives param p_idBuysale is the name of the buysale in wishlist to delete
-function fnDelWlist(p_idBuySale in number)return varchar2;
+function fnDelWlist(p_username in varchar2,  p_idBuySale in number)return varchar2;
 
 --fnDelPhoneType receives param p_namePhonetype is the name of the phonetype to delete
 function fnDelPhoneType(p_namePhoneType in varchar2) return varchar2;

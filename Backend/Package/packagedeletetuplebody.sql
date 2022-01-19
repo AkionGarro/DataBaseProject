@@ -280,13 +280,15 @@ exception
      val:='Wrong data';
      return val;
 end fnDelShippingMethod;
-function fnDelShCart(p_idBuySale in number)return varchar2 is
+function fnDelShCart(p_username in varchar2,p_idBuySale in number)return varchar2 is
 val varchar2(50);
 v_idClock number(10);
+v_idUser number(8);
 begin
+    v_idUser:=packagegetid.getidusername(p_username);
     v_idClock:=packagegetid.getidClock(p_idBuySale);--looks for id then deletes
-    delete from SHCART_APPUSERXCLOCK where SHCART_APPUSERXCLOCK.idClock=v_idClock; 
-    val:='Successfully Deleted';
+    delete from SHCART_APPUSERXCLOCK where SHCART_APPUSERXCLOCK.idClock=v_idClock and SHCART_APPUSERXCLOCK.iduser=v_idUser; 
+    val:='The item is no longer on your shopping cart';
     commit;
     return val;
 exception
@@ -297,13 +299,16 @@ exception
      val:='Wrong data';
      return val;
 end fnDelShCart;
-function fnDelWlist(p_idBuySale in number)return varchar2 is
+
+function fnDelWlist(p_username in varchar2,p_idBuySale in number)return varchar2 is
 val varchar2(50);
+v_idUser number(8);
 v_idClock number(10);
 begin
+    v_idUser:=packagegetid.getidusername(p_username);
     v_idClock:=packagegetid.getidClock(p_idBuySale);--looks for id then deletes
-    delete from WLISTUSERXCLOCK where WLISTUSERXCLOCK.idClock=v_idClock; 
-    val:='Successfully Deleted';
+    delete from WLISTUSERXCLOCK where WLISTUSERXCLOCK.idClock=v_idClock and WLISTUSERXCLOCK.iduser=v_idUser; 
+    val:='The item is no longer on your wish list';
     commit;
     return val;
 exception
@@ -333,4 +338,4 @@ exception
      return val;
 end fnDelPhoneType;
 
-end  packageDeleteTuple;
+end  packageDeleteTuple; 

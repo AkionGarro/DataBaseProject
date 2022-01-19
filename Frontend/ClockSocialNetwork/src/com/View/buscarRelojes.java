@@ -12,6 +12,7 @@ import com.Controllers.Controller_History_appuserxbuysale;
 import com.Controllers.Controller_Main;
 import com.Controllers.Controller_ModelP;
 import com.Controllers.Controller_PaymentMethod;
+import com.Controllers.Controller_Shcart_appuserxclock;
 import com.Controllers.Controller_ShippingMethod;
 import com.Controllers.Controller_TypeClock;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     private Controller_History_appuserxbuysale controllerBuyClock;
     private Controller_ShippingMethod controllerShippingMethod;
     private Controller_PaymentMethod controllerPaymentMethod;
+    private Controller_Shcart_appuserxclock controllerShCart;
     /**
      * Creates new form buscarRelojes
      */
@@ -45,6 +47,7 @@ public class buscarRelojes extends javax.swing.JPanel {
         controllerBuyClock=mainCont.getContBuyClock();
         controllerShippingMethod=mainCont.getContShippingMethod();
         controllerPaymentMethod=mainCont.getContPaymentMethod();
+        controllerShCart=mainCont.getContShCart();
         fillBrand();
         fillModel();
         fillType();
@@ -170,6 +173,7 @@ public class buscarRelojes extends javax.swing.JPanel {
             buyButton = new javax.swing.JButton();
             comboShipping = new javax.swing.JComboBox<>();
             comboPayment = new javax.swing.JComboBox<>();
+            shCartButton = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -258,13 +262,21 @@ public class buscarRelojes extends javax.swing.JPanel {
                     buyButtonActionPerformed(evt);
                 }
             });
-            add(buyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 90, 80));
+            add(buyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, 90, 40));
 
             comboShipping.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(comboShipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 110, 50));
+            add(comboShipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 110, 40));
 
             comboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(comboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 110, 50));
+            add(comboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 110, 40));
+
+            shCartButton.setText("Add to Shopping Cart");
+            shCartButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    shCartButtonActionPerformed(evt);
+                }
+            });
+            add(shCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 160, 40));
         }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
@@ -290,6 +302,19 @@ public class buscarRelojes extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_buyButtonActionPerformed
 
+    private void shCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shCartButtonActionPerformed
+                        try {
+            if (this.tableInfo.getSelectedRow()!=-1) {
+                mainCont.createWindowMessage(this.controllerShCart.create(mainCont.getUsername(),tableInfo.getValueAt(tableInfo.getSelectedRow(),0).toString()), "Clock Added to Shopping Cart");
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_shCartButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -311,6 +336,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton shCartButton;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
 }

@@ -89,7 +89,7 @@ function  fnNewSellerRating(p_idUser in varchar2, p_rating in number)return varc
 
 -- receives id of the user and id of the clock to add to shoppingcart
 function  fnNewShCart_appuserxclock(p_idappuser in varchar2,
-				      p_Clock in NUMBER)return varchar2;
+				      p_BuySale in NUMBER)return varchar2;
 -- receives id of the shipping method and company  to create a shipping method
 function  fnNewShippingMethod(p_nameSM in VARCHAR2, p_company VARCHAR2)return varchar2;
 

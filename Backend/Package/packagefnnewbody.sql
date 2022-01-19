@@ -461,21 +461,28 @@ exception
 end fnNewSellerRating;
 
 function  fnNewShCart_appuserxclock(p_idappuser in varchar2,
-				      p_Clock in number)return varchar2 as
+				      p_Buysale in number)return varchar2 as
 val varchar2(50);
 v_idUser number(8);
+v_idClock number(10);
+v_idUserS number(8);
 begin
+    select idclock,idUserSeller into v_idClock,v_idUserS from buysale where buysale.idBuysale=p_Buysale;
+    
     v_idUser:=packagegetid.getidusername(p_idappUser);
-    packagepcd.new_Review(v_iduser,p_clock);
+    if v_idUserS=v_idUser then
+        return 'You cannot add your own items to your shopping cart';
+    end if;
+    packagepcd.new_shcart_appuserxclock(v_iduser,v_idclock);
     commit;
-    val:='Successfully Created';
+    val:='Added to your shopping cart';
     return val;
 exception
     WHEN no_data_found THEN
      val:='Wrong or missing information'; 
      return val;
     when dup_val_on_index then
-     val:='Already exists';   
+     val:='This item is already on your cart';   
      return val;
     when others then
      val:='Wrong data';
@@ -664,13 +671,14 @@ v_idAppUser number(8);
 v_idPayment number(3);
 v_idShipping number(4);
 v_idSeller number(8);
+v_idClock number(10);
 begin
     v_idAppUser:=packagegetid.getidUsername(p_username);
     v_idPayment:=packagegetid.getidPaymentMethod(p_paymentmethod);
     v_idShipping:=packagegetid.getidShippingMethod(p_shippingmethod);
-    Select iduserseller into v_idSeller from buysale where buysale.idbuysale=p_idBuysale;
+    Select iduserseller,idclock into v_idSeller,v_idClock from buysale where buysale.idbuysale=p_idBuysale;
     if v_idSeller=v_idAppuser then
-     return 'This item is yours';
+     return 'You cannot buy your own item';
     end if;
         
     update buysale set   idShippingM=v_idShipping,
@@ -679,7 +687,9 @@ begin
                          datesale=SYSDATE,
                          idBuyStatus=2
                          where buysale.idbuysale=p_idbuysale; 
+    delete from shcart_appuserxclock where shcart_appuserxclock.iduser=v_idAppUser and shcart_appuserxclock.idclock=v_idClock; 
     insert into HISTORY_APPUSERXBUYSALE(IDUSER,IDBUYSALE)values(v_idAppUser,p_idBuySale);
+    
     val:='You have bought the clock';
     return val;
     commit;

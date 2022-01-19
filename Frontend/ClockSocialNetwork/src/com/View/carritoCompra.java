@@ -4,6 +4,14 @@
  */
 package com.View;
 
+import com.Controllers.Controller_History_appuserxbuysale;
+import com.Controllers.Controller_Main;
+import com.Controllers.Controller_PaymentMethod;
+import com.Controllers.Controller_Shcart_appuserxclock;
+import com.Controllers.Controller_ShippingMethod;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author garroakion
@@ -13,8 +21,24 @@ public class carritoCompra extends javax.swing.JPanel {
     /**
      * Creates new form carritoCompra
      */
+    
+    private Controller_Main mainCont = Controller_Main.getContMain();
+    private Controller_History_appuserxbuysale controllerBuyClock;
+    private Controller_Shcart_appuserxclock controllerShCart;
+    private Controller_ShippingMethod controllerShippingMethod;
+    private Controller_PaymentMethod controllerPaymentMethod;
+    
     public carritoCompra() {
         initComponents();
+        controllerBuyClock=mainCont.getContBuyClock();
+        controllerShCart=mainCont.getContShCart();
+        controllerShippingMethod=mainCont.getContShippingMethod();
+        controllerPaymentMethod=mainCont.getContPaymentMethod();
+        fillTable();
+        fillShippingMethod();
+        fillPaymentMethod();
+        calcTotal();
+        
     }
 
     /**
@@ -26,6 +50,7 @@ public class carritoCompra extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        totalLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableInfo = new javax.swing.JTable(){
             private static final long serialVersionUID = 1L;
@@ -33,10 +58,21 @@ public class carritoCompra extends javax.swing.JPanel {
             public boolean isCellEditable(int row, int column) {
                 return false;
             };};
-            jButton1 = new javax.swing.JButton();
+            deleteShCart = new javax.swing.JButton();
+            buyButton1 = new javax.swing.JButton();
+            comboShipping = new javax.swing.JComboBox<>();
+            comboPayment = new javax.swing.JComboBox<>();
+            jLabel1 = new javax.swing.JLabel();
+            jLabel2 = new javax.swing.JLabel();
+            jLabel3 = new javax.swing.JLabel();
+            jLabel4 = new javax.swing.JLabel();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+            totalLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            totalLabel.setText("0");
+            add(totalLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 530, 10, -1));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -51,16 +87,127 @@ public class carritoCompra extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 730, 620));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 290));
 
-            jButton1.setText("Buy All");
-            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+            deleteShCart.setText("Take out");
+            deleteShCart.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    deleteShCartActionPerformed(evt);
+                }
+            });
+            add(deleteShCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+
+            buyButton1.setText("BUY");
+            buyButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    buyButton1ActionPerformed(evt);
+                }
+            });
+            add(buyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 90, 40));
+
+            comboShipping.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboShipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 110, 40));
+
+            comboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 110, 40));
+
+            jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            jLabel1.setText("Total");
+            add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, -1, -1));
+
+            jLabel2.setText("Select Payment Method");
+            add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+
+            jLabel3.setText("Select Shipping");
+            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, -1, -1));
+
+            jLabel4.setText("My Shopping Cart");
+            add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
         }// </editor-fold>//GEN-END:initComponents
 
+    private void buyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyButton1ActionPerformed
+        try {
+            if (this.tableInfo.getSelectedRow()!=-1) {
+                mainCont.createWindowMessage(controllerBuyClock.buyClock(mainCont.getUsername(),Integer.parseInt(tableInfo.getValueAt(tableInfo.getSelectedRow(),0).toString()),
+                    this.comboPayment.getSelectedItem().toString(), this.comboShipping.getSelectedItem().toString()), "Clock Acquired");
+            fillTable();
+            calcTotal();
+
+        } else {
+            mainCont.createWindowMessage("Missing data", "Blank Fields");
+        }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_buyButton1ActionPerformed
+
+    private void deleteShCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteShCartActionPerformed
+                           try{
+            if (tableInfo.getSelectedRow()!=-1){
+                mainCont.createWindowMessage(this.controllerShCart.deleteT(this.mainCont.getUsername(),this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Drop from shopping cart");
+                fillTable();
+
+            }
+            else {mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }  
+    }//GEN-LAST:event_deleteShCartActionPerformed
+       private void fillTable(){
+        try{
+       this.tableInfo.setModel(controllerShCart.listshCartClocks(mainCont.getUsername()));
+        this.tableInfo.revalidate();
+        this.tableInfo.repaint();
+        }catch(Exception e){
+        }
+    }
+       
+       
+               private void fillShippingMethod(){
+             
+        try {
+            ArrayList<String> listC = this.controllerShippingMethod.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboShipping.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+            }
+       private void fillPaymentMethod(){
+             
+        try {
+            ArrayList<String> listC = this.controllerPaymentMethod.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboPayment.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+            }
+       private void calcTotal(){
+           int count=0;
+           
+           for (int i=0;i<tableInfo.getRowCount();i++)
+               count+=Integer.parseInt(tableInfo.getValueAt(i, 9 ).toString());
+        this.totalLabel.setText(String.valueOf(count));
+       }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton buyButton1;
+    private javax.swing.JComboBox<String> comboPayment;
+    private javax.swing.JComboBox<String> comboShipping;
+    private javax.swing.JButton deleteShCart;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tableInfo;
+    private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
 }

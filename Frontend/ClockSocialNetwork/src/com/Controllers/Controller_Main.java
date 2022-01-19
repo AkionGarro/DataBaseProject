@@ -33,6 +33,7 @@ public class Controller_Main {
      private Controller_PhoneType contPhoneType;
      private Controller_BuySale contBuySale;
      private Controller_History_appuserxbuysale contBuyClock;
+     private Controller_Shcart_appuserxclock contShCart;
     
      
   
@@ -65,6 +66,7 @@ public class Controller_Main {
        contPhoneType=new Controller_PhoneType();
        contBuySale=new Controller_BuySale();
       contBuyClock=new Controller_History_appuserxbuysale();
+      contShCart= new Controller_Shcart_appuserxclock();
      
        
        
@@ -161,6 +163,10 @@ public class Controller_Main {
 
     public Controller_History_appuserxbuysale getContBuyClock() {
         return contBuyClock;
+    }
+
+    public Controller_Shcart_appuserxclock getContShCart() {
+        return contShCart;
     }
 
     
