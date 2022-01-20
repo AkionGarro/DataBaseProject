@@ -14,6 +14,7 @@ import com.Controllers.Controller_BuyStatus;
 import java.util.ArrayList;
 import java.util.Locale;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -28,7 +29,6 @@ public class insertarRelojes extends javax.swing.JPanel {
     private Controller_Condition controllerCondition;
     private Controller_BuyStatus controllerBuyStatus;
     private Controller_BuySale controllerBuySale;
-  
 
     /**
      * Creates new form insertarRelojes
@@ -40,16 +40,14 @@ public class insertarRelojes extends javax.swing.JPanel {
         controllerType = mainCont.getContTypeClock();
         controllerCondition = mainCont.getContCondition();
         controllerBuyStatus = mainCont.getContBuyStatus();
-        controllerBuySale= mainCont.getContBuySale();
+        controllerBuySale = mainCont.getContBuySale();
         this.manufactureDate.setLocale(Locale.ENGLISH);
         fillBrand();
         fillModel();
- 
+
         fillCondition();
         fillBuyStatus();
         fillTable();
-       
-        
 
     }
 
@@ -64,7 +62,6 @@ public class insertarRelojes extends javax.swing.JPanel {
         }
 
     }
-    
 
     private void fillModel() {
         try {
@@ -78,7 +75,6 @@ public class insertarRelojes extends javax.swing.JPanel {
 
     }
 
-
     private void fillCondition() {
         try {
             ArrayList<String> listC = controllerCondition.listInfoCombo();
@@ -91,28 +87,26 @@ public class insertarRelojes extends javax.swing.JPanel {
 
     }
 
-     private void fillBuyStatus() {
+    private void fillBuyStatus() {
         try {
             ArrayList<String> listC = controllerBuyStatus.listInfoCombo();
             DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
             this.comboBuyStatus.setModel(listF);
-            
 
         } catch (Exception e) {
             System.out.println(e.toString());
         }
 
     }
-    
-    private void fillTable(){
-        try{
-        this.tableInfo.setModel(controllerBuySale.listMyClocks(mainCont.getUsername()));
-        this.tableInfo.revalidate();
-        this.tableInfo.repaint();
-        }catch(Exception e){
+
+    private void fillTable() {
+        try {
+            this.tableInfo.setModel(controllerBuySale.listMyClocks(mainCont.getUsername()));
+            this.tableInfo.revalidate();
+            this.tableInfo.repaint();
+        } catch (Exception e) {
         }
     }
-     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -241,6 +235,11 @@ public class insertarRelojes extends javax.swing.JPanel {
                     "Title 1", "Title 2", "Title 3", "Title 4"
                 }
             ));
+            tableInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    tableInfoMouseClicked(evt);
+                }
+            });
             jScrollPane2.setViewportView(tableInfo);
 
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 730, 430));
@@ -265,39 +264,71 @@ public class insertarRelojes extends javax.swing.JPanel {
 
     private void comboBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBrandItemStateChanged
         fillModel();
-        
+
     }//GEN-LAST:event_comboBrandItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-              try{
-        java.util.Date utilDate = this.manufactureDate.getDate();
-        java.sql.Date manufactureDate = new java.sql.Date(utilDate.getTime());
-        mainCont.createWindowMessage(this.controllerBuySale.create(
-        this.comboModel.getSelectedItem().toString(),
-        this.comboCond.getSelectedItem().toString(), 
-        this.descriptionField.getText(), 
-        manufactureDate,
-        "", 
-        Integer.parseInt(this.priceField.getText()),
-        mainCont.getUsername(), 
-        this.comboBuyStatus.getSelectedItem().toString(),
-        this.comboBrand.getSelectedItem().toString()
-        
-         ), "Creating Clock");
+        try {
+            java.util.Date utilDate = this.manufactureDate.getDate();
+            java.sql.Date manufactureDate = new java.sql.Date(utilDate.getTime());
+            mainCont.createWindowMessage(this.controllerBuySale.create(
+                    this.comboModel.getSelectedItem().toString(),
+                    this.comboCond.getSelectedItem().toString(),
+                    this.descriptionField.getText(),
+                    manufactureDate,
+                    "",
+                    Integer.parseInt(this.priceField.getText()),
+                    mainCont.getUsername(),
+                    this.comboBuyStatus.getSelectedItem().toString(),
+                    this.comboBrand.getSelectedItem().toString()
+            ), "Creating Clock");
 
-        
-        
-        fillTable();
+            fillTable();
 
+        } catch (Exception e) {
+            System.out.println(e.toString());
         }
-        catch(Exception e){
-                System.out.println(e.toString());
-        }   
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-    
 
-    
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
+        ProductInformation pi = new ProductInformation();
+        pi.setVisible(true);
+        pi.pack();
+
+        int selectedRow = tableInfo.getSelectedRow();
+        TableModel tm = tableInfo.getModel();
+
+        String idbuysale = tm.getValueAt(selectedRow, 0).toString();
+        String nametype = tm.getValueAt(selectedRow, 1).toString();
+        String namebrand = tm.getValueAt(selectedRow, 2).toString();
+        String namemodel = tm.getValueAt(selectedRow, 3).toString();
+         String namecondition = tm.getValueAt(selectedRow, 4).toString();
+         String manufacturedate = tm.getValueAt(selectedRow, 5).toString();
+        String descriptionclock = tm.getValueAt(selectedRow, 6).toString();
+        String price = tm.getValueAt(selectedRow, 7).toString();
+        
+        String datepost = tm.getValueAt(selectedRow, 8).toString();
+        //String username = tm.getValueAt(selectedRow, 2).toString();
+
+       
+        
+        
+        
+
+        // ImageIcon img = (ImageIcon) tm.getValueAt(selectedRow, 5);
+        pi.productInfoId.setText(idbuysale);
+        pi.productInfoPosted.setText(datepost);
+        //pi.productInfoBy.setText(username);
+        pi.productInfoType.setText(nametype);
+        pi.productInfoBrandClock.setText(namebrand);
+        pi.productInfoModel.setText(namemodel);
+        pi.productInfoCondition.setText(namecondition);
+        pi.productInfoManufactureDate.setText(manufacturedate);
+        pi.productInfoDescription.setText(descriptionclock);
+        pi.productInfoPrice.setText(price);
+    }//GEN-LAST:event_tableInfoMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBrand;

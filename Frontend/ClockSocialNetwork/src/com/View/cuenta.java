@@ -7,6 +7,7 @@ package com.View;
 import com.Controllers.Controller_BuySale;
 import com.Controllers.Controller_History_appuserxbuysale;
 import com.Controllers.Controller_Main;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -67,6 +68,11 @@ public class cuenta extends javax.swing.JPanel {
                     "Title 1", "Title 2", "Title 3", "Title 4"
                 }
             ));
+            tableInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    tableInfoMouseClicked(evt);
+                }
+            });
             jScrollPane2.setViewportView(tableInfo);
 
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 730, 480));
@@ -119,6 +125,38 @@ public class cuenta extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
+          ProductInformation pi = new ProductInformation();
+        pi.setVisible(true);
+        pi.pack();
+
+        int selectedRow = tableInfo.getSelectedRow();
+        TableModel tm = tableInfo.getModel();
+
+        String idbuysale = tm.getValueAt(selectedRow, 0).toString();
+        String datepost = tm.getValueAt(selectedRow, 1).toString();
+        String username = tm.getValueAt(selectedRow, 2).toString();
+        String nametype = tm.getValueAt(selectedRow, 3).toString();
+        String namebrand = tm.getValueAt(selectedRow, 4).toString();
+        String namemodel = tm.getValueAt(selectedRow, 5).toString();
+        String namecondition = tm.getValueAt(selectedRow, 6).toString();
+        String manufacturedate = tm.getValueAt(selectedRow, 7).toString();
+        String descriptionclock = tm.getValueAt(selectedRow, 8).toString();
+        String price = tm.getValueAt(selectedRow, 9).toString();
+
+        // ImageIcon img = (ImageIcon) tm.getValueAt(selectedRow, 5);
+        pi.productInfoId.setText(idbuysale);
+        pi.productInfoPosted.setText(datepost);
+        pi.productInfoBy.setText(username);
+        pi.productInfoType.setText(nametype);
+        pi.productInfoBrandClock.setText(namebrand);
+        pi.productInfoModel.setText(namemodel);
+        pi.productInfoCondition.setText(namecondition);
+        pi.productInfoManufactureDate.setText(manufacturedate);
+        pi.productInfoDescription.setText(descriptionclock);
+        pi.productInfoPrice.setText(price);
+    }//GEN-LAST:event_tableInfoMouseClicked
 
     
      private void fillTable(){
