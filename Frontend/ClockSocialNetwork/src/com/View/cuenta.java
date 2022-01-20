@@ -14,16 +14,17 @@ import javax.swing.table.TableModel;
  * @author garroakion
  */
 public class cuenta extends javax.swing.JPanel {
+
     private Controller_Main mainCont = Controller_Main.getContMain();
     private Controller_BuySale controllerBuySale;
-    
+
     /**
      * Creates new form cuenta
      */
     public cuenta() {
         initComponents();
-        
-        controllerBuySale=mainCont.getContBuySale();
+
+        controllerBuySale = mainCont.getContBuySale();
         fillTable();
     }
 
@@ -127,7 +128,7 @@ public class cuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
-          ProductInformation pi = new ProductInformation();
+        ProductInformation pi = new ProductInformation();
         pi.setVisible(true);
         pi.pack();
 
@@ -144,7 +145,7 @@ public class cuenta extends javax.swing.JPanel {
         String manufacturedate = tm.getValueAt(selectedRow, 7).toString();
         String descriptionclock = tm.getValueAt(selectedRow, 8).toString();
         String price = tm.getValueAt(selectedRow, 9).toString();
-
+        pi.productInfoBrand6.setText("Bought");
         // ImageIcon img = (ImageIcon) tm.getValueAt(selectedRow, 5);
         pi.productInfoId.setText(idbuysale);
         pi.productInfoPosted.setText(datepost);
@@ -156,15 +157,15 @@ public class cuenta extends javax.swing.JPanel {
         pi.productInfoManufactureDate.setText(manufacturedate);
         pi.productInfoDescription.setText(descriptionclock);
         pi.productInfoPrice.setText(price);
+
     }//GEN-LAST:event_tableInfoMouseClicked
 
-    
-     private void fillTable(){
-        try{
-       this.tableInfo.setModel(controllerBuySale.listBoughtClocks(mainCont.getUsername()));
-        this.tableInfo.revalidate();
-        this.tableInfo.repaint();
-        }catch(Exception e){
+    private void fillTable() {
+        try {
+            this.tableInfo.setModel(controllerBuySale.listBoughtClocks(mainCont.getUsername()));
+            this.tableInfo.revalidate();
+            this.tableInfo.repaint();
+        } catch (Exception e) {
         }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

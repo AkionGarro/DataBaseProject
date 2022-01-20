@@ -315,7 +315,8 @@ public class insertarRelojes extends javax.swing.JPanel {
         
         
         
-
+        pi.productInfoBrand6.setText("Buy Status");
+        pi.productInfoBrand7.setText("");
         // ImageIcon img = (ImageIcon) tm.getValueAt(selectedRow, 5);
         pi.productInfoId.setText(idbuysale);
         pi.productInfoPosted.setText(datepost);
