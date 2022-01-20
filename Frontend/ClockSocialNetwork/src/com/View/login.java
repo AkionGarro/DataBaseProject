@@ -18,6 +18,8 @@ import java.sql.Date;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import limitText.JTextFieldLimit;
 
 /**
@@ -1016,44 +1018,68 @@ public class login extends javax.swing.JFrame {
 
     private void registerButtonPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonPanelMouseClicked
 
+        CheckFields checks = new CheckFields();
         if (checkEmptyFields() == false) {
-            try {
-                java.util.Date utilDate = this.dateChooser.getDate();
-                java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-                System.out.println(sqlDate.toString());
-                mainCont.createWindowMessage(this.controllerAppUser.create(
-                        this.identificationField.getText(),
-                        this.comboIdentification.getSelectedItem().toString(),
-                        this.comboGender.getSelectedItem().toString(),
-                        this.comboCitizenship.getSelectedItem().toString(),
-                        sqlDate,
-                        this.nameField.getText(),
-                        this.lastNameField.getText(),
-                        this.secondLastNameField.getText(),
-                        this.usernameField.getText(),
-                        encoderPassword.encode(this.passwordTextField.getText()),
-                        this.emailTextField.getText(),
-                        this.comboDistrict.getSelectedItem().toString(),
-                        this.comboCity.getSelectedItem().toString(),
-                        this.comboCountry.getSelectedItem().toString(),
-                        this.phoneField.getText(),
-                        this.comboCodeCountry.getSelectedItem().toString(),
-                        this.comboPhoneType.getSelectedItem().toString()
-                ), "Create User");
 
-                cleanFields();
-                loginPanel.setBackground(new Color(62, 114, 179));
-                logoPanel.setBackground(new Color(62, 114, 179));
+            if (checks.CheckEmail(this.emailTextField.getText().toString()) == true
+                    && checks.onlyCheckNumbers(this.identificationField.getText().toString()) == true
+                    && checks.onlyCheckNumbers(this.phoneField.getText().toString()) == true
+                    && checks.isValidPassword(this.passwordTextField.getText().toString()) == true) {
 
-                loginSection.setLocation(0, 0);
-                content.removeAll();
-                content.add(loginSection, BorderLayout.CENTER);
-                content.revalidate();
-                content.repaint();
+                try {
+                    java.util.Date utilDate = this.dateChooser.getDate();
+                    java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+                    System.out.println(sqlDate.toString());
+                    mainCont.createWindowMessage(this.controllerAppUser.create(
+                            this.identificationField.getText(),
+                            this.comboIdentification.getSelectedItem().toString(),
+                            this.comboGender.getSelectedItem().toString(),
+                            this.comboCitizenship.getSelectedItem().toString(),
+                            sqlDate,
+                            this.nameField.getText(),
+                            this.lastNameField.getText(),
+                            this.secondLastNameField.getText(),
+                            this.usernameField.getText(),
+                            encoderPassword.encode(this.passwordTextField.getText()),
+                            this.emailTextField.getText(),
+                            this.comboDistrict.getSelectedItem().toString(),
+                            this.comboCity.getSelectedItem().toString(),
+                            this.comboCountry.getSelectedItem().toString(),
+                            this.phoneField.getText(),
+                            this.comboCodeCountry.getSelectedItem().toString(),
+                            this.comboPhoneType.getSelectedItem().toString()
+                    ), "Create User");
 
-            } catch (Exception e) {
-                System.out.println(e.toString());
+                    cleanFields();
+                    loginPanel.setBackground(new Color(62, 114, 179));
+                    logoPanel.setBackground(new Color(62, 114, 179));
+
+                    loginSection.setLocation(0, 0);
+                    content.removeAll();
+                    content.add(loginSection, BorderLayout.CENTER);
+                    content.revalidate();
+                    content.repaint();
+
+                } catch (Exception e) {
+                    System.out.println(e.toString());
+                }
+
             }
+
+            if (checks.CheckEmail(this.emailTextField.getText().toString()) == false) {
+                mainCont.createWindowMessage("Invalid Email ", "Error");
+            }
+            if (checks.onlyCheckNumbers(this.identificationField.getText().toString()) == false) {
+                  mainCont.createWindowMessage("Invalid  identification ", "Error");
+            }
+            if( checks.onlyCheckNumbers(this.phoneField.getText().toString()) == false){
+                 mainCont.createWindowMessage("Invalid  phone number ", "Error");
+            }
+
+           if( checks.isValidPassword(this.passwordTextField.getText().toString()) == false){
+                mainCont.createWindowMessage("Invalid  password ", "Error");
+           }
+           
         } else {
             mainCont.createWindowMessage("Empty Fields", "Error");
         }
