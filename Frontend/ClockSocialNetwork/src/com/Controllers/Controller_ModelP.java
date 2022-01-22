@@ -37,6 +37,7 @@ public class Controller_ModelP extends ControllerF{
             cstmt.execute();
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
+            cstmt.close();
             System.out.println(result);
             return result;
         } catch(Exception e){

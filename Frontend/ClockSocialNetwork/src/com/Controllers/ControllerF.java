@@ -39,7 +39,7 @@ public class ControllerF {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
             return result;
         } catch(Exception e){
         return  e.toString();
@@ -58,7 +58,8 @@ public class ControllerF {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
+       
             return result;
         } catch(Exception e){
         return  e.toString();
@@ -77,7 +78,7 @@ public class ControllerF {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
             return result;
         } catch(Exception e){
         return  e.toString();
@@ -96,7 +97,7 @@ public class ControllerF {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
             return result;
         } catch(Exception e){
         return  e.toString();
@@ -116,7 +117,27 @@ public class ControllerF {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+           cstmt.close();
+            return result;
+        } catch(Exception e){
+        return  e.toString();
+        }
+    }
+     
+     
+          public String updateT(String param,int param2)
+        {
+        try{
+            param=param.trim();
+            CallableStatement cstmt = connect.prepareCall(updateFn);
+            cstmt.setString(2, param);
+            cstmt.setInt(3, param2);
+            cstmt.registerOutParameter(1, OracleTypes.VARCHAR);//calls the function that returns a 1 if it was created or 0 it it was not
+            cstmt.execute();
+            
+            String result;
+            result = ((OracleCallableStatement)cstmt).getString(1);
+           cstmt.close();
             return result;
         } catch(Exception e){
         return  e.toString();
@@ -136,7 +157,7 @@ public class ControllerF {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
             return result;
         } catch(Exception e){
         return  e.toString();
@@ -153,7 +174,7 @@ public class ControllerF {
             cstmt.execute();
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+           cstmt.close();
             return result;
         } catch(Exception e){
         return e.toString();
@@ -168,7 +189,7 @@ public class ControllerF {
             cstmt.execute();
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
             return result;
         } catch(Exception e){
         return e.toString();//"Wrong data, was not created";
@@ -196,6 +217,9 @@ public class ControllerF {
                 myList.add(rs.getString(listComboVariable));
 
             }
+            
+            rs.close();
+            cstmt.close();
             return myList;
         }catch(Exception e){
             return null;
@@ -221,7 +245,8 @@ public class ControllerF {
                 myList.add(rs.getString(listComboVariable));
 
             }
-            
+            rs.close();
+            cstmt.close();
             return myList;
         }catch(Exception e){
             return null;
@@ -253,6 +278,8 @@ public class ControllerF {
                 data[0]=rs.getString(this.listComboVariable);
                 table.addRow(data);
             }
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             return null;

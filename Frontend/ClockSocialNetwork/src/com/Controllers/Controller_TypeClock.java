@@ -55,6 +55,8 @@ public class Controller_TypeClock extends ControllerF {
                 data[1]=rs.getString("descriptionT");
                 table.addRow(data);
             }
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             return null;

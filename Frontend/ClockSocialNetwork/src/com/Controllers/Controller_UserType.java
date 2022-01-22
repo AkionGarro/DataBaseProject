@@ -53,6 +53,8 @@ public class Controller_UserType extends ControllerF {
                 data[1]=rs.getString("descriptionType");
                 table.addRow(data);
             }
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             return null;

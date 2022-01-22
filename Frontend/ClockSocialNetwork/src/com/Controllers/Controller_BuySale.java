@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Jonathan
  */
-public class Controller_BuySale {
+public class Controller_BuySale extends ControllerF {
 
     public Controller_BuySale() {
         if (connect == null) {//creates the connection to the database
@@ -136,7 +136,7 @@ public class Controller_BuySale {
                 data[9] = Integer.toString(rs.getInt("price"));
                 table.addRow(data);
             }
-            //rs.close();
+            rs.close();
             return table;
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -187,7 +187,7 @@ public class Controller_BuySale {
                 data[11] = rs.getString("namesm");
                 table.addRow(data);
             }
-            //rs.close();
+            rs.close();
             return table;
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -195,7 +195,7 @@ public class Controller_BuySale {
         }
     }
 
-    public DefaultTableModel listClocksWithFilters(String p_condition, String p_type, String p_brand, String p_model) {
+    public DefaultTableModel listClocksWithFilters(String p_condition, String p_type, String p_brand, String p_model, int price) {
         try {
             DefaultTableModel table = new DefaultTableModel();
 
@@ -211,11 +211,12 @@ public class Controller_BuySale {
             table.addColumn("Price");
 
             //calls function that returns the list
-            CallableStatement cstmt = connect.prepareCall("{ ? = call packageconsults.fngetClocksWithFilters(?,?,?,?)}");
+            CallableStatement cstmt = connect.prepareCall("{ ? = call packageconsults.fngetClocksWithFilters(?,?,?,?,?)}");
             cstmt.setString(2, p_condition);
             cstmt.setString(3, p_type);
             cstmt.setString(4, p_brand);
             cstmt.setString(5, p_model);
+            cstmt.setInt(6, price);
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 
             cstmt.execute();
@@ -237,12 +238,27 @@ public class Controller_BuySale {
                 data[9] = Integer.toString(rs.getInt("price"));
                 table.addRow(data);
             }
-            //rs.close();
+            rs.close();
+            cstmt.close();
             return table;
         } catch (Exception e) {
             System.out.println(e.toString());
             return null;
         }
     }
+    
+    public String updateStatus( String idBuySale, String buyStatus){
+        this.updateFn="{ ? = call packageupdate.fnUpdteBuysaleBuyS(?,?)}";
+        return this.updateT(idBuySale, buyStatus);
+    
+    }
+    
+    
+   public String updatePrice( String idBuySale, int price){
+        this.updateFn="{ ? = call packageupdate.fnUpdteBuysalePrice(?,?)}";
+        return this.updateT(idBuySale, price);
+    
+    }
+
 
 }

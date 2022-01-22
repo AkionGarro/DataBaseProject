@@ -37,7 +37,7 @@ public class Controller_Msg_userxuser {
             
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+            cstmt.close();
             return result;//if the tuple was created
            
         } catch(Exception e){

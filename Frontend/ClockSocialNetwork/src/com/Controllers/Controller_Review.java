@@ -34,7 +34,7 @@ public class Controller_Review {
             cstmt.execute();
             String result;
             result = ((OracleCallableStatement)cstmt).getString(1);
-            System.out.println(result);
+           cstmt.close();
             return result;
         } catch(Exception e){
         return "Wrong data, was not created";

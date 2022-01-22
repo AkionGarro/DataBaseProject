@@ -96,6 +96,8 @@ public class Controller_AppuserxPeople {
                 user.setUserId(result.getInt("idappuser"));
                 return user;
             }
+            result.close();
+            cstmt.close();
 
         } catch (Exception e) {
             return null;

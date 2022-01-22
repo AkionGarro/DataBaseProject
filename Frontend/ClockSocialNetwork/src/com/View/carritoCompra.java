@@ -163,7 +163,8 @@ public class carritoCompra extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteShCartActionPerformed
 
     private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
-          ProductInformation pi = new ProductInformation();
+       if (evt.getClickCount() == 2 && tableInfo.getSelectedRow() != -1) {
+            ProductInformation pi = new ProductInformation();
         pi.setVisible(true);
         pi.pack();
 
@@ -191,7 +192,8 @@ public class carritoCompra extends javax.swing.JPanel {
         pi.productInfoCondition.setText(namecondition);
         pi.productInfoManufactureDate.setText(manufacturedate);
         pi.productInfoDescription.setText(descriptionclock);
-        pi.productInfoPrice.setText(price);
+        pi.productInfoPrice.setText(price); 
+        }   
     }//GEN-LAST:event_tableInfoMouseClicked
        private void fillTable(){
         try{

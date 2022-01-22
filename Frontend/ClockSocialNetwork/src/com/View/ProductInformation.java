@@ -45,8 +45,6 @@ public class ProductInformation extends javax.swing.JFrame {
         productInfoType = new javax.swing.JLabel();
         productInfoCondition = new javax.swing.JLabel();
         productInfoPrice = new javax.swing.JLabel();
-        productInfoBrand5 = new javax.swing.JLabel();
-        productQtyField = new javax.swing.JTextField();
         productInfoBrand6 = new javax.swing.JLabel();
         productInfoPosted = new javax.swing.JLabel();
         productInfoBrand7 = new javax.swing.JLabel();
@@ -96,27 +94,23 @@ public class ProductInformation extends javax.swing.JFrame {
         productPhoto.setBackground(new java.awt.Color(255, 255, 255));
         productPhoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         productPhoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
-        jPanel4.add(productPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, 250, 270));
+        jPanel4.add(productPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 250, 270));
 
         productInfoBrand.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand.setText("Id:");
-        jPanel4.add(productInfoBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 80, 19));
+        jPanel4.add(productInfoBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 80, 19));
 
         productInfoBrand1.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand1.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand1.setText("Condition:");
-        jPanel4.add(productInfoBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 130, -1));
+        jPanel4.add(productInfoBrand1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 130, -1));
 
         productInfoBrand2.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand2.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand2.setText("Price:");
-        jPanel4.add(productInfoBrand2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 110, -1));
+        jPanel4.add(productInfoBrand2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 110, -1));
 
         productInfoBrand3.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand3.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand3.setText("Type:");
-        jPanel4.add(productInfoBrand3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, -1));
+        jPanel4.add(productInfoBrand3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 110, -1));
 
         addToCart.setBackground(new java.awt.Color(0, 77, 64));
         addToCart.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
@@ -124,94 +118,68 @@ public class ProductInformation extends javax.swing.JFrame {
         addToCart.setText("Add to cart");
         addToCart.setBorder(null);
         addToCart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel4.add(addToCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, 169, 50));
+        addToCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addToCartActionPerformed(evt);
+            }
+        });
+        jPanel4.add(addToCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 169, 50));
 
         productInfoId.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoId.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoId, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 170, 20));
 
         productInfoType.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoType.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoType, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 170, 20));
 
         productInfoCondition.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoCondition.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoCondition, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 170, 20));
 
         productInfoPrice.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoPrice.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 170, 20));
 
-        productInfoBrand5.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        productInfoBrand5.setForeground(new java.awt.Color(0, 77, 64));
-        productInfoBrand5.setText("Qty:");
-        jPanel4.add(productInfoBrand5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
-
-        productQtyField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        productQtyField.setText("1");
-        productQtyField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 77, 64)));
-        productQtyField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                productQtyFieldActionPerformed(evt);
-            }
-        });
-        jPanel4.add(productQtyField, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 57, -1));
-
         productInfoBrand6.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand6.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand6.setText("Posted:");
-        jPanel4.add(productInfoBrand6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 130, 19));
+        jPanel4.add(productInfoBrand6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 130, 19));
 
         productInfoPosted.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoPosted.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoPosted, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 170, 20));
 
         productInfoBrand7.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand7.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand7.setText("By:");
-        jPanel4.add(productInfoBrand7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 90, 19));
+        jPanel4.add(productInfoBrand7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 90, 19));
 
         productInfoBy.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoBy.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 170, 20));
 
         productInfoBrand8.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand8.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand8.setText("Brand:");
-        jPanel4.add(productInfoBrand8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 120, 19));
+        jPanel4.add(productInfoBrand8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, 120, 19));
 
         productInfoBrandClock.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoBrandClock.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoBrandClock, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 170, 20));
 
         productInfoBrand9.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand9.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand9.setText("Model:");
-        jPanel4.add(productInfoBrand9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 120, 19));
+        jPanel4.add(productInfoBrand9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 120, 19));
 
         productInfoModel.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoModel.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, 20));
 
         productInfoBrand10.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand10.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand10.setText("Manufacture Date:");
-        jPanel4.add(productInfoBrand10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 190, -1));
+        jPanel4.add(productInfoBrand10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 190, -1));
 
         productInfoManufactureDate.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoManufactureDate.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoManufactureDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 170, 20));
 
         productInfoBrand11.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        productInfoBrand11.setForeground(new java.awt.Color(0, 0, 0));
         productInfoBrand11.setText("Description:");
-        jPanel4.add(productInfoBrand11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 150, -1));
+        jPanel4.add(productInfoBrand11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 150, -1));
 
         productInfoDescription.setFont(new java.awt.Font("Roboto Black", 1, 20)); // NOI18N
-        productInfoDescription.setForeground(new java.awt.Color(0, 0, 0));
         jPanel4.add(productInfoDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 170, 20));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1130, 470));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1130, 470));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -225,9 +193,9 @@ public class ProductInformation extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void productQtyFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productQtyFieldActionPerformed
+    private void addToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_productQtyFieldActionPerformed
+    }//GEN-LAST:event_addToCartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,7 +246,6 @@ public class ProductInformation extends javax.swing.JFrame {
     private javax.swing.JLabel productInfoBrand11;
     private javax.swing.JLabel productInfoBrand2;
     private javax.swing.JLabel productInfoBrand3;
-    private javax.swing.JLabel productInfoBrand5;
     public javax.swing.JLabel productInfoBrand6;
     public javax.swing.JLabel productInfoBrand7;
     private javax.swing.JLabel productInfoBrand8;
@@ -294,6 +261,5 @@ public class ProductInformation extends javax.swing.JFrame {
     public javax.swing.JLabel productInfoPrice;
     public javax.swing.JLabel productInfoType;
     public javax.swing.JLabel productPhoto;
-    private javax.swing.JTextField productQtyField;
     // End of variables declaration//GEN-END:variables
 }

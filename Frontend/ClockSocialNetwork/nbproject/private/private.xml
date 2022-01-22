@@ -3,7 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/garroakion/Desktop/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/insertarRelojes.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_TypeClock.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/ClockType.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/carritoCompra.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/insertarRelojes.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/favoritos.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/homeAdmin.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/cuenta.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/Status.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_AppuserxPeople.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/buscarRelojes.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/home.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/estadisticas.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/ProductInformation.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/chats.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/Gender.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/login.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/PaymentMethod.java</file>
         </group>
     </open-files>
 </project-private>

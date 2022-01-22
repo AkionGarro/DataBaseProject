@@ -51,6 +51,8 @@ public class Controller_PaymentMethod extends ControllerF{
                 data[0]=rs.getString("type");
                 table.addRow(data);
             }
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             return null;

@@ -114,6 +114,7 @@ public class Controller_District{
             while(rs.next()){
                 listDistricts.add(rs.getString("nameDistrict"));
             }
+            rs.close();
             return listDistricts;
         }catch(Exception e){
             return null;

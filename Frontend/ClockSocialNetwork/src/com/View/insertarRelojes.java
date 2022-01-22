@@ -12,9 +12,12 @@ import com.Controllers.Controller_TypeClock;
 import com.Controllers.Controller_Condition;
 import com.Controllers.Controller_BuyStatus;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.TableModel;
+
+        
 
 /**
  *
@@ -29,7 +32,7 @@ public class insertarRelojes extends javax.swing.JPanel {
     private Controller_Condition controllerCondition;
     private Controller_BuyStatus controllerBuyStatus;
     private Controller_BuySale controllerBuySale;
-
+    
     /**
      * Creates new form insertarRelojes
      */
@@ -42,6 +45,7 @@ public class insertarRelojes extends javax.swing.JPanel {
         controllerBuyStatus = mainCont.getContBuyStatus();
         controllerBuySale = mainCont.getContBuySale();
         this.manufactureDate.setLocale(Locale.ENGLISH);
+
         fillBrand();
         fillModel();
 
@@ -141,6 +145,9 @@ public class insertarRelojes extends javax.swing.JPanel {
             };};
             manufactureDate = new com.toedter.calendar.JDateChooser();
             jLabel14 = new javax.swing.JLabel();
+            jButton2 = new javax.swing.JButton();
+            jButton3 = new javax.swing.JButton();
+            newPrice = new javax.swing.JTextField();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setPreferredSize(new java.awt.Dimension(730, 700));
@@ -222,7 +229,7 @@ public class insertarRelojes extends javax.swing.JPanel {
                     jButton1ActionPerformed(evt);
                 }
             });
-            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 160, 70));
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 160, 40));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -248,6 +255,25 @@ public class insertarRelojes extends javax.swing.JPanel {
             jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel14.setText("Description:");
             add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 190, 30));
+
+            jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            jButton2.setText("Change Status");
+            jButton2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton2ActionPerformed(evt);
+                }
+            });
+            add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 170, 40));
+
+            jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            jButton3.setText("Change  Price");
+            jButton3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton3ActionPerformed(evt);
+                }
+            });
+            add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 170, 40));
+            add(newPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 100, 40));
         }// </editor-fold>//GEN-END:initComponents
 
     private void comboBuyStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBuyStatusActionPerformed
@@ -292,6 +318,7 @@ public class insertarRelojes extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
+      if (evt.getClickCount() == 2 && tableInfo.getSelectedRow() != -1) {
         ProductInformation pi = new ProductInformation();
         pi.setVisible(true);
         pi.pack();
@@ -327,8 +354,39 @@ public class insertarRelojes extends javax.swing.JPanel {
         pi.productInfoCondition.setText(namecondition);
         pi.productInfoManufactureDate.setText(manufacturedate);
         pi.productInfoDescription.setText(descriptionclock);
-        pi.productInfoPrice.setText(price);
+        pi.productInfoPrice.setText(price);    
+        } 
     }//GEN-LAST:event_tableInfoMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                 try {
+            if (this.tableInfo.getSelectedRow() != -1) {
+                mainCont.createWindowMessage(this.controllerBuySale.updateStatus(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(), this.comboBuyStatus.getSelectedItem().toString()), "Change Status ");
+                fillTable();
+                
+
+            } else {
+                mainCont.createWindowMessage("Select a clock", "No post Selected");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+                       try {
+            if (this.tableInfo.getSelectedRow() != -1 && CheckFields.onlyCheckNumbers(this.newPrice.getText())) {
+                mainCont.createWindowMessage(this.controllerBuySale.updatePrice(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(), Integer.parseInt( this.newPrice.getText().toString())), "Change Price ");
+                fillTable();
+                
+
+            } else {
+                mainCont.createWindowMessage("Clock not selected or not a valid price", "This is not a valid price");
+            }
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -338,6 +396,8 @@ public class insertarRelojes extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboModel;
     private javax.swing.JTextField descriptionField;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -349,6 +409,7 @@ public class insertarRelojes extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
     private com.toedter.calendar.JDateChooser manufactureDate;
+    private javax.swing.JTextField newPrice;
     private javax.swing.JTextField priceField;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables

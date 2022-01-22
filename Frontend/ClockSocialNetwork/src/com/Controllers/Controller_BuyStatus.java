@@ -55,7 +55,8 @@ public class Controller_BuyStatus extends ControllerF {
                 data[1]=rs.getString("descriptionB");
                 table.addRow(data);
             }
-            //rs.close();
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             

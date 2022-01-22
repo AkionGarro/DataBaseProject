@@ -64,7 +64,8 @@ public class Controller_Shcart_appuserxclock extends ControllerF{
                 data[9]=Integer.toString(rs.getInt("price"));
                  table.addRow(data);
             }
-            //rs.close();
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             System.out.println(e.toString());

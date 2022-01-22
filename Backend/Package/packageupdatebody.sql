@@ -297,4 +297,66 @@ exception
      return val;
 end fnUpdtPhoneType;
 
+
+function fnUpdteBuysaleBuyS(p_idBuysale in number, p_status in varchar2)return varchar2 
+is
+val varchar2(50);
+v_idStatus number(3);
+v_nameStatusA varchar2(20);
+begin
+    
+Select buystatus.status into v_nameStatusA from BUYSALE 
+                                inner join buyStatus on buysale.idbuystatus=buystatus.idbuystatus
+                              where buysale.idbuysale=p_idBuysale;
+                              
+                              
+                              
+ if p_status='Sold' then
+ val:='This item has not been sold yet';
+ return val;
+ end if;
+ v_idStatus := packagegetid.getIdBuyStatus(p_status);
+ if v_nameStatusA='Sold' then
+ val:='This item has already been sold';
+ return val;
+ end if; 
+ UPDATE BUYSALE set idBuyStatus=v_idStatus where BUYSALE.idBuysale=p_idBuySale;
+ return 'Updated Sale Status';
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnUpdteBuysaleBuyS;
+
+function fnUpdteBuysalePrice(p_idBuysale in number, p_price in number)return varchar2 
+is
+val varchar2(50);
+v_idClock number(10);
+v_nameStatusA varchar2(20);
+begin
+v_idClock:=packagegetid.getidClock(p_idBuySale);
+Select buystatus.status into v_nameStatusA from BUYSALE 
+                                inner join buyStatus on buysale.idbuystatus=buystatus.idbuystatus
+                              where buysale.idbuysale=p_idBuysale;
+                                                         
+ if v_nameStatusA='Sold' then
+ val:='This item has already been sold';
+ return val;
+ end if; 
+ UPDATE CLOCK set price=p_price where clock.idClock=v_idClock;
+ return 'Price Updated';
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnUpdteBuysalePrice;
+
+
+
 end PACKAGEUPDATE;

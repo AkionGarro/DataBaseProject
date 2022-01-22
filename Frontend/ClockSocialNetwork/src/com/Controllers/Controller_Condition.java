@@ -53,7 +53,8 @@ public class Controller_Condition extends ControllerF{
                 data[1]=rs.getString("descriptionC");
                 table.addRow(data);
             }
-            //rs.close();
+            rs.close();
+            cstmt.close();
             return table;
         }catch(Exception e){
             System.out.println(e.toString());

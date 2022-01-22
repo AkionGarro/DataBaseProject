@@ -128,7 +128,8 @@ public class cuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
-        ProductInformation pi = new ProductInformation();
+        if (evt.getClickCount() == 2 && tableInfo.getSelectedRow() != -1) {
+            ProductInformation pi = new ProductInformation();
         pi.setVisible(true);
         pi.pack();
 
@@ -157,6 +158,8 @@ public class cuenta extends javax.swing.JPanel {
         pi.productInfoManufactureDate.setText(manufacturedate);
         pi.productInfoDescription.setText(descriptionclock);
         pi.productInfoPrice.setText(price);
+        }
+        
 
     }//GEN-LAST:event_tableInfoMouseClicked
 
