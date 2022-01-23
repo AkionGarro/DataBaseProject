@@ -167,7 +167,6 @@ public class buscarRelojes extends javax.swing.JPanel {
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Brand");
             add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 60, 40));
 
@@ -201,12 +200,10 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 110, 40));
 
             jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel4.setForeground(new java.awt.Color(0, 0, 0));
             jLabel4.setText("Condition");
             add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 90, 40));
 
             jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel5.setForeground(new java.awt.Color(0, 0, 0));
             jLabel5.setText("Type");
             add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 60, 40));
 
@@ -215,7 +212,6 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 110, 40));
 
             jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
             jLabel6.setText("Price Under");
             add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 150, 50));
 
@@ -229,7 +225,6 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 110, 40));
 
             jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
             jLabel8.setText("Model");
             add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 70, 40));
 
@@ -257,7 +252,7 @@ public class buscarRelojes extends javax.swing.JPanel {
                     shCartButtonActionPerformed(evt);
                 }
             });
-            add(shCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 180, 40));
+            add(shCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, 40));
 
             priceField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
             add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 110, 40));
@@ -284,14 +279,15 @@ public class buscarRelojes extends javax.swing.JPanel {
             int priceTop=999999;
             if (checkField.onlyCheckNumbers(this.priceField.getText())){
                  priceTop=Integer.parseInt(priceField.getText());
-            }
-            this.tableInfo.setModel(controllerBuySale.
+                    this.tableInfo.setModel(controllerBuySale.
                     listClocksWithFilters(comboCond.getSelectedItem().toString(),
                             comboType.getSelectedItem().toString(),
                             comboBrand.getSelectedItem().toString(),
                             comboModel.getSelectedItem().toString(),priceTop));
             this.tableInfo.revalidate();
             this.tableInfo.repaint();
+            }
+
         } catch (Exception e) {
         }
     }

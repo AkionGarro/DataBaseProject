@@ -4,8 +4,12 @@
  */
 package com.View.adminPanels;
 
+import com.Controllers.Controller_AppuserxPeople;
 import com.Controllers.Controller_Gender;
 import com.Controllers.Controller_Main;
+import com.Controllers.Controller_UserType;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -14,23 +18,46 @@ import com.Controllers.Controller_Main;
 public class ChangeUserType extends javax.swing.JPanel {
 
     private Controller_Main mainCont = Controller_Main.getContMain();
+    private Controller_AppuserxPeople controller;
+    private Controller_UserType controllerType;
     
 
 
     public ChangeUserType() {
         initComponents();
-     
+        controller=mainCont.getContAppUserPeople();
+        controllerType=mainCont.getContUserType();
         fillTable();
+        fillComboType();
     }
     
         private void fillTable(){
         try{
-        //this.tableInfo.setModel(controller.listInfoTable(""));
+        this.tableInfo.setModel(controller.listInfoTableType());
         this.tableInfo.revalidate();
         this.tableInfo.repaint();
         }catch(Exception e){
+            System.out.println(e.toString());
         }
     }
+        
+        
+       private void fillComboType(){
+       
+        try {
+            ArrayList<String> listC = controllerType.listInfoCombo();
+            DefaultComboBoxModel listF = new DefaultComboBoxModel(listC.toArray());
+            this.comboType.setModel(listF);
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+
+    }
+       
+       
+       
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,16 +76,15 @@ public class ChangeUserType extends javax.swing.JPanel {
                 return false;
             };};
             changeButton = new javax.swing.JButton();
-            jComboBox1 = new javax.swing.JComboBox<>();
+            comboType = new javax.swing.JComboBox<>();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setPreferredSize(new java.awt.Dimension(730, 660));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Type:");
-            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 40));
+            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 120, 40));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -73,7 +99,7 @@ public class ChangeUserType extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 510));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 730, 510));
 
             changeButton.setBackground(new java.awt.Color(0, 0, 0));
             changeButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,17 +109,17 @@ public class ChangeUserType extends javax.swing.JPanel {
                     changeButtonActionPerformed(evt);
                 }
             });
-            add(changeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 80, 30));
+            add(changeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 80, 30));
 
-            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 6, 190, 30));
+            comboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+            add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 190, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void changeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeButtonActionPerformed
 
                       try{
             if (tableInfo.getSelectedRow()!=-1){
-               // mainCont.createWindowMessage(this.controller.updateT(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(),this.nameField.getText()), "Updating Gender");
+               mainCont.createWindowMessage(this.controller.updateUserType(this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString(),this.comboType.getSelectedItem().toString()), "Updating Type");
                 fillTable();
 
             }
@@ -108,7 +134,7 @@ public class ChangeUserType extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton changeButton;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> comboType;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tableInfo;

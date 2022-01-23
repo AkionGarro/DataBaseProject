@@ -222,6 +222,7 @@ public class ControllerF {
             cstmt.close();
             return myList;
         }catch(Exception e){
+            System.out.println(e.toString());
             return null;
         }
     }

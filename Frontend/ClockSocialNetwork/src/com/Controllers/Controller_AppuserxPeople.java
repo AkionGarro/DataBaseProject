@@ -15,18 +15,18 @@ import java.sql.ResultSet;
 import com.View.User;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Jonathan
  */
-public class Controller_AppuserxPeople {
-
+public class Controller_AppuserxPeople extends ControllerF {
     public Controller_AppuserxPeople() {
         if (connect == null) {//creates the connection to the database
             connect = (Connection) new DB_Connection().obtainConnection();
         }
-
+       
     }
 
     public String create(String p_identification,
@@ -103,6 +103,45 @@ public class Controller_AppuserxPeople {
             return null;
         }
         return user;
+    }
+    public String updateUserType(String username, String userType){
+     this.updateFn="{ ? = call packageupdate.fnUpdteChangeUserType(?,?)}";
+     return this.updateT(username, userType); 
+    }
+       
+    public DefaultTableModel listInfoTableType(){
+        
+        try{ 
+            DefaultTableModel table=new DefaultTableModel();
+
+
+            table.addColumn("Username");
+            table.addColumn("Type");
+
+            //calls function that returns the list
+            CallableStatement cstmt= connect.prepareCall("{ ? = call packagefnlist.fnListUserWithType}");
+
+            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+
+            cstmt.execute();
+
+            ResultSet rs=((OracleCallableStatement)cstmt).getCursor(1);
+            
+            String data[]= new  String[2];
+            
+            while(rs.next()){
+                data[0]=rs.getString("username");
+                data[1]=rs.getString("nametype");
+                table.addRow(data);
+            }
+            rs.close();
+            cstmt.close();
+            return table;
+        }catch(Exception e){
+            System.out.println(e.toString());
+         
+            return null;
+        }
     }
 
 }

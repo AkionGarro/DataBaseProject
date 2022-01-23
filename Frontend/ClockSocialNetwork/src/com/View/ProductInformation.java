@@ -4,6 +4,8 @@
  */
 package com.View;
 
+import com.Controllers.Controller_Main;
+import com.Controllers.Controller_Shcart_appuserxclock;
 import java.awt.Color;
 
 /**
@@ -15,9 +17,13 @@ public class ProductInformation extends javax.swing.JFrame {
     /**
      * Creates new form ProductInformation
      */
+     private Controller_Main mainCont = Controller_Main.getContMain();
+      private Controller_Shcart_appuserxclock controllerShCart;
     public ProductInformation() {
         initComponents();
+        controllerShCart = mainCont.getContShCart();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        
     }
 
     /**
@@ -204,7 +210,16 @@ public class ProductInformation extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void addToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartActionPerformed
-        // TODO add your handling code here:
+            try {
+            if (!this.productInfoId.equals("")) {
+                mainCont.createWindowMessage(this.controllerShCart.create(mainCont.getUsername(), this.productInfoId.getText()), "Clock Added to Shopping Cart");
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+
+        }
     }//GEN-LAST:event_addToCartActionPerformed
 
     /**
