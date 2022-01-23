@@ -3,18 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_UserType.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_AppuserxPeople.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_Main.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_TypeClock.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_History_appuserxbuysale.java</file>
             <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/buscarRelojes.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_Shcart_appuserxclock.java</file>
             <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/carritoCompra.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/User.java</file>
             <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/ProductInformation.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_Brand.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/insertarRelojes.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/Gender.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/login.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/adminPanels/ChangeUserType.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/ControllerF.java</file>
-            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Connect/DB_Connection.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/Controllers/Controller_Wlistuserxclock.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/favoritos.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/homeAdmin.java</file>
+            <file>file:/D:/PROYECTODBGITHUB/DataBaseProject/Frontend/ClockSocialNetwork/src/com/View/cuenta.java</file>
         </group>
     </open-files>
 </project-private>

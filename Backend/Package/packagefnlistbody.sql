@@ -285,5 +285,31 @@ open ccUrsor for select appuser.username,usertype.nametype from appuser inner jo
 return ccursor;
 end fnListUserWithType;
 
+function fnListFavorites(p_username in varchar2) return sys_refcursor is
+cCursor sys_refcursor;
+v_idUSer number(10);
+begin
+v_idUser:=packagegetid.getidusername(p_username);
+open ccursor for select buysale.idbuysale, buysale.datepost, 
+                              appuser.username,
+                              typeclock.nameType, 
+                              brand.nameBrand, 
+                              modelp.nameModel,
+                              condition.nameCondition,
+                              clock.manufacturedate,
+                              clock.descriptionclock,
+                              clock.price
+                              from WLISTUSERXCLOCK
+                              inner join clock on  WLISTUSERXCLOCK.idClock=clock.idClock
+                              inner join buysale on buysale.idclock=clock.idclock
+                              inner join condition on clock.idcondition=condition.idcondition
+                              inner join modelp on clock.idmodel=modelp.idmodel
+                              inner join brand  on brand.idbrand=modelp.idbrand
+                              inner join typeclock on typeclock.idtype=modelp.idtypeclock
+                              inner join appuser on appuser.idappuser=buysale.iduserseller
+                              where WLISTUSERXCLOCK.iduser=v_idUser ;
+return ccursor; 
+end fnListFavorites;
+
 
 end packagefnlist;

@@ -15,6 +15,7 @@ import com.Controllers.Controller_PaymentMethod;
 import com.Controllers.Controller_Shcart_appuserxclock;
 import com.Controllers.Controller_ShippingMethod;
 import com.Controllers.Controller_TypeClock;
+import com.Controllers.Controller_Wlistuserxclock;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -36,6 +37,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     private Controller_ShippingMethod controllerShippingMethod;
     private Controller_PaymentMethod controllerPaymentMethod;
     private Controller_Shcart_appuserxclock controllerShCart;
+    private Controller_Wlistuserxclock controllerFavorite;
     private CheckFields checkField;
 
     /**
@@ -52,6 +54,7 @@ public class buscarRelojes extends javax.swing.JPanel {
         controllerShippingMethod = mainCont.getContShippingMethod();
         controllerPaymentMethod = mainCont.getContPaymentMethod();
         controllerShCart = mainCont.getContShCart();
+        controllerFavorite=mainCont.getContFavorite();
         checkField= new CheckFields();
         fillBrand();
         fillModel();
@@ -162,6 +165,7 @@ public class buscarRelojes extends javax.swing.JPanel {
             jButton1 = new javax.swing.JButton();
             shCartButton = new javax.swing.JButton();
             priceField = new javax.swing.JTextField();
+            favoriteButton = new javax.swing.JButton();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -246,16 +250,26 @@ public class buscarRelojes extends javax.swing.JPanel {
             });
             add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 90, 40));
 
+            shCartButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
             shCartButton.setText("Add to Shopping Cart");
             shCartButton.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     shCartButtonActionPerformed(evt);
                 }
             });
-            add(shCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 180, 40));
+            add(shCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 260, 40));
 
             priceField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
             add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 110, 40));
+
+            favoriteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            favoriteButton.setText("Add to Favorites");
+            favoriteButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    favoriteButtonActionPerformed(evt);
+                }
+            });
+            add(favoriteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 260, 40));
         }// </editor-fold>//GEN-END:initComponents
 
     private void comboBrandItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBrandItemStateChanged
@@ -339,6 +353,19 @@ public class buscarRelojes extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void favoriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteButtonActionPerformed
+           try {
+            if (this.tableInfo.getSelectedRow() != -1) {
+                mainCont.createWindowMessage(this.controllerFavorite.create(mainCont.getUsername(), tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Clock Added to Favorites");
+
+            } else {
+                mainCont.createWindowMessage("Missing data", "Blank Fields");
+            }
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_favoriteButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -346,6 +373,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboCond;
     private javax.swing.JComboBox<String> comboModel;
     private javax.swing.JComboBox<String> comboType;
+    private javax.swing.JButton favoriteButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

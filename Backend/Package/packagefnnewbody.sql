@@ -559,14 +559,14 @@ begin
     v_idUser:=packagegetid.getidusername(p_idUser);
     packagepcd.new_WLISTUSERXCLOCK(v_idUser,p_idClock);
     commit;
-    val:='Successfully Created';
+    val:='Added to Favorites';
     return val;
 exception
     WHEN no_data_found THEN
      val:='Wrong or missing information'; 
      return val;
     when dup_val_on_index then
-     val:='Already exists';   
+     val:='This clock is already one of your favorites';   
      return val;
     when others then
      val:='Wrong data';

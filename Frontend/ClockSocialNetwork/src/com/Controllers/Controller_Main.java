@@ -34,6 +34,7 @@ public class Controller_Main {
      private Controller_BuySale contBuySale;
      private Controller_History_appuserxbuysale contBuyClock;
      private Controller_Shcart_appuserxclock contShCart;
+    private Controller_Wlistuserxclock contFavorite;
     
      
   
@@ -67,6 +68,7 @@ public class Controller_Main {
        contBuySale=new Controller_BuySale();
       contBuyClock=new Controller_History_appuserxbuysale();
       contShCart= new Controller_Shcart_appuserxclock();
+      contFavorite=new Controller_Wlistuserxclock();
      
        
        
@@ -167,6 +169,10 @@ public class Controller_Main {
 
     public Controller_Shcart_appuserxclock getContShCart() {
         return contShCart;
+    }
+
+    public Controller_Wlistuserxclock getContFavorite() {
+        return contFavorite;
     }
 
     

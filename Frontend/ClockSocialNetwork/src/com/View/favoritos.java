@@ -4,6 +4,8 @@
  */
 package com.View;
 
+import com.Controllers.Controller_Main;
+import com.Controllers.Controller_Wlistuserxclock;
 import javax.swing.table.TableModel;
 
 /**
@@ -15,8 +17,13 @@ public class favoritos extends javax.swing.JPanel {
     /**
      * Creates new form favoritos
      */
+     private Controller_Main mainCont = Controller_Main.getContMain();
+    private Controller_Wlistuserxclock controllerFavorite;
     public favoritos() {
+        
         initComponents();
+        controllerFavorite=mainCont.getContFavorite();
+        fillTable();
     }
 
     /**
@@ -35,6 +42,8 @@ public class favoritos extends javax.swing.JPanel {
             public boolean isCellEditable(int row, int column) {
                 return false;
             };};
+            jButton1 = new javax.swing.JButton();
+            jLabel1 = new javax.swing.JLabel();
 
             setBackground(new java.awt.Color(255, 255, 255));
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,11 +66,25 @@ public class favoritos extends javax.swing.JPanel {
             });
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 700));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 730, 500));
+
+            jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            jButton1.setText("Take Out From Favorites");
+            jButton1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    jButton1ActionPerformed(evt);
+                }
+            });
+            add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 610, 290, 40));
+
+            jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+            jLabel1.setText("FAVORITES");
+            add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, -1, -1));
         }// </editor-fold>//GEN-END:initComponents
 
     private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked
-          ProductInformation pi = new ProductInformation();
+     if (evt.getClickCount() == 2 && tableInfo.getSelectedRow() != -1) {
+        ProductInformation pi = new ProductInformation();
         pi.setVisible(true);
         pi.pack();
 
@@ -90,10 +113,37 @@ public class favoritos extends javax.swing.JPanel {
         pi.productInfoManufactureDate.setText(manufacturedate);
         pi.productInfoDescription.setText(descriptionclock);
         pi.productInfoPrice.setText(price);
+     
+     }
     }//GEN-LAST:event_tableInfoMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+                                try{
+            if (tableInfo.getSelectedRow()!=-1){
+                mainCont.createWindowMessage(this.controllerFavorite.deleteT(this.mainCont.getUsername(),this.tableInfo.getValueAt(tableInfo.getSelectedRow(), 0).toString()), "Dropping from Favorites");
+                fillTable();
+
+            }
+            else {mainCont.createWindowMessage("Choose one", "Pick one to take out");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }  
+    }//GEN-LAST:event_jButton1ActionPerformed
+    private void fillTable(){
+        try{
+       this.tableInfo.setModel(controllerFavorite.listFavoriteClocks(mainCont.getUsername()));
+        this.tableInfo.revalidate();
+        this.tableInfo.repaint();
+        }catch(Exception e){
+        }
+    }
+       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tableInfo;
     // End of variables declaration//GEN-END:variables
