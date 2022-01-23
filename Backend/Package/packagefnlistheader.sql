@@ -22,6 +22,9 @@ function fnListBuyStatusBasic return sys_RefCursor;
 -- returns cursor with  nametype,descriptionype from usertype
 function fnListUserTypeBasic return sys_RefCursor;
 
+-- returns cursor with  nametype from usertype
+function fnListUserTypeCombo return sys_RefCursor;
+
 -- returns cursor with type from paymentmethod
 function fnListPayMethodBasic return sys_RefCursor;
 
@@ -96,5 +99,10 @@ function fnListMyClocks(p_username in varchar2) return sys_refcursor;
                               paymentmethod.type,
                               shippingmethod.namesm  from a clock a user has bought*/
 function fnListBoughtClocks(p_username in varchar2) return sys_refcursor;
+--returns the items of a shopping cart
 function fnListShoppingCart(p_username in varchar2) return sys_refcursor;
+
+--returns the username and  usertype
+function fnListUserWithType return sys_refcursor;
+
 end packagefnlist;

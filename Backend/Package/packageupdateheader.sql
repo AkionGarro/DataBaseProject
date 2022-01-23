@@ -52,5 +52,7 @@ function fnUpdteBuysaleBuyS(p_idBuysale in number, p_status in varchar2)return v
 
 --receives id of buysale and new price.
 function fnUpdteBuysalePrice(p_idBuysale in number, p_price in number)return varchar2;
+--receives username and new type for username
+function fnUpdteChangeUserType(p_username in varchar2, p_usertype in varchar2)return varchar2;
 
 end  packageUPDATE;
