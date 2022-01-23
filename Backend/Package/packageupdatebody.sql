@@ -14,6 +14,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Wrong data';
      return val;
@@ -31,6 +35,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
@@ -50,6 +58,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Wrong data';
      return val;
@@ -68,8 +80,12 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
-     val:='Cannot be deleted, it has models';
+     val:='Wrong data';
      return val;
 end fnUpdtBrand;
 
@@ -85,6 +101,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
@@ -108,6 +128,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Wrong data';
      return val;
@@ -126,6 +150,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
@@ -146,6 +174,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Cannot be deleted';
      return val;
@@ -161,6 +193,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
@@ -178,6 +214,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Wrong data';
      return val;
@@ -192,6 +232,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
@@ -213,6 +257,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Cannot delete, it has districts';
@@ -237,6 +285,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Cannot delete, a user lives here';
      return val;
@@ -257,6 +309,10 @@ exception
     WHEN no_data_found THEN
      val:='Not found'; 
      return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
+     return val;
     when others then
      val:='Wrong data';
      return val;
@@ -273,6 +329,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
@@ -291,6 +351,10 @@ begin
 exception
     WHEN no_data_found THEN
      val:='Not found'; 
+     return val;
+    when dup_val_on_index then
+     rollback;
+     val:='Same name as another entry';   
      return val;
     when others then
      val:='Wrong data';
