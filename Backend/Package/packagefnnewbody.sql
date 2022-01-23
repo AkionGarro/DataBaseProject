@@ -555,9 +555,16 @@ function  fnNewWlistUserxClock( p_idUser in varchar2,
                         p_idClock in NUMBER)return varchar2 as
 val varchar2(50);
 v_idUser number(8);
+v_idClock number(10);
+v_idUserS number(8);
 begin
+    select idclock,idUserSeller into v_idClock,v_idUserS from buysale where buysale.idBuysale=p_idClock;
+    
     v_idUser:=packagegetid.getidusername(p_idUser);
-    packagepcd.new_WLISTUSERXCLOCK(v_idUser,p_idClock);
+    if v_idUserS=v_idUser then
+        return 'You cannot add your own items to your favorite';
+    end if;
+    packagepcd.new_WLISTUSERXCLOCK(v_idUser,v_idClock);
     commit;
     val:='Added to Favorites';
     return val;
