@@ -45,6 +45,12 @@ begin open cCursor for select nameType,descriptionType from UserType;
     return cCursor;
 end fnListUserTypeBasic;
 
+function fnListUserTypeCombo return sys_RefCursor is
+cCursor sys_refCursor;
+begin open cCursor for select nameType from UserType where nameType!='SuperAdmin';
+    return cCursor;
+end fnListUserTypeCombo;
+
 function fnListPayMethodBasic return sys_RefCursor is 
 cCursor sys_refCursor;
 begin open cCursor for select type from paymentMethod;
@@ -113,6 +119,7 @@ cCursor sys_refCursor;
 begin open ccUrsor for select nameType from phoneType;
 return ccursor;
 end fnListPhoneType;
+
 
 function fnListPhonesFromUser(username in varchar2) return SYS_REFCURSOR is
 cCursor sys_refCursor;
@@ -269,6 +276,14 @@ open ccursor for select buysale.idbuysale, buysale.datepost,
                               where shcart_appuserxclock.iduser=v_idUser ;
 return ccursor; 
 end fnListShoppingCart;
+
+
+function fnListUserWithType return sys_refcursor is
+cCursor sys_refCursor;
+begin 
+open ccUrsor for select appuser.username,usertype.nametype from appuser inner join usertype on appuser.usertype=usertype.idusertype;
+return ccursor;
+end fnListUserWithType;
 
 
 end packagefnlist;

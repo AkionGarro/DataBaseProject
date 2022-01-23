@@ -75,7 +75,7 @@ function fnDelUserType(p_name in varchar2) return varchar2 is
 val varchar2(50);
 v_idC number(3);
 begin
-    IF p_name='Admin' THEN
+    IF p_name='Admin' or p_name='SuperAdmin' THEN
     val:='This user type cannot be deleted';
     return val;
     END IF;
@@ -338,4 +338,4 @@ exception
      return val;
 end fnDelPhoneType;
 
-end  packageDeleteTuple; 
+end  packageDeleteTuple;

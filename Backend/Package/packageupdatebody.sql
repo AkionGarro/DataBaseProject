@@ -357,6 +357,26 @@ exception
      return val;
 end fnUpdteBuysalePrice;
 
+function fnUpdteChangeUserType(p_username in varchar2, p_usertype in varchar2)return varchar2
+is
+val varchar2(50);
+v_idusertype number(2);
+begin
+ if p_usertype='SuperAdmin' then
+ return 'You cannot change the type of this user';
+ end if;
+ v_idusertype:= packagegetid.getidusertype(p_usertype);
+ UPDATE APPUSER SET USERTYPE=v_idusertype where APPUSER.username=p_username;
+ return 'User Type Changed';
+exception
+    WHEN no_data_found THEN
+     val:='Not found'; 
+     return val;
+    when others then
+     val:='Wrong data';
+     return val;
+end fnUpdteChangeUserType;
+
 
 
 end PACKAGEUPDATE;
