@@ -104,5 +104,7 @@ function fnListShoppingCart(p_username in varchar2) return sys_refcursor;
 
 --returns the username and  usertype
 function fnListUserWithType return sys_refcursor;
+--returns cursor with the favorites from a user receives username
+function fnListFavorites(p_username in varchar2) return sys_refcursor;
 
 end packagefnlist;
