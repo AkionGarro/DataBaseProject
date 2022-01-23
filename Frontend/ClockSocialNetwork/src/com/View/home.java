@@ -40,11 +40,11 @@ public class home extends javax.swing.JPanel {
         option4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        option8 = new javax.swing.JPanel();
         option7 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
+        option8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         homeContent = new javax.swing.JPanel();
@@ -140,21 +140,6 @@ public class home extends javax.swing.JPanel {
 
         menu.add(option4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 270, 40));
 
-        option8.setBackground(new java.awt.Color(62, 114, 179));
-        option8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                option8MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                option8MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                option8MouseExited(evt);
-            }
-        });
-        option8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        menu.add(option8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 270, 40));
-
         option7.setBackground(new java.awt.Color(62, 114, 179));
         option7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,20 +167,36 @@ public class home extends javax.swing.JPanel {
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         menu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 38, 270, -1));
 
+        option8.setBackground(new java.awt.Color(62, 114, 179));
+        option8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                option8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                option8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                option8MouseExited(evt);
+            }
+        });
+        option8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel16.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Profile");
-        menu.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 30));
+        option8.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 190, 30));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/male_user_32px.png"))); // NOI18N
-        menu.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
+        option8.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        menu.add(option8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 270, 40));
 
         add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         homeContent.setBackground(new java.awt.Color(255, 255, 255));
         homeContent.setForeground(new java.awt.Color(255, 255, 255));
-        homeContent.setMinimumSize(new java.awt.Dimension(730, 700));
-        homeContent.setPreferredSize(new java.awt.Dimension(730, 700));
+        homeContent.setMinimumSize(new java.awt.Dimension(730, 650));
+        homeContent.setPreferredSize(new java.awt.Dimension(730, 660));
 
         javax.swing.GroupLayout homeContentLayout = new javax.swing.GroupLayout(homeContent);
         homeContent.setLayout(homeContentLayout);
@@ -205,10 +206,10 @@ public class home extends javax.swing.JPanel {
         );
         homeContentLayout.setVerticalGroup(
             homeContentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 660, Short.MAX_VALUE)
         );
 
-        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
+        add(homeContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
         menuBar.setBackground(new java.awt.Color(62, 114, 179));
         menuBar.setMinimumSize(new java.awt.Dimension(730, 40));

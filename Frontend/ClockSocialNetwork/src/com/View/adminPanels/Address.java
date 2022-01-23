@@ -107,7 +107,6 @@ public class Address extends javax.swing.JPanel {
         comboCityF = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        createButton1 = new javax.swing.JButton();
         createButton2 = new javax.swing.JButton();
         createButton3 = new javax.swing.JButton();
         nameTextField2 = new javax.swing.JTextField();
@@ -123,6 +122,7 @@ public class Address extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("City:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
 
@@ -135,6 +135,7 @@ public class Address extends javax.swing.JPanel {
         add(comboCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cod:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, -1, 30));
 
@@ -146,7 +147,7 @@ public class Address extends javax.swing.JPanel {
                 createButtonActionPerformed(evt);
             }
         });
-        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 120, 30));
+        add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 120, 30));
 
         deleteCountry.setBackground(new java.awt.Color(0, 0, 0));
         deleteCountry.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,7 +157,7 @@ public class Address extends javax.swing.JPanel {
                 deleteCountryActionPerformed(evt);
             }
         });
-        add(deleteCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 130, 30));
+        add(deleteCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 120, 30));
 
         tableInfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -169,11 +170,13 @@ public class Address extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableInfo.setPreferredSize(new java.awt.Dimension(300, 300));
         jScrollPane2.setViewportView(tableInfo);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 730, 310));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 730, 320));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Country:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
@@ -189,22 +192,14 @@ public class Address extends javax.swing.JPanel {
         add(comboCityF, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 300, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("District Name:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Agregar:");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, 30));
-
-        createButton1.setBackground(new java.awt.Color(0, 0, 0));
-        createButton1.setForeground(new java.awt.Color(255, 255, 255));
-        createButton1.setText("Create");
-        createButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                createButton1ActionPerformed(evt);
-            }
-        });
-        add(createButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 70, 30));
 
         createButton2.setBackground(new java.awt.Color(0, 0, 0));
         createButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -214,7 +209,7 @@ public class Address extends javax.swing.JPanel {
                 createButton2ActionPerformed(evt);
             }
         });
-        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 120, 30));
+        add(createButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 120, 30));
 
         createButton3.setBackground(new java.awt.Color(0, 0, 0));
         createButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,7 +219,7 @@ public class Address extends javax.swing.JPanel {
                 createButton3ActionPerformed(evt);
             }
         });
-        add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 120, 30));
+        add(createButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, 30));
 
         nameTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +237,7 @@ public class Address extends javax.swing.JPanel {
                 modifyDistrictActionPerformed(evt);
             }
         });
-        add(modifyDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 120, 30));
+        add(modifyDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 120, 30));
 
         deleteCity.setBackground(new java.awt.Color(0, 0, 0));
         deleteCity.setForeground(new java.awt.Color(255, 255, 255));
@@ -252,7 +247,7 @@ public class Address extends javax.swing.JPanel {
                 deleteCityActionPerformed(evt);
             }
         });
-        add(deleteCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 130, 30));
+        add(deleteCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 120, 30));
 
         deleteDistrict.setBackground(new java.awt.Color(0, 0, 0));
         deleteDistrict.setForeground(new java.awt.Color(255, 255, 255));
@@ -262,7 +257,7 @@ public class Address extends javax.swing.JPanel {
                 deleteDistrictActionPerformed(evt);
             }
         });
-        add(deleteDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 130, 30));
+        add(deleteDistrict, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 120, 30));
 
         modifyCountry.setBackground(new java.awt.Color(0, 0, 0));
         modifyCountry.setForeground(new java.awt.Color(255, 255, 255));
@@ -272,7 +267,7 @@ public class Address extends javax.swing.JPanel {
                 modifyCountryActionPerformed(evt);
             }
         });
-        add(modifyCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 130, 30));
+        add(modifyCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 120, 30));
 
         modifyCity.setBackground(new java.awt.Color(0, 0, 0));
         modifyCity.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,7 +277,7 @@ public class Address extends javax.swing.JPanel {
                 modifyCityActionPerformed(evt);
             }
         });
-        add(modifyCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 120, 30));
+        add(modifyCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 120, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -317,10 +312,6 @@ public class Address extends javax.swing.JPanel {
         }        // TODO add your handling code here:
                         // TODO add your handling code here:
     }//GEN-LAST:event_createButton3ActionPerformed
-
-    private void createButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_createButton1ActionPerformed
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
                 try{
@@ -456,7 +447,6 @@ public class Address extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboDistrict;
     private javax.swing.JTextField countryCodeField;
     private javax.swing.JButton createButton;
-    private javax.swing.JButton createButton1;
     private javax.swing.JButton createButton2;
     private javax.swing.JButton createButton3;
     private javax.swing.JButton deleteCity;

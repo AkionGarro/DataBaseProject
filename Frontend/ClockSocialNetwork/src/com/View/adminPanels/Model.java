@@ -107,6 +107,7 @@ public class Model extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Brand:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
@@ -136,6 +137,7 @@ public class Model extends javax.swing.JPanel {
         add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 170, 30));
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Type:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, -1, 40));
 
@@ -151,6 +153,7 @@ public class Model extends javax.swing.JPanel {
         add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Model name:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
@@ -169,6 +172,7 @@ public class Model extends javax.swing.JPanel {
         add(comboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 140, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Name:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 50));
 

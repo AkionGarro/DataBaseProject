@@ -61,6 +61,7 @@ public class identification extends javax.swing.JPanel {
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Identification Name:");
             add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 50));
 
@@ -77,7 +78,7 @@ public class identification extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 730, 420));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 730, 530));
 
             createButton.setBackground(new java.awt.Color(0, 0, 0));
             createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,7 +88,7 @@ public class identification extends javax.swing.JPanel {
                     createButtonActionPerformed(evt);
                 }
             });
-            add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 70, 30));
+            add(createButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 70, 30));
 
             modifyButton.setBackground(new java.awt.Color(0, 0, 0));
             modifyButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,7 +98,7 @@ public class identification extends javax.swing.JPanel {
                     modifyButtonActionPerformed(evt);
                 }
             });
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 130, 30));
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(617, 10, -1, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +116,7 @@ public class identification extends javax.swing.JPanel {
                     modifyButton1ActionPerformed(evt);
                 }
             });
-            add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 70, 30));
+            add(modifyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 70, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed

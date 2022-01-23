@@ -54,6 +54,7 @@ public class PaymentMethod extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Payment Method: ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 50));
 

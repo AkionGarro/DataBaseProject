@@ -75,7 +75,7 @@ public class Status extends javax.swing.JPanel {
                 modifyButtonActionPerformed(evt);
             }
         });
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 70, 30));
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 70, 30));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -103,10 +103,12 @@ public class Status extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 730, 510));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Description:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 30));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Name of the status:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
@@ -118,7 +120,7 @@ public class Status extends javax.swing.JPanel {
                 deleteButtonActionPerformed(evt);
             }
         });
-        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 70, 30));
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed

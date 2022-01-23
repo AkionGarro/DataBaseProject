@@ -86,7 +86,7 @@ public class Condition extends javax.swing.JPanel {
                     buttonModifyCActionPerformed(evt);
                 }
             });
-            add(buttonModifyC, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 70, 30));
+            add(buttonModifyC, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 70, 30));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -104,10 +104,12 @@ public class Condition extends javax.swing.JPanel {
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 550));
 
             jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel6.setForeground(new java.awt.Color(0, 0, 0));
             jLabel6.setText("Description:");
             add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 40));
 
             jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
             jLabel7.setText("Condition's Name:");
             add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, 30));
 
@@ -119,7 +121,7 @@ public class Condition extends javax.swing.JPanel {
                     buttonDeleteActionPerformed(evt);
                 }
             });
-            add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 70, 30));
+            add(buttonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 70, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void buttonAddCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAddCActionPerformed

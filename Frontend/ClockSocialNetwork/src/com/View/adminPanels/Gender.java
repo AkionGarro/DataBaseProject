@@ -58,6 +58,7 @@ public class Gender extends javax.swing.JPanel {
             setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
             jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Gender:");
             add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 50));
 
@@ -74,7 +75,7 @@ public class Gender extends javax.swing.JPanel {
             ));
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 480));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 510));
 
             createButton.setBackground(new java.awt.Color(0, 0, 0));
             createButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -94,7 +95,7 @@ public class Gender extends javax.swing.JPanel {
                     modifyButtonActionPerformed(evt);
                 }
             });
-            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 80, 30));
+            add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
             nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +113,7 @@ public class Gender extends javax.swing.JPanel {
                     deleteButtonActionPerformed(evt);
                 }
             });
-            add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 80, 30));
+            add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, 30));
         }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed

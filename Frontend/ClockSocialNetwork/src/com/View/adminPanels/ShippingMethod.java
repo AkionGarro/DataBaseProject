@@ -55,6 +55,7 @@ public class ShippingMethod extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Company Name");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 50));
 
@@ -91,7 +92,7 @@ public class ShippingMethod extends javax.swing.JPanel {
                 modifyButtonActionPerformed(evt);
             }
         });
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 70, 30));
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 70, 30));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.setColumns(20);
@@ -106,6 +107,7 @@ public class ShippingMethod extends javax.swing.JPanel {
         add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 250, 40));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Shipping Method:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 180, 50));
 
@@ -117,7 +119,7 @@ public class ShippingMethod extends javax.swing.JPanel {
                 deleteBActionPerformed(evt);
             }
         });
-        add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 70, 30));
+        add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed

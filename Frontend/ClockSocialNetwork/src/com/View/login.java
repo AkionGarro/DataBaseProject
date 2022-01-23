@@ -896,7 +896,7 @@ public class login extends javax.swing.JFrame {
                 user = controllerAppuserxPeople.getUser(usernameTextField.getText());
                 this.mainCont.setUsername(user.getUsername());
                 if (password.equals(user.getPassword())) {
-                    if (user.getUserType() == 1) {
+                    if (user.getUserType() == 13) {
                         home h1 = new home();
                         h1.setSize(1000, 700);
                         h1.setLocation(0, 0);

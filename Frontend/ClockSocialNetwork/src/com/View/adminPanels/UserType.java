@@ -82,6 +82,7 @@ public class UserType extends javax.swing.JPanel {
         );
         tableInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tableInfo.setName(""); // NOI18N
+        tableInfo.setPreferredSize(new java.awt.Dimension(300, 300));
         jScrollPane2.setViewportView(tableInfo);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 730, 450));
@@ -99,7 +100,7 @@ public class UserType extends javax.swing.JPanel {
         modifyButton.setBackground(new java.awt.Color(0, 0, 0));
         modifyButton.setForeground(new java.awt.Color(255, 255, 255));
         modifyButton.setText("Change");
-        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
+        add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
 
         nameField.setDocument(new limitText.JTextFieldLimit(20));
         nameField.addActionListener(new java.awt.event.ActionListener() {
@@ -120,10 +121,12 @@ public class UserType extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 230, 60));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Description:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 50));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Name of the user type:");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
@@ -135,7 +138,7 @@ public class UserType extends javax.swing.JPanel {
                 deleteButtonActionPerformed(evt);
             }
         });
-        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, -1, -1));
+        add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed

@@ -191,7 +191,7 @@ public class insertarRelojes extends javax.swing.JPanel {
                     comboBrandItemStateChanged(evt);
                 }
             });
-            add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 140, -1));
+            add(comboBrand, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 190, -1));
 
             comboModel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
             add(comboModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, -1));
@@ -200,15 +200,17 @@ public class insertarRelojes extends javax.swing.JPanel {
             add(comboCond, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 140, -1));
 
             priceField.setColumns(10);
-            add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 140, -1));
+            priceField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 84, 140, 40));
 
             descriptionField.setColumns(100);
+            descriptionField.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             descriptionField.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     descriptionFieldActionPerformed(evt);
                 }
             });
-            add(descriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 240, 30));
+            add(descriptionField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 190, 30));
 
             jLabel13.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel13.setText("Vintage:");
@@ -220,7 +222,7 @@ public class insertarRelojes extends javax.swing.JPanel {
                     jComboBox6ActionPerformed(evt);
                 }
             });
-            add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 140, -1));
+            add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, -1));
 
             jButton1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jButton1.setText("Add new clock");
@@ -250,7 +252,7 @@ public class insertarRelojes extends javax.swing.JPanel {
             jScrollPane2.setViewportView(tableInfo);
 
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 730, 430));
-            add(manufactureDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 140, -1));
+            add(manufactureDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 190, -1));
 
             jLabel14.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
             jLabel14.setText("Description:");
@@ -272,8 +274,10 @@ public class insertarRelojes extends javax.swing.JPanel {
                     jButton3ActionPerformed(evt);
                 }
             });
-            add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 170, 40));
-            add(newPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 100, 40));
+            add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 170, 40));
+
+            newPrice.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+            add(newPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 100, 40));
         }// </editor-fold>//GEN-END:initComponents
 
     private void comboBuyStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBuyStatusActionPerformed

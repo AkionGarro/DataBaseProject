@@ -93,7 +93,7 @@ public class carritoCompra extends javax.swing.JPanel {
             });
             jScrollPane2.setViewportView(tableInfo);
 
-            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 290));
+            add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 730, 550));
 
             deleteShCart.setText("Take out");
             deleteShCart.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +101,7 @@ public class carritoCompra extends javax.swing.JPanel {
                     deleteShCartActionPerformed(evt);
                 }
             });
-            add(deleteShCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+            add(deleteShCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 80, 40));
 
             buyButton1.setText("BUY");
             buyButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -109,26 +109,33 @@ public class carritoCompra extends javax.swing.JPanel {
                     buyButton1ActionPerformed(evt);
                 }
             });
-            add(buyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 90, 40));
+            add(buyButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 80, 40));
 
             comboShipping.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(comboShipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 110, 40));
+            add(comboShipping, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 110, 40));
 
             comboPayment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-            add(comboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 110, 40));
+            add(comboPayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 110, 40));
 
             jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
             jLabel1.setText("Total");
             add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 530, -1, -1));
 
+            jLabel2.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel2.setForeground(new java.awt.Color(0, 0, 0));
             jLabel2.setText("Select Payment Method");
-            add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, -1, -1));
+            add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
+            jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+            jLabel3.setForeground(new java.awt.Color(0, 0, 0));
             jLabel3.setText("Select Shipping");
-            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, -1, -1));
+            add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
+            jLabel4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+            jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+            jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             jLabel4.setText("My Shopping Cart");
-            add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+            add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, -1));
         }// </editor-fold>//GEN-END:initComponents
 
     private void buyButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyButton1ActionPerformed
