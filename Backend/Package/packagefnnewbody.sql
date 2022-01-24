@@ -679,14 +679,21 @@ v_idPayment number(3);
 v_idShipping number(4);
 v_idSeller number(8);
 v_idClock number(10);
+v_idBuyStatus number(3);
+v_idBuyStatusN number(3);
 begin
+    v_idBuyStatus:=packagegetid.getIdBuyStatus('Sold');
     v_idAppUser:=packagegetid.getidUsername(p_username);
     v_idPayment:=packagegetid.getidPaymentMethod(p_paymentmethod);
     v_idShipping:=packagegetid.getidShippingMethod(p_shippingmethod);
-    Select iduserseller,idclock into v_idSeller,v_idClock from buysale where buysale.idbuysale=p_idBuysale;
+    Select iduserseller,idclock,idbuystatus into v_idSeller,v_idClock,v_idBuyStatusN from buysale where buysale.idbuysale=p_idBuysale;
     if v_idSeller=v_idAppuser then
      return 'You cannot buy your own item';
     end if;
+    if v_idBuyStatus=v_idBuyStatusn then
+        return 'This item has already been bought';
+    end if;
+    
         
     update buysale set   idShippingM=v_idShipping,
                          idpaymentm=v_idPayment,
