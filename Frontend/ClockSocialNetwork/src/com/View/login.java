@@ -1077,7 +1077,7 @@ public class login extends javax.swing.JFrame {
             }
 
             else if( checks.isValidPassword(this.passwordTextField.getText().toString()) == false){
-                mainCont.createWindowMessage("Invalid  password  requires capital letter, a symbol, a number and a normal letter", "Error");
+                mainCont.createWindowMessage("Invalid  password  requires uppercase letter, a symbol, a number and a lower case letter", "Error");
            }
            
         } else {
