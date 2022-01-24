@@ -55,7 +55,6 @@ public class ShippingMethod extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Company Name");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 50));
 
@@ -104,10 +103,10 @@ public class ShippingMethod extends javax.swing.JPanel {
         add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 250, 30));
 
         companyName.setColumns(20);
+        companyName.setDocument(new limitText.JTextFieldLimit(20));
         add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 250, 40));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Shipping Method:");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 180, 50));
 

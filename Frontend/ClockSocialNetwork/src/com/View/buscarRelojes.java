@@ -260,6 +260,7 @@ public class buscarRelojes extends javax.swing.JPanel {
             add(shCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 260, 40));
 
             priceField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+            priceField.setText("99999");
             add(priceField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 110, 40));
 
             favoriteButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -307,6 +308,7 @@ public class buscarRelojes extends javax.swing.JPanel {
     }
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         fillTableFilters();
+        System.out.println("sadas");
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void tableInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableInfoMouseClicked

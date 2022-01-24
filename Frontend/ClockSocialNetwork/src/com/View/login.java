@@ -737,7 +737,7 @@ public class login extends javax.swing.JFrame {
         nombreLabel7.setForeground(new java.awt.Color(255, 255, 255));
         nombreLabel7.setText("Type:");
         registerSection.add(nombreLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 60, 40));
-        registerSection.add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
+        registerSection.add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, 150, -1));
 
         comboPhoneType.setBackground(new java.awt.Color(62, 114, 179));
         comboPhoneType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -896,7 +896,7 @@ public class login extends javax.swing.JFrame {
                 user = controllerAppuserxPeople.getUser(usernameTextField.getText());
                 this.mainCont.setUsername(user.getUsername());
                 if (password.equals(user.getPassword())) {
-                    if (user.getUserType() == 13) {
+                    if (user.getUserType() == 1) {
                         home h1 = new home();
                         h1.setSize(1000, 700);
                         h1.setLocation(0, 0);
@@ -1066,18 +1066,18 @@ public class login extends javax.swing.JFrame {
 
             }
 
-            if (checks.CheckEmail(this.emailTextField.getText().toString()) == false) {
+            else if (checks.CheckEmail(this.emailTextField.getText().toString()) == false) {
                 mainCont.createWindowMessage("Invalid Email ", "Error");
             }
-            if (checks.onlyCheckNumbers(this.identificationField.getText().toString()) == false) {
+            else if (checks.onlyCheckNumbers(this.identificationField.getText().toString()) == false) {
                   mainCont.createWindowMessage("Invalid  identification ", "Error");
             }
-            if( checks.onlyCheckNumbers(this.phoneField.getText().toString()) == false){
+            else if( checks.onlyCheckNumbers(this.phoneField.getText().toString()) == false){
                  mainCont.createWindowMessage("Invalid  phone number ", "Error");
             }
 
-           if( checks.isValidPassword(this.passwordTextField.getText().toString()) == false){
-                mainCont.createWindowMessage("Invalid  password ", "Error");
+            else if( checks.isValidPassword(this.passwordTextField.getText().toString()) == false){
+                mainCont.createWindowMessage("Invalid  password  requires capital letter, a symbol, a number and a normal letter", "Error");
            }
            
         } else {

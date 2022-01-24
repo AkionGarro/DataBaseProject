@@ -84,6 +84,7 @@ public class ClockType extends javax.swing.JPanel {
             add(modifyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, 30));
 
             nameField.setDocument(new limitText.JTextFieldLimit(20));
+            nameField.setColumns(20);
             nameField.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     nameFieldActionPerformed(evt);
@@ -93,10 +94,10 @@ public class ClockType extends javax.swing.JPanel {
 
             descriptionField.setColumns(20);
             descriptionField.setRows(5);
-            nameField.setDocument(new limitText.JTextFieldLimit(200));
+            descriptionField.setDocument(new limitText.JTextFieldLimit(100));
             jScrollPane1.setViewportView(descriptionField);
 
-            add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 192, 120));
+            add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 290, 70));
 
             tableInfo.setModel(new javax.swing.table.DefaultTableModel(
                 new Object [][] {
@@ -114,12 +115,10 @@ public class ClockType extends javax.swing.JPanel {
             add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 730, 490));
 
             jLabel7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel7.setForeground(new java.awt.Color(0, 0, 0));
             jLabel7.setText("Description:");
             add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 30));
 
             jLabel8.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-            jLabel8.setForeground(new java.awt.Color(0, 0, 0));
             jLabel8.setText("Type's name:");
             add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
